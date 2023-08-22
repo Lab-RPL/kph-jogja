@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('luas_hutan', function (Blueprint $table) {
-            $table->id();
+            $table->id("id_luas")->autoIncrement()->primary();
+            $table->decimal('luas_lindung');
+            $table->decimal('luas_produksi');
             $table->timestamps();
         });
     }
