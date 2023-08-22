@@ -12,10 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('rusak_hilang', function (Blueprint $table) {
-            $table->id('id_rusak')->autoIncrement()->primary();
+            $table->bigIncrements('id_rusak');
             $table->integer('jns_rusak');
             $table->timestamps('tgl_input');
             $table->date('tgl_rusak');
+
+            $table->unsignedBigInteger('id_PU');
+            $table->foreign('id_PU')->references('id_PU')->on('data_utama');
 
             $table->integer('no_PU');
             $table->decimal('diameter');

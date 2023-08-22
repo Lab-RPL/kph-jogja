@@ -12,11 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('data_utama', function (Blueprint $table) {
-            $table->id('id_PU')->autoIncrement()->primary();
+            $table->bigIncrements('id_PU');
             $table->date('tanggal');
 
+            $table->unsignedBigInteger('id_bdh');
+            $table->foreign('id_bdh')->references('id_bdh')->on('bdh');
 
-            $table->timestamps();
+            $table->unsignedBigInteger('id_rph');
+            $table->foreign('id_rph')->references('id_rph')->on('rph');
+
+            $table->unsignedBigInteger('id_petak');
+            $table->foreign('id_petak')->references('id_petak')->on('petak');
+
             $table->integer('no_PU');
             $table->decimal('koor_x');
             $table->decimal('koor_Y');
