@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('hhbk', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_hhbk')->autoIncrement()->primary();
+
+            $table->varchar('nama_wisata');
+            $table->text('lokasi_wisata');
+            $table->text('atraksi_wisata');
             $table->timestamps();
         });
     }
