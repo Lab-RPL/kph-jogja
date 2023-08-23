@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('rusak_hilang', function (Blueprint $table) {
             $table->bigIncrements('id_rusak');
             $table->integer('jns_rusak');
-            $table->timestamps('tgl_input');
+            $table->date('tgl_input');
             $table->date('tgl_rusak');
 
             $table->unsignedBigInteger('id_PU');

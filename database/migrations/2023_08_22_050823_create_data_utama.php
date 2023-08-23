@@ -21,8 +21,8 @@ return new class extends Migration
             $table->unsignedBigInteger('id_rph');
             $table->foreign('id_rph')->references('id_rph')->on('rph');
 
-            $table->unsignedBigInteger('id_petak');
-            $table->foreign('id_petak')->references('id_petak')->on('petak');
+            $table->unsignedBigInteger('id_ptk');
+            $table->foreign('id_ptk')->references('id_ptk')->on('petak');
 
             $table->integer('no_PU');
             $table->decimal('koor_x');

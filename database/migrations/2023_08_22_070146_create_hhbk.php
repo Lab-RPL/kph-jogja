@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('hhbk', function (Blueprint $table) {
             $table->bigIncrements('id_hhbk');
 
-            $table->varchar('nama_wisata');
+            $table->string('nama_wisata');
             $table->text('lokasi_wisata');
             $table->text('atraksi_wisata');
             $table->timestamps();
