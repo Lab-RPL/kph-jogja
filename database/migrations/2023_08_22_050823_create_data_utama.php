@@ -15,12 +15,6 @@ return new class extends Migration
             $table->bigIncrements('id_PU');
             $table->date('tanggal');
 
-            $table->unsignedBigInteger('id_bdh');
-            $table->foreign('id_bdh')->references('id_bdh')->on('bdh');
-
-            $table->unsignedBigInteger('id_rph');
-            $table->foreign('id_rph')->references('id_rph')->on('rph');
-
             $table->unsignedBigInteger('id_ptk');
             $table->foreign('id_ptk')->references('id_ptk')->on('petak');
 
