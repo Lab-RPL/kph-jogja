@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.main');
+});
+
+Route::get('/data-utama', function () {
+    return view('enak');
+});
+
+Route::get('/data-kedua', function () {
+    return view('enak2');
 });

@@ -108,8 +108,6 @@
                 </div>
             </div>
 
-            @yield('tegak')
-
     <!-- =========== Scripts =========  -->
     <script src="/js/main.js"></script>
 

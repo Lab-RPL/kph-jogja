@@ -3,14 +3,14 @@
 
 /* =============== Globals ============== */
 * {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 :root {
-  --blue: #82CD47;
+  --blue: #B0E398;
   --white: #fff;
   --gray: #f5f5f5;
   --black1: #222;
