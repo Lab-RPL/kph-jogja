@@ -27,3 +27,9 @@ Route::get('/data-kedua', function () {
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/user', function () {
+    return view('user');
+});
+Route::get('/petak', function () {
+    return view('petak');
+});

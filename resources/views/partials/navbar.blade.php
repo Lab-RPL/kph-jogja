@@ -11,20 +11,20 @@
             </li>
 
             <li>
-                <a href="/data-utama">
+                <a href="/data-kedua">
                     <span class="icon">
                         <ion-icon name="home-outline"></ion-icon>
                     </span>
-                    <span class="title">Data Utama</span>
+                    <span class="title">Data Inventaris</span>
                 </a>
             </li>
 
             <li>
-                <a href="/data-kedua ">
+                <a href="/data-utama ">
                     <span class="icon">
                         <ion-icon name="people-outline"></ion-icon>
                     </span>
-                    <span class="title">Customers</span>
+                    <span class="title">Luas Hutan Per-BDH</span>
                 </a>
             </li>
 
@@ -33,7 +33,7 @@
                     <span class="icon">
                         <ion-icon name="chatbubble-outline"></ion-icon>
                     </span>
-                    <span class="title">Messages</span>
+                    <span class="title">Perizinan Berusaha</span>
                 </a>
             </li>
 
@@ -42,7 +42,7 @@
                     <span class="icon">
                         <ion-icon name="help-outline"></ion-icon>
                     </span>
-                    <span class="title">Help</span>
+                    <span class="title">Potensi Hasil Hutan</span>
                 </a>
             </li>
 
@@ -51,7 +51,7 @@
                     <span class="icon">
                         <ion-icon name="settings-outline"></ion-icon>
                     </span>
-                    <span class="title">Settings</span>
+                    <span class="title">Produksi Hasil Hutan</span>
                 </a>
             </li>
 
@@ -60,7 +60,25 @@
                     <span class="icon">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                     </span>
-                    <span class="title">Password</span>
+                    <span class="title">Penerima Bukan Pajak</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                    <span class="title">Kerusakan/Kehilangan</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                    <span class="title">Luas Hutan</span>
                 </a>
             </li>
 

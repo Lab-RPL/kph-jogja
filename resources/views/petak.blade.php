@@ -1,53 +1,65 @@
 @extends('layouts.main')
 @section('content')
 
-<div class="garis">
+  <div class="garis">
     <div class="border-list">
-      <h2>DATA BDH</h2>
+      <h2>DATA PETAK</h2>
       <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
+
+      <div class="wrapper">
+        <div class="bdh">
+            <h3>BDH.4688</h3>
+          </div>
+          <div class="rph">
+            <h3>RPH.7888</h3>
+          </div>
+      </div>
+
       <form>
         <table id="tabelData">
-            <thead>
-              <tr>
-                <th>BDH</th>
-                <th>Nama Kepala BDH</th>
-                <th>Luas BDH</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Isi data dinamis di sini -->
-              
-            </tbody>
-          </table>
-          <div id="pagination" class="pagination">
-            <!-- Pagination dinamis di sini -->
-          </div>
+          <thead>
+            <tr>
+              <th>Nama Petak</th>
+              <th>Luas RPH</th>
+              <th>Potensi</th>
+              <th>Keterangan lain</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Isi data dinamis di sini -->
+          </tbody>
+        </table>
+        <div id="pagination" class="pagination">
+          <!-- Pagination dinamis di sini -->
+        </div>
         <div class="button-container">
-            <button type="submit">Tambah Data</button>
+          <button type="submit">Tambah Data</button>
+        </div>
+        <div class="button-kembali">
+          <button type="submit">Kembali</button>
         </div>
       </form>
     </div>
   </div>
 
-  {{-- js untuk pagination --}}
   <script>
-  const tabelData = document.getElementById("tabelData");
+      const tabelData = document.getElementById("tabelData");
   const tbody = tabelData.querySelector("tbody");
   const pagination = document.getElementById("pagination");
 
   const data = [
-    { bdh: "4688", nama: "Budi", luas: "120 m" },
-    { bdh: "4688", nama: "Ani",  luas: "20 m" },
-    { bdh: "4688", nama: "Siti", luas: "120 m" },
-    { bdh: "4688", nama: "Rina", luas: "120 m" },
-    { bdh: "4688", nama: "Asep", luas: "120 m" },
-    { bdh: "4688", nama: "Ali",  luas: "20 m" },
-    { bdh: "4688", nama: "Joko", luas: "120 m" },
-    { bdh: "4688", nama: "Tono", luas: "120 m" },
-    { bdh: "4688", nama: "Rini", luas: "120 m" },
-    { bdh: "4688", nama: "Dani", luas: "120 m" },
-    { bdh: "4688", nama: "Eko",  luas: "20 m" },
-    { bdh: "4688", nama: "Entis",luas: "120 m" }
+    { petak: "4688", rph: "Budi", potensi: "120 m", keterangan: "xxxxxxxxx" },
+    { petak: "4688", rph: "Ani",  potensi:  "20 m", keterangan: "xxxxxxxxx" },
+    { petak: "4688", rph: "Siti", potensi: "120 m", keterangan: "xxxxxxxxx" },
+    { petak: "4688", rph: "Rina", potensi: "120 m", keterangan: "xxxxxxxxx" },
+    { petak: "4688", rph: "Asep", potensi: "120 m", keterangan: "xxxxxxxxx" },
+    { petak: "4688", rph: "Ali",  potensi:  "20 m", keterangan: "xxxxxxxxx" },
+    { petak: "4688", rph: "Joko", potensi: "120 m", keterangan: "xxxxxxxxx" },
+    { petak: "4688", rph: "Tono", potensi: "120 m", keterangan: "xxxxxxxxx" },
+    { petak: "4688", rph: "Rini", potensi: "120 m", keterangan: "xxxxxxxxx" },
+    { petak: "4688", rph: "Dani", potensi: "120 m", keterangan: "xxxxxxxxx" },
+    { petak: "4688", rph: "Eko",  potensi:  "20 m", keterangan: "xxxxxxxxx" },
+    { petak: "4688", rph: "Entis",potensi: "120 m", keterangan: "xxxxxxxxx" }
   ];
 
   const itemsPerPage = 5;
@@ -60,13 +72,13 @@
     tbody.innerHTML = "";
     for (const item of dataToDisplay) {
       const row = document.createElement("tr");
-      row.innerHTML = `<td>${item.bdh}</td><td>${item.nama}</td><td>${item.luas}</td>`;
+      row.innerHTML = `<td>${item.petak}</td><td>${item.rph}</td><td>${item.potensi}</td><td>${item.keterangan}</td>`;
       tbody.appendChild(row);
     }
   }
 
-  //menambahkan pagination
-  function createPagination(items) {
+    //menambahkan pagination
+    function createPagination(items) {
   const totalPages = Math.ceil(items.length / itemsPerPage);
 
   pagination.innerHTML = "";
@@ -197,6 +209,4 @@ function createPagination(items, activePage = 1) {
 displayData(data);
 createPagination(data);
   </script>
-
-  
 @endsection
