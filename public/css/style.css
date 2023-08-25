@@ -27,6 +27,91 @@ body {
   width: 100%;
 }
 
+/* =============================Form Border============================== */
+.garis {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 16px;
+}
+
+.border-list {
+  border: 3px solid #ccc;
+  border-radius: 20px;
+  padding: 60px;
+  border-color: #0CB166;
+}
+
+.border-list h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.border-list p {
+  margin-top: 10px;
+  margin-bottom: 10px;  
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  border-bottom: 2px solid #D46402;
+  padding-bottom: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination a {
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.pagination a:hover {
+  background-color: #ddd;
+}
+
+button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #82ba67;
+  color: #fff;
+  border: 1px solid #82ba67;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: var(--blue);
+  border-color: var(--blue);
+}
+
+.button-container {
+  text-align: right;
+}
+
+
+
+
+
 /* =============== Navigation ================ */
 .navigation {
   position: fixed;

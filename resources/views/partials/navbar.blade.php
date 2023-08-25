@@ -6,7 +6,7 @@
                     <span class="icon">
                         <ion-icon name="logo-apple"></ion-icon>
                     </span>
-                    <span class="title">Kehutanan UGM</span>
+                    <span class="title">KPH Yogyakarta</span>
                 </a>
             </li>
 
@@ -82,8 +82,5 @@
                 <ion-icon name="menu-outline"></ion-icon>
             </div>
 
-            <div class="user">
-                <img src="assets/imgs/customer01.jpg" alt="">
-            </div>
         </div>
 
