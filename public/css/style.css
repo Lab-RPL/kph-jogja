@@ -37,16 +37,16 @@ body {
 }
 
 .border-list {
-  position: relative; /* tambahkan 'position: relative;' agar elemen anak nanti direferensikan dari elemen ini */
+  position: relative;
   border: 3px solid #ccc;
   border-radius: 20px;
   padding: 60px;
-  width: 980px; 
-  height: 550px;
+  max-width: 980px;
+  width: 100%; 
+  height: auto; /* Ubah ke height:auto agar form menyesuaikan tingginya */
   border-color: #0CB166;
   overflow: hidden;
 }
-
 
 .border-list h2 {
   margin-top: 0;
@@ -100,51 +100,77 @@ th {
   background-color: #ddd;
 }
 
-button {
-  display: inline-block;
-  padding: 8px 10px;
-  background-color: #82ba67;
-  color: #fff;
-  border: 1px solid #82ba67;
-  border-radius: 4px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-button:hover {
-  background-color: var(--blue);
-  border-color: var(--blue);
-}
-
 .button-container {
-  position: absolute; /* tambahkan 'position: absolute;' agar posisinya relatif terhadap elemen .border-list */
-  bottom: 30px; /* atur jarak dari bawah elemen .border-list */
-  right: 20px; /* atur jarak dari kanan elemen .border-list */
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
 }
+
 .button-kembali {
   position: absolute;
   bottom: 30px;
 }
+
 .wrapper {
   display: flex;
   justify-content: center;
 }
-
-.bdh h3 {
+.bdh h3,
+.rph h3 {
+  text-align: center;
   margin-top: 2px;
   margin-bottom: 10px;
+}
+
+.bdh h3 {
   margin-left: -10px;
-  margin-right: 40px; /* Add margin to the right to create spacing between the elements */
-  text-align: center;
+  margin-right: 40px;
 }
 
-.rph h3 {
-  text-align:center;
-  margin-top: 2px; /* Add margin for consistency with the margin of .bdh h3 */
-  margin-bottom: 10px;  /* Add margin for consistency with the margin of .bdh h3 */
+/* Responsif */
+@media (max-width: 1024px) {
+  .border-list {
+    padding: 40px;
+  }
 }
 
+@media (max-width: 768px) {
+  .border-list {
+    padding: 20px;
+    width: 90%;
+  }
+  th, td {
+    padding: 8px;
+    font-size: 14px;
+  }
 
+  .bdh h3,
+  .rph h3 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .garis {
+    margin: 0 auto;
+  }
+
+  .border-list {
+    padding: 10px;
+    width: 100%;
+  }
+
+  th, td {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .bdh h3,
+  .rph h3 {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+}
 
 
 
