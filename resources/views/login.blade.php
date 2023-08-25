@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V4</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -33,14 +33,15 @@
 		<div class="container-login100" style="background-image: url('images/hutan.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-20 p-b-30">
 				<img src="{{ asset("images/logohutan.png") }}" class="logo" alt="logo">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="POST">
+					@csrf
 					<span class="login100-form-title p-b-49">
-						Login Super Admin
+						Login
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
 						<span class="label-input100">Username</span>
-						<input class="input100" type="text" name="username" placeholder="Type your username">
+						<input class="input100" type="text" name="name" placeholder="Type your username">
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
 
@@ -62,12 +63,12 @@
 						</div>
 					</div>
 
-					<div class="flex-col-c p-t-50">
+					{{-- <div class="flex-col-c p-t-50">
 
 						<a href="#" class="txt2">
 							Sign Up
 						</a>
-					</div>
+					</div> --}}
 				</form>
 			</div>
 		</div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Login Controller
+$auth = auth::class;
+
+Route::get('/login',[$auth,'login']);
+Route::post('/login',[$auth,'masuk']);
+
+
 
 Route::get('/', function () {
     return view('layouts.main');
@@ -23,7 +31,4 @@ Route::get('/data-utama', function () {
 
 Route::get('/data-kedua', function () {
     return view('enak2');
-});
-Route::get('/login', function () {
-    return view('login');
 });
