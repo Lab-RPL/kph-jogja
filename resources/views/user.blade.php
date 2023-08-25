@@ -1,72 +1,68 @@
 @extends('layouts.main')
 @section('content')
 
-<div class="garis">
+  <div class="garis">
     <div class="border-list">
-      <h2>DATA BDH</h2>
+      <h2>DATA ADMIN</h2>
       <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
       <form>
         <table id="tabelData">
-            <thead>
-              <tr>
-                <th>BDH</th>
-                <th>Nama Kepala BDH</th>
-                <th>Luas BDH</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Isi data dinamis di sini -->
-              
-            </tbody>
-          </table>
-          <div id="pagination" class="pagination">
-            <!-- Pagination dinamis di sini -->
-          </div>
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Password</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Isi data dinamis di sini -->
+          </tbody>
+        </table>
+        <div id="pagination" class="pagination">
+          <!-- Pagination dinamis di sini -->
+        </div>
         <div class="button-container">
-            <button type="submit">Tambah Data</button>
+          <button type="submit">Tambah Data</button>
         </div>
       </form>
     </div>
   </div>
 
-  {{-- js untuk pagination --}}
-  <script>
-  const tabelData = document.getElementById("tabelData");
-  const tbody = tabelData.querySelector("tbody");
-  const pagination = document.getElementById("pagination");
-
-  const data = [
-    { bdh: "4688", nama: "Budi", luas: "120 m" },
-    { bdh: "4688", nama: "Ani",  luas: "20 m" },
-    { bdh: "4688", nama: "Siti", luas: "120 m" },
-    { bdh: "4688", nama: "Rina", luas: "120 m" },
-    { bdh: "4688", nama: "Asep", luas: "120 m" },
-    { bdh: "4688", nama: "Ali",  luas: "20 m" },
-    { bdh: "4688", nama: "Joko", luas: "120 m" },
-    { bdh: "4688", nama: "Tono", luas: "120 m" },
-    { bdh: "4688", nama: "Rini", luas: "120 m" },
-    { bdh: "4688", nama: "Dani", luas: "120 m" },
-    { bdh: "4688", nama: "Eko",  luas: "20 m" },
-    { bdh: "4688", nama: "Entis",luas: "120 m" }
-  ];
-
-  const itemsPerPage = 5;
-
-  function displayData(items, currentPage = 1) {
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    const dataToDisplay = items.slice(start, end);
-
-    tbody.innerHTML = "";
-    for (const item of dataToDisplay) {
-      const row = document.createElement("tr");
-      row.innerHTML = `<td>${item.bdh}</td><td>${item.nama}</td><td>${item.luas}</td>`;
-      tbody.appendChild(row);
+ {{-- pagination js --}}
+ <script>
+    const tabelData = document.getElementById("tabelData");
+    const tbody = tabelData.querySelector("tbody");
+    const pagination = document.getElementById("pagination");
+  
+    const data = [
+      { username: "admin1", email: "admin1@example.com", password: "pw123" },
+      { username: "admin2", email: "admin2@example.com", password: "pw123" },
+      { username: "admin3", email: "admin3@example.com", password: "pw123" },
+      { username: "admin4", email: "admin4@example.com", password: "pw123" },
+      { username: "admin5", email: "admin5@example.com", password: "pw123" },
+      { username: "admin6", email: "admin6@example.com", password: "pw123" },
+      { username: "admin7", email: "admin7@example.com", password: "pw123" },
+      { username: "admin8", email: "admin8@example.com", password: "pw123" },
+      { username: "admin9", email: "admin9@example.com", password: "pw123" },
+      { username: "admin10", email: "admin10@example.com", password: "pw123" },
+    ];
+  
+    const itemsPerPage = 5;
+  
+    function displayData(items, currentPage = 1) {
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      const dataToDisplay = items.slice(start, end);
+  
+      tbody.innerHTML = "";
+      for (const item of dataToDisplay) {
+        const row = document.createElement("tr");
+        row.innerHTML = `<td>${item.username}</td><td>${item.email}</td><td>${item.password}</td>`;
+        tbody.appendChild(row);
+      }
     }
-  }
-
-  //menambahkan pagination
-  function createPagination(items) {
+  
+    function createPagination(items) {
   const totalPages = Math.ceil(items.length / itemsPerPage);
 
   pagination.innerHTML = "";
@@ -198,5 +194,4 @@ displayData(data);
 createPagination(data);
   </script>
 
-  
 @endsection

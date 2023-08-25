@@ -32,3 +32,9 @@ Route::get('/data-utama', function () {
 Route::get('/data-kedua', function () {
     return view('enak2');
 });
+Route::get('/user', function () {
+    return view('user');
+});
+Route::get('/petak', function () {
+    return view('petak');
+});
