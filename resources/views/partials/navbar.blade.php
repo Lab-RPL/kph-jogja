@@ -11,7 +11,7 @@
             </li>
 
             <li>
-                <a href="/data-kedua">
+                <a href="/data-utama">
                     <span class="icon">
                         <ion-icon name="home-outline"></ion-icon>
                     </span>
@@ -20,7 +20,7 @@
             </li>
 
             <li>
-                <a href="/data-utama ">
+                <a href="/data-bdh ">
                     <span class="icon">
                         <ion-icon name="people-outline"></ion-icon>
                     </span>

@@ -1,26 +1,37 @@
 @extends('layouts.main')
 @section('content')
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 <div class="garis">
     <div class="border-list">
       <h2>DATA BDH</h2>
       <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
       <form>
-        <table id="tabelData">
+        @csrf
+        <table id="tabelData" class="table table-bordered">
             <thead>
               <tr>
-                <th>BDH</th>
+                <th>BDH</th>  
                 <th>Nama Kepala BDH</th>
                 <th>Luas BDH</th>
+                <th>RPH</th>
               </tr>
             </thead>
             <tbody>
-              <!-- Isi data dinamis di sini -->
-              
+          @foreach($data as $da)
+          <tr>
+            <td>{{ $da->nama_bdh  }}</td>
+            <td>{{ $da->kepala_bdh }}</td>
+            <td>{{ $da->luas_bdh }}</td>
+            <td ><a href="/rph"class="btn btn-success mb-1 m-l-1">RPH</a></td>
+          </tr>
+          @endforeach
             </tbody>
           </table>
           <div id="pagination" class="pagination">
             <!-- Pagination dinamis di sini -->
+            {{ $data->links() }}
           </div>
         <div class="button-container">
             <button type="submit">Tambah Data</button>
@@ -30,41 +41,29 @@
   </div>
 
   {{-- js untuk pagination --}}
-  <script>
-  const tabelData = document.getElementById("tabelData");
-  const tbody = tabelData.querySelector("tbody");
-  const pagination = document.getElementById("pagination");
+  {{-- <script>
+  // const tabelData = document.getElementById("tabelData");
+  // const tbody = tabelData.querySelector("tbody");
+  // const pagination = document.getElementById("pagination");
 
-  const data = [
-    { bdh: "4688", nama: "Budi", luas: "120 m" },
-    { bdh: "4688", nama: "Ani",  luas: "20 m" },
-    { bdh: "4688", nama: "Siti", luas: "120 m" },
-    { bdh: "4688", nama: "Rina", luas: "120 m" },
-    { bdh: "4688", nama: "Asep", luas: "120 m" },
-    { bdh: "4688", nama: "Ali",  luas: "20 m" },
-    { bdh: "4688", nama: "Joko", luas: "120 m" },
-    { bdh: "4688", nama: "Tono", luas: "120 m" },
-    { bdh: "4688", nama: "Rini", luas: "120 m" },
-    { bdh: "4688", nama: "Dani", luas: "120 m" },
-    { bdh: "4688", nama: "Eko",  luas: "20 m" },
-    { bdh: "4688", nama: "Entis",luas: "120 m" }
-  ];
+  // const data = [
+  //   { bdh: "4688", nama: "Budi", luas: "120 m" },
+  //   { bdh: "4688", nama: "Ani",  luas: "20 m" },
+  //   { bdh: "4688", nama: "Siti", luas: "120 m" },
+  //   { bdh: "4688", nama: "Rina", luas: "120 m" },
+  //   { bdh: "4688", nama: "Asep", luas: "120 m" },
+  //   { bdh: "4688", nama: "Ali",  luas: "20 m" },
+  //   { bdh: "4688", nama: "Joko", luas: "120 m" },
+  //   { bdh: "4688", nama: "Tono", luas: "120 m" },
+  //   { bdh: "4688", nama: "Rini", luas: "120 m" },
+  //   { bdh: "4688", nama: "Dani", luas: "120 m" },
+  //   { bdh: "4688", nama: "Eko",  luas: "20 m" },
+  //   { bdh: "4688", nama: "Entis",luas: "120 m" }
+  // ];
 
-  const itemsPerPage = 5;
+  const itemsPerPage = 2;
 
-  function displayData(items, currentPage = 1) {
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    const dataToDisplay = items.slice(start, end);
-
-    tbody.innerHTML = "";
-    for (const item of dataToDisplay) {
-      const row = document.createElement("tr");
-      row.innerHTML = `<td>${item.bdh}</td><td>${item.nama}</td><td>${item.luas}</td>`;
-      tbody.appendChild(row);
-    }
-  }
-
+ 
   //menambahkan pagination
   function createPagination(items) {
   const totalPages = Math.ceil(items.length / itemsPerPage);
@@ -196,7 +195,7 @@ function createPagination(items, activePage = 1) {
 
 displayData(data);
 createPagination(data);
-  </script>
+  </script> --}}
 
   
 @endsection

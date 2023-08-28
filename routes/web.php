@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\auth;
+use App\Http\Controllers\bdhController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,25 +17,32 @@ use Illuminate\Support\Facades\Route;
 // Login Controller
 $auth = auth::class;
 
-Route::get('/login',[$auth,'login']);
-Route::post('/login',[$auth,'masuk']);
+Route::get('/',[$auth,'login']);
+Route::post('/',[$auth,'masuk']);
+
+
+// BDH
+
+Route::get('/data-bdh', [bdhController::class,'index']);
 
 
 
-Route::get('/', function () {
-    return view('layouts.main');
-});
+
+
 
 Route::get('/data-utama', function () {
-    return view('enak');
+    return view('data-utama');
 });
 
-Route::get('/data-kedua', function () {
-    return view('enak2');
-});
+
 Route::get('/user', function () {
-    return view('user');
+    return view('admin.admin');
 });
+
 Route::get('/petak', function () {
     return view('petak');
+});
+
+Route::get('/rph', function () {
+    return view('rph');
 });
