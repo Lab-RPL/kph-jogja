@@ -482,7 +482,17 @@
       padding-right: 15px;
     }
   }
-
+  
+  @media (max-width: 1280px) {
+    .logo {
+      margin-top: 70px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 400px;
+      height: 280px;
+    }
+  }
+  
   @media (max-width: 1024px) {
     .wrap-login100 {
       width: 80%;
