@@ -23,8 +23,8 @@
           <tr>
             <td>{{ $da->nama_bdh  }}</td>
             <td>{{ $da->kepala_bdh }}</td>
-            <td>{{ $da->luas_bdh }}</td>
-            <td ><a href="/rph"class="btn btn-success mb-1 m-l-1">RPH</a></td>
+            <td>{{ $da->luas_bdh }} m2</td>
+            <td ><a href="/petak"class="btn btn-success mb-1 m-l-1">RPH</a></td>
           </tr>
           @endforeach
             </tbody>

@@ -12,7 +12,7 @@ class bdhController extends Controller
     	// if(!$req->session()->exists("user_id")){
         //     return redirect('/');
         
-        $data = DB::table('bdh')->paginate(1);
+        $data = DB::table('bdh')->paginate(5);
         return view('bdh',['data'=>$data]);
     }
 }
