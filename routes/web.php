@@ -46,3 +46,11 @@ Route::get('/petak', function () {
 Route::get('/rph', function () {
     return view('rph');
 });
+
+Route::get('/petak', function () {
+    return view('petak');
+});
+
+Route::get('/nyoba', function() {
+    return view('nyoba');
+});

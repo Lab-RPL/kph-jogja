@@ -19,6 +19,6 @@ class auth extends Controller
             $req->session()->put('user_id',$data->id);
             if($data->user_type=='user') return redirect('/data-utama');
             else return redirect('/');
-        }else return redirect('/login');
+        }else return redirect('/');
     }
 }
