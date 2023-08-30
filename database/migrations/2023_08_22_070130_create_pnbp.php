@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pnbp', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements("id_pnbp");
+            $table->integer('tahun_pnbp');
+            $table->decimal('nominal_pnbp');
             $table->timestamps();
         });
     }

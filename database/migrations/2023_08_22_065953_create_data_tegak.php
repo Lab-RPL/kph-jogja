@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('data_tegak', function (Blueprint $table) {
-            $table->id('id_tgk')->autoIncrement()->primary();
+            $table->bigIncrements('id_tgk');
+
+            $table->unsignedBigInteger('id_PU');
+            $table->foreign('id_PU')->references('id_PU')->on('data_utama');
 
             $table->integer('no_pohon');
             $table->string('jenis_tgk');

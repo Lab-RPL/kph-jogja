@@ -1,0 +1,475 @@
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* =============== Globals ============== */
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #B0E398;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* =============================Form Border============================== */
+.garis {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: -30px auto auto 60px;
+}
+
+.border-list {
+  position: relative;
+  border: 3px solid #ccc;
+  border-radius: 20px;
+  padding: 60px;
+  max-width: 980px;
+  width: 100%; 
+  height: auto; /* Ubah ke height:auto agar form menyesuaikan tingginya */
+  border-color: #0CB166;
+  overflow: hidden;
+}
+
+.border-list h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.border-list p {
+  margin-top: 10px;
+  margin-bottom: 20px;  
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  border-bottom: 2px solid #D46402;
+  padding-bottom: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* Gaya tambahan untuk memperindah tabel */
+table {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+td {
+  background-color: #fff;
+}
+
+tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+/* Efek hover pada baris tabel */
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Transisi smooth pada efek hover */
+tr {
+  transition: background-color 0.3s ease;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination a {
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.pagination a:hover {
+  background-color: #ddd;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+}
+
+button {
+  display: inline-block;
+  padding: 8px 10px;
+  background-color: #82ba67;
+  color: #fff;
+  border: 1px solid #82ba67;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: var(--blue);
+  border-color: var(--blue);
+}
+
+.button-kembali {
+  position: absolute;
+  bottom: 30px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+.bdh h3,
+.rph h3 {
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
+.bdh h3 {
+  margin-left: -10px;
+  margin-right: 40px;
+}
+
+
+/* ================================Styling Input========================= */
+
+      /* Styling input */
+      input[type="text"] {
+        padding: 3px 60px; /* Jarak antara teks dan border */
+        border: 2px solid #0CB166; /* Warna border */
+        border-radius: 5px; /* Lengkungan border */
+        font-size: 24px;
+        transition: border-color 0.3s; /* Transisi efek warna border */
+      }
+      
+      /* Efek hover pada border */
+      input[type="text"]:hover {
+        border-color: #D46402; /* Warna border saat hover */
+      }
+      
+        label {
+          display: inline-block;
+          white-space: nowrap;
+          width: 125px;
+          text-align: left;
+          margin-bottom: 30px;
+          margin-right: 80px;
+        }
+
+
+/* =============== Navigation ================ */
+.navigation {
+  position: fixed;
+  width: 320px;
+  height: 100%;
+  background: var(--blue);
+  border-left: -30px solid var(--blue);
+  transition: 0.5s;
+  overflow: hidden;
+  left: 0;
+}
+.navigation.active {
+  width: 100px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+  background-color: var(--white);
+}
+
+.navigation ul li:nth-child(1) {
+  margin-bottom: 20px;
+  pointer-events: none;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--black1);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+  color: var(--blue);
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+  color: #222;
+}
+.navigation ul li a .icon ion-icon {
+  font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+  color: #222;
+}
+
+/* --------- curve outside ---------- */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+/* ===================== Main ===================== */
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 280px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 -80px;
+}
+
+.toggle {
+  position: relative;
+  width: 90px;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+/* Responsif */
+@media (max-width: 1024px) {
+  .border-list {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .border-list {
+    padding: 20px;
+    width: 90%;
+  }
+  th, td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .bdh h3,
+  .rph h3 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .garis {
+    margin: 0 auto;
+  }
+
+  .border-list {
+    padding: 10px;
+    width: 100%;
+  }
+
+  th, td {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .bdh h3,
+  .rph h3 {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+}
+
+
+
+
+
+
+
+
+/* ====================== Responsive Design ========================== */
+/* Responsive Styles for 1280px screen width */
+@media screen and (max-width: 1280px) {
+  .main {
+    left: 300px;
+  }
+}
+
+@media (max-width: 991px) {
+  .navigation {
+    left: -300px;
+  }
+  .navigation.active {
+    width: 300px;
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    left: 300px;
+  }
+  .cardBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+  .recentOrders {
+    overflow-x: auto;
+  }
+  .status.inProgress {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navigation.active {
+    width: 100%;
+    left: 0;
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .main.active .toggle {
+    color: #fff;
+    position: fixed;
+    right: 0;
+    left: initial;
+  }
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+
+}

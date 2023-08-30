@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rph', function (Blueprint $table) {
-            $table->id('id_rph');
-            $table->string('nama_rph');
-            $table->string('kepala_rph');
+        Schema::create('petak', function (Blueprint $table) {
+            $table->bigIncrements('id_ptk');
+
+            $table->integer('nomor_ptk');
             $table->decimal('luas_rph');
-            
-            $table->timestamps();
+            $table->string('potensi_ptk');
+            $table->unsignedBigInteger('id_rph');
+            $table->foreign('id_rph')->references('id_rph')->on('rph');
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rph');
+        Schema::dropIfExists('petak');
     }
 };

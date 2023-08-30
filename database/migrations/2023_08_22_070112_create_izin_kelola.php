@@ -12,7 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('izin_kelola', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id_izin');
+
+            $table->string('nama_kelompok');
+            $table->integer('no_SK');
+            $table->integer('petak_izin');
+            $table->decimal('luasan_izin');
             $table->timestamps();
         });
     }
