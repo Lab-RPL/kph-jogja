@@ -15,10 +15,11 @@ return new class extends Migration
             $table->bigIncrements('id_ptk');
 
             $table->integer('nomor_ptk');
-            $table->decimal('luas_rph');
+            $table->decimal('luas_ptk');
             $table->string('potensi_ptk');
             $table->unsignedBigInteger('id_rph');
             $table->foreign('id_rph')->references('id_rph')->on('rph');
+            $table->timestamps();
         });
     }
 

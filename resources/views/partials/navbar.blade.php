@@ -4,7 +4,7 @@
             <li>
                 <a href="#">
                     <span class="icon">
-                        <ion-icon name="logo-apple"></ion-icon>
+                        <img src="{{ asset('images/logohutan1.png') }}" alt="Logo">
                     </span>
                     <span class="title">KPH Yogyakarta</span>
                 </a>
@@ -13,23 +13,28 @@
             <li>
                 <a href="/data-utama">
                     <span class="icon">
-                        <ion-icon name="home-outline"></ion-icon>
+                        <ion-icon name="stats-chart-outline"></ion-icon>
                     </span>
                     <span class="title">Data Inventaris</span>
                 </a>
             </li>
 
             <li>
-                <a href="/data-bdh ">
+                <a href="/data-bdh" onmouseover="showDropdown()">
                     <span class="icon">
                         <ion-icon name="people-outline"></ion-icon>
                     </span>
                     <span class="title">Luas Hutan Per-BDH</span>
                 </a>
+                <ul id="dropdown" style="display: none;">
+                    <li><a href="#">Dropdown Item 1</a></li>
+                    <li><a href="#">Dropdown Item 2</a></li>
+                    <li><a href="#">Dropdown Item 3</a></li>
+                </ul>
             </li>
 
             <li>
-                <a href="#">
+                <a href="/data-izin">
                     <span class="icon">
                         <ion-icon name="chatbubble-outline"></ion-icon>
                     </span>
@@ -65,7 +70,7 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="/data-rusak">
                     <span class="icon">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                     </span>
@@ -83,7 +88,7 @@
             </li>
 
             <li>
-                <a href="/">
+                <a href="/logout">
                     <span class="icon">
                         <ion-icon name="log-out-outline"></ion-icon>
                     </span>
@@ -102,3 +107,9 @@
 
         </div>
 
+<script>
+    function showDropdown() {
+        var dropdown = document.getElementById("dropdown");
+        dropdown.style.display = "block";
+    }
+</script>

@@ -21,4 +21,9 @@ class auth extends Controller
             else return redirect('/');
         }else return redirect('/');
     }
+
+    public function logout(Request $req){
+        $req->session()->flush();
+        return redirect('/');
+    }
 }
