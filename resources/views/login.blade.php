@@ -24,7 +24,7 @@
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/hutan.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -32,7 +32,7 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/hutan.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-20 p-b-30">
-				<img src="{{ asset("images/logohutan.png") }}" class="logo" alt="logo">
+				<img src="{{ asset("images/logohutan1.png") }}" class="logo" alt="logo">
 				<form class="login100-form validate-form" method="POST">
 					@csrf
 					<span class="login100-form-title p-b-49">

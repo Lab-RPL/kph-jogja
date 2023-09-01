@@ -25,11 +25,6 @@ Route::post('/',[$auth,'masuk']);
 
 Route::get('/data-bdh', [bdhController::class,'index']);
 
-
-
-
-
-
 Route::get('/data-utama', function () {
     return view('data-utama');
 });
@@ -47,10 +42,12 @@ Route::get('/rph', function () {
     return view('rph');
 });
 
+
 Route::get('/petak', function () {
     return view('petak');
 });
 
-Route::get('/nyoba', function() {
-    return view('nyoba');
+
+Route::get('/tambahbdh', function () {
+    return view('tambahdata_bdh');
 });
