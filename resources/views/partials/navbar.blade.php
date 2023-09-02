@@ -26,11 +26,11 @@
                     </span>
                     <span class="title">Luas Hutan Per-BDH</span>
                 </a>
-                <ul id="dropdown" style="display: none;">
+                {{-- <ul id="dropdown" style="display: none;">
                     <li><a href="#">Dropdown Item 1</a></li>
                     <li><a href="#">Dropdown Item 2</a></li>
                     <li><a href="#">Dropdown Item 3</a></li>
-                </ul>
+                </ul> --}}
             </li>
 
             <li>
