@@ -7,26 +7,26 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <div class="garis">
         <div class="border-list">
-            <h2>DATA RPH</h2>
+            <h2>DATA RPH. {{-- Agar Tidak Terjadi Perulangan Hanya Ditampilkan Satu Kali --}}
+                <?php
+                $previous_bdh_name = '';
+                ?>
+                @foreach ($rph_data as $item)
+                    <?php
+                    $current_bdh_name = $item->bdh->nama_bdh;
+                    ?>
+                    @if ($current_bdh_name != $previous_bdh_name)
+                         {{ $current_bdh_name }}
+                    @endif
+                    <?php
+                    $previous_bdh_name = $current_bdh_name;
+                    ?>
+                @endforeach</h2>
             <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
             <form>
                 <div class="wrapper">
                     <div class="bdh">
-                        {{-- Agar Tidak Terjadi Perulangan Hanya Ditampilkan Satu Kali --}}
-                        <?php
-                        $previous_bdh_name = '';
-                        ?>
-                        @foreach ($rph_data as $item)
-                            <?php
-                            $current_bdh_name = $item->bdh->nama_bdh;
-                            ?>
-                            @if ($current_bdh_name != $previous_bdh_name)
-                                <h3>BDH {{ $current_bdh_name }}</h3>
-                            @endif
-                            <?php
-                            $previous_bdh_name = $current_bdh_name;
-                            ?>
-                        @endforeach
+                       
                     </div>
                 </div>
                 @csrf
@@ -55,6 +55,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{ $data->links() }}
                 <div style="display: flex; justify-content: space-between;">
                     <a class="btn btn-warning" style="color: white" href="/data-bdh">Kembali</a>
                     <a class="btn btn-primary" style="color: white" href="/tambah-rph">Tambah Data</a>

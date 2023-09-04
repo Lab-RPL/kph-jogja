@@ -16,7 +16,7 @@
                 </div>
                 @csrf
                 <center>
-                    <table class="table">
+                    <table>
                         <tbody>
                             <style>
                                 span {
@@ -192,11 +192,65 @@
                                     </select>
                                 </td>
                             </tr>
+                            <tr>
+                                <td colspan="2"><pre style="font-weight: bold; font-size: 18px; text-align: center;">RISALAH TUMBUHAN BAWAH</pre></td>
+                            </tr>
+                            <tr>
+                                <td>Jenis </td>
+                                <td height="50px"><span>X</span>   
+                                    <input type="text" style="width: 150px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kerapatan</td>
+                                <td>
+                                    <span>X</span>
+                                    <select style="width: 150px;">
+                                        <option value="rapat">Rapat</option>
+                                        <option value="berbukit">Berbukit</option>
+                                        <option value="sedang">Sedang</option>
+                                        <option value="jarang">Jarang</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                <pre style="font-weight: bold; font-size: 18px; text-align: center;">KETERANGAN LAIN</pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Penemuan Lapangan Lain</td>
+                                <td>
+                                <span>X</span>
+                                <input type="text" style="width: 350px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Erosi</td>
+                                <td>
+                                    <span>X</span>
+                                    <select style="width: 150px;">
+                                        <option value="ada">Ada</option>
+                                        <option value="tidak-erosi">Tidak / Erosi</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ketinggian Tempat</td>
+                                <td>
+                                    <span>X</span>
+                                    <input type="text" style="width: 150px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><a class="btn btn-warning" style="color: white; float: left;" href="/data-utama">Kembali</a></td>
+                                <td><a class="btn btn-primary" style="color: white; float: right;" href="#">Lanjutkan</a></td>
+                            </tr>
                         </tbody>
                     </table>
                     <div>
-                        <a class="btn btn-warning" style="color: white" href="/data-utama">Kembali</a></td>
-                        <a class="btn btn-primary" style="color: white; float: right;" href="#">Lanjutkan</a></td>
+                        
+                        
                     </div>
         </div>
         </center>

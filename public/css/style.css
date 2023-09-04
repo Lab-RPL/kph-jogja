@@ -255,10 +255,10 @@ button:hover {
   text-decoration: none;
   color: var(--black1);
 }
-.navigation ul li:hover a,
+/* .navigation ul li:hover a,
 .navigation ul li.hovered a {
-  color: var(--blue);
-}
+  color: #ddd;
+} */
 
 .navigation ul li a .icon {
   position: relative;
@@ -293,8 +293,10 @@ button:hover {
 }
 
 /* --------- curve outside ---------- */
-.navigation ul li:hover a::before,
-.navigation ul li.hovered a::before {
+.navigation ul .nav-item:hover a::before,
+.navigation ul .nav-item.hovered a::before,
+.navigation ul .dropdown:hover a::before,
+.navigation ul .dropdown.hovered a::before {
   content: "";
   position: absolute;
   right: 0;
@@ -306,8 +308,10 @@ button:hover {
   box-shadow: 35px 35px 0 10px var(--white);
   pointer-events: none;
 }
-.navigation ul li:hover a::after,
-.navigation ul li.hovered a::after {
+.navigation ul .nav-item:hover a::after,
+.navigation ul .nav-item.hovered a::after,
+.navigation ul .dropdown:hover a::after,
+.navigation ul .dropdown.hovered a::after {
   content: "";
   position: absolute;
   right: 0;
@@ -319,13 +323,75 @@ button:hover {
   box-shadow: 35px -35px 0 10px var(--white);
   pointer-events: none;
 }
-.navigation ul li #dropdown {
-  position: absolute;
-  right: 0;
-  top: 0;
+
+
+
+.navigation .dropdown .dropdown-content {
   display: none;
-  /* ... tambahkan gaya lainnya sesuai kebutuhan ... */
+  position: absolute;
+  /* Sesuaikan posisi */
+  top: 50%;
+  left: 0;
+  /* Menambah gaya */
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  transition: visibility 0.3s, opacity 0.3s, transform 0.3s;
+  transform: translateY(-30%);
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 4px; /* Mengatur radius sudut jika ingin melengkung (kurangi jika tidak ingin terlalu melengkung)*/
+   padding: 0; /* Menghapus padding pada kontainer */
 }
+
+/* Menambahkan styling pada elemen <li> dalam dropdown-content */
+.navigation .dropdown .dropdown-content li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.navigation .dropdown:hover .dropdown-content {
+  display: block;
+  /* Menambah animasi */
+  transform: translateY(0%);
+  opacity: 1;
+  visibility: visible;
+}
+
+.navigation .dropdown .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  white-space: nowrap; /* Mencegah baris baru jika teks terlalu panjang */
+}
+
+.navigation .dropdown .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.navigation .dropdown .dropdown-content a::before,
+.navigation .dropdown .dropdown-content a::after {
+  display: none;
+}
+
+
+
+/*===========================Dropdownlist========================== */
+.dropdown-content {
+  position: absolute;
+  background-color: #ffffff;
+  max-width: 140px;
+  max-height: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+
+
 
 /* ===================== Main ===================== */
 .main {
@@ -361,6 +427,8 @@ button:hover {
   font-size: 2.5rem;
   cursor: pointer;
 }
+
+
 
 /* Responsif */
 @media (max-width: 1024px) {

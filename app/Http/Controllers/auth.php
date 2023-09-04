@@ -23,7 +23,7 @@ class auth extends Controller
     }
 
     public function logout(Request $req){
-        $req->session()->flush();
+        $req->session()->flush('user_id');
         return redirect('/');
     }
 }

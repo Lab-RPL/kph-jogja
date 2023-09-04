@@ -52,21 +52,25 @@ class bdhController extends Controller
     //     }
 
     //     Hapus BDH
-    public function destroy($id_bdh)
-    {
-        // Cari entri 'rph' yang terkait dengan 'id_bdh'
-        $rph_entries = Rph::where('id_bdh', $id_bdh)->get();
-    
-        // Hapus semua entri 'rph' yang ditemukan
-        foreach ($rph_entries as $entry) {
-            $entry->delete();
-        }
-        // Setelah semua entri 'rph' terkait dihapus, hapus entri 'bdh'
-        $bdh_entry = bdh::where('id_bdh', $id_bdh)->first();
-        $bdh_entry->delete();
-    
-        return redirect('/data-bdh')->with('pesan', 'Data BDH dan RPH terkait berhasil dihapus');
+   public function destroy($id_bdh)
+{
+    // Cari entri 'rph' yang terkait dengan 'id_bdh'
+    $rph_entries = Rph::where('id_bdh', $id_bdh)->get();
+
+    // Ubah 'IsDelete' menjadi '1' untuk semua entri 'rph' yang ditemukan
+    foreach ($rph_entries as $entry) {
+        $entry->IsDelete = 1;
+        $entry->save();
     }
+
+    // Setelah semua entri 'rph' terkait diperbarui, perbarui entri 'bdh'
+    $bdh_entry = bdh::where('id_bdh', $id_bdh)->first();
+    $bdh_entry->IsDelete = 1;
+    $bdh_entry->save();
+
+    return redirect('/data-bdh')->with('pesan', 'Data BDH dan RPH terkait berhasil diperbarui');
+}
+
     
 
     //   Edit BDH       

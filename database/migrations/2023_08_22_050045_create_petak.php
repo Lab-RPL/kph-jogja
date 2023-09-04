@@ -18,6 +18,7 @@ return new class extends Migration
             $table->decimal('luas_ptk');
             $table->string('potensi_ptk');
             $table->unsignedBigInteger('id_rph');
+            $table->boolean('IsDelete')->default(0);
             $table->foreign('id_rph')->references('id_rph')->on('rph');
             $table->timestamps();
         });
