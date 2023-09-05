@@ -17,8 +17,20 @@ class bdhController extends Controller
             return redirect('/');
         }
 
+        $title = "BDH";
         $data = DB::table('bdh')->paginate(5);
-        return view('bdh.bdh', ['data' => $data]);
+        return view('bdh.bdh', ['data' => $data,'title'=>$title]);
+    }
+    public function index2(Request $req)
+    {
+        // if(!$req->session()->exists("user_id")){
+        //     return redirect('/');
+        if (!$req->session()->has('user_id')) {
+            return redirect('/');
+        }
+
+        $data = DB::table('bdh')->paginate(5);
+        return view('bdh.bdh-read', ['data' => $data]);
     }
 
     //Menambah BDH LURR
@@ -68,7 +80,7 @@ class bdhController extends Controller
     $bdh_entry->IsDelete = 1;
     $bdh_entry->save();
 
-    return redirect('/data-bdh')->with('pesan', 'Data BDH dan RPH terkait berhasil diperbarui');
+    return redirect('/data-bdh')->with('pesan', 'Data BDH dan RPH terkait berhasil Dihapus');
 }
 
     
@@ -88,6 +100,6 @@ class bdhController extends Controller
         $bdh->kepala_bdh = $request->kepala_bdh;
         $bdh->luas_bdh = $request->luas_tanah;
         $bdh->save();
-        return redirect('/data-bdh');
+        return redirect('/data-bdh')->with('pesan','Data BDH Berhasil Di Perbaharui');
     }
 }

@@ -8,34 +8,58 @@
 
     <div class="garis">
         <div class="border-list">
-            <h2>DATA PETAK</h2>
+            <h2>DATA PETAK
+            <?php
+                $previous_rph_name = '';
+                ?>
+                @foreach ($ptk_data as $item)
+                    <?php
+                    $current_rph_name = $item->rph->nama_rph;
+                    ?>
+                    @if ($current_rph_name != $previous_rph_name)
+                         {{ $current_rph_name }}
+                    @endif
+                    <?php
+                    $previous_rph_name = $current_rph_name;
+                    ?>
+                @endforeach</h2>
             <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
-
-            <div class="wrapper">
-                <div class="bdh">
-                    <h3>BDH(.data)</h3>
-                </div>
-                <div class="rph">
-                    <h3>RPH(.data)</h3>
-                </div>
-            </div>
-
             <form>
+                <div class="wrapper">
+                    <div class="bdh">
+
+                    </div>
+                    <div class="rph">
+                        
+                    </div>
+                </div>
+                @csrf
                 <table id="tabelData" class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Nomor Petak</th>
                             <th>Luas Petak</th>
                             <th>Potensi</th>
+                            <th>aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Isi data dinamis di sini -->
+                        @foreach ($data as $da)
+                            <tr>
+                                <td>{{ $da->nomor_ptk }}</td>
+                                <td>{{ $da->luas_rph }} ha</td>
+                                <td>{{ $da->potensi_ptk }}</td>
+                                <td class="center-align">
+                                    <a href=""class="btn btn-warning mb-1 m-l-1">Edit</a>
+                                    <a href=""class="btn btn-danger mb-1 m-l-1">Hapus</a>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
                 <div style="display: flex; justify-content: space-between;">
-                    <a class="btn btn-warning" style="color: white" href="">Kembali</a>
-                    <a class="btn btn-primary" style="color: white" href="/tambahpetak">Tambah Data</a>
+                    <a class="btn btn-warning" style="color: white" href="/data-bdh">Kembali</a>
+                    <a class="btn btn-primary" style="color: white" href="/tambah-petak">Tambah Data</a>
                 </div>
             </form>
         </div>

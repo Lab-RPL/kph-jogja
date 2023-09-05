@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
 use App\Models\rph;
 use App\Models\Bdh;
@@ -21,16 +22,35 @@ class rphController extends Controller
         // ->select('rph.*', 'bdh.nama_bdh') // Pastikan Anda memilih kolom nama_bdh dari bdh
         // ->get();
 
-        $rph_data = rph::with('bdh')
-            ->where('id_bdh', $id_bdh)
-            ->get();
-        $data = DB::table('rph')
-            ->where('id_bdh', $id_bdh)
-            ->paginate(5);
-        return view('rph.rph', ['data' => $data, 'rph_data' => $rph_data]);
+        // if ($req->session()->has('previous_bdh_id')) {
+        //     $previousBdhId = $req->session()->get('previous_bdh_id');
+
+        //     // Hapus sesi yang menyimpan ID BDH sebelumnya
+        //     $req->session()->forget('previous_bdh_id');
+
+
+            $rph_data = rph::with('bdh')
+                ->where('id_bdh', $id_bdh)
+                ->get();
+            $data = DB::table('rph')
+                ->where('id_bdh', $id_bdh)
+                ->paginate(5);
+            return view('rph.rph', ['data' => $data, 'rph_data' => $rph_data]);
+        }
+    //     $data = DB::table('rph')->paginate(5);
+    // }
+
+    public function index2(Request $req)
+    {
+        if (!$req->session()->has('user_id')) {
+            return redirect('/');
+        }
+        $data = rph::all();
+        return view('rph.ul-rph', ['data' => $data]);
     }
 
-    public function create(){
+    public function create()
+    {
         $bdh = Bdh::all();
         return view('rph.tambah-rph')->with('bdh', $bdh);
     }
@@ -38,7 +58,7 @@ class rphController extends Controller
     public function tambah(Request $request)
     {
         $request->validate([
-            'id_bdh' => 'required', 
+            'id_bdh' => 'required',
             'nama_rph' => 'required',
             'kepala_rph' => 'required',
             'luas_rph' => 'required',
@@ -51,33 +71,43 @@ class rphController extends Controller
             'luas_rph' => $request->luas_rph,
         ]);
 
-        return redirect()->route('rph.index', $request->id_bdh)// Gantikan dengan nama route yang sesuai
+        return redirect()->route('rph.index', $request->id_bdh) // Gantikan dengan nama route yang sesuai
             ->with('pesan', 'Data RPH berhasil ditambahkan.');
     }
 
-//     public function store(Request $request,$id_bdh)
-// {
-//     $request->validate([
-//         // Validasi data input lainnya...
-//         'id_bdh' => 'required|integer|exists:bdh,id_bdh', // Validasi id bdh, pastikan ada di tabel bdhs
-//         'nama_rph' => 'required',
-//         'kepala_rph' => 'required',
-//         'luas_rph' => 'required',
-//     ]);
+    // public function kembali(Request $request, $id_bdh)
+    // {
+    //     $request->session()->put('previous_url', route('rph.index', $id_bdh));
+    //     return redirect()->route('rph.index');
+    // }
 
-//     $rph = new Rph([ // Pastikan Anda telah menggunakan model Rph di bagian atas file controller
-//         // Simpan data input lainnya...
-//         'id_bdh' => $request->get('id_bdh'),
-//         'nama_rph' => $request->get('nama_rph'),
-//         'kepala_rph' => $request->get('kepala_rph'),
-//         'luas_rph' => $request->get('luas_rph'),
-//     ]);
+    //     public function store(Request $request,$id_bdh)
+    // {
+    //     $request->validate([
+    //         // Validasi data input lainnya...
+    //         'id_bdh' => 'required|integer|exists:bdh,id_bdh', // Validasi id bdh, pastikan ada di tabel bdhs
+    //         'nama_rph' => 'required',
+    //         'kepala_rph' => 'required',
+    //         'luas_rph' => 'required',
+    //     ]);
 
-//     $rph->save();
+    //     $rph = new Rph([ // Pastikan Anda telah menggunakan model Rph di bagian atas file controller
+    //         // Simpan data input lainnya...
+    //         'id_bdh' => $request->get('id_bdh'),
+    //         'nama_rph' => $request->get('nama_rph'),
+    //         'kepala_rph' => $request->get('kepala_rph'),
+    //         'luas_rph' => $request->get('luas_rph'),
+    //     ]);
 
-//     return redirect('/rph{id_bdh}')->with('success', 'Data RPH berhasil disimpan');
-// }
+    //     $rph->save();
+
+    //     return redirect('/rph{id_bdh}')->with('success', 'Data RPH berhasil disimpan');
+    // }
 
 
+    // Delete RPH
 
+    public function destroy()
+    {
+    }
 }

@@ -52,7 +52,7 @@ body {
 
 .border-list::-webkit-scrollbar{
   display: none;
-}
+} 
 
 
 .border-list h2 {
@@ -237,10 +237,6 @@ button:hover {
   border-bottom-left-radius: 30px;
 }
 
-.navigation ul li:hover,
-.navigation ul li.hovered {
-  background-color: var(--white);
-}
 
 .navigation ul li:nth-child(1) {
   margin-bottom: 20px;
@@ -292,11 +288,18 @@ button:hover {
   color: #222;
 }
 
-/* --------- curve outside ---------- */
-.navigation ul .nav-item:hover a::before,
-.navigation ul .nav-item.hovered a::before,
-.navigation ul .dropdown:hover a::before,
-.navigation ul .dropdown.hovered a::before {
+.navigation ul li.active:hover,
+.navigation ul li.active.hovered,
+.navigation ul li.active.clicked {
+  background-color: var(--white);
+}
+
+.navigation ul .nav-item.active:hover a::before,
+.navigation ul .nav-item.active.hovered a::before,
+.navigation ul .nav-item.active.clicked a::before,
+.navigation ul .dropdown.active:hover a::before,
+.navigation ul .dropdown.active.hovered a::before,
+.navigation ul .dropdown.active.clicked a::before {
   content: "";
   position: absolute;
   right: 0;
@@ -308,10 +311,13 @@ button:hover {
   box-shadow: 35px 35px 0 10px var(--white);
   pointer-events: none;
 }
-.navigation ul .nav-item:hover a::after,
-.navigation ul .nav-item.hovered a::after,
-.navigation ul .dropdown:hover a::after,
-.navigation ul .dropdown.hovered a::after {
+
+.navigation ul .nav-item.active:hover a::after,
+.navigation ul .nav-item.active.hovered a::after,
+.navigation ul .nav-item.active.clicked a::after,
+.navigation ul .dropdown.active:hover a::after,
+.navigation ul .dropdown.active.hovered a::after,
+.navigation ul .dropdown.active.clicked a::after {
   content: "";
   position: absolute;
   right: 0;
@@ -329,19 +335,18 @@ button:hover {
 .navigation .dropdown .dropdown-content {
   display: none;
   position: absolute;
-  /* Sesuaikan posisi */
-  top: 50%;
   left: 0;
-  /* Menambah gaya */
+  top: 50px;
   background-color: #ffffff;
-  min-width: 160px;
+  max-width: 140px;
+  max-height: 150px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  transition: visibility 0.3s, opacity 0.3s, transform 0.3s;
-  transform: translateY(-30%);
+  z-index: 1;
+  transform: translate(0, -100%);
   opacity: 0;
   visibility: hidden;
-  border-radius: 4px; /* Mengatur radius sudut jika ingin melengkung (kurangi jika tidak ingin terlalu melengkung)*/
-   padding: 0; /* Menghapus padding pada kontainer */
+  border-radius: 10px;
+  padding: 0;
 }
 
 /* Menambahkan styling pada elemen <li> dalam dropdown-content */
@@ -353,8 +358,8 @@ button:hover {
 
 .navigation .dropdown:hover .dropdown-content {
   display: block;
-  /* Menambah animasi */
-  transform: translateY(0%);
+  top: 90%;
+  transform: translate(0, 0);
   opacity: 1;
   visibility: visible;
 }
@@ -368,14 +373,16 @@ button:hover {
   white-space: nowrap; /* Mencegah baris baru jika teks terlalu panjang */
 }
 
-.navigation .dropdown .dropdown-content a:hover {
-  background-color: #f1f1f1;
+.navigation .nav-item.dropdown .dropdown-content a:hover {
+  background-color: var(--blue);
+  border-radius: 5px;
 }
 
 .navigation .dropdown .dropdown-content a::before,
 .navigation .dropdown .dropdown-content a::after {
   display: none;
 }
+
 
 
 

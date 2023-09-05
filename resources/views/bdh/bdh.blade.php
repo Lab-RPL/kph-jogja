@@ -102,5 +102,17 @@
             });
         });
     </script>
+
+        {{-- script Notif --}}
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const pesanSukses = document.getElementById('pesan-sukses');
+                if (pesanSukses) {
+                    setTimeout(function() {
+                        pesanSukses.style.display = 'none';
+                    }, 5000);
+                }
+            });
+        </script>
     
 @endsection

@@ -66,7 +66,7 @@
                         <td></td>
                         <td>
                             <div style="display: flex; justify-content: flex-end;">
-                                <a class="btn btn-primary" href="#"><img src="{{ asset('images/options.jpg') }}"></a>
+                                <a class="btn btn-primary" href="/data-result">Detail</a>
                             </div>
                         </td>
                     </tbody>

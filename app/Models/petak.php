@@ -11,15 +11,15 @@ class petak extends Model
 
     protected $table = 'petak';
     protected $primaryKey = 'id_ptk';
-    protected $fillable = ['id_ptk', 'nomor_ptk', 'luas_rph', 'potensi_ptk',];
+    protected $fillable = ['id_ptk', 'nomor_ptk', 'luas_ptk', 'potensi_ptk','id_rph'];
 
     public function rph()
     {
-        return $this->belongsTo(rph::class, 'id_rph');
+        return $this->belongsTo('App\Models\rph', 'id_rph');
     }
 
-    public function utama()
-    {
-        return $this->hasOne(dataUtama::class, 'id_PU');
-    }
+    // public function utama()
+    // {
+    //     return $this->hasOne(dataUtama::class, 'id_PU');
+    // }
 }
