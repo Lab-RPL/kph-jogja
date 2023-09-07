@@ -19,8 +19,9 @@ class bdhController extends Controller
 
         $title = "BDH";
         $data = DB::table('bdh')->paginate(5);
-        return view('bdh.bdh', ['data' => $data,'title'=>$title]);
+        return view('bdh.bdh', ['data' => $data, 'title' => $title]);
     }
+    
     public function index2(Request $req)
     {
         // if(!$req->session()->exists("user_id")){
@@ -46,7 +47,7 @@ class bdhController extends Controller
 
         $bdh->nama_bdh = $request->nama_bdh;
         $bdh->kepala_bdh = $request->kepala_bdh;
-        $bdh->luas_bdh = $request->luas_tanah;
+        $bdh->luas_bdh = $request->luas_bdh;
         $bdh->save();
         return redirect('/data-bdh')->with('pesan', 'Data BDH Berhasil Disimpan');
     }
@@ -64,26 +65,24 @@ class bdhController extends Controller
     //     }
 
     //     Hapus BDH
-   public function destroy($id_bdh)
-{
-    // Cari entri 'rph' yang terkait dengan 'id_bdh'
-    $rph_entries = Rph::where('id_bdh', $id_bdh)->get();
+    public function destroy($id_bdh)
+    {
+        // Cari entri 'rph' yang terkait dengan 'id_bdh'
+        $rph_entries = Rph::where('id_bdh', $id_bdh)->get();
 
-    // Ubah 'IsDelete' menjadi '1' untuk semua entri 'rph' yang ditemukan
-    foreach ($rph_entries as $entry) {
-        $entry->IsDelete = 1;
-        $entry->save();
+        // Ubah 'IsDelete' menjadi '1' untuk semua entri 'rph' yang ditemukan
+        foreach ($rph_entries as $entry) {
+            $entry->IsDelete = 1;
+            $entry->save();
+        }
+
+        // Setelah semua entri 'rph' terkait diperbarui, perbarui entri 'bdh'
+        $bdh_entry = bdh::where('id_bdh', $id_bdh)->first();
+        $bdh_entry->IsDelete = 1;
+        $bdh_entry->save();
+
+        return redirect('/data-bdh')->with('pesan', 'Data BDH dan RPH terkait berhasil Dihapus');
     }
-
-    // Setelah semua entri 'rph' terkait diperbarui, perbarui entri 'bdh'
-    $bdh_entry = bdh::where('id_bdh', $id_bdh)->first();
-    $bdh_entry->IsDelete = 1;
-    $bdh_entry->save();
-
-    return redirect('/data-bdh')->with('pesan', 'Data BDH dan RPH terkait berhasil Dihapus');
-}
-
-    
 
     //   Edit BDH       
 
@@ -98,8 +97,8 @@ class bdhController extends Controller
         $bdh = Bdh::where('id_bdh', $id)->first();
         $bdh->nama_bdh = $request->nama_bdh;
         $bdh->kepala_bdh = $request->kepala_bdh;
-        $bdh->luas_bdh = $request->luas_tanah;
+        $bdh->luas_bdh = $request->luas_bdh;
         $bdh->save();
-        return redirect('/data-bdh')->with('pesan','Data BDH Berhasil Di Perbaharui');
+        return redirect('/data-bdh')->with('pesan', 'Data BDH Berhasil Di Perbaharui');
     }
 }

@@ -16,17 +16,16 @@
                 <input type="hidden" name="id_bdh" value="{{ $bdh->id_bdh }}">
                 <table id="tabelData">
                     <tr>
-
-                        <td><label for="tambah-bdh">NAMA BDH</label></td>
+                        <td><label for="tambah-bdh">Nama BDH</label></td>
                         <td><input type="text" id="tambah-bdh" name="nama_bdh" value="{{ $bdh->nama_bdh }}"></td>
                     </tr>
                     <tr>
-                        <td><label for="tambah-bdh">NAMA KEPALA BDH</label></td>
+                        <td><label for="tambah-bdh">Nama Kepala BDH</label></td>
                         <td><input type="text" id="tambah-bdh" name="kepala_bdh" value="{{ $bdh->kepala_bdh }}"></td>
                     </tr>
                     <tr>
-                        <td><label for="luas-tanah">LUAS TANAH</label></td>
-                        <td><input type="text" id="luas-tanah" name="luas_tanah" value="{{ $bdh->luas_bdh }}"></td>
+                        <td><label for="luas-tanah">Luas BDH</label></td>
+                        <td><input type="text" id="luas-tanah" name="luas_bdh" value="{{ $bdh->luas_bdh }}"></td>
                     </tr>
                 </table>
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">

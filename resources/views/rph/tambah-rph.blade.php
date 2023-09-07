@@ -12,7 +12,6 @@
             <div class="border-list">
                 <h2>DATA RPH</h2>
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
-
                 <table id="tabelData">
                     <tr>
                         <td><label for="tambah-bdh">NAMA BDH</label></td>
@@ -29,15 +28,15 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><label for="tambah-rph">NAMA RPH</label></td>
+                        <td><label for="tambah-rph">Nama RPH</label></td>
                         <td><input type="text" id="tambah-rph" name="nama_rph" required></td>
                     </tr>
                     <tr>
-                        <td><label for="tambah-rph">NAMA KEPALA RPH</label></td>
+                        <td><label for="tambah-rph">Nama Kepala RPH</label></td>
                         <td><input type="text" id="tambah-rph" name="kepala_rph" required></td>
                     </tr>
                     <tr>
-                        <td><label for="luas-rph">LUAS RPH</label></td>
+                        <td><label for="luas-rph">Luas RPH</label></td>
                         <td><input type="text" id="luas-rph" name="luas_rph" required></td>
                     </tr>
                 </table>

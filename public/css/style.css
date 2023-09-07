@@ -332,56 +332,7 @@ button:hover {
 
 
 
-.navigation .dropdown .dropdown-content {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 50px;
-  background-color: #ffffff;
-  max-width: 140px;
-  max-height: 150px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  transform: translate(0, -100%);
-  opacity: 0;
-  visibility: hidden;
-  border-radius: 10px;
-  padding: 0;
-}
 
-/* Menambahkan styling pada elemen <li> dalam dropdown-content */
-.navigation .dropdown .dropdown-content li {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-.navigation .dropdown:hover .dropdown-content {
-  display: block;
-  top: 90%;
-  transform: translate(0, 0);
-  opacity: 1;
-  visibility: visible;
-}
-
-.navigation .dropdown .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  white-space: nowrap; /* Mencegah baris baru jika teks terlalu panjang */
-}
-
-.navigation .nav-item.dropdown .dropdown-content a:hover {
-  background-color: var(--blue);
-  border-radius: 5px;
-}
-
-.navigation .dropdown .dropdown-content a::before,
-.navigation .dropdown .dropdown-content a::after {
-  display: none;
-}
 
 
 
@@ -389,11 +340,58 @@ button:hover {
 /*===========================Dropdownlist========================== */
 .dropdown-content {
   position: absolute;
-  background-color: #ffffff;
+  background-color: var(--blue);
   max-width: 140px;
   max-height: 150px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  left: 77%; /* Pindahkan ke sebelah kanan elemen induk */
+  top: 0; /* Atur posisi vertikal ke tepi atas elemen induk */
+  border-radius: 4px; /* Beri radius pada bagian dropdown-content */
+
+  /* Sembunyikan elemen direntang waktu */
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: visibility 0.5s, opacity 0.5s, transform 0.5s;
+}
+
+.navigation .dropdown:hover .dropdown-content {
+  /* Tampilkan elemen saat pengguna mengarahkan kursor ke dropdown */
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-content li {
+  list-style-type: none;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  white-space: nowrap;
+  border-radius: 4px; /* Beri radius pada item saat di-hover */
+
+  /* Tambahan styling saat hover */
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  border-radius: 4px; /* Beri radius pada item saat di-hover */
+}
+
+.navigation .dropdown .dropdown-content a::before,
+.navigation .dropdown .dropdown-content a::after {
+  display: none;
 }
 
 

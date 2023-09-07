@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    {{-- <form action="" method="post">
+    <form action="{{ route('petak.store') }}" method="post">
         @csrf
         <div class="garis">
             <div class="border-list">
@@ -15,27 +15,40 @@
 
                 <table id="tabelData">
                     <tr>
-                        <td><label for="tambah-bdh">Nama Petak</label></td>
-                        <td><input type="text" id="tambah-rph" name="nama_" required></td>
+                        <td><label for="tambah-rph">NAMA RPH</label></td>
+                        <td>
+                            <select name="id_rph" id="tambah-rph" required class="form-select">
+                                <option value="">Pilih RPH</option>
+                                @foreach ($rph as $rph)
+                                    @if ($rph->IsDelete == 0)
+                                        <option value="{{ $rph->id_rph }}">{{ $rph->nama_rph }}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                        </td>
+                    </tr>
+                    <tr></tr>
+                        <td><label for="nomor-ptk">Nomor Petak</label></td>
+                        <td><input type="text" id="nomor-ptk" name="nomor_ptk" required></td>
                     </tr>
                     <tr>
-                        <td><label for="tambah-bdh">Luas Petak</label></td>
-                        <td><input type="text" id="tambah-rph" name="kepala_bdh" required></td>
+                        <td><label for="luas-ptk">Luas Petak</label></td>
+                        <td><input type="text" id="luas-ptk" name="luas_ptk" required></td>
                     </tr>
                     <tr>
-                        <td><label for="luas-tanah">Potensi</label></td>
-                        <td><input type="text" id="luas-rph" name="luas_tanah" required></td>
+                        <td><label for="potensi-ptk">Potensi Petak</label></td>
+                        <td><input type="text" id="potensi-ptk" name="potensi_ptk" required></td>
                     </tr>
-                    <tr>
-                        <td><label for="luas-tanah">Keterangan Lain</label></td>
-                        <td><input type="text" id="luas-rph" name="luas_tanah" required></td>
-                    </tr>
+                    <!-- <tr>
+                            <td><label for="luas-tanah">Keterangan Lain</label></td>
+                            <td><input type="text" id="luas-rph" name="luas_tanah" required></td>
+                        </tr> -->
                 </table>
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <a class="btn btn-warning" style="color: white" href="/petak">Kembali</a>
+                    <a class="btn btn-warning" style="color: white" href="/data-bdh">Kembali</a>
                     <button class="btn btn-primary" style="color: white" type="submit">Submit</button>
                 </div>
             </div>
         </div>
-    </form> --}}
+    </form>
 @endsection

@@ -16,13 +16,11 @@ return new class extends Migration
             $table->integer('jns_rusak');
             $table->date('tgl_input');
             $table->date('tgl_rusak');
-
             $table->unsignedBigInteger('id_PU');
             $table->foreign('id_PU')->references('id_PU')->on('data_utama');
-
             $table->integer('no_PU');
             $table->decimal('diameter');
-            $table->binary('Foto');
+            $table->binary('foto');
         });
     }
 

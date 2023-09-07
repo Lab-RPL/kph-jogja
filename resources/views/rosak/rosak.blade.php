@@ -49,7 +49,6 @@
                                     <a href=""class="btn btn-danger mb-1 m-l-1">Hapus</a>
                                     <a href=""class="btn btn-warning mb-1 m-l-1">Edit</a>
                                 </td>
-                                <td></td>
                             </tr>
                     </tbody>
                 </table>
@@ -91,9 +90,9 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="center-align">
+                                <td class="btn-group"> 
                                     <a href=""class="btn btn-danger mb-1 m-l-1">Hapus</a>
-                                    <a href=""class="btn btn-warning mb-1 m-l-1">Edit</a>
+                                    <a href=""class="btn btn-warning mb-1 m-l-1 ms-2">Edit</a>
                                 </td>
                             </tr>
                     </tbody>

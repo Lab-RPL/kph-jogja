@@ -34,7 +34,7 @@ return new class extends Migration
             $table->string('jns_tanah');
             $table->string('kedalaman');
             $table->string('jns_bwh');
-            $table->string('kerapatna');
+            $table->string('kerapatan');
             $table->string('penemuan');
             $table->string('erosi');
             $table->float('ketinggian_tempat');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\rph;
 use App\Models\Bdh;
+use App\Models\petak;
 use Illuminate\Http\Request;
 
 class rphController extends Controller
@@ -35,6 +36,8 @@ class rphController extends Controller
             $data = DB::table('rph')
                 ->where('id_bdh', $id_bdh)
                 ->paginate(5);
+            // $bdh_data = Bdh::all();
+
             return view('rph.rph', ['data' => $data, 'rph_data' => $rph_data]);
         }
     //     $data = DB::table('rph')->paginate(5);
@@ -52,7 +55,7 @@ class rphController extends Controller
     public function create()
     {
         $bdh = Bdh::all();
-        return view('rph.tambah-rph')->with('bdh', $bdh);
+        return view('rph.tambah-rph')->with('bdh', $bdh);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
     }
 
     public function tambah(Request $request)
@@ -103,11 +106,63 @@ class rphController extends Controller
 
     //     return redirect('/rph{id_bdh}')->with('success', 'Data RPH berhasil disimpan');
     // }
+    // edit
 
+    public function edit($id)
+    {
+        $rph = Rph::findOrFail($id);
+        $bdhs = Bdh::where('IsDelete', 0)->get();
+        
+        return view('rph.edit-rph', ['rph' => $rph, 'bdhs' => $bdhs]);
+    }
+    
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'id_bdh'    => 'required',
+            'nama_rph'  => 'required',
+            'kepala_rph'=> 'required',
+            'luas_rph'  => 'required'
+        ]);
+    
+        $rph = Rph::findOrFail($id);
+    
+        $rph->id_bdh     = $request->id_bdh;
+        $rph->nama_rph   = $request->nama_rph;
+        $rph->kepala_rph = $request->kepala_rph;
+        $rph->luas_rph   = $request->luas_rph;
+    
+        $rph->save();
+    
+        return redirect('/data-bdh')->with('pesan', 'Data RPH berhasil diperbarui.');
+        // return redirect()->route('rph.index', ['id_bdh' => $rph->id_bdh])->with('pesan', 'Data RPH berhasil diperbarui.');
+    }
+    
 
     // Delete RPH
 
-    public function destroy()
+    public function destroy($id_rph)
     {
+        // Temukan RPH dengan id yang diberikan
+        $rph = Rph::findOrFail($id_rph);
+    
+        // Ubah nilai is_delete menjadi 1
+        $rph->IsDelete = 1;
+        $rph->save();
+    
+        // Temukan petak yang berelasi dengan RPH ini
+        // Misalkan ada kolom 'rph_id' pada table Petak yang menyimpan relasi dengan RPH
+        // Anda perlu mengganti 'Petak' dengan nama model Petak yang sebenarnya
+        $related_petak = petak::where('id_rph', $id_rph)->get();
+    
+        // Ubah nilai IsDelete pada petak yang berelasi menjadi 1
+        foreach ($related_petak as $petak) {
+            $petak->IsDelete = 1;
+            $petak->save();
+        }
+    
+        // Redirect ke halaman sebelumnya atau halaman yang diinginkan
+        return redirect()->back()->with('pesan', 'RPH dan petak terkait dihapus');
     }
+    
 }

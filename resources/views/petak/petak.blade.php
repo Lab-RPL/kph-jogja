@@ -9,7 +9,7 @@
     <div class="garis">
         <div class="border-list">
             <h2>DATA PETAK
-            <?php
+                <?php
                 $previous_rph_name = '';
                 ?>
                 @foreach ($ptk_data as $item)
@@ -17,12 +17,13 @@
                     $current_rph_name = $item->rph->nama_rph;
                     ?>
                     @if ($current_rph_name != $previous_rph_name)
-                         {{ $current_rph_name }}
+                        {{ $current_rph_name }}
                     @endif
                     <?php
                     $previous_rph_name = $current_rph_name;
                     ?>
-                @endforeach</h2>
+                @endforeach
+            </h2>
             <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
             <form>
                 <div class="wrapper">
@@ -30,7 +31,7 @@
 
                     </div>
                     <div class="rph">
-                        
+
                     </div>
                 </div>
                 @csrf
@@ -39,15 +40,20 @@
                         <tr>
                             <th>Nomor Petak</th>
                             <th>Luas Petak</th>
-                            <th>Potensi</th>
-                            <th>aksi</th>
+                            <th>Potensi Petak</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @if (count($data) == 0)
+                            <tr>
+                                <td colspan="5" style="text-align: center;">Belum Ada Data</td>
+                            </tr>
+                        @endif
                         @foreach ($data as $da)
                             <tr>
                                 <td>{{ $da->nomor_ptk }}</td>
-                                <td>{{ $da->luas_rph }} ha</td>
+                                <td>{{ $da->luas_ptk }} Ha</td>
                                 <td>{{ $da->potensi_ptk }}</td>
                                 <td class="center-align">
                                     <a href=""class="btn btn-warning mb-1 m-l-1">Edit</a>

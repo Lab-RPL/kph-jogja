@@ -43,9 +43,7 @@ Route::get('/data-bdh', [bdhController::class,'index']);
 Route::post('/data-bdh', [bdhController::class, 'store'])->name('bdh.store');
 Route::get('/tambah-bdh', [bdhController::class,'create']);
 Route::get('/data-bdh/{id_bdh}/edit',[bdhController::class,'edit'])->name('bdh.edit');
-
 Route::put('/data-bdh/{id}', [bdhController::class, 'update'])->name('bdh.update');
-
 Route::get('/data-bdh/{id_bdh}', [bdhController::class, 'destroy'])->name('bdh.destroy');
 Route::get('/bdh-read', [bdhController::class, 'index2']);
 
@@ -56,15 +54,20 @@ Route::get('/ul-rph', [rphController::class, 'index2'])->name('rph.index2');
 Route::get('/tambah-rph', [rphController::class, 'create'])->name('rph.create');
 // Route::post('/rph{id_bdh}', [rphController::class, 'store'])->name('rph.store');
 Route::post('/rph', [rphController::class,'tambah'])->name('rph.store');
-// Route::get('/balek/{id_bdh}', [rphController::class, 'kembali'])->name('rph.kembali');
+// ...
+Route::get('/rph/{id}/edit', [RphController::class, 'edit'])->name('rph.edit');
+Route::put('/rph/{id}', [RphController::class, 'update'])->name('rph.update');
+// ...
 
- 
+// Route::get('/balek/{id_bdh}', [rphController::class, 'kembali'])->name('rph.kembali');
+Route::get('/rph{id_bdh}',[rphController::class,'destroy'])->name('rph.destroy');
+
 // PETAK
 
 Route::get('/petak/{id_rph}', [PetakController::class, 'index'])->name('petak.index');
-// Route::get('/tambah-petak', [petakController::class, 'create'])->name('petak.create');
-// Route::post('/petak', [petakController::class, 'store'])->name('petak.store');
-
+Route::get('/tambah-petak', [petakController::class, 'create'])->name('petak.create');
+Route::post('/petak', [petakController::class, 'store'])->name('petak.store');
+Route::get('/petak-read', [petakController::class, 'index2'])->name('petak.index2');
 
 // ADMIN
 

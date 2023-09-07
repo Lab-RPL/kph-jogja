@@ -18,22 +18,22 @@
                     <span class="title">Data Inventaris</span>
                 </a>
             </li>
-            
-            
-            <li class="nav-item dropdown">  
+
+
+            <li class="nav-item dropdown">
                 <a href="/data-bdh">
                     <span class="icon">
                         <ion-icon name="people-outline"></ion-icon>
                     </span>
                     <span class="title">Luas Hutan Per-BDH</span>
                 </a>
-                <div class="dropdown-content drupdon">
+                <div class="dropdown-content">
                     <a href="/bdh-read">BDH</a>
                     <a href="/ul-rph">RPH</a>
-                    <a href="#">Petak</a>
+                    <a href="/petak-read">Petak</a>
                 </div>
             </li>
-            
+
             <li class="nav-item">
                 <a href="/data-izin">
                     <span class="icon">
@@ -62,7 +62,7 @@
             </li>
 
             <li class="nav-item">
-            <a href="/data-penerima">
+                <a href="/data-penerima">
                     <span class="icon">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                     </span>
@@ -80,7 +80,7 @@
             </li>
 
             <li class="nav-item">
-            <a href="/data-luas">
+                <a href="/data-luas">
                     <span class="icon">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                     </span>
@@ -106,60 +106,73 @@
                 <ion-icon name="menu-outline"></ion-icon>
             </div>
 
-    </div>
-<script>
-    // Fungsi yang menetapkan kelas 'active' pada elemen navigasi yang diklik dan menghapusnya dari yang lain
-    function setActiveNavItem(event) {
-  // Dapatkan semua elemen 'nav-item'
-  const navItems = document.querySelectorAll('.navigation ul li.nav-item');
+        </div>
+        <script>
+            // Fungsi yang menetapkan kelas 'active' pada elemen navigasi yang diklik dan menghapusnya dari yang lain
+            function setActiveNavItem(event) {
+                // Dapatkan semua elemen 'nav-item'
+                const navItems = document.querySelectorAll('.navigation ul li.nav-item');
 
-  // Hapus kelas 'active' dan 'clicked' dari semua elemen 'nav-item'
-  navItems.forEach((navItem) => {
-    navItem.classList.remove('active');
-    navItem.classList.remove('clicked');
-  });
+                // Hapus kelas 'active' dan 'clicked' dari semua elemen 'nav-item'
+                navItems.forEach((navItem) => {
+                    navItem.classList.remove('active');
+                    navItem.classList.remove('clicked');
+                });
 
-  // Tambahkan kelas 'active' dan 'clicked' ke elemen yang diklik
-  event.currentTarget.classList.add('active');
-  event.currentTarget.classList.add('clicked');
-}
+                // Tambahkan kelas 'active' dan 'clicked' ke elemen yang diklik
+                event.currentTarget.classList.add('active');
+                event.currentTarget.classList.add('clicked');
+            }
 
-function setActivePage() {
-  const currentPathname = window.location.pathname;
+            function setActivePage() {
+                const currentPathname = window.location.pathname;
 
-  const navLinks = document.querySelectorAll('.nav-item a');
-  navLinks.forEach((navLink) => {
-    if (navLink.pathname === currentPathname) {
-      navLink.parentElement.classList.add('active');
-      navLink.parentElement.classList.add('clicked');
-    } else {
-      navLink.parentElement.classList.remove('active');
-      navLink.parentElement.classList.remove('clicked');
-    }
-  });
+                const navLinks = document.querySelectorAll('.nav-item a');
+                navLinks.forEach((navLink) => {
+                    if (
+                        navLink.pathname === currentPathname || 
+                        //DATA-UTAMA
+                        (navLink.pathname === '/data-utama' && currentPathname ==='/data-option') ||
+                        //DATA-BDH
+                        (navLink.pathname === '/data-bdh' && currentPathname ==='/tambah-bdh') ||
+                        (navLink.pathname === '/data-bdh' && currentPathname === '/bdh-read') ||
+                        (navLink.pathname === '/data-bdh' && currentPathname === '/ul-rph') ||
+                        (navLink.pathname === '/data-bdh' && currentPathname === '/petak-read') ||
+                        (navLink.pathname === '/data-bdh' && currentPathname === '/tambah-rph') ||
+                        (navLink.pathname === '/data-bdh' && currentPathname === '/tambah-petak') ||
+                        (navLink.pathname === '/data-bdh' && currentPathname.startsWith('/rph/')) ||
+                        (navLink.pathname === '/data-bdh' && currentPathname.startsWith('/petak/')) ||
+                        (navLink.pathname === '/data-bdh' && currentPathname.startsWith('/data-bdh/') && currentPathname.endsWith('/edit')) ||
+                        //DATA-IZIN
+                        (navLink.pathname === '/data-izin' && currentPathname ==='/tambah-izin') ){
+                        navLink.parentElement.classList.add('active');
+                        navLink.parentElement.classList.add('clicked');
+                    } else {
+                        navLink.parentElement.classList.remove('active');
+                        navLink.parentElement.classList.remove('clicked');
+                    }
+                });
 
-    // Call setActivePage() again after page transitions
-    window.addEventListener('popstate', () => {
-    setActivePage();
-  });
-}
+                // Call setActivePage() again after page transitions
+                window.addEventListener('popstate', () => {
+                    setActivePage();
+                });
+            }
 
-// Inisialisasi
-function init() {
-  // Dapatkan semua elemen 'nav-item'
-  const navItems = document.querySelectorAll('.navigation ul li.nav-item');
+            // Inisialisasi
+            function init() {
+                // Dapatkan semua elemen 'nav-item'
+                const navItems = document.querySelectorAll('.navigation ul li.nav-item');
 
-  // Atur event listener klik untuk semua elemen 'nav-item'
-  navItems.forEach((navItem) => {
-    navItem.addEventListener('click', setActiveNavItem);
-  });
-}
+                // Atur event listener klik untuk semua elemen 'nav-item'
+                navItems.forEach((navItem) => {
+                    navItem.addEventListener('click', setActiveNavItem);
+                });
+            }
 
-// Panggil fungsi init ketika konten DOM telah dimuat
-document.addEventListener('DOMContentLoaded', () => {
-  init();
-  setActivePage();
-});
-
-</script>
-
+            // Panggil fungsi init ketika konten DOM telah dimuat
+            document.addEventListener('DOMContentLoaded', () => {
+                init();
+                setActivePage();
+            });
+        </script>

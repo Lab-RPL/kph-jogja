@@ -23,12 +23,12 @@
                         <td><input type="text" id="tambah-rph" name="kepala_bdh" required></td>
                     </tr>
                     <tr>
-                        <td><label for="luas-tanah">Petak</label></td>
-                        <td><input type="text" id="luas-rph" name="luas_tanah" required></td>
+                        <td><label for="nomor-ptk">Nomor Petak</label></td>
+                        <td><input type="text" id="nomor-ptk" name="nomor_ptk" required></td>
                     </tr>
                     <tr>
-                        <td><label for="luas-tanah">Luas Izin</label></td>
-                        <td><input type="text" id="luas-rph" name="luas_tanah" required></td>
+                        <td><label for="luas-izin">Luas Izin</label></td>
+                        <td><input type="text" id="luas-izin" name="luas_izin" required></td>
                     </tr>
                 </table>
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">

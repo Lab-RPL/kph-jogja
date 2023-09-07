@@ -12,19 +12,18 @@
             <div class="border-list">
                 <h2>DATA BDH</h2>
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
-
                 <table id="tabelData">
                     <tr>
-                        <td><label for="tambah-bdh">NAMA BDH</label></td>
+                        <td><label for="tambah-bdh">Nama BDH</label></td>
                         <td><input type="text" id="tambah-bdh" name="nama_bdh" required></td>
                     </tr>
                     <tr>
-                        <td><label for="tambah-bdh">NAMA KEPALA BDH</label></td>
+                        <td><label for="tambah-bdh">Nama Kepala BDH</label></td>
                         <td><input type="text" id="tambah-bdh" name="kepala_bdh" required></td>
                     </tr>
                     <tr>
-                        <td><label for="luas-tanah">LUAS TANAH</label></td>
-                        <td><input type="text" id="luas-tanah" name="luas_tanah" required></td>
+                        <td><label for="luas-bdh">Luas BDH</label></td>
+                        <td><input type="text" id="luas-bdh" name="luas_bdh" required></td>
                     </tr>
                 </table>
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">
@@ -34,5 +33,4 @@
             </div>
         </div>
     </form>
-    
 @endsection
