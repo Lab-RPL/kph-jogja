@@ -98,7 +98,7 @@
                     </tbody>
                 </table>
                 <div style="display: flex; justify-content: space-between;">
-                    <a class="btn btn-primary" style="color: white" href="#">Tambah Data</a>
+                    <a class="btn btn-primary" style="color: white" href="/tambah-rosak">Tambah Data</a>
                 </div>
             </form>
         </div>

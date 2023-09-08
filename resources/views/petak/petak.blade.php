@@ -63,6 +63,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{ $data->links() }}
                 <div style="display: flex; justify-content: space-between;">
                     <a class="btn btn-warning" style="color: white" href="/data-bdh">Kembali</a>
                     <a class="btn btn-primary" style="color: white" href="/tambah-petak">Tambah Data</a>

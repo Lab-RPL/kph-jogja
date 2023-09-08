@@ -28,7 +28,7 @@ class petakController extends Controller
         if (!$req->session()->has('user_id')) {
             return redirect('/');
         }
-        $data = Petak::all();
+        $data = Petak::paginate(5);
         return view('petak.petak-read', ['data' => $data]);
     }    
     public function create()

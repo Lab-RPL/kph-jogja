@@ -12,7 +12,7 @@
             <form>
                 <div class="wrapper">
                     <div class="bdh">
-                       
+                    
                     </div>
                 </div>
                 @csrf
@@ -43,7 +43,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{-- {{ $data->links() }} --}}
+                {{ $data->links() }}
             </form>
         </div>
     </div>

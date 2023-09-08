@@ -23,7 +23,7 @@
             <li class="nav-item dropdown">
                 <a href="/data-bdh">
                     <span class="icon">
-                        <ion-icon name="people-outline"></ion-icon>
+                        <i class="fas fa-tree fa-2x"></i>
                     </span>
                     <span class="title">Luas Hutan Per-BDH</span>
                 </a>
@@ -37,7 +37,7 @@
             <li class="nav-item">
                 <a href="/data-izin">
                     <span class="icon">
-                        <ion-icon name="chatbubble-outline"></ion-icon>
+                        <ion-icon name="shield-checkmark-outline"></ion-icon>
                     </span>
                     <span class="title">Perizinan Berusaha</span>
                 </a>
@@ -46,7 +46,7 @@
             <li class="nav-item">
                 <a href="/data-potensi">
                     <span class="icon">
-                        <ion-icon name="help-outline"></ion-icon>
+                        <ion-icon name="leaf-outline"></ion-icon>
                     </span>
                     <span class="title">Potensi Hasil Hutan</span>
                 </a>
@@ -64,7 +64,7 @@
             <li class="nav-item">
                 <a href="/data-penerima">
                     <span class="icon">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <i class="fas fa-hand-holding-usd fa-2x"></i>
                     </span>
                     <span class="title">Penerima Bukan Pajak</span>
                 </a>
@@ -73,7 +73,7 @@
             <li class="nav-item">
                 <a href="/data-rusak">
                     <span class="icon">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
+                     <i class="fas fa-heart-broken fa-lg"></i>
                     </span>
                     <span class="title">Kerusakan/Kehilangan</span>
                 </a>
@@ -82,7 +82,7 @@
             <li class="nav-item">
                 <a href="/data-luas">
                     <span class="icon">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
+                     <i class="fab fa-pagelines fa-2x"></i>
                     </span>
                     <span class="title">Luas Hutan</span>
                 </a>
@@ -144,7 +144,8 @@
                         (navLink.pathname === '/data-bdh' && currentPathname.startsWith('/petak/')) ||
                         (navLink.pathname === '/data-bdh' && currentPathname.startsWith('/data-bdh/') && currentPathname.endsWith('/edit')) ||
                         //DATA-IZIN
-                        (navLink.pathname === '/data-izin' && currentPathname ==='/tambah-izin') ){
+                        (navLink.pathname === '/data-izin' && currentPathname ==='/tambah-izin') || 
+                        (navLink.pathname === '/data-rusak' && currentPathname ==='/tambah-rosak') ){
                         navLink.parentElement.classList.add('active');
                         navLink.parentElement.classList.add('clicked');
                     } else {

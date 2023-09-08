@@ -90,7 +90,6 @@ Route::get('/tambah-izin', function (){
 Route::get('/data-rusak', function() {
     return view('rosak.rosak');
 });
-
 Route::get('tambah-rosak', function(){
     return view('rosak.tambah-rosak');
 });

@@ -181,10 +181,19 @@ button:hover {
         /* Transisi efek warna border */
         width: 400px;
       }
+      input[type="text"], select {
+        padding: 3px 20px; /* Jarak antara teks dan border */
+        border: 2px solid #0CB166; /* Warna border */
+        border-radius: 5px; /* Lengkungan border */
+        font-size: 16px;
+        /* Transisi efek warna border */
+        width: 400px;
+    }
 
       input[type="date"] {
         padding: 3px 20px; /* Jarak antara teks dan border */
         border: 2px solid #0CB166; /* Warna border */
+        margin-right: 10px;
         border-radius: 5px; /* Lengkungan border */
         font-size: 18px;
         transition: border-color 0.3s; /* Transisi efek warna border */
@@ -193,6 +202,14 @@ button:hover {
       
       /* Efek hover pada border */
       input[type="text"]:hover {
+        border-color: #D46402; /* Warna border saat hover */
+      }
+
+      input[type="text"]:hover, select:hover {
+        border-color: #D46402; /* Warna border saat elemen di-hover */
+      }
+
+      input[type="date"]:hover {
         border-color: #D46402; /* Warna border saat hover */
       }
       
@@ -351,7 +368,7 @@ button:hover {
   padding: 0;
   left: 77%; /* Pindahkan ke sebelah kanan elemen induk */
   top: 0; /* Atur posisi vertikal ke tepi atas elemen induk */
-  border-radius: 4px; /* Beri radius pada bagian dropdown-content */
+  border-radius: 4px; /* Beri radius */
 
   /* Sembunyikan elemen direntang waktu */
   visibility: hidden;

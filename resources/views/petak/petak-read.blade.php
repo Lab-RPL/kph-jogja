@@ -44,6 +44,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{ $data->links() }}
             </form>
         </div>
     </div>

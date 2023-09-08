@@ -48,7 +48,7 @@ class rphController extends Controller
         if (!$req->session()->has('user_id')) {
             return redirect('/');
         }
-        $data = rph::all();
+        $data = rph::paginate(5);
         return view('rph.ul-rph', ['data' => $data]);
     }
 
@@ -134,7 +134,7 @@ class rphController extends Controller
     
         $rph->save();
     
-        return redirect('/data-bdh')->with('pesan', 'Data RPH berhasil diperbarui.');
+        return redirect()->route('rph.index', $request->id_bdh)->with('pesan',"Data RPH Berhasil Di Update"); // Gantikan dengan nama route yang sesuai
         // return redirect()->route('rph.index', ['id_bdh' => $rph->id_bdh])->with('pesan', 'Data RPH berhasil diperbarui.');
     }
     
