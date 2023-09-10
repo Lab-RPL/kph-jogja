@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\auth;
 use App\Http\Controllers\bdhController;
+use App\Http\Controllers\rphController;
+use App\Http\Controllers\inventarisController;
+use App\Http\Controllers\petakController;
+use App\Models\rph;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,29 +23,106 @@ $auth = auth::class;
 
 Route::get('/',[$auth,'login']);
 Route::post('/',[$auth,'masuk']);
+Route::get('/logout',[$auth,'logout']);
+
+
+// DATA UTAMA
+
+Route::get('/data-utama', [inventarisController::class,'index']);
+Route::get('/data-result', function() {
+    return view('data-utama.inventarisResult');
+});
+Route::get('/data-option', function() {
+    return view('data-utama.inventarisOption');
+});
 
 
 // BDH
 
 Route::get('/data-bdh', [bdhController::class,'index']);
+Route::post('/data-bdh', [bdhController::class, 'store'])->name('bdh.store');
+Route::get('/tambah-bdh', [bdhController::class,'create']);
+Route::get('/data-bdh/{id_bdh}/edit',[bdhController::class,'edit'])->name('bdh.edit');
+Route::put('/data-bdh/{id}', [bdhController::class, 'update'])->name('bdh.update');
+Route::get('/data-bdh/{id_bdh}', [bdhController::class, 'destroy'])->name('bdh.destroy');
+Route::get('/bdh-read', [bdhController::class, 'index2']);
 
-Route::get('/data-utama', function () {
-    return view('data-utama');
-});
 
+// RPH
+Route::get('/rph/{id_bdh}',[rphController::class, 'index'])->name('rph.index');
+Route::get('/ul-rph', [rphController::class, 'index2'])->name('rph.index2');
+Route::get('/tambah-rph', [rphController::class, 'create'])->name('rph.create');
+// Route::post('/rph{id_bdh}', [rphController::class, 'store'])->name('rph.store');
+Route::post('/rph', [rphController::class,'tambah'])->name('rph.store');
+// ...
+Route::get('/rph/{id}/edit', [RphController::class, 'edit'])->name('rph.edit');
+Route::put('/rph/{id}', [RphController::class, 'update'])->name('rph.update');
+// ...
+
+// Route::get('/balek/{id_bdh}', [rphController::class, 'kembali'])->name('rph.kembali');
+Route::get('/rph{id_bdh}',[rphController::class,'destroy'])->name('rph.destroy');
+
+// PETAK
+
+Route::get('/petak/{id_rph}', [PetakController::class, 'index'])->name('petak.index');
+Route::get('/tambah-petak', [petakController::class, 'create'])->name('petak.create');
+Route::post('/petak', [petakController::class, 'store'])->name('petak.store');
+Route::get('/petak-read', [petakController::class, 'index2'])->name('petak.index2');
+
+// ADMIN
 
 Route::get('/user', function () {
     return view('admin.admin');
 });
 
-Route::get('/petak', function () {
-    return view('petak');
+// PERIZINAN
+
+Route::get('/data-izin', function () {
+    return view('izin.perizinan');
 });
 
-Route::get('/rph', function () {
-    return view('rph');
+Route::get('/tambah-izin', function (){
+    return view('izin.tambah-izin');
 });
 
-Route::get('/tambahbdh', function () {
-    return view('tambahdata_bdh');
+// KERUSAKAN/KEHILANGAN
+
+Route::get('/data-rusak', function() {
+    return view('rosak.rosak');
 });
+Route::get('tambah-rosak', function(){
+    return view('rosak.tambah-rosak');
+});
+
+// PNBP
+
+Route::get('/data-pnbp', function(){
+    return view('pnbp');
+});
+
+// HHBK
+
+Route::get('/data-hhbk', function(){
+    return view('hhbk');
+});
+
+//Potensi hasil hutan
+Route::get('/data-potensi', function(){
+    return view('potensihutan');
+});
+
+//Produksi hasil hutan
+Route::get('/data-produksi', function(){
+    return view('produksihutan');
+});
+
+//Penerima bukan pajak
+Route::get('/data-penerima', function(){
+    return view('penerima');
+});
+
+//Luas Hutan
+Route::get('/data-luas', function(){
+    return view('luashutan');
+});
+

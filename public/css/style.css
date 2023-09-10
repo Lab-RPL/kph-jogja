@@ -27,7 +27,6 @@ body {
   width: 100%;
 }
 
-/* =============================Form Border============================== */
 .garis {
   display: flex;
   justify-content: center;
@@ -44,67 +43,68 @@ body {
   max-width: 980px;
   width: 100%; 
   height: auto; /* Ubah ke height:auto agar form menyesuaikan tingginya */
+  max-height: 600px;
   border-color: #0CB166;
-  overflow: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  margin-bottom: 38px;
 }
 
+.border-list::-webkit-scrollbar{
+  display: none;
+} 
+
+
 .border-list h2 {
-  margin-top: 0;
+  margin-top: -45px;
   margin-bottom: 10px;
   text-align: center;
 }
+
 .border-list p {
   margin-top: 10px;
   margin-bottom: 20px;  
   font-family: "Poppins", sans-serif;
+  font-size: 22px;
   text-align: center;
   border-bottom: 2px solid #D46402;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
 
-th, td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: left;
-}
+  .table th,
+  .table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
 
-th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
+  .table th{
+    color: #fff;
+    text-align: center;
+  }
 
-/* Gaya tambahan untuk memperindah tabel */
-table {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+  .table thead {
+    background-color: rgba(25, 128, 81, 0.904);
+  }
 
-th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-  text-transform: uppercase;
-}
+  .table .btn {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+  }
 
-td {
-  background-color: #fff;
-}
-
-tr:nth-child(even) td {
-  background-color: #f9f9f9;
-}
-
-/* Efek hover pada baris tabel */
-tr:hover {
-  background-color: #f5f5f5;
-}
-
-/* Transisi smooth pada efek hover */
-tr {
-  transition: background-color 0.3s ease;
+  .center-align{
+    text-align: center;
 }
 
 .pagination {
@@ -130,7 +130,7 @@ tr {
   right: 20px;
 }
 
-button {
+button     {
   display: inline-block;
   padding: 8px 10px;
   background-color: #82ba67;
@@ -154,7 +154,9 @@ button:hover {
 .wrapper {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
+
 .bdh h3,
 .rph h3 {
   text-align: center;
@@ -172,15 +174,42 @@ button:hover {
 
       /* Styling input */
       input[type="text"] {
-        padding: 3px 60px; /* Jarak antara teks dan border */
+        padding: 3px 20px; /* Jarak antara teks dan border */
         border: 2px solid #0CB166; /* Warna border */
         border-radius: 5px; /* Lengkungan border */
-        font-size: 24px;
+        font-size: 16px;
+        /* Transisi efek warna border */
+        width: 400px;
+      }
+      input[type="text"], select {
+        padding: 3px 20px; /* Jarak antara teks dan border */
+        border: 2px solid #0CB166; /* Warna border */
+        border-radius: 5px; /* Lengkungan border */
+        font-size: 16px;
+        /* Transisi efek warna border */
+        width: 400px;
+    }
+
+      input[type="date"] {
+        padding: 3px 20px; /* Jarak antara teks dan border */
+        border: 2px solid #0CB166; /* Warna border */
+        margin-right: 10px;
+        border-radius: 5px; /* Lengkungan border */
+        font-size: 18px;
         transition: border-color 0.3s; /* Transisi efek warna border */
+        width: 200px;
       }
       
       /* Efek hover pada border */
       input[type="text"]:hover {
+        border-color: #D46402; /* Warna border saat hover */
+      }
+
+      input[type="text"]:hover, select:hover {
+        border-color: #D46402; /* Warna border saat elemen di-hover */
+      }
+
+      input[type="date"]:hover {
         border-color: #D46402; /* Warna border saat hover */
       }
       
@@ -189,6 +218,7 @@ button:hover {
           white-space: nowrap;
           width: 125px;
           text-align: left;
+          margin-top: 10px;
           margin-bottom: 30px;
           margin-right: 80px;
         }
@@ -224,10 +254,6 @@ button:hover {
   border-bottom-left-radius: 30px;
 }
 
-.navigation ul li:hover,
-.navigation ul li.hovered {
-  background-color: var(--white);
-}
 
 .navigation ul li:nth-child(1) {
   margin-bottom: 20px;
@@ -242,10 +268,10 @@ button:hover {
   text-decoration: none;
   color: var(--black1);
 }
-.navigation ul li:hover a,
+/* .navigation ul li:hover a,
 .navigation ul li.hovered a {
-  color: var(--blue);
-}
+  color: #ddd;
+} */
 
 .navigation ul li a .icon {
   position: relative;
@@ -255,7 +281,15 @@ button:hover {
   line-height: 75px;
   text-align: center;
   color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.navigation ul li a .icon img {
+  width: 45px; /* Ubah ukuran gambar sesuai kebutuhan */
+  height: 45px;
+}
+
 .navigation ul li a .icon ion-icon {
   font-size: 1.75rem;
 }
@@ -264,16 +298,25 @@ button:hover {
   position: relative;
   display: block;
   padding: 0 10px;
-  height: 60px;
+  height: 40px;
   line-height: 60px;
   text-align: start;
   white-space: nowrap;
   color: #222;
 }
 
-/* --------- curve outside ---------- */
-.navigation ul li:hover a::before,
-.navigation ul li.hovered a::before {
+.navigation ul li.active:hover,
+.navigation ul li.active.hovered,
+.navigation ul li.active.clicked {
+  background-color: var(--white);
+}
+
+.navigation ul .nav-item.active:hover a::before,
+.navigation ul .nav-item.active.hovered a::before,
+.navigation ul .nav-item.active.clicked a::before,
+.navigation ul .dropdown.active:hover a::before,
+.navigation ul .dropdown.active.hovered a::before,
+.navigation ul .dropdown.active.clicked a::before {
   content: "";
   position: absolute;
   right: 0;
@@ -285,8 +328,13 @@ button:hover {
   box-shadow: 35px 35px 0 10px var(--white);
   pointer-events: none;
 }
-.navigation ul li:hover a::after,
-.navigation ul li.hovered a::after {
+
+.navigation ul .nav-item.active:hover a::after,
+.navigation ul .nav-item.active.hovered a::after,
+.navigation ul .nav-item.active.clicked a::after,
+.navigation ul .dropdown.active:hover a::after,
+.navigation ul .dropdown.active.hovered a::after,
+.navigation ul .dropdown.active.clicked a::after {
   content: "";
   position: absolute;
   right: 0;
@@ -299,17 +347,85 @@ button:hover {
   pointer-events: none;
 }
 
+
+
+
+
+
+
+
+/*===========================Dropdownlist========================== */
+.dropdown-content {
+  position: absolute;
+  background-color: var(--blue);
+  max-width: 140px;
+  max-height: 150px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  left: 77%; /* Pindahkan ke sebelah kanan elemen induk */
+  top: 0; /* Atur posisi vertikal ke tepi atas elemen induk */
+  border-radius: 4px; /* Beri radius */
+
+  /* Sembunyikan elemen direntang waktu */
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: visibility 0.5s, opacity 0.5s, transform 0.5s;
+}
+
+.navigation .dropdown:hover .dropdown-content {
+  /* Tampilkan elemen saat pengguna mengarahkan kursor ke dropdown */
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-content li {
+  list-style-type: none;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  white-space: nowrap;
+  border-radius: 4px; /* Beri radius pada item saat di-hover */
+
+  /* Tambahan styling saat hover */
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  border-radius: 4px; /* Beri radius pada item saat di-hover */
+}
+
+.navigation .dropdown .dropdown-content a::before,
+.navigation .dropdown .dropdown-content a::after {
+  display: none;
+}
+
+
+
+
+
 /* ===================== Main ===================== */
 .main {
   position: absolute;
-  width: calc(100% - 300px);
-  left: 280px;
+  width: calc(100% - 190px);
+  left: 250px;
   min-height: 100vh;
   background: var(--white);
   transition: 0.5s;
 }
 .main.active {
-  width: calc(100% - 80px);
+  width: calc(100% - 60px);
   left: 80px;
 }
 
@@ -326,12 +442,15 @@ button:hover {
   position: relative;
   width: 90px;
   height: 60px;
+  right: 5px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   font-size: 2.5rem;
   cursor: pointer;
 }
+
+
 
 /* Responsif */
 @media (max-width: 1024px) {
@@ -386,11 +505,50 @@ button:hover {
 
 
 /* ====================== Responsive Design ========================== */
+
+@media only screen and (min-width: 1920px) {
+
+
+  .main {
+    width: calc(100% - 240px);
+    left: 220px;
+  }
+  
+
+
+  .main.active {
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+
+  .navigation ul li a .icon{
+    height: 52px;
+  }
+  .border-list{
+    height: auto;
+    position: relative;
+    left: -30px;
+  }
+  .toggle {
+    position: relative;
+    width: 90px;
+    height: 60px;
+    right: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+
+}
+
 /* Responsive Styles for 1280px screen width */
 @media screen and (max-width: 1280px) {
   .main {
     left: 300px;
   }
+
 }
 
 @media (max-width: 991px) {
