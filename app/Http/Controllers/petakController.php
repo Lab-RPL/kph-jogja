@@ -19,6 +19,7 @@ class petakController extends Controller
             ->paginate(5);
         $data = DB::table('petak')
             ->where('id_rph', $id_rph)
+            ->where('IsDelete',0)
             ->paginate(5);
         return view('petak.petak', ['data' => $data, 'ptk_data' => $petak_data]);
     }
@@ -28,7 +29,7 @@ class petakController extends Controller
         if (!$req->session()->has('user_id')) {
             return redirect('/');
         }
-        $data = Petak::paginate(5);
+        $data = Petak::where('IsDelete',0)->paginate(5);
         return view('petak.petak-read', ['data' => $data]);
     }    
     public function create()

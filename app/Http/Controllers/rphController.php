@@ -34,7 +34,8 @@ class rphController extends Controller
                 ->where('id_bdh', $id_bdh)
                 ->get();
             $data = DB::table('rph')
-                ->where('id_bdh', $id_bdh)
+                ->where('id_bdh', $id_bdh,)
+                ->where('IsDelete',0)
                 ->paginate(5);
             // $bdh_data = Bdh::all();
 
@@ -48,7 +49,7 @@ class rphController extends Controller
         if (!$req->session()->has('user_id')) {
             return redirect('/');
         }
-        $data = rph::paginate(5);
+        $data = rph::where('IsDelete',0)->paginate(5);
         return view('rph.ul-rph', ['data' => $data]);
     }
 

@@ -50,13 +50,13 @@
                         @endforeach
                     </tbody>
                 </table>
+                @if (Session::has('pesan'))
+                <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
+                @endif
                 {{ $data->links() }}
                 <div style="display: flex; justify-content: flex-end;" class="nav-item">
                     <a class="btn btn-primary me-3" href="/tambah-bdh">Tambah Data</a>
                 </div>
-                @if (Session::has('pesan'))
-                    <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
-                @endif
                 <script>
                     setTimeout(function() {
                         document.getElementById('pesan-sukses').style.display = 'none';
