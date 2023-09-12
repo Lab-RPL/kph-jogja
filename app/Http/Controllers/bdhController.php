@@ -30,7 +30,7 @@ class bdhController extends Controller
             return redirect('/');
         }
 
-        $data = bdh::where('IsDelete',0)->paginate(5);
+        $data = bdh::where('IsDelete',0)->paginate(10);
         return view('bdh.bdh-read', ['data' => $data]);
     }
 
