@@ -8,7 +8,7 @@
 
     <div class="garis">
         <div class="border-list">
-            <h2>DATA PETAK
+            <h2 class="mt-2">DATA PETAK
                 <?php
                 $previous_rph_name = '';
                 ?>

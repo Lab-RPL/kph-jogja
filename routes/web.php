@@ -97,6 +97,10 @@ Route::get('/data-pnbp', function(){
     return view('pnbp.pnbp');
 });
 
+Route::get('/tambah-pnbp', function(){
+    return view('pnbp.tambah-pnbp');
+});
+
 
 //Potensi hasil hutan
 Route::get('/data-potensi', function(){

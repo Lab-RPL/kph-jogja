@@ -11,7 +11,7 @@
         @method('put')
         <div class="garis">
             <div class="border-list">
-                <h2>DATA BDH</h2>
+                <h2 class="mt-2">DATA BDH</h2>
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
                 <input type="hidden" name="id_bdh" value="{{ $bdh->id_bdh }}">
                 <table id="tabelData">

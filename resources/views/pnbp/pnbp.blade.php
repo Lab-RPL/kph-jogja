@@ -6,17 +6,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <div class="garis">
-        <div class="border-list">
-            <h2>PENERIIMAAN NEGARA BUKAN PAJAK</h2>
-            <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
+        <div class="border-list"  >
+            <h2 class="mt-2">PENERIMAAN NEGARA BUKAN PAJAK</h2>
+            <p class="lead">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
+
             <form>
                 @csrf
                 <table id="tabelData" class="table table-bordered">
                     <thead>
                         <tr class="kolom">
-                            <th class="w-25">Tahun</th> <!-- Adjust the width as needed -->
-                            <th class="w-25">Nominal</th> <!-- Adjust the width as needed -->
-                            <th class="w-25">Aksi</th> <!-- Adjust the width as needed -->
+                            <th class="w-25">Tahun</th> 
+                            <th class="w-50">Nominal</th> 
+                            <th class="">Aksi</th> 
                         </tr>
                     </thead>
                     <tbody>
@@ -28,8 +29,8 @@
                         </td>
                     </tbody>
                 </table>
-                <div style="display: flex; justify-content: space-between;">
-                    <a class="btn btn-primary" style="color: white" href="/tambah-pajak">Tambah Data</a>
+                <div style="display: flex; justify-content: flex-end;"> 
+                    <a class="btn btn-primary" style="color: white" href="/tambah-pnbp">Tambah Data</a>
                 </div>
             </form>
         </div>

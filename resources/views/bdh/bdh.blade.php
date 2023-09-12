@@ -11,7 +11,7 @@
 
     <div class="garis">
         <div class="border-list">
-            <h2>DATA BDH</h2>
+            <h2 class="mt-2">DATA BDH</h2>
             <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
             <form>
                 @csrf

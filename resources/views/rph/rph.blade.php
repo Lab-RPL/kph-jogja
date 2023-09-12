@@ -10,7 +10,7 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <div class="garis">
         <div class="border-list">
-            <h2>DATA RPH{{-- Agar Tidak Terjadi Perulangan Hanya Ditampilkan Satu Kali --}}
+            <h2 class="mt-4">DATA RPH{{-- Agar Tidak Terjadi Perulangan Hanya Ditampilkan Satu Kali --}}
                 <?php
                 $previous_bdh_name = '';
                 ?>

@@ -12,7 +12,7 @@
         @method('put')
         <div class="garis">
             <div class="border-list">
-                <h2>DATA RPH</h2>
+                <h2 class="mt-2">DATA RPH</h2>
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
                 <table id="tabelData">
                     <tr>

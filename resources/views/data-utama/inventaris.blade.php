@@ -8,8 +8,8 @@
 
 
     <div class="garis" style="margin-top: -8rem;">
-        <div class="border-list" style="border: 1px solid white;">
-            <h2 style="font-size: 20px; font-weight: bold;">KESATUAN PENGELOLAAN HUTAN (KPH)</h2>
+        <div class="border-list">
+            <h2 style="font-size: 20px; font-weight: bold;" class="mt-2">KESATUAN PENGELOLAAN HUTAN (KPH)</h2>
             <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
             <form>
                 @csrf

@@ -10,7 +10,7 @@
         @csrf
         <div class="garis">
             <div class="border-list">
-            <h2>Kerusakan Dan Kehilangan</h2>
+            <h2 class="mt-2">Kerusakan Dan Kehilangan</h2>
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
                 <table id="tabelData">
                     <tr>
