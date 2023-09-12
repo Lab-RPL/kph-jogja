@@ -18,16 +18,22 @@
                     <tr>
                         <td><label for="tambah-bdh">NAMA BDH</label></td>
                         <td>
-                            <select name="id_bdh" id="tambah-bdh" required class="form-select">
-                                
-                                @foreach ($bdhs as $bdh)
+                            @foreach ($bdhs as $bdh)
+                            @if ($bdh->IsDelete == 0 && $bdh->id_bdh == $rph->id_bdh)
+                                <input value=" {{$bdh->nama_bdh }}" id="tambah-rph" type="text" name="nama_rph" disabled>
+                                @break
+                            @endif
+                        @endforeach
+                        
+
+                            {{-- @foreach ($bdhs as $bdh)
                                     @if ($bdh->IsDelete == 0)
                                         <option value="{{ $bdh->id_bdh }}"
-                                            {{ $bdh->id_bdh == $rph->id_bdh ? 'selected' : '' }}>{{ $bdh->nama_bdh }}
+                                            {{ $bdh->id_bdh == $rph->id_bdh ? 'selected' : '' }} disabled>{{ $bdh->nama_bdh }}
                                         </option>
                                     @endif
-                                @endforeach
-                            </select>
+                                @endforeach --}}
+
                         </td>
                     </tr>
                     <tr>
