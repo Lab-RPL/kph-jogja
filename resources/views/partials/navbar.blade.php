@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="navigation">
+    <div class="navigation scrollable-container">
         <ul>
             <li>
                 <a href="#">
@@ -7,6 +7,15 @@
                         <img src="{{ asset('images/LogoKPH.png') }}" alt="Logo">
                     </span>
                     <span class="title">KPH Yogyakarta</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="/dashboard">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="title">Dashboard</span>
                 </a>
             </li>
 
@@ -20,16 +29,17 @@
             </li>
 
 
+
             <li class="nav-item dropdown">
                 <a href="/data-bdh">
                     <span class="icon">
                         <i class="fas fa-tree fa-2x"></i>
                     </span>
                     <span class="title">Luas Hutan Per-BDH 
-                        <span id="dropdown-icon" class="icon-right fas fa-chevron-down"></span>
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
                     </span>
                 </a>
-                <div class="dropdown-content">
+                <div class="dropdown-content" id="myDropdown">
                     <a href="/bdh-read">BDH</a>
                     <a href="/ul-rph">RPH</a>
                     <a href="/petak-read">Petak</a>
@@ -136,6 +146,7 @@
                         navLink.pathname === currentPathname || 
                         //DATA-UTAMA
                         (navLink.pathname === '/data-utama' && currentPathname ==='/data-option') ||
+                        (navLink.pathname === '/data-utama' && currentPathname ==='/data-result') ||
                         //DATA-BDH
                         (navLink.pathname === '/data-bdh' && currentPathname ==='/tambah-bdh') ||
                         (navLink.pathname === '/data-bdh' && currentPathname === '/bdh-read') ||
