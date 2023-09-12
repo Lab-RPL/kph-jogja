@@ -33,8 +33,8 @@
                             @endif
                         @endforeach
                     </tbody>
-                </table> --}}
-                {{-- {{ $data->links() }}
+                </table> 
+              {{ $data->links() }}
             </form>
         </div>
     </div>
