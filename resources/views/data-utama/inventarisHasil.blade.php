@@ -236,7 +236,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><a class="btn btn-warning" style="color: white; float: left;" href="#">Ubah Data</a></td>
+                                <td><a class="btn btn-warning" style="color: white; float: left;" href="/edit-data">Ubah Data</a></td>
                                 <td><a class="btn btn-primary" style="color: white; float: right;" href="/data-utama">Lanjutkan</a></td>
                             </tr>
                         </tbody>

@@ -28,7 +28,8 @@ Route::get('/logout',[$auth,'logout']);
 // DATA UTAMA
 Route::get('/data-utama', [inventarisController::class,'index']);
 Route::get('/data-option', [inventarisController::class, 'create']);
-Route::get('/data-result', [inventarisController::class, 'store']); // !! masih get hanya sementara !!
+Route::get('/data-result', [inventarisController::class, 'store']); // !! masih get hanya sementara (post)!!
+Route::get('/edit-data', [inventarisController::class, 'edit']);
 
 
 // BDH

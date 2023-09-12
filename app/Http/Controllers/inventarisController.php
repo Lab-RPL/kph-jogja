@@ -64,10 +64,10 @@ class inventarisController extends Controller
     }
 
     public function show($id){
-        return view('data-utama.edit-utama');
+        
     }
 
-    public function edit($id){
-        
+    public function edit() {
+        return view('data-utama.inventarisChange');
     }
 }

@@ -250,4 +250,38 @@
         </form>
     </div>
     </div>
+
+    <style>
+        pre{
+            font-weight: bold; 
+            font-size: 18px; 
+            text-align: center;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        .line-table {
+            border-bottom: 1px solid;
+        }
+
+        select {
+            width: 200px;
+            padding: 5px;
+            border: 2px solid #0CB166;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        option {
+            padding: 5px;
+        }
+    </style>
 @endsection
