@@ -27,12 +27,8 @@ Route::get('/logout',[$auth,'logout']);
 
 // DATA UTAMA
 Route::get('/data-utama', [inventarisController::class,'index']);
-Route::get('/data-result', function() {
-    return view('data-utama.inventarisResult');
-});
-Route::get('/data-option', function() {
-    return view('data-utama.inventarisOption');
-});
+Route::get('/data-option', [inventarisController::class, 'create']);
+Route::get('/data-result', [inventarisController::class, 'store']); // !! masih get hanya sementara !!
 
 
 // BDH

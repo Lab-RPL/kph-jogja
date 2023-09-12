@@ -27,40 +27,40 @@ class inventarisController extends Controller
     }
 
     public function create(){
-        return view('');
+        return view('data-utama.inventarisRead');
     }
 
     public function store(Request $request)
     {
+        return view('data-utama.inventarisHasil');
+        // $validatedData = $request->validate([
+        //     'tanggal' => 'required|date',
+        //     'id_ptk' => 'required|exists:petak,id_ptk',
+        //     'no_PU' => 'required|integer',
+        //     'koor_x' => 'required|numeric',
+        //     'koor_Y' => 'required|numeric',
+        //     'tanam_sela' => 'required|string',
+        //     'tahun_tanam' => 'required|integer',
+        //     'jarak_tanam' => 'required|numeric',
+        //     'umur_tgk' => 'required|integer',
+        //     'keadaan_kes' => 'required|string',
+        //     'keadaan_tgk' => 'required|string',
+        //     'kemurnian' => 'required|string',
+        //     'bentuk_lap' => 'required|string',
+        //     'derajat_lereng' => 'required|string',
+        //     'kerataan_lap' => 'required|string',
+        //     'jns_tanah' => 'required|string',
+        //     'kedalaman' => 'required|string',
+        //     'jns_bwh' => 'required|string',
+        //     'kerapatan' => 'required|string',
+        //     'penemuan' => 'required|string',
+        //     'erosi' => 'required|string',
+        //     'ketinggian_tempat' => 'required|numeric',
+        // ]);
 
-        $validatedData = $request->validate([
-            'tanggal' => 'required|date',
-            'id_ptk' => 'required|exists:petak,id_ptk',
-            'no_PU' => 'required|integer',
-            'koor_x' => 'required|numeric',
-            'koor_Y' => 'required|numeric',
-            'tanam_sela' => 'required|string',
-            'tahun_tanam' => 'required|integer',
-            'jarak_tanam' => 'required|numeric',
-            'umur_tgk' => 'required|integer',
-            'keadaan_kes' => 'required|string',
-            'keadaan_tgk' => 'required|string',
-            'kemurnian' => 'required|string',
-            'bentuk_lap' => 'required|string',
-            'derajat_lereng' => 'required|string',
-            'kerataan_lap' => 'required|string',
-            'jns_tanah' => 'required|string',
-            'kedalaman' => 'required|string',
-            'jns_bwh' => 'required|string',
-            'kerapatan' => 'required|string',
-            'penemuan' => 'required|string',
-            'erosi' => 'required|string',
-            'ketinggian_tempat' => 'required|numeric',
-        ]);
+        // dataUtama::create($validatedData);
 
-        dataUtama::create($validatedData);
-
-        return redirect('/data-utama')->with('pesan', 'Data berhasil ditambahkan');
+        // return redirect('/data-utama')->with('pesan', 'Data berhasil ditambahkan');
     }
 
     public function show($id){
@@ -68,6 +68,6 @@ class inventarisController extends Controller
     }
 
     public function edit($id){
-
+        
     }
 }
