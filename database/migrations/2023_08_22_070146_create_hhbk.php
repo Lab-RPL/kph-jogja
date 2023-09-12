@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama_wisata');
             $table->text('lokasi_wisata');
             $table->text('atraksi_wisata');
+            $table->boolean('IsDelete')->default(0);
             $table->timestamps();
         });
     }
