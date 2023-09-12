@@ -62,7 +62,7 @@ class petakController extends Controller
         $petak = petak::findOrFail($id);
         $rphs = rph::where('IsDelete', 0)->get();
         
-        return view('petak.edit-rph', ['petak' => $petak, 'rphs' => $rphs]);
+        return view('petak.edit-petak', ['petak' => $petak, 'rphs' => $rphs]);
     }
 
     public function update(Request $request, $id){

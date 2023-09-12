@@ -52,13 +52,13 @@
                         @endif
                         @foreach ($data as $da)
                             <tr>
-                                <td>{{ $da->nomor_ptk }}</td>
+                                <td style="text-align: center">{{ $da->nomor_ptk }}</td>
                                 <td>{{ $da->luas_ptk }} Ha</td>
                                 <td>{{ $da->potensi_ptk }}</td>
                                 <td class="center-align">
                                     <a href="{{ route('petak.edit', $da->id_ptk) }}"class="btn btn-warning mb-1 m-l-1">Edit</a>
                                     <a href="{{ route('petak.destroy', $da->id_ptk) }}" data-id="{{ $da->id_ptk }}"
-                                        class="btn btn-danger mb-1 m-l-1 delete-btn">Hapus</a>
+                                        class="btn btn-danger mb-1 m-l-1">Hapus</a>
                                 </td>
                             </tr>
                         @endforeach

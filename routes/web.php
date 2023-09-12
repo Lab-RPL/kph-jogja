@@ -65,6 +65,9 @@ Route::get('/petak/{id_rph}', [PetakController::class, 'index'])->name('petak.in
 Route::get('/tambah-petak', [petakController::class, 'create'])->name('petak.create');
 Route::post('/petak', [petakController::class, 'store'])->name('petak.store');
 Route::get('/petak-read', [petakController::class, 'index2'])->name('petak.index2');
+Route::get('/petak/{id}/edit', [petakController::class, 'edit'])->name('petak.edit');
+Route::put('/petak/{id}', [petakController::class, 'update'])->name('petak.update');
+Route::get('/petak{id_rph}', [petakController::class, 'destroy'])->name('petak.destroy');
 
 
 // ADMIN

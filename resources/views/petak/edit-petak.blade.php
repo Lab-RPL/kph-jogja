@@ -6,21 +6,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <form action="{{ route() }}" method="POST">
+    <form action="{{ route('petak.update', $petak->id_ptk) }}" method="POST">
         @csrf
         @method('put')
         <div class="garis">
             <div class="border-list">
-                <h2 class="mt-2">DATA BDH</h2>
+                <h2 class="mt-2">DATA PETAK</h2>
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
-                <input type="hidden" name="id_bdh" value="{{ $bdh->id_bdh }}">
                 <table id="tabelData">
                     <tr>
                         <td><label for="tambah-rph">NAMA RPH</label></td>
                         <td>
                             <select name="id_rph" id="tambah-rph" required class="form-select">
                                 <option value="">Pilih RPH</option>
-                                @foreach ($rph as $rph)
+                                @foreach ($rphs as $rph)
                                     @if ($rph->IsDelete == 0)
                                         <option value="{{ $rph->id_rph }}">{{ $rph->nama_rph }}</option>
                                     @endif
