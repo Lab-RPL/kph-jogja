@@ -42,7 +42,7 @@ Route::get('/tambah-bdh', [bdhController::class,'create']);
 Route::get('/data-bdh/{id_bdh}/edit',[bdhController::class,'edit'])->name('bdh.edit');
 Route::put('/data-bdh/{id}', [bdhController::class, 'update'])->name('bdh.update');
 Route::get('/data-bdh/{id_bdh}', [bdhController::class, 'destroy'])->name('bdh.destroy');
-Route::get('/bdh-read', [bdhController::class, 'index2']);
+Route::get('/bdh-read', [bdhController::class, 'index2'])->name('bdh.index.2');
 
 
 // RPH
