@@ -21,7 +21,7 @@ class auth extends Controller
         if ($data && Hash::check($req->pass, $data->password)) {
             $req->session()->put('user_id', $data->id);
             if ($data->user_type == 'user') {
-                return redirect('/data-utama');
+                return redirect('/dashboard');
             } else {
                 return redirect('/');
             }
