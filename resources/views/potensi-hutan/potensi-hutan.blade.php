@@ -69,8 +69,6 @@
                     </div>
                 </div>
 
-                <!-- Tabel Kehilangan -->
-
                 <table id="tabelData" class="table table-bordered">
                     <thead>
                         <tr>
@@ -93,7 +91,7 @@
                     </tbody>
                 </table>
                 <div style="display: flex; justify-content: space-between;">
-                    <a class="btn btn-primary" style="color: white" href="/tambah-potensi">Tambah Data</a>
+                    <a class="btn btn-primary" style="color: white" href="/tambah-potensi">Tambah Data HHBK</a>
                 </div>
             </form>
         </div>
