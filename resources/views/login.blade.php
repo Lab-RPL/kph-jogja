@@ -34,8 +34,11 @@
     <div class="limiter">
         <div class="container-login100" style="background-image: url('images/hutan.jpg');">
             <div class="wrap-login100 p-l-55 p-r-55 p-t-20 p-b-30">
-                <img src="{{ asset('images/logohutan1.png') }}" class="logo" alt="logo">
+
                 <form class="login100-form validate-form" method="POST">
+                <img src="{{ asset('images/LogoJogja.png') }}" class="logo1" alt="logo">
+                <img src="{{ asset('images/LogoKPH.png') }}" class="logo2" alt="logo">
+                <img src="{{ asset('images/logohutan1.png') }}" class="logo3" alt="logo">
                     @csrf
                     <span class="login100-form-title p-b-49">
                         Login

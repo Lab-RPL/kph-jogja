@@ -293,5 +293,4 @@
             padding: 5px;
         }
     </style>
-    koonotll
 @endsection

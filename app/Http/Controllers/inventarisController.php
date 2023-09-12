@@ -8,12 +8,20 @@ use App\Models\dataUtama;
 
 class inventarisController extends Controller
 {
-    public function index(Request $req)
+    public function index(Request $req,)
     {
         if (!$req->session()->has('user_id')) {
             return redirect('/');
         }
 
+        // $utama_data = dataUtama::with('petak')
+        //     ->where('id_ptk', $id_ptk)
+        //     ->paginate(5);
+        // $data = DB::table('petak')
+        //     ->where('id_rph', $id_ptk)
+        //     ->where('IsDelete',0)
+        //     ->paginate(5);
+        // return view('petak.petak', ['data' => $data, 'ptk_data' => $utama_data]);
         $data = DB::table('data_utama')->paginate(5);
         return view('data-utama.inventaris', ['data' => $data]); 
     }
