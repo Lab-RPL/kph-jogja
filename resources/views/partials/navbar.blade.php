@@ -4,7 +4,7 @@
             <li>
                 <a href="#">
                     <span class="icon">
-                        <img src="{{ asset('images/logohutan1.png') }}" alt="Logo">
+                        <img src="{{ asset('images/LogoKPH.png') }}" alt="Logo">
                     </span>
                     <span class="title">KPH Yogyakarta</span>
                 </a>
@@ -25,7 +25,9 @@
                     <span class="icon">
                         <i class="fas fa-tree fa-2x"></i>
                     </span>
-                    <span class="title">Luas Hutan Per-BDH</span>
+                    <span class="title">Luas Hutan Per-BDH 
+                        <span id="dropdown-icon" class="icon-right fas fa-chevron-down"></span>
+                    </span>
                 </a>
                 <div class="dropdown-content">
                     <a href="/bdh-read">BDH</a>
@@ -62,18 +64,18 @@
             </li>
 
             <li class="nav-item">
-                <a href="/data-penerima">
+                <a href="/data-pnbp">
                     <span class="icon">
                         <i class="fas fa-hand-holding-usd fa-2x"></i>
                     </span>
-                    <span class="title">Penerima Bukan Pajak</span>
+                    <span class="title">Penerimaan Negara Bukan Pajak</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a href="/data-rusak">
                     <span class="icon">
-                     <i class="fas fa-heart-broken fa-lg"></i>
+                        <i class="fas fa-heart-broken fa-lg"></i>
                     </span>
                     <span class="title">Kerusakan/Kehilangan</span>
                 </a>
@@ -82,7 +84,7 @@
             <li class="nav-item">
                 <a href="/data-luas">
                     <span class="icon">
-                     <i class="fab fa-pagelines fa-2x"></i>
+                        <i class="fab fa-pagelines fa-2x"></i>
                     </span>
                     <span class="title">Luas Hutan</span>
                 </a>
@@ -107,6 +109,7 @@
             </div>
 
         </div>
+        
         <script>
             // Fungsi yang menetapkan kelas 'active' pada elemen navigasi yang diklik dan menghapusnya dari yang lain
             function setActiveNavItem(event) {
@@ -176,4 +179,11 @@
                 init();
                 setActivePage();
             });
+
+            //dropdow
+            
+            
         </script>
+
+
+

@@ -8,7 +8,7 @@
 
     <div class="garis">
         <div class="border-list">
-            <h2>Penerima bukan pajak</h2>
+            <h2>Penerimaan Negara Bukan Pajak</h2>
         </div>
     </div>
 @endsection

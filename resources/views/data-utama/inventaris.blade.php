@@ -45,6 +45,10 @@
                             th {
                                 background-color: #C9EFBC
                             }
+                            .txt{
+                                text-align: center; 
+                                margin-top: 0.5rem;
+                            }
                         </style>
                         <tr>
                             <th>
@@ -56,14 +60,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><div class="txt"></div>20</td>
+                        <td><div class="txt"></div>25/07/2023</td>
+                        <td><div class="txt"></div></td>
+                        <td><div class="txt"></div></td>
+                        <td><div class="txt"></div></td>
+                        <td><div class="txt"></div></td>
+                        <td><div class="txt"></div>65</td>
+                        <td><div class="txt"></div>105</td>      
                         <td>
                             <div style="display: flex; justify-content: flex-end;">
                                 <a class="btn btn-primary" href="/data-result">Detail</a>

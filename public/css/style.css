@@ -227,13 +227,13 @@ button:hover {
 /* =============== Navigation ================ */
 .navigation {
   position: fixed;
-  width: 320px;
+  width: 350px;
   height: 100%;
   background: var(--blue);
   border-left: -30px solid var(--blue);
   transition: 0.5s;
   overflow: hidden;
-  left: 0;
+  left: -10px;
 }
 .navigation.active {
   width: 100px;
@@ -273,21 +273,27 @@ button:hover {
   color: #ddd;
 } */
 
+.icon-right {
+  margin-left: 15px;
+}
+
 .navigation ul li a .icon {
   position: relative;
   display: block;
   min-width: 60px;
   height: 60px;
   line-height: 75px;
-  text-align: center;
+  padding: 0 10px;
   color: #222;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .navigation ul li a .icon img {
-  width: 45px; /* Ubah ukuran gambar sesuai kebutuhan */
-  height: 45px;
+  width: 70px; /* Ubah ukuran gambar sesuai kebutuhan */
+  height: 70px;
+  margin-top: 20px;
+  margin-left: -10px;
 }
 
 .navigation ul li a .icon ion-icon {
@@ -297,9 +303,10 @@ button:hover {
 .navigation ul li a .title {
   position: relative;
   display: block;
-  padding: 0 10px;
+  padding: 0 8px;
   height: 40px;
-  line-height: 60px;
+  font-size: 15px;
+  line-height: 65px;
   text-align: start;
   white-space: nowrap;
   color: #222;
@@ -320,11 +327,11 @@ button:hover {
   content: "";
   position: absolute;
   right: 0;
-  top: -50px;
-  width: 50px;
-  height: 50px;
+  top: -60px;
+  width: 60px;
+  height: 60px;
   background-color: transparent;
-  border-radius: 50%;
+  border-radius: 60%;
   box-shadow: 35px 35px 0 10px var(--white);
   pointer-events: none;
 }
@@ -337,21 +344,15 @@ button:hover {
 .navigation ul .dropdown.active.clicked a::after {
   content: "";
   position: absolute;
-  right: 0;
+  right:  0;
   bottom: -50px;
   width: 50px;
   height: 50px;
   background-color: transparent;
-  border-radius: 50%;
+  border-radius: 60%;
   box-shadow: 35px -35px 0 10px var(--white);
   pointer-events: none;
 }
-
-
-
-
-
-
 
 
 /*===========================Dropdownlist========================== */
@@ -366,19 +367,16 @@ button:hover {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  left: 77%; /* Pindahkan ke sebelah kanan elemen induk */
-  top: 0; /* Atur posisi vertikal ke tepi atas elemen induk */
-  border-radius: 4px; /* Beri radius */
-
-  /* Sembunyikan elemen direntang waktu */
+  left: 0; /* Mengubah left menjadi 0 untuk posisi relatif terhadap elemen dropdown */
+  top: 100%; /* Mengubah top menjadi 100% untuk posisi di bawah elemen dropdown */
+  border-radius: 4px;
   visibility: hidden;
   opacity: 0;
-  transform: translateY(-100%);
-  transition: visibility 0.5s, opacity 0.5s, transform 0.5s;
+  transform: translateY(-10px); /* Mengubah translateY menjadi -10px untuk menghindari efek transisi yang tidak diinginkan */
+  transition: visibility 0.3s, opacity 0.3s, transform 0.3s; /* Mengurangi durasi transisi menjadi 0.3s */
 }
 
 .navigation .dropdown:hover .dropdown-content {
-  /* Tampilkan elemen saat pengguna mengarahkan kursor ke dropdown */
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
@@ -395,15 +393,13 @@ button:hover {
   display: block;
   text-align: left;
   white-space: nowrap;
-  border-radius: 4px; /* Beri radius pada item saat di-hover */
-
-  /* Tambahan styling saat hover */
-  transition: background-color 0.5s, color 0.5s;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s; /* Mengurangi durasi transisi menjadi 0.3s */
 }
 
 .dropdown-content a:hover {
   background-color: #f1f1f1;
-  border-radius: 4px; /* Beri radius pada item saat di-hover */
+  border-radius: 4px;
 }
 
 .navigation .dropdown .dropdown-content a::before,

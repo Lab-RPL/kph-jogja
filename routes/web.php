@@ -5,7 +5,6 @@ use App\Http\Controllers\bdhController;
 use App\Http\Controllers\rphController;
 use App\Http\Controllers\inventarisController;
 use App\Http\Controllers\petakController;
-use App\Models\rph;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +26,6 @@ Route::get('/logout',[$auth,'logout']);
 
 
 // DATA UTAMA
-
 Route::get('/data-utama', [inventarisController::class,'index']);
 Route::get('/data-result', function() {
     return view('data-utama.inventarisResult');
@@ -38,7 +36,6 @@ Route::get('/data-option', function() {
 
 
 // BDH
-
 Route::get('/data-bdh', [bdhController::class,'index']);
 Route::post('/data-bdh', [bdhController::class, 'store'])->name('bdh.store');
 Route::get('/tambah-bdh', [bdhController::class,'create']);
@@ -62,31 +59,31 @@ Route::put('/rph/{id}', [RphController::class, 'update'])->name('rph.update');
 // Route::get('/balek/{id_bdh}', [rphController::class, 'kembali'])->name('rph.kembali');
 Route::get('/rph{id_bdh}',[rphController::class,'destroy'])->name('rph.destroy');
 
-// PETAK
 
+// PETAK
 Route::get('/petak/{id_rph}', [PetakController::class, 'index'])->name('petak.index');
 Route::get('/tambah-petak', [petakController::class, 'create'])->name('petak.create');
 Route::post('/petak', [petakController::class, 'store'])->name('petak.store');
 Route::get('/petak-read', [petakController::class, 'index2'])->name('petak.index2');
 
-// ADMIN
 
+// ADMIN
 Route::get('/user', function () {
     return view('admin.admin');
 });
 
-// PERIZINAN
 
+// PERIZINAN
 Route::get('/data-izin', function () {
-    return view('izin.perizinan');
+    return view('izin.izin');
 });
 
 Route::get('/tambah-izin', function (){
     return view('izin.tambah-izin');
 });
 
-// KERUSAKAN/KEHILANGAN
 
+// KERUSAKAN/KEHILANGAN
 Route::get('/data-rusak', function() {
     return view('rosak.rosak');
 });
@@ -94,35 +91,27 @@ Route::get('tambah-rosak', function(){
     return view('rosak.tambah-rosak');
 });
 
-// PNBP
 
+// Penerimaan Negera Bukan Pajak
 Route::get('/data-pnbp', function(){
-    return view('pnbp');
+    return view('pnbp.pnbp');
 });
 
-// HHBK
-
-Route::get('/data-hhbk', function(){
-    return view('hhbk');
-});
 
 //Potensi hasil hutan
 Route::get('/data-potensi', function(){
-    return view('potensihutan');
+    return view('potensi-hutan.potensi-hutan');
 });
+
 
 //Produksi hasil hutan
 Route::get('/data-produksi', function(){
-    return view('produksihutan');
+    return view('produksi-hutan.produksi-hutan');
 });
 
-//Penerima bukan pajak
-Route::get('/data-penerima', function(){
-    return view('penerima');
-});
 
 //Luas Hutan
 Route::get('/data-luas', function(){
-    return view('luashutan');
+    return view('luas-hutan.luas-hutan');
 });
 
