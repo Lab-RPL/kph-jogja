@@ -90,9 +90,18 @@
                         </tr>
                     </tbody>
                 </table>
+                @if (Session::has('pesan'))
+                    <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
+                @endif
+                {{-- {{ $data->links() }} --}}
                 <div style="display: flex; justify-content: space-between;">
                     <a class="btn btn-primary" style="color: white" href="/tambah-potensi">Tambah Data HHBK</a>
                 </div>
+                <script>
+                    setTimeout(function() {
+                        document.getElementById('pesan-sukses').style.display = 'none';
+                    }, 5000); // 5000 milidetik = 5 detik
+                </script>
             </form>
         </div>
     </div>
