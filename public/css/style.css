@@ -238,6 +238,7 @@ button:hover {
 
 .navigation::-webkit-scrollbar {
   width: 0.5px; /* Lebar scrollbar */
+  height: 2px;
 }
 
 .navigation::-webkit-scrollbar-thumb {
