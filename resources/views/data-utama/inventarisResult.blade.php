@@ -257,16 +257,7 @@
             font-size: 18px; 
             text-align: center;
         }
-        .scrollable-container {
-            max-height: 38rem;
-            overflow-y: scroll;
-            border: 3px solid #0CB166;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        .scrollable-container::-webkit-scrollbar {
-            display: none;
-        }
+        
         table {
             width: 100%;
             border-collapse: collapse;

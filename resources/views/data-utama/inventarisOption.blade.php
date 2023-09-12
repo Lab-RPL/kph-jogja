@@ -8,6 +8,7 @@
     <div class="garis">
         <div class="border-list scrollable-container" style="margin-top: 5%;">
             <h2 style="font-size: 20px; font-weight: bold; text-align: center;" class="mt-2">KESATUAN PENGELOLAAN HUTAN (KPH)</h2>
+
             <p style="font-size: 18px; text-align: center;">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta
             </p>
             <form>
@@ -259,21 +260,28 @@
     </div>
 
     <style>
+        .border-lists {
+            position: relative;
+            border: 3px solid #ccc;
+            border-radius: 20px;
+            padding: 60px;
+            max-width: 980px;
+            width: 100%; 
+            height: auto; /* Ubah ke height:auto agar form menyesuaikan tingginya */
+            max-height: 600px;
+            border-color: #0CB166;
+            overflow-y: scroll;
+            margin-bottom: 38px;
+            }
+        .border-lists:::-webkit-scrollbar{
+            background-color: red;
+        }
         pre{
             font-weight: bold; 
             font-size: 18px; 
             text-align: center;
         }
-        .scrollable-container {
-            max-height: 38rem;
-            overflow-y: scroll;
-            border: 3px solid #0CB166;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        .scrollable-container::-webkit-scrollbar {
-            display: none;
-        }
+       
         table {
             width: 100%;
             border-collapse: collapse;

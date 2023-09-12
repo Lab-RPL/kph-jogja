@@ -86,7 +86,7 @@ body {
   }
 
   .table th{
-    color: #fff;
+    color: var(--white);
     text-align: center;
   }
 
@@ -232,9 +232,22 @@ button:hover {
   background: var(--blue);
   border-left: -30px solid var(--blue);
   transition: 0.5s;
-  overflow: hidden;
+  overflow: auto;
   left: -10px;
 }
+
+.navigation::-webkit-scrollbar {
+  width: 0.5px; /* Lebar scrollbar */
+}
+
+.navigation::-webkit-scrollbar-thumb {
+  background-color: var(--white); /* Warna thumb scrollbar */
+}
+
+.navigation::-webkit-scrollbar-thumb .active {
+  background-color: var(--blue); /* Warna thumb scrollbar */
+}
+
 .navigation.active {
   width: 100px;
 }
@@ -356,6 +369,7 @@ button:hover {
 
 
 /*===========================Dropdownlist========================== */
+
 .dropdown-content {
   position: absolute;
   background-color: var(--blue);
@@ -402,11 +416,16 @@ button:hover {
   border-radius: 4px;
 }
 
+.rotate-90deg {
+  transform: rotate(90deg);
+  transition: transform 0.3s; /* Animasi selama 0.3 detik */
+}
+
+
 .navigation .dropdown .dropdown-content a::before,
 .navigation .dropdown .dropdown-content a::after {
   display: none;
-}
-
+} 
 
 
 
