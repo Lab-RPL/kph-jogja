@@ -119,3 +119,8 @@ Route::get('/data-luas', function(){
     return view('luas-hutan.luas-hutan');
 });
 
+//Dashboard
+Route::get('/dashboard', function(){
+    return view('dashboard.dashboard');
+});
+
