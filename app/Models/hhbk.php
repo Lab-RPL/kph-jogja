@@ -11,5 +11,5 @@ class hhbk extends Model
 
     protected $table = 'hhbk';
     protected $primaryKey = 'id_hhbk';
-    protected $fillable = ['idhh', 'nama_wisata', 'lokasi_wisata', 'atraksi_wisata'];
+    protected $fillable = ['id_hhbk', 'nama_wisata', 'lokasi_wisata', 'atraksi_wisata'];
 }
