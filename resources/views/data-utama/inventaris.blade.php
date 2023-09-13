@@ -70,7 +70,7 @@
                         <td><div class="txt"></div>65</td>
                         <td><div class="txt"></div>105</td>      
                         <td>
-                            <div style="display: flex; justify-content: flex-end;">
+                            <div style="display: flex;" class="d-flex justify-content-center">
                                 <a class="btn btn-primary" href="/data-result">Detail</a>
                             </div>
                         </td>
