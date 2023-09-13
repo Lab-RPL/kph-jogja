@@ -15,14 +15,14 @@ class potensiController extends Controller
             return redirect('/');
         }
 
-        $title = "HHBK";
         $data = hhbk::where('IsDelete',0)->paginate(5);
-        return view('potensi-hutan.potensi-hutan', ['data' => $data, 'title' => $title]);
+        return view("potensi-hutan.potensi-hutan",['data'=>$data]);
     }
 
     public function create()
     {
-        return view('potensi-hutan.potensi-hutan');
+        
+        return view('potensi-hutan.tambah-potensi-hutan');
     }
 
     public function store(Request $request)
@@ -43,6 +43,29 @@ class potensiController extends Controller
         $hhbk_entry->IsDelete = 1;
         $hhbk_entry->save();
 
-        return redirect('/data-potensi')->with('pesan', 'Data HHBK berhasil Dihapus');
+        return redirect()->back()->with('pesan', 'Data HHBK berhasil Dihapus');
+    }
+
+    public function edit($id)
+    {
+        $hhbk = hhbk::where('id_hhbk', $id)->first();
+        return view('potensi-hutan.edit-potensi-hutan', ['hhbk' => $hhbk]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'id_hhbk'    => 'required',
+            'nama_wisata'  => 'required',
+            'lokasi_wisata'=> 'required',
+            'atraksi_wisata'  => 'required'
+        ]);
+        
+        $hhbk = hhbk::where('id_hhbk', $id)->first();
+        $hhbk->nama_wisata = $request->nama_wisata;
+        $hhbk->lokasi_wisata = $request->lokasi_wisata;
+        $hhbk->atraksi_wisata = $request->atraksi_wisata;
+        $hhbk->save();
+        return redirect('/data-potensi')->with('pesan', 'Data HHBK Berhasil Diperbaharui');
     }
 }
