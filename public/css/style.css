@@ -287,9 +287,16 @@ button:hover {
   color: #ddd;
 } */
 
-.icon-right {
-  margin-left: 15px;
+.rotate-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  margin-bottom: -3px
 }
+
+.rotate-icon.rotated {
+  transform: rotate(90deg);
+}
+
 
 .navigation ul li a .icon {
   position: relative;
@@ -382,19 +389,13 @@ button:hover {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  left: 0; /* Mengubah left menjadi 0 untuk posisi relatif terhadap elemen dropdown */
-  top: 100%; /* Mengubah top menjadi 100% untuk posisi di bawah elemen dropdown */
+  left: 235px; /* Mengubah left menjadi 0 untuk posisi relatif terhadap elemen dropdown */
+  top: 40%; /* Mengubah top menjadi 100% untuk posisi di bawah elemen dropdown */
   border-radius: 4px;
   visibility: hidden;
   opacity: 0;
   transform: translateY(-10px); /* Mengubah translateY menjadi -10px untuk menghindari efek transisi yang tidak diinginkan */
   transition: visibility 0.3s, opacity 0.3s, transform 0.3s; /* Mengurangi durasi transisi menjadi 0.3s */
-}
-
-.navigation .dropdown:hover .dropdown-content {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .dropdown-content li {

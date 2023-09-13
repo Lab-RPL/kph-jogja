@@ -28,15 +28,13 @@
                 </a>
             </li>
 
-
-
             <li class="nav-item dropdown">
                 <a href="/data-bdh">
                     <span class="icon">
                         <i class="fas fa-tree fa-2x"></i>
                     </span>
                     <span class="title">Luas Hutan Per-BDH 
-                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                        <ion-icon name="chevron-forward-outline" id="dropdown-icon" class="rotate-icon"></ion-icon>
                     </span>
                 </a>
                 <div class="dropdown-content" id="myDropdown">
@@ -119,10 +117,35 @@
             </div>
 
         </div>
+
+        <script>
+            document.getElementById("dropdown-icon").addEventListener("click", function() {
+              var dropdownContent = document.getElementById("myDropdown");
+              if (dropdownContent.style.visibility === "hidden" || dropdownContent.style.visibility === "") {
+                dropdownContent.style.visibility = "visible";
+                dropdownContent.style.opacity = "1";
+                dropdownContent.style.transform = "translateY(0)";
+              } else {
+                dropdownContent.style.visibility = "hidden";
+                dropdownContent.style.opacity = "0";
+                dropdownContent.style.transform = "translateY(-10px)";
+              }
+            });
+          </script>
         
         <script>
             // Fungsi yang menetapkan kelas 'active' pada elemen navigasi yang diklik dan menghapusnya dari yang lain
             function setActiveNavItem(event) {
+            const clickedElement = event.target; // Dapatkan elemen yang diklik
+
+            // Cek apakah elemen yang diklik adalah ion-icon
+            const isIonIcon = clickedElement.tagName.toLowerCase() === 'ion-icon';
+
+            // Jika elemen yang diklik adalah ion-icon, mencegah tindakan default
+            if (isIonIcon) {
+            event.preventDefault();
+            clickedElement.classList.toggle('rotated');
+            }
                 // Dapatkan semua elemen 'nav-item'
                 const navItems = document.querySelectorAll('.navigation ul li.nav-item');
 
