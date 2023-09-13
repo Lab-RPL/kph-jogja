@@ -49,7 +49,7 @@ class rphController extends Controller
         if (!$req->session()->has('user_id')) {
             return redirect('/');
         }
-        $data = rph::where('IsDelete',0)->paginate(5);
+        $data = rph::where('IsDelete',0)->paginate(10);
         return view('rph.ul-rph', ['data' => $data]);
     }
 
