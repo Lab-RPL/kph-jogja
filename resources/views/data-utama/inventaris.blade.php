@@ -43,6 +43,9 @@
                             </th>
                         </tr>
                         <style>
+                            table{
+                                border-radius: 200px;
+                            }
                             th {
                                 background-color: #C9EFBC
                             }
@@ -70,7 +73,7 @@
                         <td><div class="txt"></div>65</td>
                         <td><div class="txt"></div>105</td>      
                         <td>
-                            <div style="display: flex;" class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-center">
                                 <a class="btn btn-primary" href="/data-result">Detail</a>
                             </div>
                         </td>

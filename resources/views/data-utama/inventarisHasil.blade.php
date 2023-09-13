@@ -21,54 +21,48 @@
                             <tr>
                                 <td width="300px">Nomor</td>
                                 <td><span>:</span>
-                                
+                                43221
                                 </td>
                             </tr>
                             <tr>
                                 <td >Tanggal</td>
                                 <td><span>:</span>
-
+                                2023-07-25
                                 </td>
                             </tr>
                             <tr>
                                 <td>KPH</td>
                                 <td><span>:</span>
-                            
+                                1940348730924
                                 </td>
                             </tr>
                             <tr>
                                 <td>BDH</td>
                                 <td><span>:</span>
-                            
+                                938949829839
                                 </td>
                             </tr>
                             <tr>
                                 <td>RPH</td>
                                 <td><span>:</span>
-                            
+                                872374923897
                                 </td>
                             </tr>
                             <tr>
                                 <td>Petak</td>
                                 <td><span>:</span>
-                            
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Nomor PU (banyak)</td>
-                                <td><span>:</span>
-                            
+                                7
                                 </td>
                             </tr>
                             <tr>
                                 <td rowspan="2">Koordinat PU</td>
                                 <td><span>X :</span>
-                            
+                                1109208913213
                                 </td>
                             </tr>
                             <tr>
                                 <td><span>Y :</span>
-                            
+                                77627698312
                                 </td>
                             </tr>
                             <tr>
@@ -79,25 +73,25 @@
                             <tr>
                                 <td>Jenis Tanaman</td>
                                 <td><span>:</span>
-                            
+                                Akasisa dan Raflesia Arnoldi
                                 </td>
                             </tr>
                             <tr>
                                 <td>Tanaman Sela</td>
                                 <td><span>:</span>
-                            
+                                Bunga 0lmm423
                                 </td>
                             </tr>
                             <tr>
                                 <td>Tahun Tanam</td>
                                 <td><span>:</span>
-                            
+                                2023-07-25
                                 </td>
                             </tr>
                             <tr>
                                 <td>Jarak Tanaman Awal</td>
                                 <td><span>:</span>
-                            
+                                43211
                                 </td>
                             </tr>
                             <tr>
@@ -108,25 +102,25 @@
                             <tr>
                                 <td>Umur</td>
                                 <td><span>:</span>
-                            
+                                17 Tahun
                                 </td>
                             </tr>
                             <tr>
                                 <td>Keadaan Kesehatan</td>
                                 <td><span>:</span>
-                            
+                                Sedang
                                 </td>
                             </tr>
                             <tr>
                                 <td>Kerataan</td>
                                 <td><span>:</span>
-                            
+                                Baik
                                 </td>
                             </tr>
                             <tr>
                                 <td>Kemurnian</td>
                                 <td><span>:</span>
-                            
+                                Rata
                                 </td>
                             </tr>
 
@@ -138,19 +132,19 @@
                             <tr>
                                 <td>Bentuk Lapangan </td>
                                 <td><span>:</span>
-                            
+                                Lereng
                                 </td>
                             </tr>
                             <tr>
                                 <td>Derajat Lereng </td>
                                 <td><span>:</span>
-                            
+                                90 derajat rata
                                 </td>
                             </tr>
                             <tr>
                                 <td>Kerataan </td>
                                 <td><span>:</span>
-                            
+                                Berombak
                                 </td>
                             </tr>
                             <tr>
@@ -159,13 +153,13 @@
                             <tr>
                                 <td>Jenis Tanah</td>
                                 <td><span>:</span>
-                            
+                                Latosol
                                 </td>
                             </tr>
                             <tr>
                                 <td>Kedalaman </td>
                                 <td><span>:</span>
-                            
+                                200m agak dalam
                                 </td>                              
                             </tr>
                             <tr>
@@ -174,13 +168,13 @@
                             <tr>
                                 <td>Jenis </td>
                                 <td><span>:</span>
-                            
+                                Paku
                                 </td>
                             </tr>
                             <tr>
                                 <td>Kerapatan</td>
                                 <td><span>:</span>
-                            
+                                Rapat
                                 </td>   
                             </tr>
                             <tr>
@@ -191,19 +185,19 @@
                             <tr>
                                 <td>Tipe Penggunaan Lahan</td>
                                 <td><span>:</span>
-                            
+                                Persediaan
                                 </td>
                             </tr>
                             <tr>
                                 <td>Erosi</td>
                                 <td><span>:</span>
-                            
+                                Tidak
                                 </td>
                             </tr>
                             <tr>
                                 <td>Ketinggian Tempat</td>
                                 <td><span>:</span>
-                            
+                                20m
                                 </td>
                             </tr>
                             <tr>
@@ -214,25 +208,25 @@
                             <tr>
                                 <td>Diameter</td>
                                 <td><span>:</span>
-                            
+                                300
                                 </td>
                             </tr>
                             <tr>
                                 <td>Luas Bidang Dasar</td>
                                 <td><span>:</span>
-                            
+                                m
                                 </td>
                             </tr>
                             <tr>
                                 <td>Peninggi</td>
                                 <td><span>:</span>
-                            
+                                -
                                 </td>
                             </tr>
                             <tr>
                                 <td>Temuan Lapangan Lain</td>
                                 <td><span>:</span>
-                            
+                                -
                                 </td>
                             </tr>
                             <tr>

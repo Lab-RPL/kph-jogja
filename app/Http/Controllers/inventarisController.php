@@ -27,7 +27,7 @@ class inventarisController extends Controller
     }
 
     public function create(){
-        return view('data-utama.inventarisRead');
+        return view('data-utama.inventarisStore');
     }
 
     public function store(Request $request)

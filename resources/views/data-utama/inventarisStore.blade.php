@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <div class="garis">
-        <div class="border-list scrollable-container" style="margin-top: 5%;">
+        <div class="border-lists scrollable-container" style="margin-top: 5%;">
             <h2 style="font-size: 20px; font-weight: bold; text-align: center;" class="mt-2">KESATUAN PENGELOLAAN HUTAN (KPH)</h2>
 
             <p style="font-size: 18px; text-align: center;">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta
@@ -245,7 +245,7 @@
                             </tr>
                             <tr>
                                 <td><a class="btn btn-warning" style="color: white; float: left;" href="/data-utama">Kembali</a></td>
-                                <td><a class="btn btn-primary" style="color: white; float: right;" href="#">Lanjutkan</a></td>
+                                <td><a class="btn btn-primary" style="color: white; float: right;" href="/data-result">Lanjutkan</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -267,15 +267,12 @@
             padding: 60px;
             max-width: 980px;
             width: 100%; 
-            height: auto; /* Ubah ke height:auto agar form menyesuaikan tingginya */
-            max-height: 600px;
+            height: auto; 
+            max-height: 550px;
             border-color: #0CB166;
             overflow-y: scroll;
             margin-bottom: 38px;
             }
-        .border-lists:::-webkit-scrollbar{
-            background-color: red;
-        }
         pre{
             font-weight: bold; 
             font-size: 18px; 
