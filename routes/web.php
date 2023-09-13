@@ -5,6 +5,7 @@ use App\Http\Controllers\bdhController;
 use App\Http\Controllers\rphController;
 use App\Http\Controllers\inventarisController;
 use App\Http\Controllers\petakController;
+use App\Http\Controllers\potensiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -67,6 +68,15 @@ Route::put('/petak/{id}', [petakController::class, 'update'])->name('petak.updat
 Route::get('/petak{id_rph}', [petakController::class, 'destroy'])->name('petak.destroy');
 
 
+//Potensi hasil hutan
+Route::get('/data-potensi',[potensiController::class, 'index'])->name('potensi.index');
+Route::get('/tambah-potensi',[potensiController::class, 'create'])->name('potensi.create');
+Route::post('/data-potensi',[potensiController::class, 'store'])->name('potensi.store');
+Route::get('/data-potensi/{id_hhbk}/edit',[potensiController::class, 'edit'])->name('potensi.edit');
+Route::put('/data-potensi/{id}',[potensiController::class, 'update'])->name('potensi.update');
+Route::get('/data-potensi/{id_hhbk}',[potensiController::class, 'destroy'])->name('potensi.destroy');
+
+
 // ADMIN
 Route::get('/user', function () {
     return view('admin.admin');
@@ -99,12 +109,6 @@ Route::get('/data-pnbp', function(){
 
 Route::get('/tambah-pnbp', function(){
     return view('pnbp.tambah-pnbp');
-});
-
-
-//Potensi hasil hutan
-Route::get('/data-potensi', function(){
-    return view('potensi-hutan.potensi-hutan');
 });
 
 
