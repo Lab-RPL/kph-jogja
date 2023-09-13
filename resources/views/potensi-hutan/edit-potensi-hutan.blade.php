@@ -7,25 +7,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <form action="{{ route('') }}" method="POST">
+    <form action="{{ route('potensi.update', ['id' => $hhbk->id_hhbk]) }}" method="POST">
         @csrf
         @method('put')
         <div class="garis">
             <div class="border-list">
                 <h2>Hasil Hutan Bukan Kayu</h2>
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
+                <input type="hidden" name="id_hhbk" value="{{ $hhbk->id_hhbk }}">
                 <table id="tabelData">
                     <tr>
                         <td><label for="nama-wis">Nama Wisata</label></td>
-                        <td><input type="text" id="nama-wis" name="nama-wis" value="{{ }}"></td>
+                        <td><input type="text" id="nama-wis" name="nama_wisata" value="{{ $hhbk->nama_wisata }}"></td>
                     </tr>
                     <tr>
                         <td><label for="lokasi-wis">Lokasi Wisata</label></td>
-                        <td><input type="text" id="lokasi-wis" name="lokasi_wisata" value="{{ }}"></td>
+                        <td><input type="text" id="lokasi-wis" name="lokasi_wisata" value="{{ $hhbk->lokasi_wisata }}"></td>
                     </tr>
                     <tr>
                         <td><label for="atraksi-wis">Atraksi Wisata</label></td>
-                        <td><input type="text" id="atraksi-wis" name="atraksi_wisata" value="{{ }}"></td>
+                        <td><input type="text" id="atraksi-wis" name="atraksi_wisata" value="{{ $hhbk->atraksi_wisata }}"></td>
                     </tr>
                 </table>
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">
