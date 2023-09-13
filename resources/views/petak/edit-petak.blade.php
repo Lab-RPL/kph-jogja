@@ -17,14 +17,20 @@
                     <tr>
                         <td><label for="tambah-rph">NAMA RPH</label></td>
                         <td>
-                            <select name="id_rph" id="tambah-rph" required class="form-select">
+                            @foreach ($rphs as $rph)
+                            @if ($rph->IsDelete == 0 && $rph->id_rph == $petak->id_rph)
+                                <input value=" {{$rph->nama_rph }}" id="tambah-rph" type="text" name="nama_rph" disabled>
+                                @break
+                            @endif
+                            @endforeach
+                            {{-- <select name="id_rph" id="tambah-rph" required class="form-select">
                                 <option value="">Pilih RPH</option>
                                 @foreach ($rphs as $rph)
                                     @if ($rph->IsDelete == 0)
                                         <option value="{{ $rph->id_rph }}">{{ $rph->nama_rph }}</option>
                                     @endif
                                 @endforeach
-                            </select>
+                            </select> --}}
                         </td>
                     </tr>
                     <tr>

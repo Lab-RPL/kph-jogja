@@ -23,7 +23,7 @@
                                 <input value=" {{$bdh->nama_bdh }}" id="tambah-rph" type="text" name="nama_rph" disabled>
                                 @break
                             @endif
-                        @endforeach
+                            @endforeach
                         
 
                             {{-- @foreach ($bdhs as $bdh)
