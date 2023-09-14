@@ -25,7 +25,7 @@
                         <ion-icon name="stats-chart-outline"></ion-icon>
                     </span>
                     <span class="title">Data Inventaris</span>
-                </a>
+                </a> 
             </li>
 
             <li class="nav-item dropdown">
@@ -170,6 +170,7 @@
                         //DATA-UTAMA
                         (navLink.pathname === '/data-utama' && currentPathname ==='/data-option') ||
                         (navLink.pathname === '/data-utama' && currentPathname ==='/data-result') ||
+                        (navLink.pathname === '/data-utama' && currentPathname ==='/edit-data') ||
                         //DATA-BDH
                         (navLink.pathname === '/data-bdh' && currentPathname ==='/tambah-bdh') ||
                         (navLink.pathname === '/data-bdh' && currentPathname === '/bdh-read') ||
@@ -182,7 +183,11 @@
                         (navLink.pathname === '/data-bdh' && currentPathname.startsWith('/data-bdh/') && currentPathname.endsWith('/edit')) ||
                         //DATA-IZIN
                         (navLink.pathname === '/data-izin' && currentPathname ==='/tambah-izin') || 
-                        (navLink.pathname === '/data-rusak' && currentPathname ==='/tambah-rosak') ){
+                        (navLink.pathname === '/data-rusak' && currentPathname ==='/tambah-rosak') ||
+                        //DATA-POTENSI
+                        (navLink.pathname === '/data-potensi' && currentPathname ==='/tambah-potensi') ||
+                        //DATA-PNPB
+                        (navLink.pathname === '/data-pnbp' && currentPathname ==='/tambah-pnbp') ){
                         navLink.parentElement.classList.add('active');
                         navLink.parentElement.classList.add('clicked');
                     } else {
