@@ -56,7 +56,8 @@
                                 <td>{{ $da->luas_ptk }} Ha</td>
                                 <td>{{ $da->potensi_ptk }}</td>
                                 <td class="center-align">
-                                    <a href="{{ route('petak.edit', $da->id_ptk) }}"class="btn btn-warning mb-1 m-l-1">Edit</a>
+                                    <a
+                                        href="{{ route('petak.edit', $da->id_ptk) }}"class="btn btn-warning mb-1 m-l-1">Edit</a>
                                     <a href="{{ route('petak.destroy', $da->id_ptk) }}" data-id="{{ $da->id_ptk }}"
                                         class="btn btn-danger mb-1 m-l-1">Hapus</a>
                                 </td>
@@ -66,8 +67,14 @@
                 </table>
                 {{ $data->links() }}
                 <div style="display: flex; justify-content: space-between;">
-                    <a class="btn btn-warning" style="color: white" href="/data-bdh">Kembali</a>
-                    <a class="btn btn-primary" style="color: white" href="/tambah-petak">Tambah Data</a>
+                    <a class="btn btn-warning" style="color: white" href="#" onclick="goBack();">Kembali</a>
+
+                    <script>
+                        function goBack() {
+                            window.history.back();
+                        }
+                    </script> <a class="btn btn-primary" style="color: white" href="/tambah-petak">Tambah
+                        Data</a>
                 </div>
             </form>
         </div>

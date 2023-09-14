@@ -18,12 +18,13 @@
                         <td><label for="tambah-rph">NAMA RPH</label></td>
                         <td>
                             @foreach ($rphs as $rph)
-                            @if ($rph->IsDelete == 0 && $rph->id_rph == $petak->id_rph)
-                                <input value=" {{$rph->nama_rph }}" id="tambah-rph" type="text" name="nama_rph" disabled>
+                                @if ($rph->IsDelete == 0 && $rph->id_rph == $petak->id_rph)
+                                    <input value=" {{ $rph->nama_rph }}" id="tambah-rph" type="text" name="nama_rph"
+                                        disabled>
                                 @break
                             @endif
-                            @endforeach
-                            {{-- <select name="id_rph" id="tambah-rph" required class="form-select">
+                        @endforeach
+                        {{-- <select name="id_rph" id="tambah-rph" required class="form-select">
                                 <option value="">Pilih RPH</option>
                                 @foreach ($rphs as $rph)
                                     @if ($rph->IsDelete == 0)
@@ -31,26 +32,34 @@
                                     @endif
                                 @endforeach
                             </select> --}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label for="nomor-ptk">Nomor Petak</label></td>
-                        <td><input type="text" id="nomor-ptk" name="nomor_ptk" value="{{ $petak->nomor_ptk }}"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="luas-ptk">Luas Petak</label></td>
-                        <td><input type="text" id="luas-ptk" name="luas_ptk" value="{{ $petak->luas_ptk }}"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="potensi-ptk">Potensi Petak</label></td>
-                        <td><input type="text" id="potensi-ptk" name="potensi_ptk" value="{{ $petak->potensi_ptk }}"></td>
-                    </tr>
-                </table>
-                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <a class="btn btn-warning" style="color: white" href="/data-bdh">Kembali</a>
-                    <button class="btn btn-primary" style="color: white" type="submit">Edit Data</button>
-                </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="nomor-ptk">Nomor Petak</label></td>
+                    <td><input type="text" id="nomor-ptk" name="nomor_ptk" value="{{ $petak->nomor_ptk }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="luas-ptk">Luas Petak</label></td>
+                    <td><input type="text" id="luas-ptk" name="luas_ptk" value="{{ $petak->luas_ptk }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="potensi-ptk">Potensi Petak</label></td>
+                    <td><input type="text" id="potensi-ptk" name="potensi_ptk" value="{{ $petak->potensi_ptk }}">
+                    </td>
+                </tr>
+            </table>
+            <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+                <a class="btn btn-warning" style="color: white" href="/data-bdh" onclick="return goBack();">Kembali</a>
+
+                <script>
+                    function goBack() {
+                        window.history.back();
+                        return false;
+                    }
+                </script>
+                <button class="btn btn-primary" style="color: white" type="submit">Edit Data</button>
             </div>
         </div>
-    </form>
+    </div>
+</form>
 @endsection
