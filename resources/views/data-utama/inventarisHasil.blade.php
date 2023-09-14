@@ -94,36 +94,49 @@
                                 43211
                                 </td>
                             </tr>
-                            <tr>
+                            {{-- <tr>
                                 <td colspan="2">
                                     <pre>DATA TEGAKAN</pre>
                                 </td>
-                            </tr>
+                            </tr> --}}
                             <tr>
-                                <td>Umur</td>
-                                <td><span>:</span>
-                                17 Tahun
+                                <td colspan="2" class="border-list">
+                                    <pre>DATA TEGAKAN</pre>
+                                    <table id="tabelData" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Jenis</th>
+                                                <th>No. Pohon</th>
+                                                <th>Diameter</th>
+                                                <th>Tinggi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Akasia</td>
+                                                <td>25</td>
+                                                <td>5 m</td>
+                                                <td>10 m</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Akasia</td>
+                                                <td>25</td>
+                                                <td>5 m</td>
+                                                <td>10 m</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Akasia</td>
+                                                <td>25</td>
+                                                <td>5 m</td>
+                                                <td>10 m</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div style="display: flex; justify-content: flex-end">
+                                        <a class="btn btn-primary" style="color: white" href="/tambah-petak">TambahData</a>
+                                    </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Keadaan Kesehatan</td>
-                                <td><span>:</span>
-                                Sedang
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Kerataan</td>
-                                <td><span>:</span>
-                                Baik
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Kemurnian</td>
-                                <td><span>:</span>
-                                Rata
-                                </td>
-                            </tr>
-
                             <tr>
                                 <td colspan="2">
                                     <pre style="font-weight: bold; font-size: 18px; text-align: center;">DATA LAPANGAN</pre>
