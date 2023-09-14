@@ -4,6 +4,7 @@ use App\Http\Controllers\auth;
 use App\Http\Controllers\bdhController;
 use App\Http\Controllers\rphController;
 use App\Http\Controllers\inventarisController;
+use App\Http\Controllers\izinController;
 use App\Http\Controllers\petakController;
 use App\Http\Controllers\potensiController;
 use Illuminate\Support\Facades\Route;
@@ -84,13 +85,12 @@ Route::get('/user', function () {
 
 
 // PERIZINAN
-Route::get('/data-izin', function () {
-    return view('izin.izin');
-});
-
-Route::get('/tambah-izin', function (){
-    return view('izin.tambah-izin');
-});
+Route::get('/data-izin',[izinController::class, 'index'])->name('izin.index');
+Route::post('/data-izin',[izinController::class, 'store'])->name('izin.store');
+Route::get('tambah-izin',[izinController::class, 'create'])->name('izin.create');
+Route::get('/data-izin/{id_izin}/edit',[izinController::class, 'edit'])->name('izin.edit');
+Route::put('/data-izin/{id}',[izinController::class, 'update'])->name('izin.update');
+Route::get('/data-izin/{id_izin}',[izinController::class, 'destroy'])->name('izin.destroy');
 
 
 // KERUSAKAN/KEHILANGAN
