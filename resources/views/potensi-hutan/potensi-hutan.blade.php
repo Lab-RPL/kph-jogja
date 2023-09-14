@@ -94,7 +94,7 @@
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
                 {{ $data->links() }}
-                <div style="display: flex; justify-content: space-between;">
+                <div style="display: flex; justify-content: flex-end;" class="nav-item">
                     <a class="btn btn-primary" style="color: white" href="/tambah-potensi">Tambah Data HHBK</a>
                 </div>
                 <script>
