@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <form action="" method="post">
+    <form action="{{ route('izin.store') }}" method="post">
         @csrf
         <div class="garis">
             <div class="border-list">
@@ -15,16 +15,16 @@
 
                 <table id="tabelData">
                     <tr>
-                        <td><label for="tambah-bdh">Nama Kelompok Tani Hutan</label></td>
-                        <td><input type="text" id="tambah-rph" name="nama_bdh" required></td>
+                        <td><label for="nama_kel">Nama Kelompok Tani Hutan</label></td>
+                        <td><input type="text" id="nama_kel" name="nama_kelompok" required></td>
                     </tr>
                     <tr>
-                        <td><label for="tambah-bdh">Nomor SK</label></td>
-                        <td><input type="text" id="tambah-rph" name="kepala_bdh" required></td>
+                        <td><label for="nomor-sk">Nomor SK</label></td>
+                        <td><input type="text" id="nomor-sk" name="no_SK" required></td>
                     </tr>
                     <tr>
                         <td><label for="nomor-ptk">Nomor Petak</label></td>
-                        <td><input type="text" id="nomor-ptk" name="nomor_ptk" required></td>
+                        <td><input type="text" id="nomor-ptk" name="petak_izin" required></td>
                     </tr>
                     <tr>
                         <td><label for="luas-izin">Luas Izin</label></td>
