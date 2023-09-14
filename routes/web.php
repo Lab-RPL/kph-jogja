@@ -111,6 +111,10 @@ Route::get('/tambah-pnbp', function(){
     return view('pnbp.tambah-pnbp');
 });
 
+Route::get('/edit-pnbp', function(){
+    return view('pnbp.edit-pnbp');
+});
+
 
 //Produksi hasil hutan
 Route::get('/data-produksi', function(){

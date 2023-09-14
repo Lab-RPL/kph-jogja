@@ -24,8 +24,8 @@
                         <td>xxxx</td>
                         <td>xxxx</td>
                         <td  style="justify-content: space-between; align-items:center">
+                            <a href="/edit-pnbp" class="btn btn-warning mb-1 m-l-2">Edit</a>
                             <a href="" class="btn btn-danger mb-1 m-l-1">Hapus</a>
-                            <a href="" class="btn btn-warning mb-1 m-l-2">Edit</a>
                         </td>
                     </tbody>
                 </table>
