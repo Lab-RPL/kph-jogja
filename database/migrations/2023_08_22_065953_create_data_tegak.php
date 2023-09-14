@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('jenis_tgk');
             $table->decimal('diameter');
             $table->decimal('tinggi');
+            $table->boolean('IsDelete')->default(0);
             $table->timestamps();
         });
     }

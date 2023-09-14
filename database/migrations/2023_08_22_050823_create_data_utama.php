@@ -38,7 +38,7 @@ return new class extends Migration
             $table->string('penemuan');
             $table->string('erosi');
             $table->float('ketinggian_tempat');
-            
+            $table->boolean('IsDelete')->default(0);
         });
     }
 

@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('nama_kelompok');
             $table->integer('no_SK');
             $table->integer('petak_izin');
-            $table->decimal('luasan_izin');
+            $table->decimal('luas_izin');
+            $table->boolean('IsDelete')->default(0);
             $table->timestamps();
         });
     }

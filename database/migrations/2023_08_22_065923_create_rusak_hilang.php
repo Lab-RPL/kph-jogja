@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('no_PU');
             $table->decimal('diameter');
             $table->binary('foto');
+            $table->boolean('IsDelete')->default(0);
         });
     }
 
