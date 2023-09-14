@@ -42,15 +42,21 @@ class bdhController extends Controller
 
     public function store(Request $request)
     {
-
+        $request->validate([
+            'nama_bdh' => 'required',
+            'kepala_bdh' => 'required',
+            'luas_bdh' => 'required|numeric',
+        ]);
+    
         $bdh = new Bdh();
-
         $bdh->nama_bdh = $request->nama_bdh;
         $bdh->kepala_bdh = $request->kepala_bdh;
         $bdh->luas_bdh = $request->luas_bdh;
         $bdh->save();
+    
         return redirect('/data-bdh')->with('pesan', 'Data BDH Berhasil Disimpan');
     }
+    
 
     //     public function update(Request $request, $id)
     //     {
