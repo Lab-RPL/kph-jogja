@@ -23,7 +23,7 @@ class auth extends Controller
             if ($data->user_type == 'user') {
                 return redirect('/dashboard');
             } else {
-                return redirect('/');
+                return redirect('/admin');
             }
         } else {
             return redirect('/');

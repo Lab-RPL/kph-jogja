@@ -79,7 +79,7 @@ Route::get('/data-potensi/{id_hhbk}',[potensiController::class, 'destroy'])->nam
 
 
 // ADMIN
-Route::get('/user', function () {
+Route::get('/admin', function () {
     return view('admin.admin');
 });
 
