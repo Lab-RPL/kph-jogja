@@ -20,6 +20,7 @@ class auth extends Controller
     
         if ($data && Hash::check($req->pass, $data->password)) {
             $req->session()->put('user_id', $data->id);
+            $req->session()->put('user_type', $data->user_type); // Menyimpan user_type ke dalam session
             if ($data->user_type == 'user') {
                 return redirect('/dashboard');
             } else {

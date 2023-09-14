@@ -1,113 +1,143 @@
 <div class="container">
     <div class="navigation scrollable-container">
-        <ul>
-            <li>
-                <a href="#">
-                    <span class="icon">
-                        <img src="{{ asset('images/LogoKPH.png') }}" alt="Logo">
-                    </span>
-                    <span class="title">KPH Yogyakarta</span>
-                </a>
-            </li>
+            {{-- Hanya untuk user_type user --}}
+            @if(session('user_type') === 'user') 
+                {{-- Semua navigation item untuk user --}}
+                <ul>
+                    <li>
+                        <a href="/dashboard">
+                            <span class="icon">
+                                <img src="{{ asset('images/LogoKPH.png') }}" alt="Logo">
+                            </span>
+                            <span class="title">KPH Yogyakarta</span>
+                        </a>
+                    </li>
+        
+                    <li class="nav-item">
+                        <a href="/dashboard">
+                            <span class="icon">
+                                <ion-icon name="home-outline"></ion-icon>
+                            </span>
+                            <span class="title">Dashboard</span>
+                        </a>
+                    </li>
+        
+                    <li class="nav-item">
+                        <a href="/data-utama">
+                            <span class="icon">
+                                <ion-icon name="stats-chart-outline"></ion-icon>
+                            </span>
+                            <span class="title">Data Inventaris</span>
+                        </a> 
+                    </li>
+        
+                    <li class="nav-item dropdown">
+                        <a href="/data-bdh">
+                            <span class="icon">
+                                <i class="fas fa-tree fa-2x"></i>
+                            </span>
+                            <span class="title">Luas Hutan Per-BDH 
+                                <ion-icon name="chevron-forward-outline" id="dropdown-icon" class="rotate-icon"></ion-icon>
+                            </span>
+                        </a>
+                        <div class="dropdown-content" id="myDropdown">
+                            <a href="/bdh-read">BDH</a>
+                            <a href="/ul-rph">RPH</a>
+                            <a href="/petak-read">Petak</a>
+                        </div>
+                    </li>
+        
+                    <li class="nav-item">
+                        <a href="/data-izin">
+                            <span class="icon">
+                                <ion-icon name="shield-checkmark-outline"></ion-icon>
+                            </span>
+                            <span class="title">Perizinan Berusaha</span>
+                        </a>
+                    </li>
+        
+                    <li class="nav-item">
+                        <a href="/data-potensi">
+                            <span class="icon">
+                                <ion-icon name="leaf-outline"></ion-icon>
+                            </span>
+                            <span class="title">Potensi Hasil Hutan</span>
+                        </a>
+                    </li>
+        
+                    <li class="nav-item">
+                        <a href="/data-produksi">
+                            <span class="icon">
+                                <ion-icon name="settings-outline"></ion-icon>
+                            </span>
+                            <span class="title">Produksi Hasil Hutan</span>
+                        </a>
+                    </li>
+        
+                    <li class="nav-item">
+                        <a href="/data-pnbp">
+                            <span class="icon">
+                                <i class="fas fa-hand-holding-usd fa-2x"></i>
+                            </span>
+                            <span class="title">Penerimaan Negara Bukan Pajak</span>
+                        </a>
+                    </li>
+        
+                    <li class="nav-item">
+                        <a href="/data-rusak">
+                            <span class="icon">
+                                <i class="fas fa-heart-broken fa-lg"></i>
+                            </span>
+                            <span class="title">Kerusakan/Kehilangan</span>
+                        </a>
+                    </li>
+        
+                    <li class="nav-item">
+                        <a href="/data-luas">
+                            <span class="icon">
+                                <i class="fab fa-pagelines fa-2x"></i>
+                            </span>
+                            <span class="title">Luas Hutan</span>
+                        </a>
+                    </li>
+        
+                    <li class="nav-item">
+                        <a href="/logout">
+                            <span class="icon">
+                                <ion-icon name="log-out-outline"></ion-icon>
+                            </span>
+                            <span class="title">Sign Out</span>
+                        </a>
+                    </li>
+                    @endif
+                    
+                    {{-- Hanya untuk user_type admin --}}
+                    @if(session('user_type') === 'admin') 
+                    {{-- Semua navigation item untuk admin --}}
+                    <li class="nav-item">
+                        <a href="/admin">
+                            <span class="icon">
+                                <ion-icon name="log-out-outline"></ion-icon>
+                            </span>
+                            <span class="title">Tambah User</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/logout">
+                            <span class="icon">
+                                <ion-icon name="log-out-outline"></ion-icon>
+                            </span>
+                            <span class="title">Sign Out</span>
+                        </a>
+                    </li>
+                </ul>
+                
+            @endif
+        </div>
 
-            <li class="nav-item">
-                <a href="/dashboard">
-                    <span class="icon">
-                        <ion-icon name="home-outline"></ion-icon>
-                    </span>
-                    <span class="title">Dashboard</span>
-                </a>
-            </li>
 
-            <li class="nav-item">
-                <a href="/data-utama">
-                    <span class="icon">
-                        <ion-icon name="stats-chart-outline"></ion-icon>
-                    </span>
-                    <span class="title">Data Inventaris</span>
-                </a> 
-            </li>
 
-            <li class="nav-item dropdown">
-                <a href="/data-bdh">
-                    <span class="icon">
-                        <i class="fas fa-tree fa-2x"></i>
-                    </span>
-                    <span class="title">Luas Hutan Per-BDH 
-                        <ion-icon name="chevron-forward-outline" id="dropdown-icon" class="rotate-icon"></ion-icon>
-                    </span>
-                </a>
-                <div class="dropdown-content" id="myDropdown">
-                    <a href="/bdh-read">BDH</a>
-                    <a href="/ul-rph">RPH</a>
-                    <a href="/petak-read">Petak</a>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <a href="/data-izin">
-                    <span class="icon">
-                        <ion-icon name="shield-checkmark-outline"></ion-icon>
-                    </span>
-                    <span class="title">Perizinan Berusaha</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="/data-potensi">
-                    <span class="icon">
-                        <ion-icon name="leaf-outline"></ion-icon>
-                    </span>
-                    <span class="title">Potensi Hasil Hutan</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="/data-produksi">
-                    <span class="icon">
-                        <ion-icon name="settings-outline"></ion-icon>
-                    </span>
-                    <span class="title">Produksi Hasil Hutan</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="/data-pnbp">
-                    <span class="icon">
-                        <i class="fas fa-hand-holding-usd fa-2x"></i>
-                    </span>
-                    <span class="title">Penerimaan Negara Bukan Pajak</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="/data-rusak">
-                    <span class="icon">
-                        <i class="fas fa-heart-broken fa-lg"></i>
-                    </span>
-                    <span class="title">Kerusakan/Kehilangan</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="/data-luas">
-                    <span class="icon">
-                        <i class="fab fa-pagelines fa-2x"></i>
-                    </span>
-                    <span class="title">Luas Hutan</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="/logout">
-                    <span class="icon">
-                        <ion-icon name="log-out-outline"></ion-icon>
-                    </span>
-                    <span class="title">Sign Out</span>
-                </a>
-            </li>
-        </ul>
-    </div>
 
     <!-- ========================= Main ==================== -->
     <div class="main">
