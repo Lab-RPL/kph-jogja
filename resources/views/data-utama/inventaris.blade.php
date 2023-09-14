@@ -7,7 +7,7 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 
-    <div class="garis" style="margin-top: -5rem;">
+    <div class="garis">
         <div class="border-list">
             <h2 style="font-size: 20px; font-weight: bold;" class="mt-2">KESATUAN PENGELOLAAN HUTAN (KPH)</h2>
 
