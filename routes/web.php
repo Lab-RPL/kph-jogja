@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\adminController;
 use App\Http\Controllers\auth;
 use App\Http\Controllers\bdhController;
 use App\Http\Controllers\rphController;
@@ -79,9 +80,7 @@ Route::get('/data-potensi/{id_hhbk}',[potensiController::class, 'destroy'])->nam
 
 
 // ADMIN
-Route::get('/admin', function () {
-    return view('admin.admin');
-});
+Route::get('/admin',[adminController::class,'index']);
 
 
 // PERIZINAN
