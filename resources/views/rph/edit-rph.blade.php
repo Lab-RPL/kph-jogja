@@ -19,14 +19,15 @@
                         <td><label for="tambah-bdh">NAMA BDH</label></td>
                         <td>
                             @foreach ($bdhs as $bdh)
-                            @if ($bdh->IsDelete == 0 && $bdh->id_bdh == $rph->id_bdh)
-                                <input value=" {{$bdh->nama_bdh }}" id="tambah-rph" type="text" name="nama_rph" disabled>
+                                @if ($bdh->IsDelete == 0 && $bdh->id_bdh == $rph->id_bdh)
+                                    <input value=" {{ $bdh->nama_bdh }}" id="tambah-rph" type="text" name="nama_rph"
+                                        disabled>
                                 @break
                             @endif
-                            @endforeach
-                        
+                        @endforeach
 
-                            {{-- @foreach ($bdhs as $bdh)
+
+                        {{-- @foreach ($bdhs as $bdh)
                                     @if ($bdh->IsDelete == 0)
                                         <option value="{{ $bdh->id_bdh }}"
                                             {{ $bdh->id_bdh == $rph->id_bdh ? 'selected' : '' }} disabled>{{ $bdh->nama_bdh }}
@@ -34,26 +35,33 @@
                                     @endif
                                 @endforeach --}}
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label for="tambah-rph">Nama RPH</label></td>
-                        <td><input type="text" id="tambah-rph" name="nama_rph" value="{{ $rph->nama_rph }}"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="tambah-rph">Nama Kepala RPH</label></td>
-                        <td><input type="text" id="tambah-rph" name="kepala_rph" value="{{ $rph->kepala_rph }}"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="luas-rph">Luas RPH</label></td>
-                        <td><input type="text" id="luas-rph" name="luas_rph" value="{{ $rph->luas_rph }}"></td>
-                    </tr>
-                </table>
-                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <a class="btn btn-warning" style="color: white" href="/data-bdh">Kembali</a>
-                    <button class="btn btn-primary" style="color: white" type="submit">Edit Data</button>
-                </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="tambah-rph">Nama RPH</label></td>
+                    <td><input type="text" id="tambah-rph" name="nama_rph" value="{{ $rph->nama_rph }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="tambah-rph">Nama Kepala RPH</label></td>
+                    <td><input type="text" id="tambah-rph" name="kepala_rph" value="{{ $rph->kepala_rph }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="luas-rph">Luas RPH</label></td>
+                    <td><input type="text" id="luas-rph" name="luas_rph" value="{{ $rph->luas_rph }}"></td>
+                </tr>
+            </table>
+            <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+                <a class="btn btn-warning" style="color: white" href="/data-bdh" onclick="return goBack();">Kembali</a>
+
+                <script>
+                    function goBack() {
+                        window.history.back();
+                        return false;
+                    }
+                </script>
+                <button class="btn btn-primary" style="color: white" type="submit">Edit Data</button>
             </div>
         </div>
-    </form>
+    </div>
+</form>
 @endsection

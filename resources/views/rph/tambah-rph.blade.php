@@ -19,10 +19,9 @@
                             <select name="id_bdh" id="tambah-bdh" required class="form-select">
                                 <option value="">Pilih BDH</option>
                                 @foreach ($bdh as $bdh)
-                                @if ($bdh->IsDelete == 0)
-                                    
-                                <option value="{{ $bdh->id_bdh }}">{{ $bdh->nama_bdh }}</option>
-                                @endif
+                                    @if ($bdh->IsDelete == 0)
+                                        <option value="{{ $bdh->id_bdh }}">{{ $bdh->nama_bdh }}</option>
+                                    @endif
                                 @endforeach
                             </select>
                         </td>
@@ -41,7 +40,13 @@
                     </tr>
                 </table>
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <a class="btn btn-warning" style="color: white" href="/data-bdh">Kembali</a>
+                    <button onclick="goBack()" class="btn btn-warning" style="color: white">Kembali</button>
+
+                    <script>
+                        function goBack() {
+                            window.history.back();
+                        }
+                    </script>
                     <button class="btn btn-primary" style="color: white" type="submit">Tambah Data</button>
                 </div>
             </div>
