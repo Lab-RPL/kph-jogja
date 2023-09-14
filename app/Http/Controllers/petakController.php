@@ -35,7 +35,7 @@ class petakController extends Controller
     public function create()
     {
         $rph = rph::all();
-        return view('petak.tambah-petak')->with('rph', $rph);
+        return view('petak.tambah-petak')->with('rph', $rph) ;
     }
 
     public function store(Request $request)
@@ -103,9 +103,8 @@ class petakController extends Controller
             $petak->IsDelete = 1;
             $petak->save();
         }
-    
         // Redirect ke halaman sebelumnya atau halaman yang diinginkan
-        return redirect()->back()->with('pesan', 'RPH dan petak terkait dihapus');
+        return redirect()->back()->with('pesan', 'petak terkait dihapus');
     
     }
 }

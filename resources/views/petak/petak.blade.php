@@ -56,27 +56,40 @@
                                 <td>{{ $da->luas_ptk }} Ha</td>
                                 <td>{{ $da->potensi_ptk }}</td>
                                 <td class="center-align">
-                                    <a
-                                        href="{{ route('petak.edit', $da->id_ptk) }}"class="btn btn-warning mb-1 m-l-1">Edit</a>
+                                    
+                                    <a href="{{ route('petak.edit', $da->id_ptk) }}"class="btn btn-warning mb-1 m-l-1">Edit</a>
                                     <a href="{{ route('petak.destroy', $da->id_ptk) }}" data-id="{{ $da->id_ptk }}"
                                         class="btn btn-danger mb-1 m-l-1">Hapus</a>
+                                    
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
+                @if (Session::has('pesan'))
+                    <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
+                @endif
                 {{ $data->links() }}
                 <div style="display: flex; justify-content: space-between;">
                     <a class="btn btn-warning" style="color: white" href="#" onclick="goBack();">Kembali</a>
-
                     <script>
                         function goBack() {
                             window.history.back();
                         }
-                    </script> <a class="btn btn-primary" style="color: white" href="/tambah-petak">Tambah
-                        Data</a>
+                    </script> 
+                    <a class="btn btn-primary" style="color: white" href="/tambah-petak">TambahData</a>
                 </div>
             </form>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pesanSukses = document.getElementById('pesan-sukses');
+            if (pesanSukses) {
+                setTimeout(function() {
+                    pesanSukses.style.display = 'none';
+                }, 5000);
+            }
+        });
+    </script>
 @endsection
