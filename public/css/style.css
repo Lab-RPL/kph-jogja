@@ -134,6 +134,7 @@
 /* ================== Order Details List ============== */
 .details {
     position: relative;
+    margin-bottom: 10px;
     width: 100%;
     padding: 20px;
     display: grid;
@@ -346,6 +347,7 @@ body {
     overflow-y: scroll;
     -ms-overflow-style: none;
     margin-bottom: 38px;
+    top: 40px;
 }
 .border-liste::-webkit-scrollbar{
   display: none;
