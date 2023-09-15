@@ -311,6 +311,13 @@ body {
     height: 100vh;
     margin: -30px auto auto 60px;
 }
+.garis1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: -30px auto auto 60px;
+}
 
 .border-list {
     position: relative;
@@ -325,6 +332,23 @@ body {
     overflow-y: scroll;
     -ms-overflow-style: none;
     margin-bottom: 38px;
+}
+.border-liste {
+    position: relative;
+    border: 3px solid #ccc;
+    border-radius: 20px;
+    max-width: 150rem;
+    width: 100%;
+    height: auto; /* Ubah ke height:auto agar form menyesuaikan tingginya */
+    max-height: 650px;
+    border-color: white;
+    margin-top: 2%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    margin-bottom: 38px;
+}
+.border-liste::-webkit-scrollbar{
+  display: none;
 }
 
 .border-list::-webkit-scrollbar {
