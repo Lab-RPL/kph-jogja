@@ -4,6 +4,7 @@ use App\Http\Controllers\auth;
 use App\Http\Controllers\bdhController;
 use App\Http\Controllers\rphController;
 use App\Http\Controllers\inventarisController;
+use App\Http\Controllers\pnbpController;
 use App\Http\Controllers\izinController;
 use App\Http\Controllers\petakController;
 use App\Http\Controllers\potensiController;
@@ -105,9 +106,7 @@ Route::get('tambah-rosak', function(){
 
 
 // Penerimaan Negera Bukan Pajak
-Route::get('/data-pnbp', function(){
-    return view('pnbp.pnbp');
-});
+Route::get('/data-pnbp', [pnbpController::class,'index']);
 
 Route::get('/tambah-pnbp', function(){
     return view('pnbp.tambah-pnbp');

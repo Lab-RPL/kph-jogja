@@ -20,14 +20,25 @@
                             <th class="">Aksi</th> 
                         </tr>
                     </thead>
-                    <tbody>
-                        <td>xxxx</td>
-                        <td>xxxx</td>
-                        <td  style="justify-content: space-between; align-items:center">
-                            <a href="/edit-pnbp" class="btn btn-warning mb-1 m-l-2">Edit</a>
-                            <a href="" class="btn btn-danger mb-1 m-l-1">Hapus</a>
-                        </td>
-                    </tbody>
+                    @if (count($data) == 0)
+                    <tr>
+                        <td colspan="5" style="text-align: center;">Belum Ada Data</td>
+                    </tr>
+                @endif
+                @foreach ($data as $da)
+                    @if ($da->IsDelete == 0)
+                        <tr>
+                            <td>{{ $da->tahun_pnbp }}</td>
+                            <td>{{ $da->nominal_pnbp }}</td>
+                            <td style="justify-content: space-between; align-items:center">
+                                {{-- <a href="{{ route('pnbp.pnbp', $da->id_pnbp) }}"
+                                    class="btn btn-warning mb-1 m-l-1">Edit</a>
+                                <a data-id="{{ $da->id_pnbp }}" href="{{ route('potensi.destroy', $da->id_pnbp) }}"
+                                    class="btn btn-danger mb-1 m-l-2">Hapus</a> --}}
+                            </td>
+                        </tr>
+                    @endif
+                @endforeach
                 </table>
                 <div style="display: flex; justify-content: flex-end;"> 
                     <a class="btn btn-primary" style="color: white" href="/tambah-pnbp">Tambah Data</a>
