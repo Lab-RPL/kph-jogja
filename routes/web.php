@@ -7,6 +7,7 @@ use App\Http\Controllers\inventarisController;
 use App\Http\Controllers\izinController;
 use App\Http\Controllers\petakController;
 use App\Http\Controllers\potensiController;
+use App\Http\Controllers\adminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -79,9 +80,7 @@ Route::get('/data-potensi/{id_hhbk}',[potensiController::class, 'destroy'])->nam
 
 
 // ADMIN
-Route::get('/admin', function () {
-    return view('admin.admin');
-});
+Route::get('/admin',[adminController::class,'index']);
 
 
 // PERIZINAN
