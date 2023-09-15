@@ -81,6 +81,9 @@ Route::get('/data-potensi/{id_hhbk}',[potensiController::class, 'destroy'])->nam
 
 // ADMIN
 Route::get('/admin',[adminController::class,'index']);
+Route::get('/tambah-admin', function(){
+    return view('admin.tambah-admin');
+});
 
 
 // PERIZINAN
