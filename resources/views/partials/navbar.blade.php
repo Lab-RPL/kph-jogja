@@ -135,15 +135,22 @@
                 
             @endif
         </div>
-
-
-
-
     <!-- ========================= Main ==================== -->
     <div class="main">
         <div class="topbar">
             <div class="toggle">
                 <ion-icon name="menu-outline"></ion-icon>
+            </div>
+            
+            <div class="search" style="margin-top:20px;">
+                <label>
+                    <input type="text" placeholder="Search here">
+                    <ion-icon style="margin-top:10px;" name="search-outline"></ion-icon>
+                </label>
+            </div>
+
+            <div class="user">
+                <img src="https://www.dbl.id/uploads/school/60367/913-SMKN_2_SURAKARTA.PNG" alt="">
             </div>
 
         </div>
