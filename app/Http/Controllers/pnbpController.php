@@ -33,5 +33,13 @@ class pnbpController extends Controller
         $pnbp->save();
         return redirect('/data-pnbp')->with('pesan', 'Data pnbp Berhasil Disimpan');
     }
+    public function destroy($id_pnbp)
+    {
+        $pnbp_entry = pnbp::where('id_pnbp', $id_pnbp)->first();
+        $pnbp_entry->IsDelete = 1;
+        $pnbp_entry->save();
+
+        return redirect()->back()->with('pesan', 'Data PNBP berhasil Dihapus');
+    }
 
 }
