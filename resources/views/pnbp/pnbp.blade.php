@@ -40,6 +40,10 @@
                     @endif
                 @endforeach
                 </table>
+                @if (Session::has('pesan'))
+                    <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
+                @endif
+                {{ $data->links() }}
                 <div style="display: flex; justify-content: flex-end;"> 
                     <a class="btn btn-primary" style="color: white" href="/tambah-pnbp">Tambah Data</a>
                 </div>
