@@ -31,10 +31,10 @@
                             <td>{{ $da->tahun_pnbp }}</td>
                             <td>{{ $da->nominal_pnbp }}</td>
                             <td style="justify-content: space-between; align-items:center">
-                                {{-- <a href="{{ route('pnbp.pnbp', $da->id_pnbp) }}"
+                                <a href="{{ route('pnbp.edit', $da->id_pnbp) }}"
                                     class="btn btn-warning mb-1 m-l-1">Edit</a>
-                                <a data-id="{{ $da->id_pnbp }}" href="{{ route('potensi.destroy', $da->id_pnbp) }}"
-                                    class="btn btn-danger mb-1 m-l-2">Hapus</a> --}}
+                                <a data-id="{{ $da->id_pnbp }}" href="{{ route('pnbp.destroy', $da->id_pnbp) }}"
+                                    class="btn btn-danger mb-1 m-l-2">Hapus</a>
                             </td>
                         </tr>
                     @endif

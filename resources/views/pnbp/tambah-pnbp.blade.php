@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    {{-- <form action="{{ route('pnbp.store') }}" method="post"> --}}
+    <form action="{{ route('pnbp.store') }}" method="post">
         @csrf
         <div class="garis">
             <div class="border-list">
@@ -14,12 +14,12 @@
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
                 <table id="tabelData">
                     <tr>
-                        <td><label for="tambah-bdh">Tahun</label></td>
+                        <td><label for="tambah-pnbp">Tahun</label></td>
                         <td><input type="text" id="tambah-pnbp" name="tahun_pnbp" required></td>
                     </tr>
                     <tr>
-                        <td><label for="tambah-bdh">Nominal</label></td>
-                        <td><input type="text" id="tambah-pnbp" name="nominal-pnbp" required></td>
+                        <td><label for="tambah-pnbp">Nominal</label></td>
+                        <td><input type="text" id="tambah-pnbp" name="nominal_pnbp" required></td>
                     </tr>
                 </table>
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">
