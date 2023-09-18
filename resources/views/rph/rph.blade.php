@@ -14,8 +14,8 @@
         }
     </style>
     <div class="garis">
-        <div class="border-list">
-            <h2 class="mt-4">DATA RPH{{-- Agar Tidak Terjadi Perulangan Hanya Ditampilkan Satu Kali --}}
+        <div class="border-lists">
+            <h2 class="mt-4 middletext">DATA RPH{{-- Agar Tidak Terjadi Perulangan Hanya Ditampilkan Satu Kali --}}
                 <?php
                 $previous_bdh_name = '';
                 ?>
@@ -31,7 +31,7 @@
                     ?>
                 @endforeach
             </h2>
-            <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
+            <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
             <form>
                 <div class="wrapper">
                     <div class="bdh">
