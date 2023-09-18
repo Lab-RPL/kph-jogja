@@ -41,5 +41,25 @@ class pnbpController extends Controller
 
         return redirect()->back()->with('pesan', 'Data PNBP berhasil Dihapus');
     }
+    public function edit($id)
+    {
+        $pnbp = pnbp::where('id_pnbp', $id)->first();
+        return view('pnbp.edit-pnbp', ['pnbp' => $pnbp]);
+    }
+    public function update(Request $request, $id)
+{
+    $this->validate($request, [
+        'tahun_pnbp' => 'required',
+        'nominal_pnbp' => 'required',
+    ]);
+    
+    $pnbp = pnbp::where('id_pnbp', $id)->first();
+    $pnbp->tahun_pnbp = $request->tahun_pnbp;
+    $pnbp->nominal_pnbp = $request->nominal_pnbp;
+    $pnbp->save();
+
+    return redirect('/data-pnbp')->with('pesan', 'Data PNBP Berhasil Diperbaharui');
+}
+
 
 }

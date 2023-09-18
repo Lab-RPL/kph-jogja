@@ -110,7 +110,7 @@ Route::get('/data-pnbp', [pnbpController::class,'index'])->name('pnbp.index');
 Route::get('/tambah-pnbp',[pnbpController::class, 'create'])->name('pnbp.create');
 Route::post('/data-pnbp',[pnbpController::class, 'store'])->name('pnbp.store');
 Route::get('/data-pnbp/{id_pnbp}/edit',[pnbpController::class, 'edit'])->name('pnbp.edit');
-Route::put('/data-pnbp/{id}',[pnbpiController::class, 'update'])->name('pnbp.update');
+Route::put('/data-pnbp/{id}',[pnbpController::class, 'update'])->name('pnbp.update');
 Route::get('/data-pnbp/{id_pnbp}',[pnbpController::class, 'destroy'])->name('pnbp.destroy');
 
 
