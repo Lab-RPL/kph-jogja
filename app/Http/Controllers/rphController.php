@@ -36,7 +36,7 @@ class rphController extends Controller
             $data = DB::table('rph')
                 ->where('id_bdh', $id_bdh,)
                 ->where('IsDelete',0)
-                ->paginate(5);
+                ->paginate(10);
             // $bdh_data = Bdh::all();
 
             return view('rph.rph', ['data' => $data, 'rph_data' => $rph_data]);

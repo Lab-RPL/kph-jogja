@@ -1,13 +1,18 @@
 @extends('layouts.main')
 @section('content')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-    </script>
-    <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+
+    {{-- Style search datatable --}}
+    <style>
+        div.dataTables_wrapper div.dataTables_filter {
+            text-align: right;
+            margin-right: 50px;
+        }
+    </style>
     <div class="garis">
         <div class="border-list">
             <h2 class="mt-4">DATA RPH{{-- Agar Tidak Terjadi Perulangan Hanya Ditampilkan Satu Kali --}}
@@ -44,37 +49,53 @@
                             <th>Aksi</th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
-                        @if (count($data) == 0)
+                    <tbody>
+                    @if (count($data) == 0)
+                        <tr>
+                            <td colspan="5" style="text-align: center">Belum Ada Data</td>
+                        </tr>
+                    @endif
+                    @foreach ($data as $da)
+                        @if ($da->IsDelete == 0)
                             <tr>
-                                <td colspan="5" style="text-align: center">Belum Ada Data</td>
+                                <td>{{ $da->nama_rph }}</td>
+                                <td>{{ $da->kepala_rph }}</td>
+                                <td>{{ $da->luas_rph }} Ha</td>
+                                <td><a href="{{ route('petak.index', ['id_rph' => $da->id_rph]) }}"
+                                        class="btn btn-success">Lihat</a></td>
+                                <td class="center-align">
+                                    <a href="{{ route('rph.edit', $da->id_rph) }}"
+                                        class="btn btn-warning mb-1 m-l-1">Edit</a>
+                                    <a href="{{ route('rph.destroy', $da->id_rph) }}" data-id="{{ $da->id_rph }}"
+                                        class="btn btn-danger mb-1 m-l-1 delete-btn">Hapus</a>
+                                </td>
                             </tr>
                         @endif
-                        @foreach ($data as $da)
-                            @if ($da->IsDelete == 0)
-                                <tr>
-                                    <td>{{ $da->nama_rph }}</td>
-                                    <td>{{ $da->kepala_rph }}</td>
-                                    <td>{{ $da->luas_rph }} Ha</td>
-                                    <td><a href="{{ route('petak.index', ['id_rph' => $da->id_rph]) }}"
-                                            class="btn btn-success">Lihat</a></td>
-                                    <td class="center-align">
-                                        <a href="{{ route('rph.edit', $da->id_rph) }}" class="btn btn-warning mb-1 m-l-1">Edit</a>
-                                        <a href="{{ route('rph.destroy', $da->id_rph) }}" data-id="{{ $da->id_rph }}"
-                                            class="btn btn-danger mb-1 m-l-1 delete-btn">Hapus</a>
-                                    </td>
-                                </tr>
-                            @endif
-                        @endforeach
+                    @endforeach
                     </tbody>
                 </table>
+                {{-- CDN Dan Script DataTable --}}
+                <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+                <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+                <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+                <script>
+                    $('#tabelData').DataTable({
+                        lengthMenu: [
+                            [5, 10, 25, -1],
+                            [5, 10, 25, "All"]
+                        ],
+
+                        pageLength: 5 // Menampilkan 5 data per halaman
+                    });
+                </script>
                 @if (Session::has('pesan'))
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
-                {{ $data->links() }}
-                <div style="display: flex; justify-content: space-between;">
-                    <a class="btn btn-warning" style="color: white" href="/data-bdh">Kembali</a>
-                    <a class="btn btn-primary" style="color: white" href="/tambah-rph">Tambah Data</a>
+                {{-- {{ $data->links() }} --}}
+                <div style="display: flex; justify-content: space-between;" class="mt-4">
+                    <a class="btn btn-warning mt-3" style="color: white" href="/data-bdh">Kembali</a>
+                    <a class="btn btn-primary mt-3" style="color: white" href="/tambah-rph">Tambah Data</a>
                 </div>
             </form>
         </div>
@@ -123,6 +144,13 @@
             });
         });
     </script> --> --}}
+    {{-- CDN BS5 --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     {{-- script Notif --}}
     <script>

@@ -18,7 +18,7 @@ class bdhController extends Controller
         }
 
         $title = "BDH";
-        $data = bdh::where('IsDelete',0)->paginate(5);
+        $data = bdh::where('IsDelete',0)->paginate(10);
         return view('bdh.bdh', ['data' => $data, 'title' => $title]);
     }
     
