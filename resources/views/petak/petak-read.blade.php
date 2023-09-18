@@ -20,10 +20,10 @@
         }
     </style>
     <div class="garis">
-        <div class="border-list">
-            <h2 class="mt-2">DATA PETAK
+        <div class="border-lists">
+            <h2 class="mt-2 middletext">DATA PETAK
             </h2>
-            <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
+            <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
             <form>
                 <div class="wrapper">
                     <div class="bdh">
