@@ -8,9 +8,9 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <div class="garis">
-        <div class="border-list">
-            <h2>Potensi Hasil Hutan</h2>
-            <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
+        <div class="border-lists">
+            <h2 class="middletext">Potensi Hasil Hutan</h2>
+            <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
             <form>
                 @csrf
                 <div class="wrapper">
