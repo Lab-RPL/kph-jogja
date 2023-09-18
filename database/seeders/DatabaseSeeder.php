@@ -137,7 +137,12 @@ class DatabaseSeeder extends Seeder
             'luas_rph' => 21.98,
             'id_bdh' => 1
         ]);
-
+        User::create([
+            'id' => 2,
+            'name' => 'besar',
+            'password' => bcrypt('123'),
+            'user_type' => 'admin'
+        ]);
         
     }
 }
