@@ -313,6 +313,20 @@ body {
     -ms-overflow-style: none;
     margin-bottom: 38px;
 }
+ .border-lists {
+            position: relative;
+            border: 3px solid #ccc;
+            border-radius: 20px;
+            padding: 60px;
+            max-width: 980px;
+            width: 100%;
+            margin-top: -1%; 
+            height: 35rem; 
+            max-height: 550px;
+            border-color: #0CB166;
+            overflow-y: scroll;
+            margin-bottom: 38px;
+            } 
 .border-liste {
     position: relative;
     border: 3px solid #ccc;
