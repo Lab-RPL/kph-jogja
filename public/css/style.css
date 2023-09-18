@@ -306,7 +306,7 @@ body {
     padding: 60px;
     max-width: 980px;
     width: 100%;
-    height: auto; /* Ubah ke height:auto agar form menyesuaikan tingginya */
+    height: 35rem; /* Ubah ke height:auto agar form menyesuaikan tingginya */
     max-height: 600px;
     border-color: #0cb166;
     overflow-y: scroll;

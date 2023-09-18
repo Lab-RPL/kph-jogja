@@ -14,7 +14,7 @@
             <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
             <form>
                 @csrf
-                <table id="tabelData" class="table table-bordered">
+                <table id="tabelData" class="table table-striped">
                     <thead>
                         <tr>
                             <th rowspan="2" style="background-color: #9CC589;">
