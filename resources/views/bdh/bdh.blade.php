@@ -18,7 +18,7 @@
             <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
             <form>
                 @csrf
-                <table id="tabelData" class="table table-bordered">
+                <table id="tabelData" class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th>BDH</th>

@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 @csrf
-                <table id="tabelData" class="table table-bordered">
+                <table id="tabelData" class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th>Nomor Petak</th>
