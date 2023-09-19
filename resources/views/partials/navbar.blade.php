@@ -215,7 +215,9 @@
                         //DATA-POTENSI
                         (navLink.pathname === '/data-potensi' && currentPathname ==='/tambah-potensi') ||
                         //DATA-PNPB
-                        (navLink.pathname === '/data-pnbp' && currentPathname ==='/tambah-pnbp') ){
+                        (navLink.pathname === '/data-pnbp' && currentPathname ==='/tambah-pnbp') ||
+                        (navLink.pathname === '/data-pnbp' && currentPathname ==='/tambah-pnbp') ||
+                        (navLink.pathname === '/data-pnbp' && currentPathname.startsWith('/data-pnbp/') && currentPathname.endsWith('/edit')) ){
                         navLink.parentElement.classList.add('active');
                         navLink.parentElement.classList.add('clicked');
                     } else {
