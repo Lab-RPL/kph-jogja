@@ -6,8 +6,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <form >
-        {{-- action="{{ route('') }}" method="post" --}}
+    <form action="{{ route('admin.store') }}" method="post">
+        
         @csrf
         <div class="garis">
             <div class="border-list">
@@ -23,10 +23,10 @@
                         <td><label for="pass">Password</label></td>
                         <td><input type="text" id="pass" name="password" required></td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <td><label for="kon-pass">Konfirmasi Password</label></td>
-                        <td><input type="text" id="kon-pass" name="" required></td>
-                    </tr>
+                        <td><input type="text" id="kon-pass" name="kon_password" required></td>
+                    </tr> --}}
                     <!-- <tr>
                                 <td><label for="luas-tanah">Keterangan Lain</label></td>
                                 <td><input type="text" id="luas-rph" name="luas_tanah" required></td>

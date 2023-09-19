@@ -23,6 +23,13 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         User::create([
+            'name' => 'admin',
+            'password' => bcrypt('123'),
+            'user_type' => 'admin'
+        ]);
+
+        User::create([
+            'id' => 2,
             'name' => 'Juan',
             'password' => bcrypt('123')
         ]);
@@ -136,12 +143,6 @@ class DatabaseSeeder extends Seeder
             'kepala_rph' => 'Mas Empak Ratus',
             'luas_rph' => 21.98,
             'id_bdh' => 1
-        ]);
-        User::create([
-            'id' => 2,
-            'name' => 'besar',
-            'password' => bcrypt('123'),
-            'user_type' => 'admin'
         ]);
         
     }

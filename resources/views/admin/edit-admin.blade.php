@@ -7,24 +7,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <form action="{{ route('potensi.update', ['id' => $hhbk->id_hhbk]) }}" method="POST">
+    <form action="{{ route('admin.update', ['id' => $admin->id]) }}" method="POST">
         @csrf
         @method('put')
         <div class="garis">
             <div class="border-list">
                 <h2>ADMIN</h2>
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
-                {{-- <input type="hidden" name="id_hhbk" value="{{ $hhbk->id_hhbk }}"> --}}
+                <input type="hidden" name="id" value="{{ $admin->id }}">
                 <table id="tabelData">
                     <tr></tr>
                     <td><label for="name">Username</label></td>
-                    <td><input type="text" id="name" name="name" value="{{}}"></td>
-                    </tr>
-                    {{-- <tr>
-                        <td><label for="pass">Password</label></td>
-                        <td><input type="text" id="pass" name="password" value="{{}}"></td>
+                    <td><input type="text" id="name" name="name" value="{{ $admin->name }}"></td>
                     </tr>
                     <tr>
+                        <td><label for="pass">Password</label></td>
+                        <td><input type="text" id="pass" name="password" value="{{ $admin->password }}"></td>
+                    </tr>
+                    {{-- <tr>
                         <td><label for="kon-pass">Konfirmasi Password</label></td>
                         <td><input type="text" id="kon-pass" name="" value="{{}}"></td>
                     </tr> --}}
