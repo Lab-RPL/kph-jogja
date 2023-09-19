@@ -18,7 +18,7 @@
                     <span class="title">Tambah User</span>
                 </a>
             </li>
-       <li class="nav-item">
+        <li class="nav-item">
                 <a href="/logout">
                     <span class="icon">
                         <ion-icon name="log-out-outline"></ion-icon>
@@ -81,7 +81,7 @@
                         //DATA-BDH
                         (navLink.pathname === '/data-bdh' && currentPathname ==='/tambah-bdh') ||
                         (navLink.pathname === '/data-bdh' && currentPathname === '/bdh-read') ||
-                        (navLink.pathname === '/data-bdh' && currentPathname === '/ul-rph') ||
+                        (navLink.pathname === '/data-bdh' && currentPathname === '/rph-read') ||
                         (navLink.pathname === '/data-bdh' && currentPathname === '/petak-read') ||
                         (navLink.pathname === '/data-bdh' && currentPathname === '/tambah-rph') ||
                         (navLink.pathname === '/data-bdh' && currentPathname === '/tambah-petak') ||

@@ -42,7 +42,7 @@
                         </a>
                         <div class="dropdown-content" id="myDropdown">
                             <a href="/bdh-read">BDH</a>
-                            <a href="/ul-rph">RPH</a>
+                            <a href="/rph-read">RPH</a>
                             <a href="/petak-read">Petak</a>
                         </div>
                     </li>
@@ -202,7 +202,7 @@
                         //DATA-BDH
                         (navLink.pathname === '/data-bdh' && currentPathname ==='/tambah-bdh') ||
                         (navLink.pathname === '/data-bdh' && currentPathname === '/bdh-read') ||
-                        (navLink.pathname === '/data-bdh' && currentPathname === '/ul-rph') ||
+                        (navLink.pathname === '/data-bdh' && currentPathname === '/rph-read') ||
                         (navLink.pathname === '/data-bdh' && currentPathname === '/petak-read') ||
                         (navLink.pathname === '/data-bdh' && currentPathname === '/tambah-rph') ||
                         (navLink.pathname === '/data-bdh' && currentPathname === '/tambah-petak') ||

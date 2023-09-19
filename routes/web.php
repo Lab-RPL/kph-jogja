@@ -9,6 +9,7 @@ use App\Http\Controllers\izinController;
 use App\Http\Controllers\petakController;
 use App\Http\Controllers\potensiController;
 use App\Http\Controllers\adminController;
+use App\Models\admin;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,7 +49,7 @@ Route::get('/bdh-read', [bdhController::class, 'index2'])->name('bdh.index.2');
 
 // RPH
 Route::get('/rph/{id_bdh}',[rphController::class, 'index'])->name('rph.index');
-Route::get('/ul-rph', [rphController::class, 'index2'])->name('rph.index2');
+Route::get('/rph-read', [rphController::class, 'index2'])->name('rph.index2');
 Route::get('/tambah-rph', [rphController::class, 'create'])->name('rph.create');
 // Route::post('/rph{id_bdh}', [rphController::class, 'store'])->name('rph.store');
 Route::post('/rph', [rphController::class,'tambah'])->name('rph.store');
@@ -81,10 +82,12 @@ Route::get('/data-potensi/{id_hhbk}',[potensiController::class, 'destroy'])->nam
 
 
 // ADMIN
-Route::get('/admin',[adminController::class,'index']);
-Route::get('/tambah-admin', function(){
-    return view('admin.tambah-admin');
-});
+Route::get('/admin',[adminController::class,'index'])->name('admin.index');
+Route::post('/admin',[adminController::class, 'store'])->name('admin.store');
+Route::get('/tambah-admin',[adminController::class, 'create'])->name('admin.create');
+Route::get('/admin/{id}/edit',[adminController::class, 'edit'])->name('admin.edit');
+Route::put('/admin/{id}',[adminController::class, 'update'])->name('admin.update');
+Route::get('/admin/{id}',[adminController::class, 'destroy'])->name('admin.destroy');
 
 
 // PERIZINAN
