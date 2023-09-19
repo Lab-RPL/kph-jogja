@@ -326,17 +326,43 @@ body {
  .border-lists {
             position: relative;
             border: 3px solid #ccc;
-            border-radius: 20px;
+            border-radius: 10px;
             padding: 60px;
             max-width: 980px;
             width: 100%;
             margin-top: -1%; 
-            height: 35rem; 
-            max-height: 550px;
+            height: 100%; 
+            max-height: 35rem;
             border-color: #0CB166;
             overflow-y: scroll;
             margin-bottom: 38px;
             } 
+
+/* Mengatur gaya untuk Chrome, Safari, dan Opera (WebKit based browsers) */
+.border-lists::-webkit-scrollbar {
+    width: 10px; /* Menetapkan lebar scrollbar */
+  }
+  
+  .border-lists::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Menetapkan warna latar belakang track scrollbar */
+    border-radius: 10px; /* Membuat sudut track scrollbar melengkung */
+  }
+  
+  .border-lists::-webkit-scrollbar-thumb {
+    background-color: var(--blue); /* Menetapkan warna triple thumb scrollbar */
+    border-radius: 10px; /* Membuat sudut scrollbar thumb melengkung */
+  }
+  
+  .border-lists::-webkit-scrollbar-thumb:hover {
+    background-color: #c6f5b1; /* Mengganti warna thumbnail saat mouse berada di atasnya */
+  }
+  
+  /* Mengatur gaya untuk Firefox */
+  .border-lists {
+    scrollbar-width: thin; /* Mengatur lebar scrollbar */
+    scrollbar-color: #888 #f1f1f1; /* Mengatur warna scrollbar thumb dan track */
+  }
+
 .border-liste {
     position: relative;
     border: 3px solid #ccc;
