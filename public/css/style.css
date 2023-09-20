@@ -644,8 +644,8 @@ label {
 }
 .navigation ul li a .icon img {
     width: 70px; /* Ubah ukuran gambar sesuai kebutuhan */
-    height: 70px;
-    margin-top: 20px;
+    height: 65px;
+    margin-top: 10px;
     margin-left: -10px;
 }
 
@@ -662,6 +662,7 @@ label {
     line-height: 65px;
     text-align: start;
     white-space: nowrap;
+    margin-right: 20px;
     color: #222;
 }
 
@@ -712,27 +713,21 @@ label {
 .dropdown-content {
     position: absolute;
     background-color: #95da78;
-    max-width: 140px;
-    max-height: 150px;
-    overflow: auto;
+    max-width: 70px;
+    max-height: 120px;
+    overflow: visible;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    left: 235px; /* Mengubah left menjadi 0 untuk posisi relatif terhadap elemen dropdown */
-    top: 40%; /* Mengubah top menjadi 100% untuk posisi di bawah elemen dropdown */
+    left: 178px; /* Mengubah left menjadi 0 untuk posisi relatif terhadap elemen dropdown */
+    top: 80%; /* Mengubah top menjadi 100% untuk posisi di bawah elemen dropdown */
     border-radius: 4px;
     visibility: hidden;
     opacity: 0;
-    transform: translateY(
-        -10px
-    ); /* Mengubah translateY menjadi -10px untuk menghindari efek transisi yang tidak diinginkan */
+    transform: translateY(-10px); /* Mengubah translateY menjadi -10px untuk menghindari efek transisi yang tidak diinginkan */
     transition: visibility 0.3s, opacity 0.3s, transform 0.3s; /* Mengurangi durasi transisi menjadi 0.3s */
-}
-
-.dropdown-content li {
-    list-style-type: none;
 }
 
 .dropdown-content a {
@@ -746,7 +741,7 @@ label {
     transition: background-color 0.3s, color 0.3s; /* Mengurangi durasi transisi menjadi 0.3s */
 }
 
-.dropdown-content a:hover {
+.dropdown-item a:hover {
     background-color: #c0e0bc;
     border-radius: 4px;
 }
@@ -759,6 +754,73 @@ label {
 .navigation .dropdown .dropdown-content a::before,
 .navigation .dropdown .dropdown-content a::after {
     display: none;
+}
+
+.dropdown-item {
+    position: relative; /* Menambahkan posisi relatif agar submenu berada relatif terhadap item ini */
+}
+
+.nama1{
+    bottom: 80px;
+}
+.nama2{
+    bottom: 160px;
+}
+
+.submenu {
+    position: relative;
+    left: auto;
+    right: -70px;
+    top: -40px;
+    background-color: #a3ec90;
+    border-radius: 5px;
+    white-space: nowrap;
+    padding: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.3s;
+}
+.submenu1 {
+    border-radius: 5px;
+    position: relative;
+    left: auto;
+    right: -70px;
+    top: -120px;
+    background-color: #a3ec90;
+    white-space: nowrap;
+    padding: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.3s;
+}
+.submenu2 {
+    border-radius: 5px;
+    position: relative;
+    left: auto;
+    right: -70px;
+    bottom: 200px;
+    background-color: #a3ec90;
+    white-space: nowrap;
+    padding: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.3s;
+}
+
+.dropdown-item:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+}
+.dropdown-item:hover .submenu1 {
+    visibility: visible;
+    opacity: 1;
+}
+.dropdown-item:hover .submenu2 {
+    visibility: visible;
+    opacity: 1;
 }
 
 /* ===================== Main ===================== */

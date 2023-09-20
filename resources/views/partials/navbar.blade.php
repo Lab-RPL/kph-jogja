@@ -1,8 +1,5 @@
 <div class="container">
     <div class="navigation scrollable-container">
-            {{-- Hanya untuk user_type user --}}
-            @if(session('user_type') === 'user') 
-                {{-- Semua navigation item untuk user --}}
                 <ul>
                     <li>
                         <a href="/dashboard">
@@ -41,9 +38,27 @@
                             </span>
                         </a>
                         <div class="dropdown-content" id="myDropdown">
-                            <a href="/bdh-read">BDH</a>
-                            <a href="/rph-read">RPH</a>
-                            <a href="/petak-read">Petak</a>
+                            <div class="dropdown-item">
+                                <a class="nama">BDH</a>
+                                <div class="submenu">
+                                    <a href="/bdh-read">Lihat</a>
+                                    <a href="/tambah-bdh">Tambah</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-item">
+                                <a class="nama1">RPH</a>
+                                <div class="submenu1">
+                                    <a href="/rph-read">Lihat</a>
+                                    <a href="/tambah-rph">Tambah</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-item">
+                                <a class="nama2">Petak</a>
+                                <div class="submenu2">
+                                    <a href="/petak-read">Lihat</a>
+                                    <a href="/tambah-petak">Tambah</a>
+                                </div>
+                            </div>
                         </div>
                     </li>
         
@@ -109,31 +124,8 @@
                             <span class="title">Sign Out</span>
                         </a>
                     </li>
-                    @endif
-                    
-                    {{-- Hanya untuk user_type admin --}}
-                    @if(session('user_type') === 'admin') 
-                    {{-- Semua navigation item untuk admin --}}
-                    <li class="nav-item">
-                        <a href="/admin">
-                            <span class="icon">
-                                <ion-icon name="log-out-outline"></ion-icon>
-                            </span>
-                            <span class="title">Tambah User</span>
-                        </a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a href="/logout">
-                            <span class="icon">
-                                <ion-icon name="log-out-outline"></ion-icon>
-                            </span>
-                            <span class="title">Sign Out</span>
-                        </a>
-                    </li>
                 </ul>
                 
-            @endif
         </div>
     <!-- ========================= Main ==================== -->
     <div class="main">
