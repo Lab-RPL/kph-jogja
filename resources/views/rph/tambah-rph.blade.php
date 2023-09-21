@@ -20,13 +20,16 @@
                             <select name="id_bdh" id="tambah-bdh" required class="form-control" disabled>
                                 @foreach ($bdh as $bdh)
                                     @if ($bdh->IsDelete == 0)
-                                        <!-- Mengecek jika query "bdh" ada (tidak null) dan id_bdh dari loop sama dengan query "bdh" -->
                                         <option value="{{ $bdh->id_bdh }}"
                                         @if($selectedBdh != null && $selectedBdh == $bdh->id_bdh) selected @endif
                                         >{{ $bdh->nama_bdh }}</option>
                                     @endif
                                 @endforeach
                             </select>
+                            
+                            <!-- Use a hidden input to submit the selected value from the disabled select -->
+                            <input type="hidden" name="id_bdh" value="{{ $selectedBdh }}" />
+                            
                             
                         </td>
                     </tr>
