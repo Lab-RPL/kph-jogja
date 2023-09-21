@@ -41,7 +41,9 @@
 
                     </div>
                 </div>
-                @csrf
+                @if (Session::has('pesan'))
+                    <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
+                @endif
                 <table id="tabelData" class="table table-bordered table-striped">
                     <thead>
                         <tr>
@@ -74,9 +76,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                @if (Session::has('pesan'))
-                    <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
-                @endif
+
                 {{-- {{ $data->links() }} --}}
                 <div style="display: flex; justify-content: space-between;" class="mt-4">
                     <a class="btn btn-warning" style="color: white" href="#" onclick="goBack();">Kembali</a>

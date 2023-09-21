@@ -39,6 +39,9 @@
                     </div>
                 </div>
                 @csrf
+                @if (Session::has('pesan'))
+                    <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
+                @endif
                 <table id="tabelData" class="table table-bordered">
                     <thead>
                         <tr>
@@ -50,28 +53,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @if (count($data) == 0)
-                        <tr>
-                            <td colspan="5" style="text-align: center">Belum Ada Data</td>
-                        </tr>
-                    @endif
-                    @foreach ($data as $da)
-                        @if ($da->IsDelete == 0)
+                        @if (count($data) == 0)
                             <tr>
-                                <td>{{ $da->nama_rph }}</td>
-                                <td>{{ $da->kepala_rph }}</td>
-                                <td>{{ $da->luas_rph }} Ha</td>
-                                <td><a href="{{ route('petak.index', ['id_rph' => $da->id_rph]) }}"
-                                        class="btn btn-success">Lihat</a></td>
-                                <td class="center-align">
-                                    <a href="{{ route('rph.edit', $da->id_rph) }}"
-                                        class="btn btn-warning mb-1 m-l-1">Edit</a>
-                                    <a href="{{ route('rph.destroy', $da->id_rph) }}" data-id="{{ $da->id_rph }}"
-                                        class="btn btn-danger mb-1 m-l-1 delete-btn">Hapus</a>
-                                </td>
+                                <td colspan="5" style="text-align: center">Belum Ada Data</td>
                             </tr>
                         @endif
-                    @endforeach
+                        @foreach ($data as $da)
+                            @if ($da->IsDelete == 0)
+                                <tr>
+                                    <td>{{ $da->nama_rph }}</td>
+                                    <td>{{ $da->kepala_rph }}</td>
+                                    <td>{{ $da->luas_rph }} Ha</td>
+                                    <td><a href="{{ route('petak.index', ['id_rph' => $da->id_rph]) }}"
+                                            class="btn btn-success">Lihat</a></td>
+                                    <td class="center-align">
+                                        <a href="{{ route('rph.edit', $da->id_rph) }}"
+                                            class="btn btn-warning mb-1 m-l-1">Edit</a>
+                                        <a href="{{ route('rph.destroy', $da->id_rph) }}" data-id="{{ $da->id_rph }}"
+                                            class="btn btn-danger mb-1 m-l-1 delete-btn">Hapus</a>
+                                    </td>
+                                </tr>
+                            @endif
+                        @endforeach
                     </tbody>
                 </table>
                 {{-- CDN Dan Script DataTable --}}
@@ -89,14 +92,13 @@
                         pageLength: 5 // Menampilkan 5 data per halaman
                     });
                 </script>
-                @if (Session::has('pesan'))
-                    <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
-                @endif
+
                 {{-- {{ $data->links() }} --}}
                 <div style="display: flex; justify-content: space-between;" class="mt-4">
                     <a class="btn btn-warning mt-3" style="color: white" href="/data-bdh">Kembali</a>
                     <!-- Redirect ke halaman tambah dengan query "bdh" (Cth: ?bdh=1) -->
-                    <a class="btn btn-primary mt-3" style="color: white" href="{{ route('rph.create', ['bdh' => $id_bdh]) }}">Tambah Data</a>
+                    <a class="btn btn-primary mt-3" style="color: white"
+                        href="{{ route('rph.create', ['bdh' => $id_bdh]) }}">Tambah Data</a>
                 </div>
             </form>
         </div>

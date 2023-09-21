@@ -18,6 +18,9 @@
             <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
             <form>
                 @csrf
+                @if (Session::has('pesan'))
+                    <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
+                @endif
                 <table id="tabelData" class="table table-bordered table-striped">
                     <thead>
                         <tr>
@@ -53,9 +56,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                @if (Session::has('pesan'))
-                    <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
-                @endif
+
                 {{-- {{ $data->links() }} --}}
                 <div style="display: flex; justify-content: flex-end;" class="nav-item">
                     <a class="btn btn-primary me-1 mt-4" href="/tambah-bdh">Tambah Data</a>
