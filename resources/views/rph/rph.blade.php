@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 @csrf
-                <table id="tabelData" class="table table-bordered table-striped">
+                <table id="tabelData" class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Nama RPH</th>
@@ -95,7 +95,8 @@
                 {{-- {{ $data->links() }} --}}
                 <div style="display: flex; justify-content: space-between;" class="mt-4">
                     <a class="btn btn-warning mt-3" style="color: white" href="/data-bdh">Kembali</a>
-                    <a class="btn btn-primary mt-3" style="color: white" href="/tambah-rph">Tambah Data</a>
+                    <!-- Redirect ke halaman tambah dengan query "bdh" (Cth: ?bdh=1) -->
+                    <a class="btn btn-primary mt-3" style="color: white" href="{{ route('rph.create', ['bdh' => $id_bdh]) }}">Tambah Data</a>
                 </div>
             </form>
         </div>
