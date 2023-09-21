@@ -40,7 +40,9 @@ Route::get('/edit-data', [inventarisController::class, 'edit']);
 // BDH
 Route::get('/data-bdh', [bdhController::class,'index']);
 Route::post('/data-bdh', [bdhController::class, 'store'])->name('bdh.store');
-Route::get('/tambah-bdh', [bdhController::class,'create']);
+// Route::post('/data-bdh', [bdhController::class, 'store_read'])->name('bdh.store_read');
+Route::get('/tambah-bdh', [bdhController::class,'create'])->name('bdh.create');
+// Route::get('/tambah-bdh-read', [bdhController::class,'create_read'])->name('bdh.create_read');
 Route::get('/data-bdh/{id_bdh}/edit',[bdhController::class,'edit'])->name('bdh.edit');
 Route::put('/data-bdh/{id}', [bdhController::class, 'update'])->name('bdh.update');
 Route::get('/data-bdh/{id_bdh}', [bdhController::class, 'destroy'])->name('bdh.destroy');
@@ -51,8 +53,10 @@ Route::get('/bdh-read', [bdhController::class, 'index2'])->name('bdh.index.2');
 Route::get('/rph/{id_bdh}',[rphController::class, 'index'])->name('rph.index');
 Route::get('/rph-read', [rphController::class, 'index2'])->name('rph.index2');
 Route::get('/tambah-rph', [rphController::class, 'create'])->name('rph.create');
+Route::get('/tambah-rph-read',[rphController::class, 'create_read'])->name('rph.create_read');
 // Route::post('/rph{id_bdh}', [rphController::class, 'store'])->name('rph.store');
 Route::post('/rph', [rphController::class,'tambah'])->name('rph.store');
+Route::post('/rph-read',[rphController::class, 'tambah_read'])->name('rph.store_read');
 // ...
 Route::get('/rph/{id}/edit', [RphController::class, 'edit'])->name('rph.edit');
 Route::put('/rph/{id}', [RphController::class, 'update'])->name('rph.update');
@@ -65,7 +69,9 @@ Route::get('/rph{id_bdh}',[rphController::class,'destroy'])->name('rph.destroy')
 // PETAK
 Route::get('/petak/{id_rph}', [PetakController::class, 'index'])->name('petak.index');
 Route::get('/tambah-petak', [petakController::class, 'create'])->name('petak.create');
+// Route::get('/tambah-petak-read', [petakController::class, 'create_read'])->name('petak.create_read');
 Route::post('/petak', [petakController::class, 'store'])->name('petak.store');
+// Route::post('/petak-read',[petakController::class, 'store_read'])->name('petak.store_read');
 Route::get('/petak-read', [petakController::class, 'index2'])->name('petak.index2');
 Route::get('/petak/{id}/edit', [petakController::class, 'edit'])->name('petak.edit');
 Route::put('/petak/{id}', [petakController::class, 'update'])->name('petak.update');

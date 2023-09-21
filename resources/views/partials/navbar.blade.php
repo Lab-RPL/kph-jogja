@@ -41,22 +41,22 @@
                             <div class="dropdown-item">
                                 <a class="nama">BDH</a>
                                 <div class="submenu">
-                                    <a href="/bdh-read">Lihat</a>
-                                    <a href="/tambah-bdh">Tambah</a>
+                                    <a href="{{ route('bdh.index.2') }}">Lihat</a>
+                                    <a href="">Tambah</a>
                                 </div>
                             </div>
                             <div class="dropdown-item">
                                 <a class="nama1">RPH</a>
                                 <div class="submenu1">
-                                    <a href="/rph-read">Lihat</a>
-                                    <a href="/tambah-rph">Tambah</a>
+                                    <a href="{{ route('rph.index2') }}">Lihat</a>
+                                    <a href="{{ route('rph.create_read') }}">Tambah</a>
                                 </div>
                             </div>
                             <div class="dropdown-item">
                                 <a class="nama2">Petak</a>
                                 <div class="submenu2">
-                                    <a href="/petak-read">Lihat</a>
-                                    <a href="/tambah-petak">Tambah</a>
+                                    <a href="{{ route('petak.index2') }}">Lihat</a>
+                                    <a href="">Tambah</a>
                                 </div>
                             </div>
                         </div>

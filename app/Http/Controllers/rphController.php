@@ -36,7 +36,7 @@ class rphController extends Controller
             $data = DB::table('rph')
                 ->where('id_bdh', $id_bdh,)
                 ->where('IsDelete',0)
-                ->paginate(10);
+                ->paginate(100000000);
             // $bdh_data = Bdh::all();
 
             // Mengambil id_bdh dari yang dipilih
@@ -50,7 +50,7 @@ class rphController extends Controller
         if (!$req->session()->has('user_id')) {
             return redirect('/');
         }
-        $data = rph::where('IsDelete',0)->paginate(10);
+        $data = rph::where('IsDelete',0)->paginate(10000000);
         return view('rph.ul-rph', ['data' => $data]);
     }
 
@@ -61,6 +61,32 @@ class rphController extends Controller
         $selectedBdh = $request->query("bdh", null);
         return view('rph.tambah-rph', compact("bdh", "selectedBdh"));                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
     }
+
+    public function create_read(){
+        $bdh = Bdh::all();
+        return view('rph.tambah-rph-read')->with('bdh', $bdh);
+    }
+
+    public function tambah_read(Request $request)
+    {
+        $request->validate([
+            'id_bdh' => 'required',
+            'nama_rph' => 'required',
+            'kepala_rph' => 'required', 
+            'luas_rph' => 'required',
+        ]);
+
+        Rph::create([
+            'id_bdh' => $request->id_bdh,
+            'nama_rph' => $request->nama_rph,
+            'kepala_rph' => $request->kepala_rph,
+            'luas_rph' => $request->luas_rph,
+        ]);
+
+        return redirect()->route('rph.index2', $request->id_bdh) // Gantikan dengan nama route yang sesuai
+            ->with('pesan', 'Data RPH berhasil ditambahkan.');
+    }
+
 
     public function tambah(Request $request)
     {

@@ -6,28 +6,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <form action="" method="post">
+    <form action="{{ route('rph.store_read') }}" method="post">
         @csrf
         <div class="garis">
             <div class="border-list">
                 <h2 class="mt-2">DATA RPH</h2>
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
                 <table id="tabelData">
-                    
                     <tr>
                         <td><label for="tambah-bdh">NAMA BDH</label></td>
                         <td>
-                            <select name="id_bdh" id="tambah-bdh" required class="form-control">
+                            <select name="id_bdh" id="tambah-bdh" required class="form-select">
+                                <option value="">Pilih BDH</option>
                                 @foreach ($bdh as $bdh)
                                     @if ($bdh->IsDelete == 0)
-                                        <!-- Mengecek jika query "bdh" ada (tidak null) dan id_bdh dari loop sama dengan query "bdh" -->
                                         <option value="{{ $bdh->id_bdh }}">{{ $bdh->nama_bdh }}</option>
                                     @endif
                                 @endforeach
                             </select>
                         </td>
                     </tr>
-                    
                     <tr>
                         <td><label for="tambah-rph">Nama RPH</label></td>
                         <td><input type="text" id="tambah-rph" name="nama_rph" required></td>
@@ -54,6 +52,4 @@
             </div>
         </div>
     </form>
-    
-    
 @endsection

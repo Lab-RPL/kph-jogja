@@ -21,10 +21,14 @@
             <form>
                 <div class="wrapper">
                     <div class="bdh">
-
                     </div>
                 </div>
                 @csrf
+
+                @if (Session::has('pesan'))
+                    <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
+                @endif
+                    
                 <table id="tabelData" class="table table-bordered table-striped">
                     <thead>
                         <tr>
@@ -50,9 +54,14 @@
                         @endforeach
                     </tbody>
                 </table>
+
+                <script>
+                    setTimeout(function() {
+                        document.getElementById('pesan-sukses').style.display = 'none';
+                    }, 5000); // 5000 milidetik = 5 detik
+                </script>
                 {{-- {{ $data->links() }} --}}
             </form>
-
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -69,10 +78,13 @@
             pageLength: 5 // Menampilkan 5 data per halaman
         });
     </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
         < script src = "https://cdn.jsdelivr.net/npm/sweetalert2@10" >
     </script>
+
+
     // {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     //     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"> --}}
 @endsection
