@@ -38,7 +38,7 @@
                                     <td>{{ $da->name }}</td>
                                     <td>{{ $da->user_type }}</td>
                                     <td>
-                                        <a href="{{ route('admin.edit', $da->id) }}" class="btn btn-warning mb-1 m-l-1">Edit</a>
+                                        <a href="{{ route('admin.edit', $da->id) }}" class="btn btn-warning mb-1 m-l-1">Ganti Password / Username</a>
                                         <a data-id="{{ $da->id }}" href="{{ route('admin.destroy', $da->id) }}"
                                             class="btn btn-danger mb-1 m-l-2">Hapus</a>
                                     </td>
@@ -65,7 +65,7 @@
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
                 <div style="display: flex; justify-content: flex-end;" class="nav-item mt-4">
-                    <a class="btn btn-primary" style="color: white" href="/tambah-admin">Tambah Data</a>
+                    <a class="btn btn-primary" style="color: white" href="{{ route('admin.create') }}">Tambah Data</a>
                 </div>
             </form>
         </div>
