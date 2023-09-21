@@ -39,7 +39,8 @@ class rphController extends Controller
                 ->paginate(10);
             // $bdh_data = Bdh::all();
 
-            return view('rph.rph', ['data' => $data, 'rph_data' => $rph_data]);
+            // Mengambil id_bdh dari yang dipilih
+            return view('rph.rph', ['data' => $data, 'rph_data' => $rph_data, 'id_bdh' => $id_bdh]);
         }
     //     $data = DB::table('rph')->paginate(5);
     // }
@@ -53,10 +54,12 @@ class rphController extends Controller
         return view('rph.ul-rph', ['data' => $data]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
         $bdh = Bdh::all();
-        return view('rph.tambah-rph')->with('bdh', $bdh);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+        // Mengambil bdh dari query "bdh" (Cth ?bdh=1) dan return null jika tidak ada
+        $selectedBdh = $request->query("bdh", null);
+        return view('rph.tambah-rph', compact("bdh", "selectedBdh"));                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
     }
 
     public function tambah(Request $request)
@@ -64,7 +67,7 @@ class rphController extends Controller
         $request->validate([
             'id_bdh' => 'required',
             'nama_rph' => 'required',
-            'kepala_rph' => 'required',
+            'kepala_rph' => 'required', 
             'luas_rph' => 'required',
         ]);
 

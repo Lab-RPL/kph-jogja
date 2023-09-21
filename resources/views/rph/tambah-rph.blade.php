@@ -13,19 +13,26 @@
                 <h2 class="mt-2">DATA RPH</h2>
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
                 <table id="tabelData">
+                    
                     <tr>
                         <td><label for="tambah-bdh">NAMA BDH</label></td>
                         <td>
-                            <select name="id_bdh" id="tambah-bdh" required class="form-select">
-                                <option value="">Pilih BDH</option>
+                            <select name="id_bdh" id="tambah-bdh" required class="form-control" disabled>
                                 @foreach ($bdh as $bdh)
                                     @if ($bdh->IsDelete == 0)
-                                        <option value="{{ $bdh->id_bdh }}">{{ $bdh->nama_bdh }}</option>
+                                        <!-- Mengecek jika query "bdh" ada (tidak null) dan id_bdh dari loop sama dengan query "bdh" -->
+                                        <option value="{{ $bdh->id_bdh }}"
+                                        @if($selectedBdh != null && $selectedBdh == $bdh->id_bdh) selected @endif
+                                        >{{ $bdh->nama_bdh }}</option>
                                     @endif
                                 @endforeach
                             </select>
+                            
                         </td>
                     </tr>
+                    
+                    
+
                     <tr>
                         <td><label for="tambah-rph">Nama RPH</label></td>
                         <td><input type="text" id="tambah-rph" name="nama_rph" required></td>
@@ -52,4 +59,6 @@
             </div>
         </div>
     </form>
+    
+    
 @endsection
