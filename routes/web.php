@@ -38,6 +38,10 @@ Route::get('/edit-data', [inventarisController::class, 'edit']);
 Route::get('/data-tegakan', function(){
     return view('data-utama.inventarisTegakan');
 });
+Route::get('/tambah-tegakan', function(){
+    return view('data-utama.tambah-tegakan');
+});
+
 
 
 // BDH
