@@ -23,7 +23,7 @@
                     </tr>
                     <tr>
                         <td><label for="tambah-pnbp">Nominal</label></td>
-                        <td><input type="text" id="tambah-pnbp" name="nominal_pnbp" value="{{ $pnbp->nominal_pnbp }}"></td>
+                        <td><input type="text" id="tambah-pnbp" name="nominal_pnbp" value="Rp{{ number_format($pnbp->nominal_pnbp, 0, '.', '.') }},00"></td>
                     </tr>
                 </table>
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">
