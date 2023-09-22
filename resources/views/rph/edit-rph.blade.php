@@ -21,7 +21,7 @@
                             @foreach ($bdhs as $bdh)
                                 @if ($bdh->IsDelete == 0 && $bdh->id_bdh == $rph->id_bdh)
                                     <input value=" {{ $bdh->nama_bdh }}" id="tambah-rph" type="text" name="nama_rph"
-                                        disabled>
+                                        readonly class="bg-secondary opacity-75">
                                 @break
                             @endif
                         @endforeach
