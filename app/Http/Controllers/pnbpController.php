@@ -25,14 +25,20 @@ class pnbpController extends Controller
     }
     public function store(Request $request)
     {
-
-        $pnbp= new pnbp();
-
+        $this->validate($request, [
+            'tahun_pnbp' => 'required',
+            'nominal_pnbp' => 'required|numeric',
+        ]);
+    
+        $pnbp = new pnbp();
+    
         $pnbp->tahun_pnbp = $request->tahun_pnbp;
-        $pnbp->nominal_pnbp= $request->nominal_pnbp;
+        $pnbp->nominal_pnbp = number_format($request->nominal_pnbp, 0, '.', ','); // Format angka di sini
         $pnbp->save();
+    
         return redirect('/data-pnbp')->with('pesan', 'Data pnbp Berhasil Disimpan');
     }
+    
     public function destroy($id_pnbp)
     {
         $pnbp_entry = pnbp::where('id_pnbp', $id_pnbp)->first();

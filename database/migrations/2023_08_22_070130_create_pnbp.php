@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('pnbp', function (Blueprint $table) {
             $table->bigIncrements("id_pnbp");
             $table->integer('tahun_pnbp');
-            $table->decimal('nominal_pnbp');
+            $table->bigInteger('nominal_pnbp');
             $table->boolean('IsDelete')->default(0);
             $table->timestamps();
         });

@@ -29,7 +29,7 @@
                     @if ($da->IsDelete == 0)
                         <tr>
                             <td>{{ $da->tahun_pnbp }}</td>
-                            <td>{{ $da->nominal_pnbp }}</td>
+                            <td>Rp{{ number_format($da->nominal_pnbp, 0, '.', '.') }},00</td>
                             <td style="justify-content: space-between; align-items:center">
                                 <a href="{{ route('pnbp.edit', $da->id_pnbp) }}"
                                     class="btn btn-warning mb-1 m-l-1">Edit</a>
