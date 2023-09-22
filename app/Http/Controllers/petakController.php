@@ -29,7 +29,7 @@ class petakController extends Controller
         if (!$req->session()->has('user_id')) {
             return redirect('/');
         }
-        $data = Petak::where('IsDelete',0)->paginate(10);
+        $data = Petak::where('IsDelete',0)->paginate(100000000);
         return view('petak.petak-read', ['data' => $data]);
     }    
     public function create()
