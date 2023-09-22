@@ -32,11 +32,18 @@ Route::get('/logout',[$auth,'logout']);
 
 // DATA UTAMA
 Route::get('/data-utama', [inventarisController::class,'index'])->name('data-utama.index');
-Route::get('/data-option', [inventarisController::class, 'create']);
-Route::get('/data-result', [inventarisController::class, 'store']); // !! masih get hanya sementara (post)!!
-Route::get('/edit-data', [inventarisController::class, 'edit']);
+// Route::get('/data-tegakan', [inventarisController::class,'index_tgk'])->name('data_utama.index_tgk');
+Route::get('/data-option', [inventarisController::class, 'create'])->name('data-utama.create');
+// Route::get('', [inventarisController::class, 'create_tgk'])->name('data-utama.create_tgk');
+Route::get('/data-result', [inventarisController::class, 'store'])->name('data-utama.store'); // !! masih get hanya sementara (post)!!
+// Route::get('', [inventarisController::class, 'store.tgk'])->name('data-utama.store_tgk'); // !! masih get hanya sementara (post)!!
+Route::get('/edit-data', [inventarisController::class, 'edit'])->name('data-utama.edit');
+// Route::get('', [inventarisController::class, 'edit_tgk'])->name('data-utama.edit_tgk');
+// Route::put('', [inventarisController::class, 'update'])->name('data-utama.update');
+// Route::put('', [inventarisController::class, 'update_tgk'])->name('data-utama.update_tgk');
+// Route::get('', [inventarisController::class, 'destroy'])->name('data-utama.destroy');
+// Route::get('', [inventarisController::class, 'destroy_tgk'])->name('data-utama.destroy_tgk');
 
-//DATA TEGAKAN
 Route::get('/data-tegakan', function(){
     return view('data-utama.inventarisTegakan');
 });
