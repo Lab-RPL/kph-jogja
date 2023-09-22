@@ -35,6 +35,8 @@ Route::get('/data-utama', [inventarisController::class,'index'])->name('data-uta
 Route::get('/data-option', [inventarisController::class, 'create']);
 Route::get('/data-result', [inventarisController::class, 'store']); // !! masih get hanya sementara (post)!!
 Route::get('/edit-data', [inventarisController::class, 'edit']);
+
+//DATA TEGAKAN
 Route::get('/data-tegakan', function(){
     return view('data-utama.inventarisTegakan');
 });
