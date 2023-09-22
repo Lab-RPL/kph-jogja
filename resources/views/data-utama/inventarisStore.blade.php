@@ -107,27 +107,6 @@
                             <td colspan="2" height="65px">
                                 <div class="line-table mt-4"></div>
                             </td>
-                            <tr>
-                                <td colspan="2">
-                                    <pre>DATA TEGAKAN</pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Jenis Tegakan</td>
-                                <td height="50px"><span>X</span> <input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td>Nomor Pohon</td>
-                                <td height="50px"><span>X</span> <input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td>Diameter</td>
-                                <td height="50px"><span>X</span> <input type="text"></td>
-                            </tr>
-                            <tr>
-                                <td>Tinggi </td>
-                                <td height="50px"><span>X</span> <input type="text"></td>
-                            </tr>
 
                             <tr>
                                 <td colspan="2" height="65px">

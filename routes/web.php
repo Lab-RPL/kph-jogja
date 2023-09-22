@@ -31,10 +31,13 @@ Route::get('/logout',[$auth,'logout']);
 
 
 // DATA UTAMA
-Route::get('/data-utama', [inventarisController::class,'index']);
+Route::get('/data-utama', [inventarisController::class,'index'])->name('data-utama.index');
 Route::get('/data-option', [inventarisController::class, 'create']);
 Route::get('/data-result', [inventarisController::class, 'store']); // !! masih get hanya sementara (post)!!
 Route::get('/edit-data', [inventarisController::class, 'edit']);
+Route::get('/data-tegakan', function(){
+    return view('data-utama.inventarisTegakan');
+});
 
 
 // BDH
@@ -69,9 +72,9 @@ Route::get('/rph{id_bdh}',[rphController::class,'destroy'])->name('rph.destroy')
 // PETAK
 Route::get('/petak/{id_rph}', [PetakController::class, 'index'])->name('petak.index');
 Route::get('/tambah-petak', [petakController::class, 'create'])->name('petak.create');
-// Route::get('/tambah-petak-read', [petakController::class, 'create_read'])->name('petak.create_read');
+Route::get('/tambah-petak-read', [petakController::class, 'create_read'])->name('petak.create_read');
 Route::post('/petak', [petakController::class, 'store'])->name('petak.store');
-// Route::post('/petak-read',[petakController::class, 'store_read'])->name('petak.store_read');
+Route::post('/petak-read',[petakController::class, 'store_read'])->name('petak.store_read');
 Route::get('/petak-read', [petakController::class, 'index2'])->name('petak.index2');
 Route::get('/petak/{id}/edit', [petakController::class, 'edit'])->name('petak.edit');
 Route::put('/petak/{id}', [petakController::class, 'update'])->name('petak.update');

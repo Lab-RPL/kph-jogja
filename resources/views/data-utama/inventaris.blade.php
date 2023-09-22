@@ -24,9 +24,6 @@
                                 <div style="text-align: center; margin-top: -3rem;">TANGGAL</div>
                             </th>
                             <th rowspan="2" style="background-color: #9CC589;">
-                                <div style="text-align: center; margin-top: -3rem;">KPH</div>
-                            </th>
-                            <th rowspan="2" style="background-color: #9CC589;">
                                 <div style="text-align: center; margin-top: -3rem;">BDH</div>
                             </th>
                             <th rowspan="2" style="background-color: #9CC589;">
@@ -41,6 +38,10 @@
                             <th rowspan="2" style="background-color: #9CC589;">
                                 <div style="text-align: center; margin-top: -3rem;">OPTION</div>
                             </th>
+                            <th rowspan="2" style="background-color: #9CC589;">
+                                <div style="text-align: center; margin-top: -3rem;">Data Tegak</div>
+                            </th>
+                            
                         </tr>
                         <style>
                             table{
@@ -69,12 +70,16 @@
                         <td><div class="txt"></div></td>
                         <td><div class="txt"></div></td>
                         <td><div class="txt"></div></td>
-                        <td><div class="txt"></div></td>
                         <td><div class="txt"></div>65</td>
                         <td><div class="txt"></div>105</td>      
                         <td>
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-primary" href="/data-result">Detail</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-primary" href="/data-tegakan">Lihat</a>
                             </div>
                         </td>
                     </tbody>

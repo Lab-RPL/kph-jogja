@@ -18,239 +18,203 @@
                 <center>
                     <table>
                         <tbody></tbody>
-                            <tr>
-                                <td width="300px">Nomor</td>
-                                <td><span>:</span>
+                        <tr>
+                            <td width="300px">Nomor</td>
+                            <td><span>:</span>
                                 43221
-                                </td>
-                            </tr>
-                            <tr>
-                                <td >Tanggal</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Tanggal</td>
+                            <td><span>:</span>
                                 2023-07-25
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>KPH</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>KPH</td>
+                            <td><span>:</span>
                                 1940348730924
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>BDH</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>BDH</td>
+                            <td><span>:</span>
                                 938949829839
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>RPH</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>RPH</td>
+                            <td><span>:</span>
                                 872374923897
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Petak</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Petak</td>
+                            <td><span>:</span>
                                 7
-                                </td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2">Koordinat PU</td>
-                                <td><span>X :</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Koordinat PU</td>
+                            <td><span>X :</span>
                                 1109208913213
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span>Y :</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>Y :</span>
                                 77627698312
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <pre>DATA UTAMA (RISALAH HUTAN)</pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Jenis Tanaman</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <pre>DATA UTAMA (RISALAH HUTAN)</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jenis Tanaman</td>
+                            <td><span>:</span>
                                 Akasisa dan Raflesia Arnoldi
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tanaman Sela</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Tanaman Sela</td>
+                            <td><span>:</span>
                                 Bunga 0lmm423
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tahun Tanam</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Tahun Tanam</td>
+                            <td><span>:</span>
                                 2023-07-25
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Jarak Tanaman Awal</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jarak Tanaman Awal</td>
+                            <td><span>:</span>
                                 43211
-                                </td>
-                            </tr>
-                            {{-- <tr>
-                                <td colspan="2">
-                                    <pre>DATA TEGAKAN</pre>
-                                </td>
-                            </tr> --}}
-                            <tr>
-                                <td colspan="2" class="border-list">
-                                    <pre>DATA TEGAKAN</pre>
-                                    <table id="tabelData" class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Jenis</th>
-                                                <th>No. Pohon</th>
-                                                <th>Diameter</th>
-                                                <th>Tinggi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Akasia</td>
-                                                <td>25</td>
-                                                <td>5 m</td>
-                                                <td>10 m</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Akasia</td>
-                                                <td>25</td>
-                                                <td>5 m</td>
-                                                <td>10 m</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Akasia</td>
-                                                <td>25</td>
-                                                <td>5 m</td>
-                                                <td>10 m</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div style="display: flex; justify-content: flex-end">
-                                        <a class="btn btn-primary" style="color: white" href="/tambah-petak">TambahData</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <pre style="font-weight: bold; font-size: 18px; text-align: center;">DATA LAPANGAN</pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Bentuk Lapangan </td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="2">
+                                <pre style="font-weight: bold; font-size: 18px; text-align: center;">DATA LAPANGAN</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bentuk Lapangan </td>
+                            <td><span>:</span>
                                 Lereng
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Derajat Lereng </td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Derajat Lereng </td>
+                            <td><span>:</span>
                                 90 derajat rata
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Kerataan </td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Kerataan </td>
+                            <td><span>:</span>
                                 Berombak
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><pre>DATA TANAH</pre></td>
-                            </tr>
-                            <tr>
-                                <td>Jenis Tanah</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <pre>DATA TANAH</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jenis Tanah</td>
+                            <td><span>:</span>
                                 Latosol
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Kedalaman </td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Kedalaman </td>
+                            <td><span>:</span>
                                 200m agak dalam
-                                </td>                              
-                            </tr>
-                            <tr>
-                                <td colspan="2"><pre style="font-weight: bold; font-size: 18px; text-align: center;">DATA TUMBUHAN BAWAH</pre></td>
-                            </tr>
-                            <tr>
-                                <td>Jenis </td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <pre style="font-weight: bold; font-size: 18px; text-align: center;">DATA TUMBUHAN BAWAH</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jenis </td>
+                            <td><span>:</span>
                                 Paku
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Kerapatan</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Kerapatan</td>
+                            <td><span>:</span>
                                 Rapat
-                                </td>   
-                            </tr>
-                            <tr>
-                                <td colspan="2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
                                 <pre style="font-weight: bold; font-size: 18px; text-align: center;">KETERANGAN LAIN</pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tipe Penggunaan Lahan</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Tipe Penggunaan Lahan</td>
+                            <td><span>:</span>
                                 Persediaan
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Erosi</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Erosi</td>
+                            <td><span>:</span>
                                 Tidak
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ketinggian Tempat</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ketinggian Tempat</td>
+                            <td><span>:</span>
                                 20m
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
                                 <pre style="font-weight: bold; font-size: 18px; text-align: center;">KETERANGAN</pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Diameter</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Diameter</td>
+                            <td><span>:</span>
                                 300
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Luas Bidang Dasar</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Luas Bidang Dasar</td>
+                            <td><span>:</span>
                                 m
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Peninggi</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Peninggi</td>
+                            <td><span>:</span>
                                 -
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Temuan Lapangan Lain</td>
-                                <td><span>:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Temuan Lapangan Lain</td>
+                            <td><span>:</span>
                                 -
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a class="btn btn-warning" style="color: white; float: left;" href="/edit-data">Ubah Data</a></td>
-                                <td><a class="btn btn-primary" style="color: white; float: right;" href="/data-utama">Lanjutkan</a></td>
-                            </tr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a class="btn btn-warning" style="color: white; float: left;" href="/edit-data">Ubah
+                                    Data</a></td>
+                            <td><a class="btn btn-primary" style="color: white; float: right;"
+                                    href="/data-tegakan">Lanjutkan</a></td>
+                        </tr>
                         </tbody>
                     </table>
                     <div>
-                        
-                        
+
+
                     </div>
         </div>
         </center>
@@ -259,12 +223,12 @@
     </div>
 
     <style>
-        pre{
-            font-weight: bold; 
-            font-size: 18px; 
+        pre {
+            font-weight: bold;
+            font-size: 18px;
             text-align: center;
         }
-        
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -287,8 +251,15 @@
             border-radius: 5px;
             font-size: 16px;
         }
+
         option {
             padding: 5px;
+        }
+
+        .border-top-bottom {
+            border-top: 2px solid #0CB166;
+            border-bottom: 2px solid #0CB166;
+            padding: 2rem;
         }
     </style>
 @endsection
