@@ -11,6 +11,12 @@ class dataUtama extends Model
 
     protected $table = "data_utama";
     protected $primaryKey = 'id_PU';
-    protected $fillable = ["id_PU", "tanggal", "id_ptk", "no_PU", "koor_x", "koor_Y", "tanam_sela", "tahun_tanam", "jarak_tanam"];
+    protected $fillable = ["id_PU", "tanggal", "id_ptk", "no_PU", "koor_x", "koor_Y", "tanam_sela", "tahun_tanam", "jarak_tanam", "umur_tgk", "keadaan_kes", "kemurnian", "bentuk_lap", "derajat_lereng", "landai_lereng", "kerataan_lap", "jns_tanah", "kedalaman", "dalaman", "jns_bwh", "kerapatan", "penemuan", "erosi", "tinggi_tempat"];
+
+    public function bdh()
+{
+    return $this->belongsTo(Bdh::class, 'id_bdh');
+}
+
 }
 
