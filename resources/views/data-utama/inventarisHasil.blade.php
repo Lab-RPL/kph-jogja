@@ -10,59 +10,54 @@
             <h2 class="middletext" class="mt-2">KESATUAN PENGELOLAAN HUTAN (KPH)</h2>
             <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta
             </p>
-            <form>
+            <form method="POST">
                 <div class="wrapper">
                     <pre>DATA UTAMA</pre>
                 </div>
                 @csrf
+                {{-- @method('put') --}}
                 <center>
                     <table>
-                        <tbody></tbody>
+                        {{-- @foreach ($data as $da)
                         <tr>
                             <td width="300px">Nomor</td>
                             <td><span>:</span>
-                                43221
+                                {{ $da->no_PU }}
                             </td>
                         </tr>
                         <tr>
                             <td>Tanggal</td>
                             <td><span>:</span>
-                                2023-07-25
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>KPH</td>
-                            <td><span>:</span>
-                                1940348730924
+                                {{ $da->tanggal }}
                             </td>
                         </tr>
                         <tr>
                             <td>BDH</td>
                             <td><span>:</span>
-                                938949829839
+                                {{ $da->nama_bdh }}
                             </td>
                         </tr>
                         <tr>
                             <td>RPH</td>
                             <td><span>:</span>
-                                872374923897
+                                {{ $da->nama_rph }}
                             </td>
                         </tr>
                         <tr>
                             <td>Petak</td>
                             <td><span>:</span>
-                                7
+                                {{ $da->nomor_ptk }}
                             </td>
                         </tr>
                         <tr>
                             <td rowspan="2">Koordinat PU</td>
                             <td><span>X :</span>
-                                1109208913213
+                                {{ $da->koor_x }}
                             </td>
                         </tr>
                         <tr>
                             <td><span>Y :</span>
-                                77627698312
+                                {{ $da->koor_y }}
                             </td>
                         </tr>
                         <tr>
@@ -73,28 +68,28 @@
                         <tr>
                             <td>Jenis Tanaman</td>
                             <td><span>:</span>
-                                Akasisa dan Raflesia Arnoldi
+                                {{ $da->jns_tanam }}
                             </td>
                         </tr>
                         <tr>
                             <td>Tanaman Sela</td>
                             <td><span>:</span>
-                                Bunga 0lmm423
+                                {{ $da->tanam_sela }}
                             </td>
                         </tr>
                         <tr>
                             <td>Tahun Tanam</td>
                             <td><span>:</span>
-                                2023-07-25
+                                {{ $da->tahun_tanam }}
                             </td>
                         </tr>
                         <tr>
                             <td>Jarak Tanaman Awal</td>
                             <td><span>:</span>
-                                43211
+                                {{ $da->jarak_tanam }}
                             </td>
                         </tr>
-                        
+
                         <tr>
                             <td colspan="2">
                                 <pre style="font-weight: bold; font-size: 18px; text-align: center;">DATA LAPANGAN</pre>
@@ -103,19 +98,19 @@
                         <tr>
                             <td>Bentuk Lapangan </td>
                             <td><span>:</span>
-                                Lereng
+                                {{ $da->bentuk_lap }}
                             </td>
                         </tr>
                         <tr>
                             <td>Derajat Lereng </td>
                             <td><span>:</span>
-                                90 derajat rata
+                                {{ $da->derajat_lereng }}
                             </td>
                         </tr>
                         <tr>
                             <td>Kerataan </td>
                             <td><span>:</span>
-                                Berombak
+                                {{ $da->kerataan_lap }}
                             </td>
                         </tr>
                         <tr>
@@ -126,13 +121,13 @@
                         <tr>
                             <td>Jenis Tanah</td>
                             <td><span>:</span>
-                                Latosol
+                                {{ $da->jns_tanah }}
                             </td>
                         </tr>
                         <tr>
                             <td>Kedalaman </td>
                             <td><span>:</span>
-                                200m agak dalam
+                                {{ $da->kedalaman }}
                             </td>
                         </tr>
                         <tr>
@@ -143,13 +138,13 @@
                         <tr>
                             <td>Jenis </td>
                             <td><span>:</span>
-                                Paku
+                                {{ $da->jns_bwh }}
                             </td>
                         </tr>
                         <tr>
                             <td>Kerapatan</td>
                             <td><span>:</span>
-                                Rapat
+                                {{ $da->kerapatan }}
                             </td>
                         </tr>
                         <tr>
@@ -160,61 +155,27 @@
                         <tr>
                             <td>Tipe Penggunaan Lahan</td>
                             <td><span>:</span>
-                                Persediaan
+                                {{ $da->penemuan }}
                             </td>
                         </tr>
                         <tr>
                             <td>Erosi</td>
                             <td><span>:</span>
-                                Tidak
+                                {{ $da->erosi }}
                             </td>
                         </tr>
                         <tr>
                             <td>Ketinggian Tempat</td>
                             <td><span>:</span>
-                                20m
+                                {{ $da->tinggi_tempat }}
                             </td>
                         </tr>
-                        <tr>
-                            <td colspan="2">
-                                <pre style="font-weight: bold; font-size: 18px; text-align: center;">KETERANGAN</pre>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Diameter</td>
-                            <td><span>:</span>
-                                300
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Luas Bidang Dasar</td>
-                            <td><span>:</span>
-                                m
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Peninggi</td>
-                            <td><span>:</span>
-                                -
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Temuan Lapangan Lain</td>
-                            <td><span>:</span>
-                                -
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a class="btn btn-warning" style="color: white; float: left;" href="/edit-data">Ubah
-                                    Data</a></td>
-                            <td><a class="btn btn-primary" style="color: white; float: right;"
-                                    href="/data-tegakan">Lanjutkan</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <div>
-
-
+                        @endforeach --}}
+                    </table> 
+                    <div style="display: flex; justify-content: space-between; margin-top: 60px;">
+                        <a class="btn btn-warning" style="color: white; float: left;" href="">Ubah
+                            Data</a>
+                        <a class="btn btn-primary" style="color: white; float: right;" href="/data-tegakan">Lanjutkan</a>
                     </div>
         </div>
         </center>
