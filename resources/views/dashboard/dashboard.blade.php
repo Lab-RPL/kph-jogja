@@ -16,7 +16,7 @@
                 <div class="cardBox">
                     <div class="card">
                         <div>
-                            <div class="numbers">1,504 <span style="font-size: 25px">Data</span></div>
+                            <div class="numbers">{{ $totalinven }} <span style="font-size: 25px">Data</span></div>
                             <div class="cardName">Data Inventaris</div>
                         </div>
                         <span class="iconBx" style="margin-top: 10px;">
