@@ -53,11 +53,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if (count($data) == 0)
-                            <tr>
-                                <td colspan="5" style="text-align: center">Belum Ada Data</td>
-                            </tr>
-                        @endif
                         @foreach ($data as $da)
                             @if ($da->IsDelete == 0)
                                 <tr>

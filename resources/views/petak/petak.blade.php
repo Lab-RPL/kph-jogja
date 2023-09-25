@@ -54,11 +54,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if (count($data) == 0)
-                            <tr>
-                                <td colspan="5" style="text-align: center;">Belum Ada Data</td>
-                            </tr>
-                        @endif
                         @foreach ($data as $da)
                             <tr>
                                 <td style="text-align: center">{{ $da->nomor_ptk }}</td>
