@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 
+    {{-- Style search datatable --}}
+    <style>
+        div.dataTables_wrapper div.dataTables_filter {
+            text-align: right;
+            margin-right: 50px;
+        }
+    </style>
     <div class="garis">
         <div class="border-lists">
             <h2 class="middletext" class="mt-2">DATA PETAK UKUR</h2>
