@@ -13,7 +13,6 @@ use App\Http\Controllers\potensiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LuasHutanController;
 use App\Http\Controllers\inventarisController;
-use App\Http\Controllers\LuasHutanController;
 
 
 
