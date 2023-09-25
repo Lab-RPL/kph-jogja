@@ -107,7 +107,7 @@
 .cardBox .card:hover .numbers,
 .cardBox .card:hover .cardName,
 .cardBox .card:hover .iconBx {
-    color: var(--white);
+    color: var(--black1);
 }
 
 /* ================== Order Details List ============== */

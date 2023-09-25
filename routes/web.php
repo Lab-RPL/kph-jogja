@@ -10,8 +10,7 @@ use App\Http\Controllers\pnbpController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\petakController;
 use App\Http\Controllers\potensiController;
-use App\Http\Controllers\LuasHutanController;
-use App\Http\Controllers\inventarisController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +58,7 @@ Route::get('/data-bdh', [bdhController::class,'index']);
 Route::post('/data-bdh', [bdhController::class, 'store'])->name('bdh.store');
 // Route::post('/data-bdh', [bdhController::class, 'store_read'])->name('bdh.store_read');
 Route::get('/tambah-bdh', [bdhController::class,'create'])->name('bdh.create');
+Route::get('/tambah-bdh-read', [bdhController::class,'create_read'])->name('bdh.create.read');
 // Route::get('/tambah-bdh-read', [bdhController::class,'create_read'])->name('bdh.create_read');
 Route::get('/data-bdh/{id_bdh}/edit',[bdhController::class,'edit'])->name('bdh.edit');
 Route::put('/data-bdh/{id}', [bdhController::class, 'update'])->name('bdh.update');
@@ -160,7 +160,5 @@ Route::get('/data-luas', [LuasHutanController::class, 'index'])->name('data-luas
 
 
 //Dashboard
-Route::get('/dashboard', function(){
-    return view('dashboard.dashboard');
-});
+Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard.index');
 

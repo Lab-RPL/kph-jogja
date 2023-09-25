@@ -29,7 +29,7 @@
 
                     <div class="card">
                         <div>
-                            <div class="numbers">80 <span style="font-size: 25px">Data</span></div>
+                            <div class="numbers">{{ $totalbdh }} <span style="font-size: 25px">Data</span></div>
                             <div class="cardName">Badan Daerah Hutan</div>
                         </div>
                         <span class="iconBx" style="margin-top: 10px;">
@@ -42,7 +42,7 @@
 
                     <div class="card">
                         <div>
-                            <div class="numbers">284 <span style="font-size: 25px">Data</span></div>
+                            <div class="numbers">{{ $totalrph }} <span style="font-size: 25px">Data</span></div>
                             <div class="cardName">Rencana Pengelolaan Hutan</div>
                         </div>
                         <span class="iconBx" style="margin-top: 10px;">
@@ -55,7 +55,7 @@
 
                     <div class="card">
                         <div>
-                            <div class="numbers">42 <span style="font-size: 25px">Data</span></div>
+                            <div class="numbers">42 <span style="font-size: 25px"> Data</span></div>
                             <div class="cardName">Perizinan Berusaha</div>
                         </div>
                         <span class="iconBx" style="margin-top: 10px;">
