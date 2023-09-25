@@ -1,16 +1,16 @@
 <?php
 
+use App\Models\admin;
 use App\Http\Controllers\auth;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\bdhController;
 use App\Http\Controllers\rphController;
-use App\Http\Controllers\inventarisController;
-use App\Http\Controllers\pnbpController;
 use App\Http\Controllers\izinController;
+use App\Http\Controllers\pnbpController;
+use App\Http\Controllers\adminController;
 use App\Http\Controllers\petakController;
 use App\Http\Controllers\potensiController;
-use App\Http\Controllers\adminController;
-use App\Models\admin;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,11 +32,18 @@ Route::get('/logout',[$auth,'logout']);
 
 // DATA UTAMA
 Route::get('/data-utama', [inventarisController::class,'index'])->name('data-utama.index');
-Route::get('/data-option', [inventarisController::class, 'create']);
-Route::get('/data-result', [inventarisController::class, 'store']); // !! masih get hanya sementara (post)!!
-Route::get('/edit-data', [inventarisController::class, 'edit']);
+// Route::get('/data-tegakan', [inventarisController::class,'index_tgk'])->name('data_utama.index_tgk');
+Route::get('/data-option', [inventarisController::class, 'create'])->name('data-utama.create');
+// Route::get('', [inventarisController::class, 'create_tgk'])->name('data-utama.create_tgk');
+Route::get('/data-result', [inventarisController::class, 'store'])->name('data-utama.store'); // !! masih get hanya sementara (post)!!
+// Route::get('', [inventarisController::class, 'store.tgk'])->name('data-utama.store_tgk'); // !! masih get hanya sementara (post)!!
+Route::get('/edit-data', [inventarisController::class, 'edit'])->name('data-utama.edit');
+// Route::get('', [inventarisController::class, 'edit_tgk'])->name('data-utama.edit_tgk');
+// Route::put('', [inventarisController::class, 'update'])->name('data-utama.update');
+// Route::put('', [inventarisController::class, 'update_tgk'])->name('data-utama.update_tgk');
+// Route::get('', [inventarisController::class, 'destroy'])->name('data-utama.destroy');
+// Route::get('', [inventarisController::class, 'destroy_tgk'])->name('data-utama.destroy_tgk');
 
-//DATA TEGAKAN
 Route::get('/data-tegakan', function(){
     return view('data-utama.inventarisTegakan');
 });
@@ -51,6 +58,7 @@ Route::get('/data-bdh', [bdhController::class,'index']);
 Route::post('/data-bdh', [bdhController::class, 'store'])->name('bdh.store');
 // Route::post('/data-bdh', [bdhController::class, 'store_read'])->name('bdh.store_read');
 Route::get('/tambah-bdh', [bdhController::class,'create'])->name('bdh.create');
+Route::get('/tambah-bdh-read', [bdhController::class,'create_read'])->name('bdh.create.read');
 // Route::get('/tambah-bdh-read', [bdhController::class,'create_read'])->name('bdh.create_read');
 Route::get('/data-bdh/{id_bdh}/edit',[bdhController::class,'edit'])->name('bdh.edit');
 Route::put('/data-bdh/{id}', [bdhController::class, 'update'])->name('bdh.update');
@@ -148,12 +156,9 @@ Route::get('/data-produksi', function(){
 
 
 //Luas Hutan
-Route::get('/data-luas', function(){
-    return view('luas-hutan.luas-hutan');
-});
+Route::get('/data-luas', [LuasHutanController::class, 'index'])->name('data-luas');
+
 
 //Dashboard
-Route::get('/dashboard', function(){
-    return view('dashboard.dashboard');
-});
+Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard.index');
 

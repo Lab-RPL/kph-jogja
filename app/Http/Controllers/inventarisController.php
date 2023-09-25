@@ -16,6 +16,7 @@ class inventarisController extends Controller
             return redirect('/');
         }
 
+        
         // $utama_data = dataUtama::with('petak')
         //     ->where('id_ptk', $id_ptk)
         //     ->paginate(5);
@@ -24,14 +25,37 @@ class inventarisController extends Controller
         //     ->where('IsDelete',0)
         //     ->paginate(5);
         // return view('data-utama.inventaris', ['data' => $data, 'utama_data' => $utama_data]);
-        $data = DB::table('data_utama')->paginate(5);
+        $data = DB::table('data_utama')
+        ->join('petak', 'data_utama.id_ptk', '=', 'petak.id_ptk')
+        ->join('rph', 'petak.id_rph', '=', 'rph.id_rph')
+        ->join('bdh', 'rph.id_bdh', '=', 'bdh.id_bdh')
+        ->select('data_utama.*', 'petak.nomor_ptk', 'rph.nama_rph', 'bdh.nama_bdh','data_utama.koor_x', 'data_utama.koor_y')
+        ->paginate(1000000);
+    
+    
         return view('data-utama.inventaris', ['data' => $data]); 
+    }
+
+    public function index_tgk(Request $req,){
+
+        if (!$req->session()->has('user_id')) {
+            return redirect('/');
+        }
+
+
+
+        $data = DB::table('data_tegak')->paginate(10000000);
+        return view('data-utama.inventarisTegakan',['data' => $data]);
     }
 
     public function create(){
 
         $petak = petak::all();
         return view('data-utama.inventarisStore')->with('petak', $petak);
+    }
+
+    public function create_tgk(){
+        
     }
 
     public function store(Request $request)
@@ -48,7 +72,6 @@ class inventarisController extends Controller
     //         'jarak_tanam' => 'required|numeric',
     //         'umur_tgk' => 'required|integer',
     //         'keadaan_kes' => 'required|string',
-    //         'keadaan_tgk' => 'required|string',
     //         'kemurnian' => 'required|string',
     //         'bentuk_lap' => 'required|string',
     //         'derajat_lereng' => 'required|string',
@@ -64,7 +87,7 @@ class inventarisController extends Controller
 
     //     dataUtama::create([
 
-    //         'id_ptk' => $request->id_ptk,
+    //         'id_ptk' => $request->petak_pu,
     //         'tanggal' => $request->tanggal,
     //         'no_PU' => $request->no_PU,
     //         'koor_x' => $request->koor_x,
@@ -74,25 +97,51 @@ class inventarisController extends Controller
     //         'jarak_tanam' => $request->jarak_tanam,
     //         'umur_tgk' => $request->umur_tgk,
     //         'keadaan_kes' => $request->keadaan_kes,
-    //         'keadaan_tgk' => $request->keadaan_tgk,
     //         'kemurnian' => $request->kemurnian,
     //         'bentuk_lap' => $request->bentuk_lap,
     //         'derajat_lereng' => $request->derajat_lereng,
+    //         'landai_lereng' => $request->landai_lereng,
     //         'kerataan_lap' => $request->kerataan_lap,
     //         'jns_tanah' => $request->jns_tanah,
-    //         'kedalaman' => $request->kedalamaan,
+    //         'kedalaman' => $request->kedalaman,
+    //         'dalaman' => $request->dalaman,
     //         'jns_bwh' => $request->jns_bwh,
     //         'kerapatan' => $request->kerapatan,
     //         'penemuan' => $request->penemuan,
     //         'erosi' => $request->erosi,
-    //         'ketinggian_tempat' => $request->ketinggian_tempat,
+    //         'tinggi_tempat' => $request->tinggi_tempat,
     //     ]);
 
     //     return redirect()->route('data-utama.index', $request->id_ptk)
     //                     -> with('pesan', 'Data berhasil ditambahkan');
     // }
+    }
 
-    // public function edit() {
-    //     return view('data-utama.inventarisChange');
+    public function store_tgk(){
+
+    }
+
+    public function edit() {
+        return view('data-utama.inventarisChange');
+    }
+
+    public function edit_tgk(){
+
+    }
+
+    public function update(){
+
+    }
+
+    public function update_tgk(){
+
+    }
+
+    public function destroy(){
+
+    }
+
+    public function destroy_tgk(){
+
     }
 }

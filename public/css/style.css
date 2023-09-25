@@ -107,7 +107,7 @@
 .cardBox .card:hover .numbers,
 .cardBox .card:hover .cardName,
 .cardBox .card:hover .iconBx {
-    color: var(--white);
+    color: var(--black1);
 }
 
 /* ================== Order Details List ============== */
@@ -119,6 +119,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 30px;
+    
     /* margin-top: 10px; */
 }
 

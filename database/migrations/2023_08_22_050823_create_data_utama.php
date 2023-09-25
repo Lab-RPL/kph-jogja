@@ -26,18 +26,19 @@ return new class extends Migration
             $table->float('jarak_tanam');
             $table->integer('umur_tgk');
             $table->string('keadaan_kes');
-            $table->string('keadaan_tgk');
             $table->string('kemurnian');
             $table->string('bentuk_lap');
             $table->string('derajat_lereng');
+            $table->string('landai_lereng');
             $table->string('kerataan_lap');
             $table->string('jns_tanah');
             $table->string('kedalaman');
+            $table->string('dalaman');
             $table->string('jns_bwh');
             $table->string('kerapatan');
             $table->string('penemuan');
             $table->string('erosi');
-            $table->float('ketinggian_tempat');
+            $table->float('tinggi_tempat');
             $table->boolean('IsDelete')->default(0);
         });
     }
