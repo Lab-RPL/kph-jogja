@@ -19,27 +19,29 @@ return new class extends Migration
             $table->foreign('id_ptk')->references('id_ptk')->on('petak');
 
             $table->integer('no_PU');
-            $table->decimal('koor_x');
-            $table->decimal('koor_Y');
+            $table->double('koor_x');
+            $table->double('koor_y');
             $table->string('tanam_sela');
             $table->integer('tahun_tanam');
             $table->float('jarak_tanam');
             $table->integer('umur_tgk');
             $table->string('keadaan_kes');
+            $table->string('kerataan_tgk');
             $table->string('kemurnian');
             $table->string('bentuk_lap');
-            $table->string('derajat_lereng');
+            $table->decimal('derajat_lereng');
             $table->string('landai_lereng');
             $table->string('kerataan_lap');
             $table->string('jns_tanah');
-            $table->string('kedalaman');
+            $table->decimal('kedalaman');
             $table->string('dalaman');
             $table->string('jns_bwh');
             $table->string('kerapatan');
-            $table->string('penemuan');
-            $table->string('erosi');
-            $table->float('tinggi_tempat');
+            $table->string('penemuan')->nullable();
+            $table->string('erosi')->nullable();
+            $table->float('tinggi_tempat')->nullable();
             $table->boolean('IsDelete')->default(0);
+            $table->timestamps();
         });
     }
 

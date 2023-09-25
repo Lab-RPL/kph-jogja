@@ -51,7 +51,7 @@
                                 <div style="text-align: center; margin-top: -3rem;">OPTION</div>
                             </th>
                             <th rowspan="2" style="background-color: #9CC589;">
-                                <div style="text-align: center; margin-top: -3rem;">Data Tegak</div>
+                                <div style="text-align: center; margin-top: -3rem;">DATA TEGAK</div>
                             </th>
 
                         </tr>
@@ -78,55 +78,56 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody>
-                        @foreach ($data as $da)
-                            <tr>
-                                @if (count($data) == 0)
+
+                    @foreach ($data as $da)
+                        <tr>
+                            {{-- @if (count($data) == 0)
                             <tr>
                                 <td colspan="5" style="text-align: center;">Belum Ada Data</td>
                             </tr>
-                        @endif
+                        @endif --}}
 
-                        <td>
-                            <div class="txt">{{ $da->no_PU }}</div>
-                        </td>
-                        <td>
-                            <div class="txt">{{ $da->tanggal }}</div>
-                        </td>
-                        <td>
-                            <div class="txt">{{ $da->nama_bdh }}</div>
-                        </td>
-                        <td>
-                            <div class="txt">{{ $da->nama_rph }}</div>
-                        </td>
-                        <td>
-                            <div class="txt">{{ $da->nomor_ptk }}</div>
-                        </td>
-                        <td>
-                            <div class="txt">{{ $da->koor_x }}</div>
-                        </td>
-                        <td>
-                            <div class="txt">{{ $da->koor_y }}</div>
-                        </td>
-                        <td>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-primary" href="/data-result">Detail</a>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-primary" href="/data-tegakan">Lihat</a>
-                            </div>
-                        </td>
+                            <td>
+                                <div class="txt">{{ $da->no_PU }}</div>
+                            </td>
+                            <td>
+                                <div class="txt">{{ $da->tanggal }}</div>
+                            </td>
+                            <td>
+                                <div class="txt">{{ $da->nama_bdh }}</div>
+                            </td>
+                            <td>
+                                <div class="txt">{{ $da->nama_rph }}</div>
+                            </td>
+                            <td>
+                                <div class="txt">{{ $da->nomor_ptk }}</div>
+                            </td>
+                            <td>
+                                <div class="txt">{{ $da->koor_x }}</div>
+                            </td>
+                            <td>
+                                <div class="txt">{{ $da->koor_y }}</div>
+                            </td>
+                            <td>
+                                    <a class="btn btn-primary" href="{{ route('data-utama.detail') }}">Detail</a>
+                                    <a href="" class="btn btn-warning">Edit</a>
+                                    <a data-id="{{ $da->id_PU }}" class="delete-btn btn btn-danger"
+                                        href="{{ route('data-utama.destroy', $da->id_PU) }}">Hapus</a>
+                            </td>
+                            <td>
+                                <div class="d-flex justify-content-center">
+                                    <a class="btn btn-primary" href="/data-tegakan">Lihat</a>
+                                </div>
+                            </td>
                         </tr>
-                        @endforeach
+                    @endforeach
                     </tbody>
                 </table>
 
                 <div style="display: flex; justify-content: flex-end;">
-                    <a class="btn btn-primary"
+                    <a class="btn btn-primary mt-4"
                         style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
-                        href="/data-option">Tambah Data</a> {{--  sementara --}}
+                        href="{{ route('data-utama.create') }}">Tambah Data</a> {{--  sementara --}}
                 </div>
 
             </form>
@@ -145,6 +146,17 @@
             ],
 
             pageLength: 5 // Menampilkan 5 data per halaman
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pesanSukses = document.getElementById('pesan-sukses');
+            if (pesanSukses) {
+                setTimeout(function() {
+                    pesanSukses.style.display = 'none';
+                }, 5000);
+            }
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

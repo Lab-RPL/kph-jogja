@@ -11,7 +11,7 @@
 
             <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta
             </p>
-            <form action="" method="post">
+            <form action="{{ route('data-utama.store') }}" method="post">
                 <div class="wrapper">
                     <pre>RISALAH HUTAN</pre>
                 </div>
@@ -38,18 +38,31 @@
                             </tr> --}}
                             <tr>
                                 <td>Petak</td>
-                                <td height="50px"><span>X</span> <input type="text" name="petak_pu" required></td>
+                                <td height="50px">
+                                    <span>X</span>
+                                    <select name="id_ptk" required>
+                                        <option value="">Pilih Nomor Petak</option>
+                                        @foreach ($petak as $petak)
+                                            @if ($petak->IsDelete == 0)
+                                                <option value="{{ $petak->id_ptk }}">{{ $petak->nomor_ptk }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </td>
                             </tr>
+
                             <tr>
                                 <td>Nomor PU</td>
                                 <td height="50px"><span>X</span> <input type="text" name="no_PU" required></td>
                             </tr>
                             <tr>
                                 <td rowspan="2">Koordinat PU</td>
-                                <td height="50px">X <input placeholder="Koordinat X" type="text" name="koor_x" required></td>
+                                <td height="50px">X <input placeholder="Koordinat X" type="text" name="koor_x"
+                                        required></td>
                             </tr>
                             <tr>
-                                <td height="50px">Y <input placeholder="Koordinat Y" type="text" name="koor_y" required></td>
+                                <td height="50px">Y <input placeholder="Koordinat Y" type="text" name="koor_y"
+                                        required></td>
                             </tr>
                             <tr>
                                 <td colspan="2" height="65px">
@@ -62,33 +75,38 @@
                             </tr>
                             <tr>
                                 <td>Tahun Tanam</td>
-                                <td height="50px"><span>X</span> <input type="text" name="tahun_tanam" required></td>
+                                <td height="50px"><span>X</span> <input type="text" name="tahun_tanam"
+                                        placeholder="Tahun" required></td>
                             </tr>
                             <tr>
                                 <td>Jarak Tanaman Awal</td>
-                                <td height="50px"><span>X</span> <input type="text" name="jarak_tanam" required></td>
+                                <td height="50px"><span>X</span> <input type="text" name="jarak_tanam" placeholder="m"
+                                        required></td>
                             </tr>
                             <tr>
                                 <td>Umur</td>
-                                <td height="50px"><span>X</span> <input type="text" name="umur_tgk" required></td>
+                                <td height="50px"><span>X</span> <input type="text" name="umur_tgk" placeholder="Tahun"
+                                        required></td>
                             </tr>
                             <tr>
                                 <td>Keadaan Kesehatan</td>
                                 <td height="50px"><span>X</span>
                                     <select name="keadaan_kes" required>
-                                        <option value="merah">Baik</option>
-                                        <option value="hijau" selected>Sedang</option>
-                                        <option value="biru">Jelek</option>
+                                        <option value="">Pilih Keadaan</option>
+                                        <option value="Baik">Baik</option>
+                                        <option value="Sedang">Sedang</option>
+                                        <option value="Jelek">Jelek</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Kerataan</td>
                                 <td height="50px"><span>X</span>
-                                    <select name="kerataan_kes" required>
-                                        <option value="merah">Rata</option>
-                                        <option value="hijau" selected>Agak Rata</option>
-                                        <option value="biru">Tidak Rata</option>
+                                    <select name="kerataan_tgk" required>
+                                        <option value="">Pilih Kerataan</option>
+                                        <option value="Rata">Rata</option>
+                                        <option value="Agak Rata">Agak Rata</option>
+                                        <option value="Tidak Rata">Tidak Rata</option>
                                     </select>
                                 </td>
                             </tr>
@@ -96,9 +114,10 @@
                                 <td>Kemurnian</td>
                                 <td height="50px"><span>X</span>
                                     <select name="kemurnian" required>
-                                        <option value="merah">Murni</option>
-                                        <option value="hijau" selected>Agak Murni</option>
-                                        <option value="biru">Tidak Murni</option>
+                                        <option value="">Pilih Kemurnian</option>
+                                        <option value="Murni">Murni</option>
+                                        <option value="Agak Murni">Agak Murni</option>
+                                        <option value="Tidak Murni">Tidak Murni</option>
                                     </select>
                                 </td>
                             </tr>
@@ -117,23 +136,26 @@
                                 <td>Bentuk Lapangan </td>
                                 <td height="50px"><span>X</span>
                                     <select name="bentuk_lap" required>
-                                        <option value="merah">Puncak</option>
-                                        <option value="hijau" selected>Punggung</option>
-                                        <option value="biru">Pasu</option>
-                                        <option value="biru">Jurang</option>
-                                        <option value="biru">Lereng</option>
+                                        <option value="">Pilih Bentuk Lapangan</option>
+                                        <option value="Puncak">Puncak</option>
+                                        <option value="Punggung">Punggung</option>
+                                        <option value="Pasu">Pasu</option>
+                                        <option value="Jurang">Jurang</option>
+                                        <option value="Lereng">Lereng</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Derajat Lereng </td>
                                 <td height="50px"><span>X</span>
-                                    <input type="text" style="width: 75px" placeholder="00°" name="derajat_lereng" required>
+                                    <input type="text" style="width: 75px" placeholder="00°" name="derajat_lereng"
+                                        required>
                                     <select name="landai_lereng" required>
-                                        <option value="merah">Rata</option>
-                                        <option value="hijau" selected>Landai</option>
-                                        <option value="biru">Curam</option>
-                                        <option value="biru">Sangat Curam</option>
+                                        <option value="">Pilih Data</option>
+                                        <option value="Rata">Rata</option>
+                                        <option value="Landai">Landai</option>
+                                        <option value="Curam">Curam</option>
+                                        <option value="Sangat Curam">Sangat Curam</option>
                                     </select>
                                 </td>
                             </tr>
@@ -141,8 +163,9 @@
                                 <td>Kerataan </td>
                                 <td height="50px"><span>X</span>
                                     <select name="kerataan_lap" required>
-                                        <option value="berbukit">Berbukit</option>
-                                        <option value="berombak">Berombak</option>
+                                        <option value="">Pilih Kerataan</option>
+                                        <option value="Berbukit">Berbukit</option>
+                                        <option value="Berombak">Berombak</option>
                                     </select>
                                 </td>
                             </tr>
@@ -155,22 +178,25 @@
                                 <td>Jenis Tanah</td>
                                 <td><span>X</span>
                                     <select name="jns_tanah" required>
-                                        <option value="abu">Abu</option>
+                                        <option value="">Pilih Jenis Tanah</option>
+                                        <option value="Abu">Abu</option>
                                         <option value="latosol">Latosol</option>
-                                        <option value="kapur">Kapur</option>
-                                        <option value="margalit">Margalit</option>
-                                        <option value="grumusol">Grumusol</option>
+                                        <option value="Kapur">Kapur</option>
+                                        <option value="Margalit">Margalit</option>
+                                        <option value="Grumusol">Grumusol</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Kedalaman </td>
                                 <td height="50px"><span>X</span>
-                                    <input type="text" style="width: 80px;" placeholder="m" name="kedalaman" required>
+                                    <input type="text" style="width: 80px;" placeholder="m" name="kedalaman"
+                                        required>
                                     <select style="width: 8rem;" name="dalaman" required>
-                                        <option value="dalam">Dalam</option>
-                                        <option value="agak">Agak Dalam</option>
-                                        <option value="dangkal">Dangkal</option>
+                                        <option value="">Pilih Data</option>
+                                        <option value="Dalam">Dalam</option>
+                                        <option value="Agak Dalam">Agak Dalam</option>
+                                        <option value="Dangkal">Dangkal</option>
                                     </select>
                                 </td>
                             </tr>
@@ -182,7 +208,7 @@
                             <tr>
                                 <td>Jenis </td>
                                 <td height="50px"><span>X</span>
-                                    <input type="text" style="width: 150px;" name="jenis_bwh">
+                                    <input type="text" style="width: 150px;" name="jns_bwh">
                                 </td>
                             </tr>
                             <tr>
@@ -190,10 +216,11 @@
                                 <td>
                                     <span>X</span>
                                     <select style="width: 150px;" name="kerapatan" required>
-                                        <option value="rapat">Rapat</option>
-                                        <option value="berbukit">Berbukit</option>
-                                        <option value="sedang">Sedang</option>
-                                        <option value="jarang">Jarang</option>
+                                        <option value="">Pilih Kerapatan</option>
+                                        <option value="Rapat">Rapat</option>
+                                        <option value="Berbukit">Berbukit</option>
+                                        <option value="Sedang">Sedang</option>
+                                        <option value="Jarang">Jarang</option>
                                     </select>
                                 </td>
                             </tr>
@@ -206,16 +233,17 @@
                                 <td>Penemuan Lapangan Lain</td>
                                 <td>
                                     <span>X</span>
-                                    <input type="text" style="width: 350px;" name="penemuan" required>
+                                    <input type="text" style="width: 350px;" name="penemuan">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Erosi</td>
                                 <td>
                                     <span>X</span>
-                                    <select style="width: 150px;" name="erosi" required>
-                                        <option value="ada">Ada</option>
-                                        <option value="tidak-erosi">Tidak / Erosi</option>
+                                    <select style="width: 150px;" name="erosi">
+                                        <option value="">Pilih Data</option>
+                                        <option value="Ada">Ada</option>
+                                        <option value="Tidak Erosi">Tidak Erosi</option>
                                     </select>
                                 </td>
                             </tr>
@@ -223,17 +251,22 @@
                                 <td>Ketinggian Tempat</td>
                                 <td>
                                     <span>X</span>
-                                    <input type="text" style="width: 150px;" name="tinggi_tempat" placeholder="m" required>
+                                    <input type="text" style="width: 150px;" name="tinggi_tempat" placeholder="m">
                                 </td>
-                            </tr>
-                            <tr>
-                                <td><a class="btn btn-warning" style="color: white; float: left;"
-                                        href="/data-utama">Kembali</a></td>
-                                <td><a class="btn btn-primary" style="color: white; float: right;"
-                                        href="/data-result">Lanjutkan</a></td>
                             </tr>
                         </tbody>
                     </table>
+                    <div style="display: flex; justify-content: space-between; margin-top: 60px;">
+                        <a class="btn btn-warning" style="color: white" onclick="return goBack();">Kembali</a>
+                        <button class="btn btn-primary" style="color: white" type="submit">Tambah Data</button>
+                    </div>
+
+                    <script>
+                        function goBack() {
+                            window.history.back();
+                            return false;
+                        }
+                    </script>
         </div>
         </center>
         </form>
@@ -242,18 +275,18 @@
 
     <style>
         /* .border-lists {
-                    position: relative;
-                    border: 3px solid #ccc;
-                    border-radius: 20px;
-                    padding: 60px;
-                    max-width: 980px;
-                    width: 100%;
-                    height: auto;
-                    max-height: 550px;
-                    border-color: #0CB166;
-                    overflow-y: scroll;
-                    margin-bottom: 38px;
-                    } */
+                            position: relative;
+                            border: 3px solid #ccc;
+                            border-radius: 20px;
+                            padding: 60px;
+                            max-width: 980px;
+                            width: 100%;
+                            height: auto;
+                            max-height: 550px;
+                            border-color: #0CB166;
+                            overflow-y: scroll;
+                            margin-bottom: 38px;
+                            } */
 
         pre {
             font-weight: bold;
