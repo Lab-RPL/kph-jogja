@@ -1,16 +1,17 @@
 <?php
 
+use App\Models\admin;
 use App\Http\Controllers\auth;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\bdhController;
 use App\Http\Controllers\rphController;
-use App\Http\Controllers\inventarisController;
-use App\Http\Controllers\pnbpController;
 use App\Http\Controllers\izinController;
+use App\Http\Controllers\pnbpController;
+use App\Http\Controllers\adminController;
 use App\Http\Controllers\petakController;
 use App\Http\Controllers\potensiController;
-use App\Http\Controllers\adminController;
-use App\Models\admin;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LuasHutanController;
+use App\Http\Controllers\inventarisController;
 
 /*
 |--------------------------------------------------------------------------
@@ -155,9 +156,8 @@ Route::get('/data-produksi', function(){
 
 
 //Luas Hutan
-Route::get('/data-luas', function(){
-    return view('luas-hutan.luas-hutan');
-});
+Route::get('/data-luas', [LuasHutanController::class, 'index'])->name('data-luas');
+
 
 //Dashboard
 Route::get('/dashboard', function(){
