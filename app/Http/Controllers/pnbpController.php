@@ -33,7 +33,7 @@ class pnbpController extends Controller
         $pnbp = new pnbp();
     
         $pnbp->tahun_pnbp = $request->tahun_pnbp;
-        $pnbp->nominal_pnbp = number_format($request->nominal_pnbp, 0, '.', ','); // Format angka di sini
+        $pnbp->nominal_pnbp = $request->nominal_pnbp; // Format angka di sini
         $pnbp->save();
     
         return redirect('/data-pnbp')->with('pesan', 'Data pnbp Berhasil Disimpan');

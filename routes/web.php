@@ -12,6 +12,10 @@ use App\Http\Controllers\petakController;
 use App\Http\Controllers\potensiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\inventarisController;
+use App\Http\Controllers\LuasHutanController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
