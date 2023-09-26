@@ -109,14 +109,14 @@
                                 <div class="txt">{{ $da->koor_y }}</div>
                             </td>
                             <td>
-                                    <a class="btn btn-primary" href="{{ route('data-utama.detail') }}">Detail</a>
+                                    <a class="btn btn-primary" href="{{ route('data-utama.detail',['id_PU' => $da->id_PU]) }}">Detail</a>
                                     <a href="" class="btn btn-warning">Edit</a>
                                     <a data-id="{{ $da->id_PU }}" class="delete-btn btn btn-danger"
                                         href="{{ route('data-utama.destroy', $da->id_PU) }}">Hapus</a>
                             </td>
                             <td>
                                 <div class="d-flex justify-content-center">
-                                    <a class="btn btn-primary" href="/data-tegakan">Lihat</a>
+                                    <a class="btn btn-primary" href="{{ route('data-tgk.index', ['id_PU' => $da->id_PU]) }}">Lihat</a>
                                 </div>
                             </td>
                         </tr>

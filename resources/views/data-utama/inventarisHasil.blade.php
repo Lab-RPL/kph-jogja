@@ -17,166 +17,188 @@
                 @csrf
                 {{-- @method('put') --}}
                 <center>
-                    <table>
-                        {{-- @foreach ($data as $da)
-                        <tr>
-                            <td width="300px">Nomor</td>
-                            <td><span>:</span>
-                                {{ $da->no_PU }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Tanggal</td>
-                            <td><span>:</span>
-                                {{ $da->tanggal }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>BDH</td>
-                            <td><span>:</span>
-                                {{ $da->nama_bdh }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>RPH</td>
-                            <td><span>:</span>
-                                {{ $da->nama_rph }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Petak</td>
-                            <td><span>:</span>
-                                {{ $da->nomor_ptk }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2">Koordinat PU</td>
-                            <td><span>X :</span>
-                                {{ $da->koor_x }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><span>Y :</span>
-                                {{ $da->koor_y }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <pre>DATA UTAMA (RISALAH HUTAN)</pre>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Jenis Tanaman</td>
-                            <td><span>:</span>
-                                {{ $da->jns_tanam }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Tanaman Sela</td>
-                            <td><span>:</span>
-                                {{ $da->tanam_sela }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Tahun Tanam</td>
-                            <td><span>:</span>
-                                {{ $da->tahun_tanam }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Jarak Tanaman Awal</td>
-                            <td><span>:</span>
-                                {{ $da->jarak_tanam }}
-                            </td>
-                        </tr>
+                    @if ($data)
+                        <table>
 
-                        <tr>
-                            <td colspan="2">
-                                <pre style="font-weight: bold; font-size: 18px; text-align: center;">DATA LAPANGAN</pre>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Bentuk Lapangan </td>
-                            <td><span>:</span>
-                                {{ $da->bentuk_lap }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Derajat Lereng </td>
-                            <td><span>:</span>
-                                {{ $da->derajat_lereng }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kerataan </td>
-                            <td><span>:</span>
-                                {{ $da->kerataan_lap }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <pre>DATA TANAH</pre>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Jenis Tanah</td>
-                            <td><span>:</span>
-                                {{ $da->jns_tanah }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kedalaman </td>
-                            <td><span>:</span>
-                                {{ $da->kedalaman }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <pre style="font-weight: bold; font-size: 18px; text-align: center;">DATA TUMBUHAN BAWAH</pre>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Jenis </td>
-                            <td><span>:</span>
-                                {{ $da->jns_bwh }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kerapatan</td>
-                            <td><span>:</span>
-                                {{ $da->kerapatan }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <pre style="font-weight: bold; font-size: 18px; text-align: center;">KETERANGAN LAIN</pre>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Tipe Penggunaan Lahan</td>
-                            <td><span>:</span>
-                                {{ $da->penemuan }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Erosi</td>
-                            <td><span>:</span>
-                                {{ $da->erosi }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Ketinggian Tempat</td>
-                            <td><span>:</span>
-                                {{ $da->tinggi_tempat }}
-                            </td>
-                        </tr>
-                        @endforeach --}}
-                    </table> 
-                    <div style="display: flex; justify-content: space-between; margin-top: 60px;">
-                        <a class="btn btn-warning" style="color: white; float: left;" href="">Ubah
-                            Data</a>
-                        <a class="btn btn-primary" style="color: white; float: right;" href="/data-tegakan">Lanjutkan</a>
-                    </div>
+                            <tr>
+                                <td width="300px">Nomor</td>
+                                <td><span>:</span>
+                                    {{ $data->no_PU }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tanggal</td>
+                                <td><span>:</span>
+                                    {{ $data->tanggal }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>BDH</td>
+                                <td><span>:</span>
+                                    {{ $data->nama_bdh }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RPH</td>
+                                <td><span>:</span>
+                                    {{ $data->nama_rph }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Petak</td>
+                                <td><span>:</span>
+                                    {{ $data->nomor_ptk }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Koordinat PU</td>
+                                <td><span>X :</span>
+                                    {{ $data->koor_x }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span>Y :</span>
+                                    {{ $data->koor_y }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <pre>RISALAH TEGAKAN</pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tanaman Sela</td>
+                                <td><span>:</span>
+                                    {{ $data->tanam_sela }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tahun Tanam</td>
+                                <td><span>:</span>
+                                    {{ $data->tahun_tanam }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Jarak Tanaman Awal</td>
+                                <td><span>:</span>
+                                    {{ $data->jarak_tanam }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Umur</td>
+                                <td><span>:</span>
+                                    {{ $data->umur_tgk }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Keadaan Kesehatan</td>
+                                <td><span>:</span>
+                                    {{ $data->keadaan_kes }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kerataan</td>
+                                <td><span>:</span>
+                                    {{ $data->kerataan_tgk }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kemurnian</td>
+                                <td><span>:</span>
+                                    {{ $data->kemurnian }}
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+                                    <pre style="font-weight: bold; font-size: 18px; text-align: center;">RISALAH LAPANGAN</pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Bentuk Lapangan </td>
+                                <td><span>:</span>
+                                    {{ $data->bentuk_lap }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Derajat Lereng </td>
+                                <td><span>:</span>
+                                    {{ $data->derajat_lereng }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kerataan </td>
+                                <td><span>:</span>
+                                    {{ $data->kerataan_lap }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <pre>RISALAH TANAH</pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Jenis Tanah</td>
+                                <td><span>:</span>
+                                    {{ $data->jns_tanah }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kedalaman </td>
+                                <td><span>:</span>
+                                    {{ $data->kedalaman }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <pre style="font-weight: bold; font-size: 18px; text-align: center;">RISALAH TUMBUHAN BAWAH</pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Jenis </td>
+                                <td><span>:</span>
+                                    {{ $data->jns_bwh }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kerapatan</td>
+                                <td><span>:</span>
+                                    {{ $data->kerapatan }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <pre style="font-weight: bold; font-size: 18px; text-align: center;">KETERANGAN LAIN</pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tipe Penggunaan Lahan</td>
+                                <td><span>:</span>
+                                    {{ $data->penemuan }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Erosi</td>
+                                <td><span>:</span>
+                                    {{ $data->erosi }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ketinggian Tempat</td>
+                                <td><span>:</span>
+                                    {{ $data->tinggi_tempat }}
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="display: flex; justify-content: space-between; margin-top: 60px;">
+                            <a class="btn btn-warning" style="color: white; float: left;" href="">Ubah
+                                Data</a>
+                            <a class="btn btn-primary" style="color: white; float: right;"
+                                href="{{ route('data-tgk.index', ['id_PU' => $data->id_PU]) }}">Lanjutkan</a>
+                        </div>
+                    @else
+                        <p>Tidak ada data yang ditemukan</p>
+                    @endif
         </div>
         </center>
         </form>

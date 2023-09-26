@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\dataTegak;
 use Illuminate\Support\Facades\DB;
 use App\Models\petak;
 use App\Models\dataUtama;
@@ -37,14 +37,22 @@ class inventarisController extends Controller
         return view('data-utama.inventaris', compact('data')); 
     }
 
-    public function index_detail(Request $req,){
+    public function index_detail(Request $req, $id_PU)
+    {
         if (!$req->session()->has('user_id')) {
             return redirect('/');
         }
-
-        $data = DB::table('data_utama');
-        return view('data-utama.inventarisHasil',['data' => $data]);
+    
+        $data = dataUtama::where('id_PU', $id_PU)->first();
+    
+        if (!$data) {
+            // Jika data dengan id_PU yang diberikan tidak ditemukan, Anda dapat mengambil tindakan yang sesuai, misalnya mengembalikan respons 404.
+            abort(404);
+        }
+    
+        return view('data-utama.inventarisHasil', ['data' => $data]);
     }
+    
 
     public function create(){
 
@@ -150,10 +158,30 @@ class inventarisController extends Controller
 
     public function destroy($id_PU)
     {
-        $dataUtama_entry = dataUtama::where('id_PU', $id_PU)->first();
-        $dataUtama_entry->IsDelete = 1;
-        $dataUtama_entry->save();
+        // $dataUtama_entry = dataUtama::where('id_PU', $id_PU)->first();
+        // $dataUtama_entry->IsDelete = 1;
+        // $dataUtama_entry->save();
 
-        return redirect()->back()->with('pesan', 'Data Petak Ukur berhasil Dihapus');
+        // return redirect()->back()->with('pesan', 'Data Petak Ukur berhasil Dihapus');
+
+        $dataUtama = dataUtama::findOrFail($id_PU);
+    
+        // Ubah nilai is_delete menjadi 1
+        $dataUtama->IsDelete = 1;
+        $dataUtama->save();
+    
+        // Temukan petak yang berelasi dengan RPH ini
+        // Misalkan ada kolom 'rph_id' pada table Petak yang menyimpan relasi dengan RPH
+        // Anda perlu mengganti 'Petak' dengan nama model Petak yang sebenarnya
+        $related_tegak = dataTegak::where('id_PU', $id_PU)->get();
+    
+        // Ubah nilai IsDelete pada petak yang berelasi menjadi 1
+        foreach ($related_tegak as $tegak) {
+            $tegak->IsDelete = 1;
+            $tegak->save();
+        }
+    
+        // Redirect ke halaman sebelumnya atau halaman yang diinginkan
+        return redirect()->back()->with('pesan', 'Petak Ukur dan Data Tegakan Terkait Berhasil Dihapus');
     }
 }
