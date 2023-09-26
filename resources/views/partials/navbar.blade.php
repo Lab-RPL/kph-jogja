@@ -194,11 +194,14 @@
                         (navLink.pathname === '/data-utama' && currentPathname ==='/edit-data') ||
                         //DATA-BDH
                         (navLink.pathname === '/data-bdh' && currentPathname ==='/tambah-bdh') ||
+                        (navLink.pathname === '/data-bdh' && currentPathname ==='/tambah-bdh-read') ||
                         (navLink.pathname === '/data-bdh' && currentPathname === '/bdh-read') ||
                         (navLink.pathname === '/data-bdh' && currentPathname === '/rph-read') ||
                         (navLink.pathname === '/data-bdh' && currentPathname === '/petak-read') ||
                         (navLink.pathname === '/data-bdh' && currentPathname === '/tambah-rph') ||
+                        (navLink.pathname === '/data-bdh' && currentPathname === '/tambah-rph-read') ||
                         (navLink.pathname === '/data-bdh' && currentPathname === '/tambah-petak') ||
+                        (navLink.pathname === '/data-bdh' && currentPathname === '/tambah-petak-read') ||
                         (navLink.pathname === '/data-bdh' && currentPathname.startsWith('/rph/')) ||
                         (navLink.pathname === '/data-bdh' && currentPathname.startsWith('/petak/')) ||
                         (navLink.pathname === '/data-bdh' && currentPathname.startsWith('/data-bdh/') && currentPathname.endsWith('/edit')) ||
