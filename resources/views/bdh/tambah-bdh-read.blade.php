@@ -27,7 +27,7 @@
                     </tr>
                 </table>
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <a class="btn btn-warning" style="color: white" href="/data-bdh">Kembali</a>
+                    <a class="btn btn-warning" style="color: white" href="{{ route('bdh.index.2') }}">Kembali</a>
                     <button class="btn btn-primary" style="color: white" type="submit">Tambah Data</button>
                 </div>
             </div>
