@@ -42,7 +42,7 @@
                                 <a class="nama">BDH</a>
                                 <div class="submenu">
                                     <a href="{{ route('bdh.index.2') }}">Lihat</a>
-                                    <a href="">Tambah</a>
+                                    <a href="{{ route('bdh.create.read') }}">Tambah</a>
                                 </div>
                             </div>
                             <div class="dropdown-item">

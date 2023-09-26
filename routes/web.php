@@ -11,7 +11,6 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\petakController;
 use App\Http\Controllers\potensiController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\LuasHutanController;
 use App\Http\Controllers\inventarisController;
 
 
@@ -63,6 +62,7 @@ Route::get('/tambah-tegakan', function(){
 // BDH
 Route::get('/data-bdh', [bdhController::class,'index']);
 Route::post('/data-bdh', [bdhController::class, 'store'])->name('bdh.store');
+Route::post('/bdh-read', [bdhController::class, 'store_read'])->name('bdh.store.read');
 // Route::post('/data-bdh', [bdhController::class, 'store_read'])->name('bdh.store_read');
 Route::get('/tambah-bdh', [bdhController::class,'create'])->name('bdh.create');
 Route::get('/tambah-bdh-read', [bdhController::class,'create_read'])->name('bdh.create.read');

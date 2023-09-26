@@ -55,7 +55,7 @@
 
                     <div class="card">
                         <div>
-                            <div class="numbers">42 <span style="font-size: 25px"> Data</span></div>
+                            <div class="numbers">{{ $totalptk }} <span style="font-size: 25px"> Data</span></div>
                             <div class="cardName">Data Petak</div>
                         </div>
                         <span class="iconBx" style="margin-top: 10px;">
