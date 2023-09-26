@@ -13,58 +13,67 @@
 
             <form>
                 <!-- ======================= Cards ================== -->
-                <div class="cardBox">
-                    <div class="card">
-                        <div>
-                            <div class="numbers">{{ $totalinven }} <span style="font-size: 25px">Data</span></div>
-                            <div class="cardName">Data Inventaris</div>
+                    <div class="cardBox">
+                        
+                        <div class="card">
+                            <a href="/data-utama">
+                                <div>
+                                    <div class="numbers">{{ $totalinven }} <span style="font-size: 25px">Data</span></div>
+                                    <div class="cardName">Data Inventaris</div>
+                                </div>
+                                <span class="iconBx" style="margin-top: 60px;">
+                                    <ion-icon name="stats-chart-outline"></ion-icon>
+                                </span>
+                                {{-- <div class="iconBx">
+                            <ion-icon name="eye-outline"></ion-icon>
+                        </div> --}}
+                            </a>
                         </div>
-                        <span class="iconBx" style="margin-top: 10px;">
-                            <ion-icon name="stats-chart-outline"></ion-icon>
-                        </span>
-                        {{-- <div class="iconBx">
-                    <ion-icon name="eye-outline"></ion-icon>
-                </div> --}}
+
+                    <div class="card">
+                        <a href="{{ route('bdh.store.read') }}">
+                            <div>
+                                <div class="numbers">{{ $totalbdh }} <span style="font-size: 25px">Data</span></div>
+                                <div class="cardName">Badan Daerah Hutan</div>
+                            </div>
+                            <span class="iconBx">
+                                <ion-icon name="logo-ionic"></ion-icon>
+                            </span>
+                            {{-- <div class="iconBx">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </div> --}}
+                        </a>
                     </div>
 
                     <div class="card">
-                        <div>
-                            <div class="numbers">{{ $totalbdh }} <span style="font-size: 25px">Data</span></div>
-                            <div class="cardName">Badan Daerah Hutan</div>
-                        </div>
-                        <span class="iconBx" style="margin-top: 10px;">
-                            <ion-icon name="logo-ionic"></ion-icon>
-                        </span>
-                        {{-- <div class="iconBx">
-                    <ion-icon name="cart-outline"></ion-icon>
-                </div> --}}
+                        <a href="{{ route('rph.index2') }}">
+                            <div>
+                                <div class="numbers">{{ $totalrph }} <span style="font-size: 25px">Data</span></div>
+                                <div class="cardName">Rencana Pengelolaan Hutan</div>
+                            </div>
+                            <span class="iconBx" style="margin-top: 20px">
+                                <ion-icon name="leaf-outline"></ion-icon>
+                            </span>
+                            {{-- <div class="iconBx">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div> --}}  
+                        </a>
                     </div>
 
                     <div class="card">
-                        <div>
-                            <div class="numbers">{{ $totalrph }} <span style="font-size: 25px">Data</span></div>
-                            <div class="cardName">Rencana Pengelolaan Hutan</div>
+                        <a href="{{ route('petak.store_read') }}">
+                            <div>
+                                <div class="numbers">{{ $totalptk }} <span style="font-size: 25px"> Data</span></div>
+                                <div class="cardName">Data Petak</div>
+                            </div>
+                            <span class="iconBx" style="margin-top: 70px">
+                                <ion-icon name="analytics-outline"></ion-icon>
+                            </span>
+                            {{-- <div class="iconBx">
+                        <ion-icon name="cash-outline"></ion-icon>
+                    </div> --}}
                         </div>
-                        <span class="iconBx" style="margin-top: 10px;">
-                            <ion-icon name="leaf-outline"></ion-icon>
-                        </span>
-                        {{-- <div class="iconBx">
-                    <ion-icon name="chatbubbles-outline"></ion-icon>
-                </div> --}}  
-                    </div>
-
-                    <div class="card">
-                        <div>
-                            <div class="numbers">{{ $totalptk }} <span style="font-size: 25px"> Data</span></div>
-                            <div class="cardName">Data Petak</div>
-                        </div>
-                        <span class="iconBx" style="margin-top: 10px;">
-                            <ion-icon name="analytics-outline"></ion-icon>
-                        </span>
-                        {{-- <div class="iconBx">
-                    <ion-icon name="cash-outline"></ion-icon>
-                </div> --}}
-                    </div>
+                        </a>
                 </div>
 
                 <!-- ================ Order Details List ================= -->
