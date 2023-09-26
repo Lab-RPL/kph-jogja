@@ -56,7 +56,7 @@
                                 <a class="nama2">Petak</a>
                                 <div class="submenu2">
                                     <a href="{{ route('petak.index2') }}">Lihat</a>
-                                    <a href="">Tambah</a>
+                                    <a href="{{ route('petak.create_read') }}">Tambah</a>
                                 </div>
                             </div>
                         </div>
