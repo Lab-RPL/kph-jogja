@@ -373,12 +373,12 @@ body {
     max-width: 150rem;
     width: 100%;
     height: auto; /* Ubah ke height:auto agar form menyesuaikan tingginya */
+    margin-top: 8rem;
     max-height: 650px;
     border-color: white;
-    margin-top: 2%;
     overflow-y: scroll;
     -ms-overflow-style: none;
-    margin-bottom: 38px;
+    margin-bottom: 200px;
     top: 40px;
 }
 .border-liste::-webkit-scrollbar{
@@ -885,6 +885,27 @@ label {
 }
 
 /* ====================== Responsive Design ========================== */
+
+
+@media (min-width: 1440px) {
+    .main {
+      width: calc(100% - 200px);
+      top: -200px;
+    }
+
+    .border-liste{
+        max-height: 900px;
+        max-width: 70rem;
+        margin-top: 25rem;
+    }
+    
+    .navigation ul li a .title{
+        font-size: 15px;
+    }
+    
+  
+
+  }
 
 @media only screen and (min-width: 1920px) {
     .main {

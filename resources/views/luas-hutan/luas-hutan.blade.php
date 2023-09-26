@@ -20,22 +20,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($luasHutan as $item)
-                            <tr>
-                                <td>{{ $item->luas_lindung }}</td>
-                                <td>{{ $item->luas_produksi }}</td>
-                            </tr>
-                        @endforeach
+                    @php
+                        $item = $luasHutan->first();
+                    @endphp
+                        <tr>
+                            <td>{{ $item->luas_lindung }} Ha</td>
+                            <td>{{ $item->luas_produksi }} Ha</td>
+                        </tr>
                     </tbody>
                 </table>
                 @if (Session::has('pesan'))
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
-                <div style="display: flex; justify-content: flex-end;"> 
-                    <a class="btn btn-primary" style="color: white" href="/tambah-pnbp">Ubah Data</a>
+                <div style="display: flex; justify-content: flex-end;">
+                        <a class="btn btn-primary" style="color: white" href="#">Ubah Data</a>
                 </div>
             </form>
         </div>
     </div>
 @endsection
+
 

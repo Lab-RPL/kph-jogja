@@ -163,7 +163,7 @@ Route::get('/data-produksi', function(){
 
 
 //Luas Hutan
-Route::get('/data-luas', [LuasHutanController::class, 'index'])->name('data-luas');
+Route::get('/data-luas', [LuasHutanController::class, 'index'])->name('data-read');
 
 
 //Dashboard

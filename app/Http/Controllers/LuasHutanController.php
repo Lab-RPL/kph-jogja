@@ -12,4 +12,6 @@ class LuasHutanController extends Controller
         $luasHutan = LuasHutan::where('IsDelete', 0)->get();
         return view('luas-hutan.luas-hutan', compact('luasHutan'));
     }
+
+    
 }

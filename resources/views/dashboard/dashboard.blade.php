@@ -50,16 +50,16 @@
                         </span>
                         {{-- <div class="iconBx">
                     <ion-icon name="chatbubbles-outline"></ion-icon>
-                </div> --}}
+                </div> --}}  
                     </div>
 
                     <div class="card">
                         <div>
                             <div class="numbers">42 <span style="font-size: 25px"> Data</span></div>
-                            <div class="cardName">Perizinan Berusaha</div>
+                            <div class="cardName">Data Petak</div>
                         </div>
                         <span class="iconBx" style="margin-top: 10px;">
-                            <ion-icon name="shield-checkmark-outline"></ion-icon>
+                            <ion-icon name="analytics-outline"></ion-icon>
                         </span>
                         {{-- <div class="iconBx">
                     <ion-icon name="cash-outline"></ion-icon>
