@@ -6,42 +6,38 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <form action="" method="post">
+    <form action="{{ route('data-tgk.store') }}" method="post">
         @csrf
         <div class="garis">
             <div class="border-list">
-                <h2 class="mt-2">DATA Tegakan</h2>
+                <h2 class="mt-2">DATA TEGAKAN</h2>
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
                 <table id="tabelData">
-                    
+
                     <tr>
                         <td><label for="">Nomor PU</label></td>
                         <td>
-                            <select></select>
-                            {{-- <select name="id_bdh" id="tambah-bdh" required class="form-control" disabled>
-                                @foreach ($bdh as $bdh)
-                                    @if ($bdh->IsDelete == 0)
-                                        <option value="{{ $bdh->id_bdh }}"
-                                        @if($selectedBdh != null && $selectedBdh == $bdh->id_bdh) selected @endif
-                                        >{{ $bdh->nama_bdh }}</option>
+                            <select name="id_PU" id="tambah-dataUtama" required class="form-control" disabled>
+                                @foreach ($dataUtama as $dataUtama)
+                                    @if ($dataUtama->IsDelete == 0)
+                                        <option value="{{ $dataUtama->id_PU }}"
+                                            @if ($selectedDataUtama != null && $selectedDataUtama == $dataUtama->id_PU) selected @endif>{{ $dataUtama->no_PU }}
+                                        </option>
                                     @endif
                                 @endforeach
-                            </select> --}}
-                            
+                            </select>
                             <!-- Use a hidden input to submit the selected value from the disabled select -->
-                            {{-- <input type="hidden" name="id_bdh" value="{{ $selectedBdh }}" /> --}}
-                            
-                            
+                            <input type="hidden" name="id_PU" value="{{ $selectedDataUtama }}" />
                         </td>
                     </tr>
-                    
+
                     <tr>
-                        <td><label for="tambah-tegakan" >Jenis Tegakan</label></td>
-                        <td><input type="text" id="tambah-tegakan" name="jenis_tegakan" required></td>
+                        <td><label for="tambah-tegakan">Jenis Tegakan</label></td>
+                        <td><input type="text" id="tambah-tegakan" name="jenis_tgk" required></td>
                     </tr>
                     <tr>
                         <td><label>Nomor Pohon</label></td>
-                        <td><input type="text" id="tambah-tegakan" name="nomor_pohon" required></td>
+                        <td><input type="text" id="tambah-tegakan" name="no_pohon" required></td>
                     </tr>
                     <tr>
                         <td><label>Diameter</label></td>
@@ -52,7 +48,7 @@
                         <td><input type="text" id="tambah-tegakan" name="tinggi" required></td>
                     </tr>
                 </table>
-                
+
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">
                     <button onclick="goBack()" class="btn btn-warning" style="color: white">Kembali</button>
 
@@ -66,6 +62,4 @@
             </div>
         </div>
     </form>
-    
-    
 @endsection

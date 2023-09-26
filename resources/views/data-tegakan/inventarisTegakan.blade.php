@@ -16,8 +16,9 @@
         .my-custom-table th {
             background-color: #B0E398;
             color: black;
-            
+
         }
+
         .my-custom-table td {
             color: black;
         }
@@ -30,6 +31,9 @@
 
             <form>
                 @csrf
+                @if (Session::has('pesan'))
+                    <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
+                @endif
                 <table id="tabelData" class="table table-bordered, my-custom-table">
                     <thead>
                         <tr class="kolom">
@@ -41,20 +45,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Akasia</td>
-                            <td>25</td>
-                            <td>12 m</td>
-                            <td>100 m</td>
-                            <td class="center-align">
-                                <a class="btn btn-warning mb-1 m-l-1">Edit</a>
-                                <a class="btn btn-danger mb-1 m-l-1">Hapus</a>
-                            </td>
-                            {{-- <td  style="justify-content: space-between; align-items:center">
-                            <a href="/edit-pnbp" class="btn btn-warning mb-1 m-l-2">Edit</a>
-                            <a href="" class="btn btn-danger mb-1 m-l-1">Hapus</a>
-                        </td> --}}
-                        </tr>
+                        @foreach ($data as $da)
+                            @if ($da->IsDelete == 0)
+                                <tr>
+                                    <td>{{ $da->jenis_tgk }}</td>
+                                    <td>{{ $da->no_pohon }}</td>
+                                    <td>{{ $da->diameter }}</td>
+                                    <td>{{ $da->tinggi }}</td>
+                                    <td class="center-align">
+                                        <a class="btn btn-warning mb-1 m-l-1" href="">Edit</a>
+                                        <a class="btn btn-danger mb-1 m-l-1"
+                                            href="{{ route('data-tgk.destroy', $da->id_tgk) }}"
+                                            data-id="{{ $da->id_tgk }}">Hapus</a>
+                                    </td>
+                                </tr>
+                            @endif
+                        @endforeach
                     </tbody>
                 </table>
                 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -71,8 +77,20 @@
                         pageLength: 5 // Menampilkan 5 data per halaman
                     });
                 </script>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const pesanSukses = document.getElementById('pesan-sukses');
+                        if (pesanSukses) {
+                            setTimeout(function() {
+                                pesanSukses.style.display = 'none';
+                            }, 5000);
+                        }
+                    });
+                </script>
                 <div style="display: flex; justify-content: flex-end;">
-                    <a class="btn btn-primary" style="color: white" href="/tambah-tegakan">Tambah Data</a>
+                    <a class="btn btn-primary" style="color: white"
+                        href="{{ route('data-tgk.create', ['data_utama' => $id_PU]) }}">Tambah Data</a>
                 </div>
             </form>
         </div>
