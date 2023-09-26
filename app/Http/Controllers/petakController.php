@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Bdh;
 use Illuminate\Support\Facades\DB;
 use App\Models\rph;
 use App\Models\petak;
@@ -16,12 +18,12 @@ class petakController extends Controller
     
         $petak_data = petak::with('rph')
             ->where('id_rph', $id_rph)
-            ->paginate(5);
+            ->get();
         $data = DB::table('petak')
             ->where('id_rph', $id_rph)
             ->where('IsDelete',0)
-            ->paginate(5);
-        return view('petak.petak', ['data' => $data, 'ptk_data' => $petak_data]);
+            ->paginate(10);
+        return view('petak.petak', ['data' => $data, 'ptk_data' => $petak_data, 'id_rph' =>$id_rph]);
     }
 
     public function index2(Request $req)
@@ -32,10 +34,16 @@ class petakController extends Controller
         $data = Petak::where('IsDelete',0)->paginate(100000000);
         return view('petak.petak-read', ['data' => $data]);
     }    
-    public function create()
+    public function create(Request $request)
     {
         $rph = rph::all();
-        return view('petak.tambah-petak')->with('rph', $rph) ;
+        $selectedRph = $request->query("rph", null);
+        return view('petak.tambah-petak', compact("rph", "selectedRph"));
+    }
+    public function create_read(){
+        $bdh = Bdh::all();
+        $rph = Rph::all();
+        return view('petak.tambah-petak-read')->with(['bdh' => $bdh, 'rph' => $rph]);
     }
 
     public function store(Request $request)
