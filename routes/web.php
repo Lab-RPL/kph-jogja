@@ -166,8 +166,8 @@ Route::get('/data-produksi', function(){
 Route::get('/data-luas', [LuasHutanController::class, 'index'])->name('data-read');
 Route::get('/luas-hutan/{id}/edit', [LuasHutanController::class, 'edit'])->name('luas-hutan.edit');
 Route::put('/luas-hutan/{id}', [LuasHutanController::class, 'update'])->name('luas-hutan.update');
-
-
+Route::post('/luas-hutan', [LuasHutanController::class, 'store'])->name('luas-hutan.store');
+Route::get('/tambah-luas-hutan', [LuasHutanController::class, 'create'])->name('luas-hutan.create');
 
 
 //Dashboard

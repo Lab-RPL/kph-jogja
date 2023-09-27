@@ -40,7 +40,7 @@
                 @endif
                 <div style="display: flex; justify-content: flex-end;">
                     @if ($luasHutan->isEmpty())
-                        <a class="btn btn-primary" style="color: white" href="#">Tambah Data</a>
+                        <a class="btn btn-primary" style="color: white" href="{{ route('luas-hutan.create') }}">Tambah Data</a>
                     @else
                         <a class="btn btn-primary" style="color: white" href="{{ route('luas-hutan.edit', $item->id_luas) }}">Ubah Data</a>
                     @endif

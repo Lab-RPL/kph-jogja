@@ -28,4 +28,24 @@ class LuasHutanController extends Controller
     
         return redirect('/data-luas')->with('pesan', 'Data berhasil diubah.');
     }
+
+    public function create()
+    {
+        return view('luas-hutan.tambah-luas-hutan');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'luas_lindung' => 'required|numeric',
+            'luas_produksi' => 'required|numeric',
+        ]);
+
+        $luasHutan = new LuasHutan();
+        $luasHutan->luas_lindung = $request->luas_lindung;
+        $luasHutan->luas_produksi = $request->luas_produksi;
+        $luasHutan->save();
+
+        return redirect('data-luas')->with('pesan', 'Data berhasil ditambahkan.');
+    }
 }
