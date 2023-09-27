@@ -20,20 +20,30 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @php
-                        $item = $luasHutan->first();
-                    @endphp
+                    @if ($luasHutan->isEmpty())
+                        <tr>
+                            <td colspan="2">No Data</td>
+                        </tr>
+                    @else
+                        @php
+                            $item = $luasHutan->first();
+                        @endphp
                         <tr>
                             <td>{{ $item->luas_lindung }} Ha</td>
                             <td>{{ $item->luas_produksi }} Ha</td>
                         </tr>
+                    @endif
                     </tbody>
                 </table>
                 @if (Session::has('pesan'))
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
                 <div style="display: flex; justify-content: flex-end;">
+                    @if ($luasHutan->isEmpty())
+                        <a class="btn btn-primary" style="color: white" href="#">Tambah Data</a>
+                    @else
                         <a class="btn btn-primary" style="color: white" href="{{ route('luas-hutan.edit', $item->id_luas) }}">Ubah Data</a>
+                    @endif
                 </div>
             </form>
         </div>
