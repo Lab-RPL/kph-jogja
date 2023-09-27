@@ -16,20 +16,20 @@
                 <input type="hidden" >
                 <input type="hidden" >
                 <table id="tabelData">
-                    @php
-                    $item = $luasHutan->first();
+                @php
+                    $item = $luasHutan;
                 @endphp
                     <tr>
                         <td><label>Luas Hutan Lindung</label></td>
-                        <td><input type="text" name="luas_lindung" value="{{ $item->luas_lindung }}" ></td> 
+                        <td><input type="text" name="luas_lindung" value="{{ $item->luas_lindung }} Ha" ></td> 
                     </tr>
                     <tr>
                         <td><label>Luas Hutan Produksi</label></td>
-                        <td><input type="text" name="luas_produksi" value="{{ $item->luas_produksi }}"></td>
+                        <td><input type="text" name="luas_produksi" value="{{ $item->luas_produksi }} Ha"></td>
                     </tr>
                 </table>
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <a class="btn btn-warning" style="color: white" href="#">Kembali</a>
+                    <a class="btn btn-warning" style="color: white" href="{{ route('data-read') }}">Kembali</a>
                     <button class="btn btn-primary" style="color: white" type="submit">Edit Data</button>
                 </div>
             </div>

@@ -205,6 +205,8 @@
                         (navLink.pathname === '/data-bdh' && currentPathname.startsWith('/rph/')) ||
                         (navLink.pathname === '/data-bdh' && currentPathname.startsWith('/petak/')) ||
                         (navLink.pathname === '/data-bdh' && currentPathname.startsWith('/data-bdh/') && currentPathname.endsWith('/edit')) ||
+                        //LUAS-HUTAN
+                        (navLink.pathname === '/data-luas' && currentPathname.startsWith('/luas-hutan/') && currentPathname.endsWith('/edit')) ||
                         //DATA-IZIN
                         (navLink.pathname === '/data-izin' && currentPathname ==='/tambah-izin') || 
                         (navLink.pathname === '/data-rusak' && currentPathname ==='/tambah-rosak') ||

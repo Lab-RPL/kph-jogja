@@ -22,8 +22,10 @@ class LuasHutanController extends Controller
     public function update(Request $request, $id)
     {
         $luasHutan = LuasHutan::findOrFail($id);
-        $luasHutan->update($request->all());
-
+        $luasHutan->luas_lindung = str_replace(' Ha', '', $request->luas_lindung);
+        $luasHutan->luas_produksi = str_replace(' Ha', '', $request->luas_produksi);
+        $luasHutan->save();
+    
         return redirect('/data-luas')->with('pesan', 'Data berhasil diubah.');
     }
 }
