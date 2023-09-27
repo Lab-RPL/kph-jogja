@@ -20,22 +20,20 @@
                         <td>
                             @foreach ($bdhs as $bdh)
                                 @if ($bdh->IsDelete == 0 && $bdh->id_bdh == $rph->id_bdh)
-                                    <input value=" {{ $bdh->nama_bdh }}" id="tambah-rph" type="text" name="nama_rph"
-                                        readonly class="bg-secondary opacity-75">
+                                    <input value="{{ $bdh->nama_bdh }}" id="tampil-nama-bdh" type="text" readonly class="bg-secondary opacity-75">
+                                    <input value="{{ $bdh->id_bdh }}" id="tambah-bdh" type="hidden" name="id_bdh">
                                 @break
                             @endif
                         @endforeach
-
-
+                        
                         {{-- @foreach ($bdhs as $bdh)
                                     @if ($bdh->IsDelete == 0)
                                         <option value="{{ $bdh->id_bdh }}"
                                             {{ $bdh->id_bdh == $rph->id_bdh ? 'selected' : '' }} disabled>{{ $bdh->nama_bdh }}
-                                        </option>
-                                    @endif
-                                @endforeach --}}
-
-                    </td>
+                                    </option>
+                                @endif
+                            @endforeach --}}
+                        </td>
                 </tr>
                 <tr>
                     <td><label for="tambah-rph">Nama RPH</label></td>
