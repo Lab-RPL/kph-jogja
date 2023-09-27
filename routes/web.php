@@ -49,16 +49,12 @@ Route::get('/data-utama/{id_PU}', [inventarisController::class, 'destroy'])->nam
 
 // DATA TEGAKAN
 
-// Route::get('/data-tegakan', function(){
-//     return view('data-tegakan.inventarisTegakan');
-// });
-
 
 Route::get('/data-tegakan/{id_PU}', [tegakController::class,'index'])->name('data-tgk.index');
 Route::get('/tambah-tegakan', [tegakController::class, 'create'])->name('data-tgk.create');
 Route::post('/data-tegakan', [tegakController::class, 'store'])->name('data-tgk.store');
-// Route::get('', [tegakController::class, 'edit'])->name('data-tgk.edit');
-// Route::put('', [tegakController::class, 'update'])->name('data-tgk.update');
+Route::get('/data-tegakan/{id}/edit', [tegakController::class, 'edit'])->name('data-tgk.edit');
+Route::put('/data-tegakan/{id}', [tegakController::class, 'update'])->name('data-tgk.update');
 Route::get('/data-tegakan{id_PU}', [tegakController::class, 'destroy'])->name('data-tgk.destroy');
 
 

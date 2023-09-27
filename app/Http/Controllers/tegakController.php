@@ -60,12 +60,34 @@ class tegakController extends Controller
             ->with('pesan', 'Data Tegakan berhasil ditambahkan.');
     }
 
-    public function edit()
-    {
+    public function edit($id){
+        $dataTegak = dataTegak::findOrFail($id);
+        $utama = dataUtama::where('IsDelete', 0)->get();
+        
+        return view('data-tegakan.edit-tegakan', ['dataTegak' => $dataTegak, 'utama' => $utama]);
     }
 
-    public function update()
-    {
+    public function update(Request $request, $id){
+        $this->validate($request, [
+            'id_PU'    => 'required',
+            'jenis_tgk'  => 'required',
+            'no_pohon'=> 'required',
+            'diameter'  => 'required',
+            'tinggi'  => 'required'
+        ]);
+
+        $dataTegak = dataTegak::findOrFail($id);
+
+        $dataTegak->id_PU     = $request->id_PU;
+        $dataTegak->jenis_tgk   = $request->jenis_tgk;
+        $dataTegak->no_pohon = $request->no_pohon;
+        $dataTegak->diameter  = $request->diameter;
+        $dataTegak->tinggi  = $request->tinggi;
+    
+        $dataTegak->save();
+    
+        return redirect()->route('data-tgk.index', $request->id_PU)->with('pesan',"Data Tegakan Berhasil Diupdate"); // Gantikan dengan nama route yang sesuai
+        
     }
 
     public function destroy($id_tgk)
