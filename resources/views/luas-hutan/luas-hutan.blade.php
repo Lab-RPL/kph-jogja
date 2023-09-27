@@ -33,11 +33,24 @@
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
                 <div style="display: flex; justify-content: flex-end;">
-                        <a class="btn btn-primary" style="color: white" href="#">Ubah Data</a>
+                        <a class="btn btn-primary" style="color: white" href="{{ route('luas-hutan.edit', $item->id_luas) }}">Ubah Data</a>
                 </div>
             </form>
         </div>
     </div>
+
+
+        {{-- script Notif --}}
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const pesanSukses = document.getElementById('pesan-sukses');
+                if (pesanSukses) {
+                    setTimeout(function() {
+                        pesanSukses.style.display = 'none';
+                    }, 5000);
+                }
+            });
+        </script>
 @endsection
 
 

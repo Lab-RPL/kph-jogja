@@ -6,9 +6,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <form method="POST" action="{{ route('luas-hutan.update', $luasHutan) }}">
+    <form action="{{ route('luas-hutan.update', $luasHutan->id_luas) }}" method="POST">
         @csrf
-        @method('PUT') <!-- Menambahkan method PUT agar server menginterpretasi request sebagai update -->
+        @method('PUT')
         <div class="garis">
             <div class="border-list">
                 <h2 class="mt-2">PENERIMAAN NEGARA BUKAN PAJAK</h2>
@@ -16,17 +16,20 @@
                 <input type="hidden" >
                 <input type="hidden" >
                 <table id="tabelData">
+                    @php
+                    $item = $luasHutan->first();
+                @endphp
                     <tr>
                         <td><label>Luas Hutan Lindung</label></td>
-                        <td><input type="text" name="luas_hutan_lindung" value="{{ $luasHutan->luas_lindung }}"></td> 
+                        <td><input type="text" name="luas_lindung" value="{{ $item->luas_lindung }}" ></td> 
                     </tr>
                     <tr>
                         <td><label>Luas Hutan Produksi</label></td>
-                        <td><input type="text" name="luas_hutan_produksi" value="{{ $luasHutan->luas_produksi }}"></td>
+                        <td><input type="text" name="luas_produksi" value="{{ $item->luas_produksi }}"></td>
                     </tr>
                 </table>
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <a class="btn btn-warning" style="color: white" href="/data-luas">Kembali</a>
+                    <a class="btn btn-warning" style="color: white" href="#">Kembali</a>
                     <button class="btn btn-primary" style="color: white" type="submit">Edit Data</button>
                 </div>
             </div>

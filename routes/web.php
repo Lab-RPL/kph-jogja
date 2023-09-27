@@ -168,6 +168,10 @@ Route::get('/data-produksi', function(){
 
 //Luas Hutan
 Route::get('/data-luas', [LuasHutanController::class, 'index'])->name('data-read');
+Route::get('/luas-hutan/{id}/edit', [LuasHutanController::class, 'edit'])->name('luas-hutan.edit');
+Route::put('/luas-hutan/{id}', [LuasHutanController::class, 'update'])->name('luas-hutan.update');
+
+
 
 
 //Dashboard
