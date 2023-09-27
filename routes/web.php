@@ -41,8 +41,8 @@ Route::get('/data-utama', [inventarisController::class,'index'])->name('data-uta
 Route::get('/data-result/{id_PU}', [inventarisController::class, 'index_detail'])->name('data-utama.detail');
 Route::get('/data-option', [inventarisController::class, 'create'])->name('data-utama.create');
 Route::post('/data-utama', [inventarisController::class, 'store'])->name('data-utama.store');
-Route::get('/data-utama/{id_PU}/edit', [inventarisController::class, 'edit'])->name('data-utama.edit');
-// Route::put('/data-utama/{id}', [inventarisController::class, 'update'])->name('data-utama.update');
+Route::get('/data-utama/edit/{id_PU}', [inventarisController::class, 'edit'])->name('data-utama.edit');
+Route::put('/data-utama/{id}', [inventarisController::class, 'update'])->name('data-utama.update');
 Route::get('/data-utama/{id_PU}', [inventarisController::class, 'destroy'])->name('data-utama.destroy');
 
 

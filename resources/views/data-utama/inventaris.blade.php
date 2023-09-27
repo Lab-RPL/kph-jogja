@@ -110,7 +110,7 @@
                             </td>
                             <td>
                                     <a class="btn btn-primary" href="{{ route('data-utama.detail',['id_PU' => $da->id_PU]) }}">Detail</a>
-                                    <a href="" class="btn btn-warning">Edit</a>
+                                    <a href="{{route('data-utama.edit',['id_PU'=> $da->id_PU])}}" class="btn btn-warning">Edit</a>
                                     <a data-id="{{ $da->id_PU }}" class="delete-btn btn btn-danger"
                                         href="{{ route('data-utama.destroy', $da->id_PU) }}">Hapus</a>
                             </td>
