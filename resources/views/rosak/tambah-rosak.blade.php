@@ -6,50 +6,60 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <form action="{{ route('rusak.store') }}" method="post">
+    <form action="" method="post">
         @csrf
         <div class="garis">
             <div class="border-lists">
-            <h2 class="mt-2 middletext">Kerusakan Dan Kehilangan</h2>
+                <h2 class="mt-2 middletext">DATA KERUSAKAN / KEHILANGAN</h2>
                 <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
-                <table id="tabelData">
-                    <tr>
-                        <td><label for="jenis">Jenis</label></td>
-                        <td>
-                            <select id="jenis" name="jenis" required>
-                                <option value="" disabled selected hidden>Pilih jenis</option>
-                                <option value="kerusakan">Kerusakan</option>
-                                <option value="kehilangan">Kehilangan</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label for="tanggal-input">Tanggal Input</label></td>
-                        <td><input type="date" required></td>
-                    </tr>
-                    <tr>
-                        <td><label for="tanggal-rusak">Tanggal Rusak</label></td>
-                        <td><input type="date" required></td>
-                    </tr>
-                    <tr>
-                        <td><label for="nomor-pu">Nomor PU</label></td>
-                        <td><input type="text" required></td>
-                    </tr>
-                    <tr>
-                        <td><label for="koordinat-kerusakan">Koordinat Kerusakan</label></td>
-                        <td>
-                            <input type="text" class="koordinat" id="koordinat-x" name="koordinat-x" placeholder="X" required>
-                            <input type="text" class="koordinat" id="koordinat-y" name="koordinat-y" placeholder="Y" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label for="diameter-tunggak">Diameter Tunggak <br> (Khusus Kehilangan)</label></td>
-                        <td><input type="text" required></td>
-                    </tr>
-                    <tr>
-                        <td><label for="upload-foto">Upload Foto</label></td>
-                        <td><input type="file" required></td>
-                    </tr>
+                <table>
+                    <tbody>
+                        <style>
+                            span {
+                                color: white;
+                            }
+                        </style>
+
+                        <tr>
+                            <td>Jenis</td>
+                            <td height="50px"><span>X</span>
+                                <select id="jenis-rosak" name="jns_rusak" required>
+                                    <option value="" disabled selected hidden>Pilih Jenis</option>
+                                    <option value="0">Rusak</option>
+                                    <option value="1">Hilang</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="300px">Tanggal Input</td>
+                            <td height="50px"><span>X</span> <input type="date" name="tanggal_input" required></td>
+                        </tr>
+                        <tr>
+                            <td width="300px">Tanggal Kejadian</td>
+                            <td height="50px"><span>X</span> <input type="date" name="tanggal_jadi" required></td>
+                        </tr>
+                        <tr>
+                            <td>Nomor PU</td>
+                            <td height="50px"><span>X</span> <input type="text" name="no_PU" required></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Koordinat PU</td>
+                            <td height="50px">X <input placeholder="Koordinat X" type="text" name="koor_x" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="50px">Y <input placeholder="Koordinat Y" type="text" name="koor_y" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Foto</td>
+                            <td height="50px"><span>X</span> <input type="file" name="foto"></td>
+                        </tr>
+                        <tr id="dimtung" style="display: none;">
+                            <td>Diameter Tunggak</td>
+                            <td height="50px"><span>X</span> <input type="text" name="diameter"></td>
+                        </tr>
+                    </tbody>
                 </table>
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">
                     <a class="btn btn-warning" style="color: white" href="/data-rusak">Kembali</a>
@@ -58,10 +68,16 @@
             </div>
         </div>
     </form>
-    <style>
 
-        input[type="text"].koordinat::placeholder {
-            text-align: right;
-        }
-    </style>
+    <script>
+        document.getElementById('jenis-rosak').addEventListener('change', function() {
+            var hilangInput = document.getElementById('dimtung');
+            if (this.value === '1') {
+                hilangInput.style.display =
+                'table-row'; // Menggunakan 'table-row' untuk mengembalikan tampilan baris tabel
+            } else {
+                hilangInput.style.display = 'none';
+            }
+        });
+    </script>
 @endsection
