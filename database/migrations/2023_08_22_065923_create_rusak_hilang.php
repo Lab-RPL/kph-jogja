@@ -13,15 +13,17 @@ return new class extends Migration
     {
         Schema::create('rusak_hilang', function (Blueprint $table) {
             $table->bigIncrements('id_rusak');
-            $table->integer('jns_rusak');
+            $table->boolean('jns_rusak')->default(0);
             $table->date('tgl_input');
             $table->date('tgl_rusak');
             $table->unsignedBigInteger('id_PU');
             $table->foreign('id_PU')->references('id_PU')->on('data_utama');
-            $table->integer('no_PU');
-            $table->decimal('diameter');
-            $table->binary('foto');
+            $table->double('koor_x');
+            $table->double('koor_y');
+            $table->decimal('diameter')->nullable();
+            $table->binary('foto')->nullable();
             $table->boolean('IsDelete')->default(0);
+            $table->timestamps();
         });
     }
 

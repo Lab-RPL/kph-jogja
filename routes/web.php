@@ -13,6 +13,7 @@ use App\Http\Controllers\potensiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LuasHutanController;
 use App\Http\Controllers\inventarisController;
+use App\Http\Controllers\rosakController;
 use App\Http\Controllers\tegakController;
 
 
@@ -130,10 +131,8 @@ Route::get('/data-izin/{id_izin}',[izinController::class, 'destroy'])->name('izi
 
 
 // KERUSAKAN/KEHILANGAN
-Route::get('/data-rusak', function() {
-    return view('rosak.rosak');
-});
-Route::get('tambah-rosak', function(){
+Route::get('/data-rusak',[rosakController::class,'index'])->name('rosak.index');
+Route::get('/tambah-rosak', function(){
     return view('rosak.tambah-rosak');
 });
 

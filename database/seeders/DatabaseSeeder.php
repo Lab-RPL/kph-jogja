@@ -6,8 +6,11 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Bdh;
+use App\Models\dataTegak;
 use App\Models\Rph;
 use App\Models\petak;
+use App\Models\dataUtama;
+use App\Models\rosak;
 
 class DatabaseSeeder extends Seeder
 {
@@ -285,6 +288,59 @@ class DatabaseSeeder extends Seeder
             'luas_ptk' => 321,
             'potensi_ptk' => 'Wisata Alam',
             'id_rph' => 10
+        ]);
+
+        dataUtama::create([
+            'id_PU' => 1,
+            'tanggal' => "2023-10-06",
+            'id_ptk' => 10,
+            'no_PU' => 7,
+            'koor_x' => -93.098734,
+            'koor_y' => 70.0542324,
+            'tanam_sela' => "entah",
+            'tahun_tanam' => 1990,
+            'jarak_tanam' => 59,
+            'umur_tgk' => 90,
+            'keadaan_kes' => "Jelek",
+            'kerataan_tgk' => "Agak rata",
+            'kemurnian' => "Murni",
+            'bentuk_lap' => "Punggung",
+            'derajat_lereng' => 23,
+            'landai_lereng' => "Landai",
+            'kerataan_lap' => "Berombak",
+            'jns_tanah' => "Latosol",
+            'kedalaman' => 93,
+            'dalaman' => "Dalam",
+            'jns_bwh' => "entah",
+            'kerapatan' => "Berbukit"
+        ]);
+
+        dataTegak::create([
+            'id_tgk' => 1,
+            'id_PU' => 1,
+            'no_pohon' => 100,
+            'jenis_tgk' => "Akasia",
+            'diameter' => 17,
+            'tinggi' => 90
+        ]);
+
+        rosak::create([
+            'id_rusak' => 1,
+            'jns_rusak' => 1,
+            'tgl_input' => "2023-10-06",
+            'tgl_rusak' => "2023-10-06",
+            'id_PU' => 1,
+            'koor_x' => 90123,
+            'koor_y' => 82321,
+            'diameter' => 89
+        ]);
+        rosak::create([
+            'id_rusak' => 2,
+            'tgl_input' => "2023-10-06",
+            'tgl_rusak' => "2023-10-06",
+            'id_PU' => 1,
+            'koor_x' => 99732,
+            'koor_y' => 421
         ]);
     }
 }
