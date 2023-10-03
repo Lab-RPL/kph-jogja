@@ -45,11 +45,11 @@
                 <table id="tabelData" class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Nama RPH</th>
-                            <th>Nama Kepala RPH</th>
-                            <th>Luas RPH</th>
-                            <th>Petak</th>
-                            <th>Aksi</th>
+                            <th style="background-color: #9CC589;">Nama RPH</th>
+                            <th style="background-color: #9CC589;">Nama Kepala RPH</th>
+                            <th style="background-color: #9CC589;">Luas RPH</th>
+                            <th style="background-color: #9CC589;">Petak</th>
+                            <th style="background-color: #9CC589;">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>

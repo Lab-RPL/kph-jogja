@@ -24,11 +24,11 @@
                 <table id="tabelData" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>BDH</th>
-                            <th>Nama Kepala BDH</th>
-                            <th>Luas BDH</th>
-                            <th>RPH</th>
-                            <th>Aksi</th>
+                            <th style="background-color: #9CC589;">BDH</th>
+                            <th style="background-color: #9CC589;">Nama Kepala BDH</th>
+                            <th style="background-color: #9CC589;">Luas BDH</th>
+                            <th style="background-color: #9CC589;">RPH</th>
+                            <th style="background-color: #9CC589;">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -41,16 +41,17 @@
 
                     </div>
                 </div>
+                
                 @if (Session::has('pesan'))
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
                 <table id="tabelData" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>Nomor Petak</th>
-                            <th>Luas Petak</th>
-                            <th>Potensi Petak</th>
-                            <th>Aksi</th>
+                            <th style="background-color: #9CC589;">Nomor Petak</th>
+                            <th style="background-color: #9CC589;">Luas Petak</th>
+                            <th style="background-color: #9CC589;">Potensi Petak</th>
+                            <th style="background-color: #9CC589;">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>

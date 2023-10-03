@@ -17,7 +17,7 @@
                         <td><label for="tambah-bdh">NAMA BDH</label></td>
                         <td>
                             <select name="id_bdh" id="tambah-bdh" required class="form-select">
-                                <option value="">Pilih BDH</option>
+                                <option value="" disabled selected hidden>Pilih BDH</option>
                                 @foreach ($bdh as $bdh)
                                     @if ($bdh->IsDelete == 0)
                                         <option value="{{ $bdh->id_bdh }}">{{ $bdh->nama_bdh }}</option>

@@ -70,10 +70,10 @@
                             }
                         </style>
                         <tr>
-                            <th>
+                            <th style="background-color: #9CC589;">
                                 <div style="text-align: center;">X</div>
                             </th>
-                            <th>
+                            <th style="background-color: #9CC589;">
                                 <div style="text-align: center;">Y</div>
                             </th>
                         </tr>

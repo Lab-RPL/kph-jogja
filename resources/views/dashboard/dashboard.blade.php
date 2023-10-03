@@ -49,7 +49,7 @@
                         <a href="{{ route('rph.index2') }}">
                             <div>
                                 <div class="numbers">{{ $totalrph }} <span style="font-size: 25px">Data</span></div>
-                                <div class="cardName">Rencana Pengelolaan Hutan</div>
+                                <div class="cardName">Resort Pengelolaan Hutan</div>
                             </div>
                             <span class="iconBx" style="margin-top: 20px">
                                 <ion-icon name="leaf-outline"></ion-icon>
