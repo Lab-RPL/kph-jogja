@@ -37,8 +37,6 @@
                             <th rowspan="2" valign="middle" style="background-color: #9CC589;">Tanggal Rusak</th>
                             <th rowspan="2" valign="middle" style="background-color: #9CC589;">Nomor PU</th>
                             <th colspan="2" style="background-color: #9CC589;">Koordinat Rusak</th>
-                            <th rowspan="2" valign="middle" style="background-color: #9CC589;">Diameter Tunggak</th>
-
                             <th rowspan="2" valign="middle" style="background-color: #9CC589;">Foto</th>
                             <th rowspan="2" valign="middle" style="background-color: #9CC589;">Aksi</th>
                         </tr>
@@ -54,19 +52,22 @@
                     <tbody>
                         @foreach ($data as $ros)
                         @if ($ros->jns_rusak == 0)
+                        @if ($ros->IsDelete == 0)
+                            
+                       
                         <tr>
                             <td>{{ $ros->tgl_input }}</td>
                             <td>{{ $ros->tgl_rusak }}</td>
                             <td>{{ $ros->no_PU }}</td>
                             <td>{{ $ros->koor_x }}</td>
                             <td>{{ $ros->koor_y }}</td>
-                            <td>{{ $ros->diameter }}</td>
                             <td>{{ $ros->foto }}</td>
                             <td class="btn-group">
-                                <a href="" class="btn btn-danger mb-1 m-l-1">Hapus</a>
-                                <a href="" class="btn btn-warning mb-1 m-l-1 ms-2">Edit</a>
+                                <a href="{{ route('rosak.destroy', $ros->id_rusak) }}" class="btn btn-danger mb-1 m-l-1">Hapus</a>
+                                <a href="{{ route('rosak.edit',$ros->id_rusak) }}" class="btn btn-warning mb-1 m-l-1 ms-2">Edit</a>
                             </td>
                         </tr>
+                        @endif
                         @endif
                         @endforeach
 
@@ -104,19 +105,22 @@
                     <tbody>
                         @foreach ($data as $ros)
                             @if ($ros->jns_rusak == 1)
-                                <tr>
-                                    <td>{{ $ros->tgl_input }}</td>
-                                    <td>{{ $ros->tgl_rusak }}</td>
-                                    <td>{{ $ros->no_PU }}</td>
-                                    <td>{{ $ros->koor_x }}</td>
-                                    <td>{{ $ros->koor_y }}</td>
-                                    <td>{{ $ros->diameter }}</td>
-                                    <td>{{ $ros->foto }}</td>
-                                    <td class="btn-group">
-                                        <a href="" class="btn btn-danger mb-1 m-l-1">Hapus</a>
-                                        <a href="" class="btn btn-warning mb-1 m-l-1 ms-2">Edit</a>
-                                    </td>
-                                </tr>
+                            @if ($ros->IsDelete == 0)
+                            <tr>
+                                <td>{{ $ros->tgl_input }}</td>
+                                <td>{{ $ros->tgl_rusak }}</td>
+                                <td>{{ $ros->no_PU }}</td>
+                                <td>{{ $ros->koor_x }}</td>
+                                <td>{{ $ros->koor_y }}</td>
+                                <td>{{ $ros->diameter }}</td>
+                                <td>{{ $ros->foto }}</td>
+                                <td class="btn-group">
+                                    <a href="{{ route('rosak.destroy', $ros->id_rusak) }}" data-id="{{ $ros->id_rusak }}" class="btn btn-danger mb-1 m-l-1">Hapus</a>
+                                    <a href="{{ route('rosak.edit',$ros->id_rusak) }}" class="btn btn-warning mb-1 m-l-1 ms-2">Edit</a>
+                                </td>
+                            </tr>
+                                
+                            @endif
                             @endif
                         @endforeach
 

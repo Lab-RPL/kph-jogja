@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <form action="" method="post">
+    <form action="{{ Route('rosak.store') }}" method="post">
         @csrf
         <div class="garis">
             <div class="border-lists">
@@ -32,16 +32,27 @@
                         </tr>
                         <tr>
                             <td width="300px">Tanggal Input</td>
-                            <td height="50px"><span>X</span> <input type="date" name="tanggal_input" required></td>
+                            <td height="50px"><span>X</span> <input type="date" name="tgl_input" required></td>
                         </tr>
                         <tr>
                             <td width="300px">Tanggal Kejadian</td>
-                            <td height="50px"><span>X</span> <input type="date" name="tanggal_jadi" required></td>
+                            <td height="50px"><span>X</span> <input type="date" name="tgl_rusak" required></td>
                         </tr>
                         <tr>
                             <td>Nomor PU</td>
-                            <td height="50px"><span>X</span> <input type="text" name="no_PU" required></td>
+                            <td>
+                                <span>X</span>
+                                <select name="id_PU" required>
+                                    <option value="" disabled selected hidden>Pilih Nomor PU</option>
+                                    @foreach ($data as $p)
+                                        <option value="{{ $p->id_PU }}">
+                                            {{ $p->no_PU }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </td>
                         </tr>
+
                         <tr>
                             <td rowspan="2">Koordinat PU</td>
                             <td height="50px">X <input placeholder="Koordinat X" type="text" name="koor_x" required>
@@ -74,7 +85,7 @@
             var hilangInput = document.getElementById('dimtung');
             if (this.value === '1') {
                 hilangInput.style.display =
-                'table-row'; // Menggunakan 'table-row' untuk mengembalikan tampilan baris tabel
+                    'table-row'; // Menggunakan 'table-row' untuk mengembalikan tampilan baris tabel
             } else {
                 hilangInput.style.display = 'none';
             }
