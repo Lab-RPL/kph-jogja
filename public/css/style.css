@@ -469,12 +469,12 @@ body {
 }
 
 .table th {
-    color: var(--white);
+    color: var(--black1);
     text-align: center;
 }
 
 .table thead {
-    background-color: rgba(25, 128, 81, 0.904);
+    background-color: #9CC589;
 }
 
 .table .btn {
