@@ -132,9 +132,11 @@ Route::get('/data-izin/{id_izin}',[izinController::class, 'destroy'])->name('izi
 
 // KERUSAKAN/KEHILANGAN
 Route::get('/data-rusak',[rosakController::class,'index'])->name('rosak.index');
-Route::get('/tambah-rosak', function(){
-    return view('rosak.tambah-rosak');
-});
+Route::get('/tambah-rosak',[rosakController::class, 'create'])->name('rosak.create');
+Route::post('/data-rusak',[rosakController::class, 'store'])->name('rosak.store');
+Route::get('/data-rusak/{id_rusak}/edit',[rosakController::class, 'edit'])->name('rosak.edit');
+// Route::put('/data-rusak/{id}',[rosakController::class, 'update'])->name('rosak.update');
+Route::get('/data-rusak/{id_rusak}',[rosakController::class, 'destroy'])->name('rosak.destroy');
 
 
 // Penerimaan Negera Bukan Pajak
