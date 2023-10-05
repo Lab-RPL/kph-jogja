@@ -6,7 +6,7 @@
                             <span class="icon">
                                 <img src="{{ asset('images/LogoKPH.png') }}" alt="Logo">
                             </span>
-                            <span class="title">KPH Yogyakarta</span>
+                            <span class="title1">KPH Yogyakarta</span>
                         </a>
                     </li>
         
