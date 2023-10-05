@@ -3,14 +3,15 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
-use App\Models\User;
 use App\Models\Bdh;
-use App\Models\dataTegak;
 use App\Models\Rph;
+use App\Models\User;
 use App\Models\petak;
-use App\Models\dataUtama;
 use App\Models\rosak;
+use App\Models\dataTegak;
+use App\Models\dataUtama;
+use App\Models\LuasHutan;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -341,6 +342,10 @@ class DatabaseSeeder extends Seeder
             'id_PU' => 1,
             'koor_x' => 99732,
             'koor_y' => 421
+        ]);
+        LuasHutan::create([
+            'luas_lindung' => "1000",
+            'luas_produksi' => "800",
         ]);
     }
 }
