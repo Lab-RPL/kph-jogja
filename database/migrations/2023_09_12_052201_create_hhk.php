@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('jenis_tgk');
             $table->decimal('luas_hasil_hutan');
             $table->decimal('volume_hasil_hutan');
+            $table->boolean('IsDelete')->default(0);
             $table->timestamps();
         });
     }

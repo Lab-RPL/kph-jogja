@@ -14,6 +14,10 @@ class DashboardController extends Controller
         $totalinven = DB::table('data_utama')->where('IsDelete',0)->count();
         $totalrph = DB::table('rph')->where('IsDelete',0)->count();
         $totalptk = DB::table('petak')->where('IsDelete',0)->count();
-        return view('dashboard.dashboard',compact('totalbdh','totalrph','totalptk','totalinven'));
+        $totalPerizinan = DB::table('izin_kelola')->where('IsDelete',0)->count();
+        $totalProduksi = DB::table('hhbk')->where('IsDelete',0)->count();
+        $totalPotensi = DB::table('hhk')->where('IsDelete',0)->count();
+        $totalPajak = DB::table('pnbp')->where('IsDelete',0)->count();
+        return view('dashboard.dashboard',compact('totalbdh','totalrph','totalptk','totalinven','totalPerizinan','totalPotensi','totalPajak','totalProduksi'));
     }
 }
