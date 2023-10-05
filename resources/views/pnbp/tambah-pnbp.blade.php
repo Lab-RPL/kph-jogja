@@ -14,11 +14,11 @@
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
                 <table id="tabelData">
                     <tr>
-                        <td>Tahun</td>
+                        <td height="60px">Tahun</td>
                         <td><input type="text" id="tambah-pnbp" name="tahun_pnbp" required></td>
                     </tr>
                     <tr>
-                        <td>Nominal</td>
+                        <td height="60px">Nominal</td>
                         <td><input type="text" id="tambah-pnbp" name="nominal_pnbp" required></td>
                     </tr>
                 </table>

@@ -17,12 +17,12 @@
                 <input type="hidden" name="id_pnbp">
                 <table id="tabelData">
                     <tr>
-                        <td>Tahun</td>
+                        <td height="60px">Tahun</td>
                         <td><input type="text" id="tambah-pnbp" name="tahun_pnbp" value="{{ $pnbp->tahun_pnbp }}"></td>
                         {{-- <td><input type="text" id="tambah-pnbp" name="tahun_pnbp"></td> --}}
                     </tr>
                     <tr>
-                        <td>Nominal</td>
+                        <td height="60px">Nominal</td>
                         <td><input type="text" id="tambah-pnbp" name="nominal_pnbp" value="{{ $pnbp->nominal_pnbp }}">
                         </td>
                     </tr>

@@ -53,7 +53,7 @@
                 </table>
 
                 {{-- {{ $data->links() }} --}}
-                <div style="display: flex; justify-content: flex-end;" class="nav-item mt-5">
+                <div style="display: flex; justify-content: flex-end;" class="nav-item mt-4">
                     <a class="btn btn-primary"
                         style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
                         href="/tambah-izin">Tambah Data</a>

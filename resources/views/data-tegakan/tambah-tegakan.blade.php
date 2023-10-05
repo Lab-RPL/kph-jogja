@@ -13,11 +13,11 @@
                 <h2 class="mt-2">DATA TEGAKAN</h2>
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
                 <table id="tabelData">
-
+                    
                     <tr>
                         <td>Nomor PU</td>
                         <td>
-                            <select name="id_PU" id="tambah-dataUtama" required class="form-control" disabled>
+                            <select name="id_PU" id="tambah-dataUtama" required class="form-control" disabled >
                                 @foreach ($dataUtama as $dataUtama)
                                     @if ($dataUtama->IsDelete == 0)
                                         <option value="{{ $dataUtama->id_PU }}"
@@ -32,7 +32,7 @@
                     </tr>
 
                     <tr>
-                        <td>Jenis Tegakan</td>
+                        <td >Jenis Tegakan</td>
                         <td><input type="text" id="tambah-tegakan" name="jenis_tgk" required></td>
                     </tr>
                     <tr>

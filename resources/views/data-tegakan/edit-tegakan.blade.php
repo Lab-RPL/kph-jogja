@@ -16,7 +16,7 @@
                 <table id="tabelData">
 
                     <tr>
-                        <td>Nomor PU</td>
+                        <td height="60px">Nomor PU</td>
                         <td>
                             @foreach ($utama as $utama)
                                 @if ($utama->IsDelete == 0 && $utama->id_PU == $dataTegak->id_PU)
@@ -32,22 +32,22 @@
                 </tr>
 
                 <tr>
-                    <td>Jenis Tegakan</td>
+                    <td height="60px">Jenis Tegakan</td>
                     <td><input type="text" id="tambah-tegakan" name="jenis_tgk" value="{{ $dataTegak->jenis_tgk }}">
                     </td>
                 </tr>
                 <tr>
-                    <td>Nomor Pohon</td>
+                    <td height="60px">Nomor Pohon</td>
                     <td><input type="text" id="tambah-tegakan" name="no_pohon" value="{{ $dataTegak->no_pohon }}">
                     </td>
                 </tr>
                 <tr>
-                    <td>Diameter</td>
+                    <td height="60px">Diameter</td>
                     <td><input type="text" id="tambah-tegakan" name="diameter" value="{{ $dataTegak->diameter }}">
                     </td>
                 </tr>
                 <tr>
-                    <td>Tinggi</td>
+                    <td height="60px">Tinggi</td>
                     <td><input type="text" id="tambah-tegakan" name="tinggi" value="{{ $dataTegak->tinggi }}"></td>
                 </tr>
             </table>

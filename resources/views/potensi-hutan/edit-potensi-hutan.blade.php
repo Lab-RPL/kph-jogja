@@ -17,16 +17,16 @@
                 <input type="hidden" name="id_hhbk" value="{{ $hhbk->id_hhbk }}">
                 <table id="tabelData">
                     <tr>
-                        <td>Nama Wisata</td>
+                        <td height="60px">Nama Wisata</td>
                         <td><input type="text" id="nama-wis" name="nama_wisata" value="{{ $hhbk->nama_wisata }}"></td>
                     </tr>
                     <tr>
-                        <td>Lokasi Wisata</td>
+                        <td height="60px">Lokasi Wisata</td>
                         <td><input type="text" id="lokasi-wis" name="lokasi_wisata" value="{{ $hhbk->lokasi_wisata }}">
                         </td>
                     </tr>
                     <tr>
-                        <td>Atraksi Wisata</td>
+                        <td height="60px">Atraksi Wisata</td>
                         <td><input type="text" id="atraksi-wis" name="atraksi_wisata"
                                 value="{{ $hhbk->atraksi_wisata }}"></td>
                     </tr>

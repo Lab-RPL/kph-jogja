@@ -17,16 +17,16 @@
                 <input type="hidden" name="id_izin" value="{{ $data->id_izin }}">
                 <table id="tabelData">
                     <tr>
-                        <td>Nama Kelompok Tani Hutan</td>
+                        <td height="60px">Nama Kelompok Tani Hutan</td>
                         <td><input type="text" id="nama-kel" name="nama_kelompok" value="{{ $data->nama_kelompok }}">
                         </td>
                     </tr>
                     <tr>
-                        <td>Nomor SK</td>
+                        <td height="60px">Nomor SK</td>
                         <td><input type="text" id="nomor-sk" name="no_SK" value="{{ $data->no_SK }}"></td>
                     </tr>
                     <tr>
-                        <td>Nomor Petak</td>
+                        <td height="60px">Nomor Petak</td>
                         <td>
                             <select name="petak_izin" required>
                                 <option value="" selected disabled hidden>Pilih Nomor Petak</option>
@@ -43,7 +43,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Luas Izin</td>
+                        <td height="60px">Luas Izin</td>
                         <td><input type="text" id="luas-izin" name="luas_izin" value="{{ $data->luas_izin }}"></td>
                     </tr>
                 </table>

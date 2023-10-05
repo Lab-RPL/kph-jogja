@@ -14,16 +14,16 @@
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
 
                 <table id="tabelData">
-                    <tr></tr>
-                    <td>Nama Wisata</td>
+
+                    <td height="60px">Nama Wisata</td>
                     <td><input type="text" id="nama-wis" name="nama_wisata" required></td>
                     </tr>
                     <tr>
-                        <td>Lokasi Wisata</td>
+                        <td height="60px">Lokasi Wisata</td>
                         <td><input type="text" id="lokasi-wis" name="lokasi_wisata" required></td>
                     </tr>
                     <tr>
-                        <td>Atraksi Wisata</td>
+                        <td height="60px">Atraksi Wisata</td>
                         <td><input type="text" id="atraksi-wis" name="atraksi_wisata" required></td>
                     </tr>
                     <!-- <tr>
