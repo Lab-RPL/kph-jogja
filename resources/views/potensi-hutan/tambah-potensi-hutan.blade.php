@@ -15,27 +15,64 @@
 
                 <table id="tabelData">
                     <tr></tr>
-                    <td><label for="nama-wis">Nama Wisata</label></td>
+                    <td>Nama Wisata</td>
                     <td><input type="text" id="nama-wis" name="nama_wisata" required></td>
                     </tr>
                     <tr>
-                        <td><label for="lokasi-wis">Lokasi Wisata</label></td>
+                        <td>Lokasi Wisata</td>
                         <td><input type="text" id="lokasi-wis" name="lokasi_wisata" required></td>
                     </tr>
                     <tr>
-                        <td><label for="atraksi-wis">Atraksi Wisata</label></td>
+                        <td>Atraksi Wisata</td>
                         <td><input type="text" id="atraksi-wis" name="atraksi_wisata" required></td>
                     </tr>
                     <!-- <tr>
-                                <td><label for="luas-tanah">Keterangan Lain</label></td>
-                                <td><input type="text" id="luas-rph" name="luas_tanah" required></td>
-                            </tr> -->
+                                    <td><label for="luas-tanah">Keterangan Lain</label></td>
+                                    <td><input type="text" id="luas-rph" name="luas_tanah" required></td>
+                                </tr> -->
                 </table>
-                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <a class="btn btn-warning" style="color: white" href="/data-potensi">Kembali</a>
-                    <button class="btn btn-primary" style="color: white" type="submit">Submit</button>
+                <div style="display: flex; justify-content: space-between;" class="mt-5">
+                    <a class="btn btn-warning" style="color: white; font-weight: bold" href="/data-potensi">Kembali</a>
+                    <button class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                        type="submit">Submit</button>
                 </div>
             </div>
         </div>
     </form>
+
+    <style>
+        pre {
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        .line-table {
+            border-bottom: 1px solid;
+        }
+
+        select {
+            width: 200px;
+            padding: 5px;
+            border: 2px solid #0CB166;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        option {
+            padding: 5px;
+        }
+    </style>
 @endsection

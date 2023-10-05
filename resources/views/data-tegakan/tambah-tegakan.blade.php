@@ -15,7 +15,7 @@
                 <table id="tabelData">
 
                     <tr>
-                        <td><label for="">Nomor PU</label></td>
+                        <td>Nomor PU</td>
                         <td>
                             <select name="id_PU" id="tambah-dataUtama" required class="form-control" disabled>
                                 @foreach ($dataUtama as $dataUtama)
@@ -32,34 +32,72 @@
                     </tr>
 
                     <tr>
-                        <td><label for="tambah-tegakan">Jenis Tegakan</label></td>
+                        <td>Jenis Tegakan</td>
                         <td><input type="text" id="tambah-tegakan" name="jenis_tgk" required></td>
                     </tr>
                     <tr>
-                        <td><label>Nomor Pohon</label></td>
+                        <td>Nomor Pohon</td>
                         <td><input type="text" id="tambah-tegakan" name="no_pohon" required></td>
                     </tr>
                     <tr>
-                        <td><label>Diameter</label></td>
+                        <td>Diameter</td>
                         <td><input type="text" id="tambah-tegakan" name="diameter" required></td>
                     </tr>
                     <tr>
-                        <td><label>Tinggi</label></td>
+                        <td>Tinggi</td>
                         <td><input type="text" id="tambah-tegakan" name="tinggi" required></td>
                     </tr>
                 </table>
 
-                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <button onclick="goBack()" class="btn btn-warning" style="color: white">Kembali</button>
+                <div style="display: flex; justify-content: space-between;" class="mt-5">
+                    <button onclick="goBack()" class="btn btn-warning"
+                        style="color: white; font-weight: bold;">Kembali</button>
 
                     <script>
                         function goBack() {
                             window.history.back();
                         }
                     </script>
-                    <button class="btn btn-primary" style="color: white" type="submit">Tambah Data</button>
+                    <button class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                        type="submit">Submit</button>
                 </div>
             </div>
         </div>
     </form>
+
+    <style>
+        pre {
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        .line-table {
+            border-bottom: 1px solid;
+        }
+
+        select {
+            width: 200px;
+            padding: 5px;
+            border: 2px solid #0CB166;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        option {
+            padding: 5px;
+        }
+    </style>
 @endsection

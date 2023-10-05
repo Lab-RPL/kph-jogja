@@ -14,21 +14,56 @@
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
                 <table id="tabelData">
                     <tr>
-                        <td><label for="tambah-pnbp">Tahun</label></td>
+                        <td>Tahun</td>
                         <td><input type="text" id="tambah-pnbp" name="tahun_pnbp" required></td>
                     </tr>
                     <tr>
-                        <td><label for="tambah-pnbp">Nominal</label></td>
+                        <td>Nominal</td>
                         <td><input type="text" id="tambah-pnbp" name="nominal_pnbp" required></td>
                     </tr>
                 </table>
-                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <a class="btn btn-warning" style="color: white" href="/data-pnbp">Kembali</a>
-                    <button class="btn btn-primary" style="color: white" type="submit">Tambah Data</button>
+                <div style="display: flex; justify-content: space-between;" class="mt-5">
+                    <a class="btn btn-warning" style="color: white; font-weight: bold;" href="/data-pnbp">Kembali</a>
+                    <button class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                        type="submit">Submit</button>
                 </div>
             </div>
         </div>
     </form>
 
+    <style>
+        pre {
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+        }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        .line-table {
+            border-bottom: 1px solid;
+        }
+
+        select {
+            width: 200px;
+            padding: 5px;
+            border: 2px solid #0CB166;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        option {
+            padding: 5px;
+        }
+    </style>
 @endsection

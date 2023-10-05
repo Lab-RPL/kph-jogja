@@ -47,8 +47,10 @@
                 </table>
 
                 {{-- {{ $data->links() }} --}}
-                <div style="display: flex; justify-content: flex-end;">
-                    <a class="btn btn-primary" style="color: white" href="/tambah-pnbp">Tambah Data</a>
+                <div style="display: flex; justify-content: flex-end;" class="mt-4">
+                    <a class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                        href="{{ route('pnbp.create') }}">Tambah Data</a>
                 </div>
 
                 <script src="https://code.jquery.com/jquery-3.7.1.min.js"

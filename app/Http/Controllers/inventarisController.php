@@ -119,7 +119,7 @@ class inventarisController extends Controller
 
         return redirect()
             ->route('data-utama.index', $request->id_ptk)
-            ->with('pesan', 'Data berhasil ditambahkan');
+            ->with('pesan', 'Data Petak Ukur Berhasil Ditambahkan');
     }
 
     public function edit(Request $req, $id_PU)
@@ -204,7 +204,7 @@ class inventarisController extends Controller
           
         $data->save();
     
-        return redirect()->route('data-utama.index')->with('success', 'Data berhasil diupdate');
+        return redirect()->route('data-utama.index')->with('pesan', 'Data Petak Ukur Berhasil Diupdate');
     }
 
     public function destroy($id_PU)

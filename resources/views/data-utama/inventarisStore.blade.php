@@ -257,8 +257,11 @@
                         </tbody>
                     </table>
                     <div style="display: flex; justify-content: space-between; margin-top: 60px;">
-                        <a class="btn btn-warning" style="color: white" onclick="return goBack();">Kembali</a>
-                        <button class="btn btn-primary" style="color: white" type="submit">Tambah Data</button>
+                        <a class="btn btn-warning" style="color: white; font-weight: bold;"
+                            onclick="return goBack();">Kembali</a>
+                        <button class="btn btn-primary"
+                            style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                            type="submit">Submit</button>
                     </div>
 
                     <script>
@@ -275,18 +278,18 @@
 
     <style>
         /* .border-lists {
-                            position: relative;
-                            border: 3px solid #ccc;
-                            border-radius: 20px;
-                            padding: 60px;
-                            max-width: 980px;
-                            width: 100%;
-                            height: auto;
-                            max-height: 550px;
-                            border-color: #0CB166;
-                            overflow-y: scroll;
-                            margin-bottom: 38px;
-                            } */
+                                    position: relative;
+                                    border: 3px solid #ccc;
+                                    border-radius: 20px;
+                                    padding: 60px;
+                                    max-width: 980px;
+                                    width: 100%;
+                                    height: auto;
+                                    max-height: 550px;
+                                    border-color: #0CB166;
+                                    overflow-y: scroll;
+                                    margin-bottom: 38px;
+                                    } */
 
         pre {
             font-weight: bold;

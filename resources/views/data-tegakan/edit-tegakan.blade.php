@@ -14,9 +14,9 @@
                 <h2 class="mt-2">DATA Tegakan</h2>
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
                 <table id="tabelData">
-                    
+
                     <tr>
-                        <td><label for="">Nomor PU</label></td>
+                        <td>Nomor PU</td>
                         <td>
                             @foreach ($utama as $utama)
                                 @if ($utama->IsDelete == 0 && $utama->id_PU == $dataTegak->id_PU)
@@ -26,42 +26,81 @@
                                 @break
                             @endif
                         @endforeach
-                            
-                            
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td><label for="tambah-tegakan" >Jenis Tegakan</label></td>
-                        <td><input type="text" id="tambah-tegakan" name="jenis_tgk" value="{{ $dataTegak->jenis_tgk }}"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Nomor Pohon</label></td>
-                        <td><input type="text" id="tambah-tegakan" name="no_pohon" value="{{ $dataTegak->no_pohon }}"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Diameter</label></td>
-                        <td><input type="text" id="tambah-tegakan" name="diameter" value="{{ $dataTegak->diameter }}" ></td>
-                    </tr>
-                    <tr>
-                        <td><label>Tinggi</label></td>
-                        <td><input type="text" id="tambah-tegakan" name="tinggi" value="{{ $dataTegak->tinggi }}"></td>
-                    </tr>
-                </table>
-                
-                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <button onclick="goBack()" class="btn btn-warning" style="color: white">Kembali</button>
 
-                    <script>
-                        function goBack() {
-                            window.history.back();
-                        }
-                    </script>
-                    <button class="btn btn-primary" style="color: white" type="submit">Edit Data</button>
-                </div>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Jenis Tegakan</td>
+                    <td><input type="text" id="tambah-tegakan" name="jenis_tgk" value="{{ $dataTegak->jenis_tgk }}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nomor Pohon</td>
+                    <td><input type="text" id="tambah-tegakan" name="no_pohon" value="{{ $dataTegak->no_pohon }}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Diameter</td>
+                    <td><input type="text" id="tambah-tegakan" name="diameter" value="{{ $dataTegak->diameter }}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tinggi</td>
+                    <td><input type="text" id="tambah-tegakan" name="tinggi" value="{{ $dataTegak->tinggi }}"></td>
+                </tr>
+            </table>
+
+            <div style="display: flex; justify-content: space-between;" class="mt-5">
+                <button onclick="goBack()" class="btn btn-warning"
+                    style="color: white; font-weight: bold;">Kembali</button>
+
+                <script>
+                    function goBack() {
+                        window.history.back();
+                    }
+                </script>
+                <button class="btn btn-primary"
+                    style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                    type="submit">Submit</button>
             </div>
         </div>
-    </form>
-    
-    
+    </div>
+</form>
+
+<style>
+    pre {
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table th,
+    table td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    .line-table {
+        border-bottom: 1px solid;
+    }
+
+    select {
+        width: 200px;
+        padding: 5px;
+        border: 2px solid #0CB166;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    option {
+        padding: 5px;
+    }
+</style>
 @endsection

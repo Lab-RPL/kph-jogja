@@ -17,7 +17,7 @@
                     margin-right: 50px;
                 }
             </style>
-            
+
             <form>
                 @csrf
                 @if (Session::has('pesan'))
@@ -96,8 +96,10 @@
                         @endforeach
                     </tbody>
                 </table>
-                <div style="display: flex; justify-content: flex-end;" class="nav-item">
-                    <a class="btn btn-primary" style="color: white" href="/tambah-potensi">Tambah Data HHBK</a>
+                <div style="display: flex; justify-content: flex-end;" class="nav-item mt-4">
+                    <a class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                        href="{{ route('potensi.create') }}">Tambah Data HHBK</a>
                 </div>
                 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
                     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

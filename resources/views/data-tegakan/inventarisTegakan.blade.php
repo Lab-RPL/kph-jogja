@@ -53,7 +53,8 @@
                                     <td>{{ $da->diameter }}</td>
                                     <td>{{ $da->tinggi }}</td>
                                     <td class="center-align">
-                                        <a class="btn btn-warning mb-1 m-l-1" href="{{ route('data-tgk.edit', $da->id_tgk) }}">Edit</a>
+                                        <a class="btn btn-warning mb-1 m-l-1"
+                                            href="{{ route('data-tgk.edit', $da->id_tgk) }}">Edit</a>
                                         <a class="btn btn-danger mb-1 m-l-1"
                                             href="{{ route('data-tgk.destroy', $da->id_tgk) }}"
                                             data-id="{{ $da->id_tgk }}">Hapus</a>
@@ -88,8 +89,9 @@
                         }
                     });
                 </script>
-                <div style="display: flex; justify-content: flex-end;">
-                    <a class="btn btn-primary" style="color: white"
+                <div style="display: flex; justify-content: flex-end;" class="mt-4">
+                    <a class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
                         href="{{ route('data-tgk.create', ['data_utama' => $id_PU]) }}">Tambah Data</a>
                 </div>
             </form>
