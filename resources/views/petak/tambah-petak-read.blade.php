@@ -15,7 +15,7 @@
                 <table id="tabelData">
                     <tr>
                         <td><label for="tambah-bdh">NAMA BDH</label></td>
-                        <td>
+                        <td>  
                             <select name="id_bdh" id="tambah-bdh" required class="form-select">
                                 <option value="">Pilih BDH</option>
                                 @foreach ($bdh as $bdh)
@@ -40,10 +40,6 @@
                             </select>
                         </td>
                     </tr>
-                    {{-- <tr>
-                        <td><label for="tambah-rph">Nama RPH</label></td>
-                        <td><input type="text" id="tambah-rph" name="nama_rph" required></td>
-                    </tr> --}}
                     <tr>
                         <td><label for="tambah-rph">Nama Kepala RPH</label></td>
                         <td><input type="text" id="tambah-rph" name="kepala_rph" required></td>

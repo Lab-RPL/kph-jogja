@@ -17,14 +17,20 @@
                     <tr>
                         <td><label for="tambah-rph">NAMA RPH</label></td>
                         <td>
-                            <select name="id_rph" id="tambah-rph" required class="form-select">
-                                <option value="">Pilih RPH</option>
+                            <select name="id_rph" id="tambah-rph" required class="form-control" disabled>
                                 @foreach ($rph as $rph)
                                     @if ($rph->IsDelete == 0)
-                                        <option value="{{ $rph->id_rph }}">{{ $rph->nama_rph }}</option>
+                                        {{-- <option value="{{ $rph->id_rph }}">{{ $rph->nama_rph }}</option> --}}
+                                        <option value="{{ $rph->id_rph}}"
+                                        @if ($selectedRph != null && $selectedRph == $rph->id_rph)
+                                        selected @endif >{{ $rph->nama_rph }}</option>
                                     @endif
                                 @endforeach
                             </select>
+
+                            <input type="hidden" name="id_rph" value="{{ $selectedRph }}" />
+
+
                         </td>
                     </tr>
                     <tr></tr>
@@ -45,7 +51,7 @@
                                     </tr> -->
                 </table>
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <a class="btn btn-warning" style="color: white" href="/data-bdh" onclick="return goBack();">Kembali</a>
+                    <button class="btn btn-warning" style="color: white" onclick="return goBack();">Kembali</button>
 
                     <script>
                         function goBack() {
@@ -53,7 +59,7 @@
                             return false;
                         }
                     </script>
-                    <button class="btn btn-primary" style="color: white" type="submit">Submit</>
+                    <button class="btn btn-primary" style="color: white" type="submit">Submit</button>
                 </div>
             </div>
         </div>

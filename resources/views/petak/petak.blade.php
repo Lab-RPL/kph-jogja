@@ -46,7 +46,7 @@
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
                 <table id="tabelData" class="table table-bordered table-striped">
-                    <thead>
+                    <thead> 
                         <tr>
                             <th style="background-color: #9CC589;">Nomor Petak</th>
                             <th style="background-color: #9CC589;">Luas Petak</th>
@@ -75,13 +75,13 @@
 
                 {{-- {{ $data->links() }} --}}
                 <div style="display: flex; justify-content: space-between;" class="mt-4">
-                    <a class="btn btn-warning" style="color: white" href="#" onclick="goBack();">Kembali</a>
+                    <a class="btn btn-warning" style="color: white"  onclick="goBack();">Kembali</a>
                     <script>
                         function goBack() {
                             window.history.back();
                         }
                     </script>
-                    <a class="btn btn-primary" style="color: white" href="/tambah-petak">TambahData</a>
+                    <a class="btn btn-primary" style="color: white" href="{{ route('petak.create', ['rph' => $id_rph]) }}">Tambah Data</a>
                 </div>
             </form>
         </div>
@@ -111,6 +111,7 @@
             }
         });
     </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
