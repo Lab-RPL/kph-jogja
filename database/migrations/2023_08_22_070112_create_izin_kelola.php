@@ -15,8 +15,9 @@ return new class extends Migration
             $table->bigIncrements('id_izin');
 
             $table->string('nama_kelompok');
-            $table->integer('no_SK');
-            $table->integer('petak_izin');
+            $table->string('no_SK');
+            $table->unsignedBigInteger('id_ptk');
+            $table->foreign('id_ptk')->references('id_ptk')->on('petak');
             $table->decimal('luas_izin');
             $table->boolean('IsDelete')->default(0);
             $table->timestamps();

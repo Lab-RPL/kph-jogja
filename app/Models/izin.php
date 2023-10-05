@@ -11,5 +11,9 @@ class izin extends Model
 
     protected $table = "izin_kelola";
     protected $primaryKey = "id_izin";
-    protected $fillable = ["id_izin", "nama_kelompok", "no_SK", "petak_izin", "luas_izin"];
+    protected $fillable = ["id_izin", "nama_kelompok", "no_SK", "id_ptk", "luas_izin"];
+
+    public function petak(){
+        return $this->belongsTo('App\Models\petak', 'id_ptk');
+    }
 }

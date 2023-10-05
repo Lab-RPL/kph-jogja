@@ -16,7 +16,7 @@
                     margin-right: 50px;
                 }
             </style>
-            
+
             <form>
                 @csrf
                 @if (Session::has('pesan'))
@@ -38,7 +38,7 @@
                                 <tr>
                                     <td>{{ $da->nama_kelompok }}</td>
                                     <td>{{ $da->no_SK }}</td>
-                                    <td>{{ $da->petak_izin }}</td>
+                                    <td>{{ $da->nomor_ptk }}</td>
                                     <td>{{ $da->luas_izin }} Ha</td>
                                     <td style="justify-content: space-between; align-items:center">
                                         <a href="{{ route('izin.edit', $da->id_izin) }}"
@@ -53,8 +53,10 @@
                 </table>
 
                 {{-- {{ $data->links() }} --}}
-                <div style="display: flex; justify-content: flex-end;" class="nav-item">
-                    <a class="btn btn-primary" style="color: white" href="/tambah-izin">Tambah Data</a>
+                <div style="display: flex; justify-content: flex-end;" class="nav-item mt-5">
+                    <a class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                        href="/tambah-izin">Tambah Data</a>
                 </div>
                 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
                     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

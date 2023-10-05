@@ -15,27 +15,73 @@
 
                 <table id="tabelData">
                     <tr>
-                        <td><label for="nama_kel">Nama Kelompok Tani Hutan</label></td>
+                        <td>Nama Kelompok Tani Hutan</td>
                         <td><input type="text" id="nama_kel" name="nama_kelompok" required></td>
                     </tr>
                     <tr>
-                        <td><label for="nomor-sk">Nomor SK</label></td>
+                        <td>Nomor SK</td>
                         <td><input type="text" id="nomor-sk" name="no_SK" required></td>
                     </tr>
                     <tr>
-                        <td><label for="nomor-ptk">Nomor Petak</label></td>
-                        <td><input type="text" id="nomor-ptk" name="petak_izin" required></td>
+                        <td>Nomor Petak</td>
+                        <td>
+                            <select name="petak_izin" required>
+                                <option value="" disabled selected hidden>Pilih Nomor Petak</option>
+                                @foreach ($petak as $petak)
+                                    @if ($petak->IsDelete == 0)
+                                        <option value="{{ $petak->id_ptk }}">{{ $petak->nomor_ptk }}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                        </td>
                     </tr>
                     <tr>
-                        <td><label for="luas-izin">Luas Izin</label></td>
+                        <td>Luas Izin</td>
                         <td><input type="text" id="luas-izin" name="luas_izin" required></td>
                     </tr>
                 </table>
-                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <a class="btn btn-warning" style="color: white" href="/data-izin">Kembali</a>
-                    <button class="btn btn-primary" style="color: white" type="submit">Submit</button>
+                <div style="display: flex; justify-content: space-between;" class="mt-5">
+                    <a class="btn btn-warning" style="font-weight: bold; color: white" href="/data-izin">Kembali</a>
+                    <button class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                        type="submit">Submit</button>
                 </div>
             </div>
         </div>
     </form>
+
+    <style>
+        pre {
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        .line-table {
+            border-bottom: 1px solid;
+        }
+
+        select {
+            width: 200px;
+            padding: 5px;
+            border: 2px solid #0CB166;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        option {
+            padding: 5px;
+        }
+    </style>
 @endsection
