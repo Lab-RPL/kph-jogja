@@ -71,11 +71,19 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    list-style: none;
     text-decoration: none;
+    color: inherit;
 }
+
+
 
 .cardBox .card a .iconBx {
     margin-top: 50px;
+}
+
+.cardName a {
+    text-decoration: none;
 }
 
 .cardBox .card .numbers {
@@ -105,6 +113,8 @@
 .cardBox .card:hover .iconBx {
     color: var(--black1);
 }
+
+
 
 /* chart pie */
 
@@ -246,7 +256,7 @@ body {
     width: 100%;
     height: auto;
     /* Ubah ke height:auto agar form menyesuaikan tingginya */
-    margin-top: 8rem;
+    margin-top: 6rem;
     max-height: 650px;
     border-color: white;
     overflow-y: scroll;

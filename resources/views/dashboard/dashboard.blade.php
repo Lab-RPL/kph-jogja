@@ -17,10 +17,12 @@
                     <div class="card">
                         <div>
                             <div class="numbers">{{ $totalinven }} <span style="font-size: 25px">Data</span></div>
-                            <div class="cardName">Data Inventaris</div>
+                            <div class="cardName">
+                                <a href="#">Data Inventaris</a>
+                            </div>
                         </div>
                         <span class="iconBx" style="margin-top: 10px;">
-                            <ion-icon name="stats-chart-outline"></ion-icon>
+                            <a href="#"><ion-icon name="stats-chart-outline"></ion-icon></a>
                         </span>
                         {{-- <div class="iconBx">
                     <ion-icon name="eye-outline"></ion-icon>
@@ -30,10 +32,12 @@
                     <div class="card">
                         <div>
                             <div class="numbers">{{ $totalbdh }} <span style="font-size: 25px">Data</span></div>
-                            <div class="cardName">Badan Daerah Hutan</div>
+                            <div class="cardName">
+                                <a href="#">Badan Daerah Hutan</a>
+                            </div>
                         </div>
                         <span class="iconBx" style="margin-top: 10px;">
-                            <ion-icon name="logo-ionic"></ion-icon>
+                            <a href="#"><ion-icon name="logo-ionic"></ion-icon></a>
                         </span>
                         {{-- <div class="iconBx">
                     <ion-icon name="cart-outline"></ion-icon>
@@ -43,10 +47,12 @@
                     <div class="card">
                         <div>
                             <div class="numbers">{{ $totalrph }} <span style="font-size: 25px">Data</span></div>
-                            <div class="cardName">Rencana Pengelolaan Hutan</div>
+                            <div class="cardName">
+                                <a href="#">Rencana Pengelolaan Hutan</a>
+                            </div>
                         </div>
                         <span class="iconBx" style="margin-top: 10px;">
-                            <ion-icon name="leaf-outline"></ion-icon>
+                            <a href="#"><ion-icon name="leaf-outline"></ion-icon></a>
                         </span>
                         {{-- <div class="iconBx">
                     <ion-icon name="chatbubbles-outline"></ion-icon>
@@ -56,10 +62,12 @@
                     <div class="card">
                         <div>
                             <div class="numbers">{{ $totalptk }} <span style="font-size: 25px"> Data</span></div>
-                            <div class="cardName">Data Petak</div>
+                            <div class="cardName">
+                                <a href="#">Data Petak</a>
+                            </div>
                         </div>
                         <span class="iconBx" style="margin-top: 10px;">
-                            <ion-icon name="analytics-outline"></ion-icon>
+                            <a href="#"><ion-icon name="analytics-outline"></ion-icon></a>
                         </span>
                         {{-- <div class="iconBx">
                     <ion-icon name="cash-outline"></ion-icon>
@@ -71,10 +79,12 @@
                     <div class="card">
                         <div>
                             <div class="numbers">{{ $totalPerizinan }} <span style="font-size: 25px">Data</span></div>
-                            <div class="cardName">Perizinan Berusaha</div>
+                            <div class="cardName">
+                                <a href="#">Perizinan Berusaha</a>
+                            </div>
                         </div>
                         <span class="iconBx" style="margin-top: 10px;">
-                            <ion-icon name="shield-checkmark-outline"></ion-icon>
+                            <a href="#"><ion-icon name="shield-checkmark-outline"></ion-icon></a>
                         </span>
                         {{-- <div class="iconBx">
                     <ion-icon name="eye-outline"></ion-icon>
@@ -84,10 +94,12 @@
                     <div class="card">
                         <div>
                             <div class="numbers">{{ $totalPotensi }} <span style="font-size: 25px">Data</span></div>
-                            <div class="cardName">Potensi Hasil Hutan</div>
+                            <div class="cardName">
+                                <a href="#">Potensi Hasil Hutan</a>
+                            </div>
                         </div>
                         <span class="iconBx" style="margin-top: 10px;">
-                            <ion-icon name="leaf-outline"></ion-icon>
+                           <a href="#"><ion-icon name="leaf-outline"></ion-icon></a>
                         </span>
                         {{-- <div class="iconBx">
                     <ion-icon name="cart-outline"></ion-icon>
@@ -97,10 +109,10 @@
                     <div class="card">
                         <div>
                             <div class="numbers">{{ $totalProduksi }} <span style="font-size: 25px">Data</span></div>
-                            <div class="cardName">Produksi Hasil Hutan</div>
+                            <div class="cardName"><a href="#">Produksi Hasil Hutan</a></div>
                         </div>
                         <span class="iconBx" style="margin-top: 10px;">
-                            <ion-icon name="settings-outline"></ion-icon>
+                            <a href="#"><ion-icon name="settings-outline"></ion-icon></a>
                         </span>
                         {{-- <div class="iconBx">
                     <ion-icon name="chatbubbles-outline"></ion-icon>
@@ -110,10 +122,12 @@
                     <div class="card">
                         <div>
                             <div class="numbers">{{ $totalPajak }} <span style="font-size: 25px"> Data</span></div>
-                            <div class="cardName">Penerimaan Pajak</div>
+                            <div class="cardName">
+                                <a href="#">Penerimaan Pajak</a>
+                            </div>
                         </div>
                         <span class="iconBx" style="margin-top: 10px;">
-                            <ion-icon name="stats-chart-outline"></ion-icon>
+                            <a href="#"><ion-icon name="stats-chart-outline"></ion-icon></a>
                         </span>
                         {{-- <div class="iconBx">
                     <ion-icon name="cash-outline"></ion-icon>
@@ -126,10 +140,19 @@
                     <canvas id="hasilHutanChart"></canvas>
                     <canvas id="produksiHutanChart"></canvas>
                 </div>
-                {{-- </div> --}}
-                <!-- =========== Scripts =========  -->
-                <script src="/js/main.js"></script>
 
+
+    {{-- </div> --}}
+    <!-- =========== Scripts =========  -->
+    <script src="/js/main.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
                 <!-- ====== ionicons ======= -->
                 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
                 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -190,10 +213,11 @@
                     });
                 </script>
 
-                {{-- <div class="garis">
->>>>>>> Stashed changes
-        <div class="border-list">
-            <h2>Dashboard</h2>
-        </div>
-    </div> --}}
-            @endsection
+//                 {{-- <div class="garis">
+// >>>>>>> Stashed changes
+//         <div class="border-list">
+//             <h2>Dashboard</h2>
+//         </div>
+//     </div> --}}
+@endsection
+
