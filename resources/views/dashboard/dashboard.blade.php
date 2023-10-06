@@ -7,16 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <style>
-        .all {
-            display: flex;
-        }
-
-        .chart-container {
-            display: flex;
-            flex-direction: column;
-        }
-    </style>
     <div class="garis1">
         <div class="border-liste">
 
@@ -33,7 +23,8 @@
                                     </div>
                                 </div>
                                 <span class="iconBx" style="margin-top: 10px;">
-                                    <a href="{{ route('data-utama.index') }}"><ion-icon name="stats-chart-outline"></ion-icon></a>
+                                    <a href="{{ route('data-utama.index') }}"><ion-icon
+                                            name="stats-chart-outline"></ion-icon></a>
                                 </span>
                                 {{-- <div class="iconBx">
                             <ion-icon name="eye-outline"></ion-icon>
@@ -98,7 +89,8 @@
                                     </div>
                                 </div>
                                 <span class="iconBx" style="margin-top: 10px;">
-                                    <a href="{{ route('izin.index') }}"><ion-icon name="shield-checkmark-outline"></ion-icon></a>
+                                    <a href="{{ route('izin.index') }}"><ion-icon
+                                            name="shield-checkmark-outline"></ion-icon></a>
                                 </span>
                                 {{-- <div class="iconBx">
                             <ion-icon name="eye-outline"></ion-icon>
@@ -107,7 +99,8 @@
 
                             <div class="card">
                                 <div>
-                                    <div class="numbers">{{ $totalPotensi }} <span style="font-size: 20px">Data</span></div>
+                                    <div class="numbers">{{ $totalPotensi }} <span style="font-size: 20px">Data</span>
+                                    </div>
                                     <div class="cardName">
                                         <a href="{{ route('potensi.index') }}">Potensi Hasil Hutan</a>
                                     </div>
@@ -155,22 +148,13 @@
 
 
                     <div class="chart-container">
-                        <canvas id="luasBdhChart" class="chart2" style="margin-bottom: 10px;margin-top: 30px;max-width: 500px;"></canvas>
+                        <canvas id="luasBdhChart" class="chart2"></canvas>
                         <div class="bawah">
-                            <canvas id="hasilHutanChart" style="max-width: 220px;max-height:220px;"></canvas>
-                            <canvas id="produksiHutanChart" style="max-width: 220px;"></canvas>
+                            <canvas id="hasilHutanChart" class="chart1"></canvas>
+                            <canvas id="produksiHutanChart" class="chart3"></canvas>
                         </div>
                     </div>
                 </div>
-                <style>
-                    .bawah {
-                        display: flex;
-                    }
-
-                    .chart2 {
-                        width: 800px;
-                    }
-                </style>
 
 
                 {{-- </div> --}}
@@ -256,6 +240,4 @@
                         }
                     });
                 </script>
-
             @endsection
-
