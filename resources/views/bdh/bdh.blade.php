@@ -39,12 +39,12 @@
                                     <td>{{ $da->kepala_bdh }}</td>
                                     <td>{{ $da->luas_bdh }} Ha</td>
                                     <td> <a href="{{ route('rph.index', ['id_bdh' => $da->id_bdh]) }}"
-                                            class="btn btn-success">Lihat</a>
+                                            class="btn btn-success"><i class="fas fa-eye"></i></a>
                                     </td>
                                     <td>
-                                        <a href="{{ route('bdh.edit', $da->id_bdh) }}" class="btn btn-warning">Edit</a>
+                                        <a href="{{ route('bdh.edit', $da->id_bdh) }}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
                                         <a data-id="{{ $da->id_bdh }}" class="delete-btn btn btn-danger"
-                                            href="{{ route('bdh.destroy', $da->id_bdh) }}">Hapus</a>
+                                            href="{{ route('bdh.destroy', $da->id_bdh) }}"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endif
