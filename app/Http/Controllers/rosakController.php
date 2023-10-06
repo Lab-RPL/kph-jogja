@@ -10,19 +10,20 @@ use Illuminate\Support\Facades\DB;
 class rosakController extends Controller
 {
     public function index(Request $req)
-    {
-        // if(!$req->session()->exists("user_id")){
-        //     return redirect('/');
-        if (!$req->session()->has('user_id')) {
-            return redirect('/');
-        }
-
-        $data = DB::table('rusak_hilang')
-        ->join('data_utama','rusak_hilang.id_PU','=','data_utama.id_PU')
-        ->select('rusak_hilang.*','data_utama.no_PU')
-        ->get();
-        return view('rosak.rosak',compact('data'));
+{
+    // if(!$req->session()->exists("user_id")){
+    //     return redirect('/');
+    if (!$req->session()->has('user_id')) {
+        return redirect('/');
     }
+
+    $data = DB::table('rusak_hilang')
+    ->join('data_utama','rusak_hilang.id_PU','=','data_utama.id_PU')
+    ->select('rusak_hilang.*','data_utama.no_PU')
+    ->paginate(100000);
+    return view('rosak.rosak',compact('data'));
+}
+
 
     public function create(){
         $data = DB::table('data_utama')->get();
@@ -31,6 +32,11 @@ class rosakController extends Controller
     }
 
     public function store(Request $request){
+        
+        $image = $request->file('foto');
+        $imageFileName = $this->generateRandomString();
+        $image->move(public_path() . "/upload", $imageFileName);
+
         $rosak = new Rosak();
         $rosak->jns_rusak = $request->jns_rusak;
         $rosak->tgl_input = $request->tgl_input;
@@ -38,21 +44,24 @@ class rosakController extends Controller
         $rosak->id_PU = $request->id_PU;
         $rosak->koor_x = $request->koor_x;
         $rosak->koor_y = $request->koor_y;
+        $rosak->diameter = $request->diameter;
+        $rosak->foto = $imageFileName;
+        $rosak->save();
 
-        if ($file = $request->file('foto')) {
-            $name = time().$file->getClientOriginalName();
-            $file->move('public/uploads', $name);
-            
-            $rosak->foto = $name;
-        }
-        
-
-    $rosak->diameter = $request->diameter;
-    $rosak->save();
 
     // Set flash data dan redirect
     return redirect('/data-rusak')->with('pesan', 'Data Kerusakan/Kehilangan Berhasil Ditambahkan!');
 
+    }
+
+    function generateRandomString($length = 10) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[random_int(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
 
     public function edit($id){
@@ -74,7 +83,12 @@ class rosakController extends Controller
 
     public function update(Request $request, $id){
 
-        $rosak = rosak::findOrFail($id);
+    
+        $image = $request->file('foto');
+        $imageFileName = $this->generateRandomString();
+        $image->move(public_path() . "/upload", $imageFileName);
+
+        $rosak = rosak::find($id);
 
         $rosak->jns_rusak = $request->jns_rusak;
         $rosak->tgl_input = $request->tgl_input;
@@ -82,19 +96,15 @@ class rosakController extends Controller
         $rosak->id_PU = $request->id_PU;
         $rosak->koor_x = $request->koor_x;
         $rosak->koor_y = $request->koor_y;
+        $rosak->foto = $imageFileName;
 
-        if ($file = $request->file('foto')) {
-            $name = time().$file->getClientOriginalName();
-            $file->move('public/uploads', $name);
-            
-            $rosak->foto = $name;
-        }
+       
         
 
         $rosak->diameter = $request->diameter;
         $rosak->save();
 
-        return redirect()->route('rosak.index', $request->id_PU)->with('pesan', 'Data Kerusakan/Kehilangan Berhasil Diupdate');
+        return redirect()->route('rosak.index')->with('pesan', 'Data Kerusakan/Kehilangan Berhasil Diupdate');
 
     }
 

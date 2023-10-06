@@ -5,6 +5,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
     <div class="garis">
         <div class="border-lists">
@@ -19,12 +21,12 @@
             </style>
 
             <form>
+                @csrf
                 <div class="wrapper">
                     <div class="bdh">
                         <h3>Data Kerusakan</h3>
                     </div>
                 </div>
-                @csrf
                 @if (Session::has('pesan'))
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
@@ -54,14 +56,18 @@
                         @if ($ros->jns_rusak == 0)
                         @if ($ros->IsDelete == 0)
                             
-                       
                         <tr>
                             <td>{{ $ros->tgl_input }}</td>
                             <td>{{ $ros->tgl_rusak }}</td>
                             <td>{{ $ros->no_PU }}</td>
                             <td>{{ $ros->koor_x }}</td>
                             <td>{{ $ros->koor_y }}</td>
-                            <td>{{ $ros->foto }}</td>
+                            <td>
+                                <a href="/upload/{{ $ros->foto }}" width="100px" data-lightbox="photos">
+                                    <img src="/upload/{{ $ros->foto }}" alt="Foto Kerusakan" width="100px">
+                                </a>
+                            </td>
+                            
                             <td class="btn-group">
                                 <a href="{{ route('rosak.edit',$ros->id_rusak) }}" class="btn btn-warning mb-1 m-l-1 ms-2"><i class="fas fa-pencil-alt"></i></a>
                                 <a href="{{ route('rosak.destroy', $ros->id_rusak) }}" class="btn btn-danger mb-1 m-l-1"><i class="fa fa-trash"></i></a>
@@ -113,7 +119,7 @@
                                 <td>{{ $ros->koor_x }}</td>
                                 <td>{{ $ros->koor_y }}</td>
                                 <td>{{ $ros->diameter }}</td>
-                                <td>{{ $ros->foto }}</td>
+                                <td><img src="/upload/{{ $ros->foto }}" alt="Foto Kehilangan" width="100px"></td>
                                 <td class="btn-group">
                                     <a href="{{ route('rosak.edit',$ros->id_rusak) }}" class="btn btn-warning mb-1 m-l-1 ms-2"><i class="fas fa-pencil-alt"></i></a>
                                     <a href="{{ route('rosak.destroy', $ros->id_rusak) }}" data-id="{{ $ros->id_rusak }}" class="btn btn-danger mb-1 m-l-1"><i class="fa fa-trash"></i></a>                                

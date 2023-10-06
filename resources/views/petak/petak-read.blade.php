@@ -25,6 +25,9 @@
             </h2>
             <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
             <form>
+                @if (Session::has('pesan'))
+                <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
+            @endif
                 <div class="wrapper">
                     <div class="bdh">
 
