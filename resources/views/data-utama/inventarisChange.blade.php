@@ -309,10 +309,9 @@
                         </tbody>
                     </table>
                     <div style="display: flex; justify-content: space-between; margin-top: 60px;">
-                        <a class="btn btn-warning" style="color: white; font-weight: bold;"
+                        <a class="btn btn-danger" style="color: white; font-weight: bold;"
                             onclick="return goBack();">Kembali</a>
-                        <button class="btn btn-primary"
-                            style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                        <button class="btn btn-primary" style="color: #ffffff; font-weight: bold;"
                             type="submit">Submit</button>
                     </div>
 

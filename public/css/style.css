@@ -868,6 +868,12 @@ label {
     }
 }
 
+.sub-table-inventaris{
+    text-align: center; 
+    margin-top: -3rem;
+    font-size: 13px;
+}
+
 /* Responsive Styles for 1280px screen width */
 @media screen and (max-width: 1280px) {
     .main {

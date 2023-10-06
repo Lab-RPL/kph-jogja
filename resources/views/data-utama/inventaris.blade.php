@@ -26,32 +26,31 @@
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
 
-                <table id="tabelData" class="table table-striped">
+                <table id="tabelData" class="table table-bordered" >
                     <thead>
-                        <tr>
                             <th rowspan="2" style="background-color: #9CC589;">
-                                <div style="text-align: center; margin-top: -3rem;">NOMOR PU</div>
+                                <div class="sub-table-inventaris">NOMOR PU</div>
                             </th>
                             <th rowspan="2" style="background-color: #9CC589;">
-                                <div style="text-align: center; margin-top: -3rem;">TANGGAL</div>
+                                <div class="sub-table-inventaris">TANGGAL</div>
                             </th>
                             <th rowspan="2" style="background-color: #9CC589;">
-                                <div style="text-align: center; margin-top: -3rem;">BDH</div>
+                                <div class="sub-table-inventaris">BDH</div>
                             </th>
                             <th rowspan="2" style="background-color: #9CC589;">
-                                <div style="text-align: center; margin-top: -3rem;">RPH</div>
+                                <div class="sub-table-inventaris">RPH</div>
                             </th>
                             <th rowspan="2" style="background-color: #9CC589;">
-                                <div style="text-align: center; margin-top: -3rem;">PETAK</div>
+                                <div class="sub-table-inventaris">PETAK</div>
                             </th>
                             <th colspan="2" style="background-color: #9CC589;">
-                                <div style="text-align: center;">KOORDINAT</div>
+                                <div class="text-center" style="font-size: 13px;">KOORDINAT</div>
                             </th>
                             <th rowspan="2" style="background-color: #9CC589;">
-                                <div style="text-align: center; margin-top: -3rem;">OPTION</div>
+                                <div class="sub-table-inventaris">OPTION</div>
                             </th>
                             <th rowspan="2" style="background-color: #9CC589;">
-                                <div style="text-align: center; margin-top: -3rem;">DATA TEGAK</div>
+                                <div class="sub-table-inventaris">DATA TEGAK</div>
                             </th>
 
                         </tr>
@@ -71,10 +70,10 @@
                         </style>
                         <tr>
                             <th style="background-color: #9CC589;">
-                                <div style="text-align: center;">X</div>
+                                <div class="text-center">X</div>
                             </th>
                             <th style="background-color: #9CC589;">
-                                <div style="text-align: center;">Y</div>
+                                <div class="text-center">Y</div>
                             </th>
                         </tr>
                     </thead>
@@ -109,14 +108,14 @@
                                 <div class="txt">{{ $da->koor_y }}</div>
                             </td>
                             <td>
-                                    <a class="btn btn-primary" href="{{ route('data-utama.detail',['id_PU' => $da->id_PU]) }}">Detail</a>
-                                    <a href="{{route('data-utama.edit',['id_PU'=> $da->id_PU])}}" class="btn btn-warning">Edit</a>
-                                    <a data-id="{{ $da->id_PU }}" class="delete-btn btn btn-danger"
-                                        href="{{ route('data-utama.destroy', $da->id_PU) }}">Hapus</a>
+                                    <a class="btn btn-primary" href="{{ route('data-utama.detail',['id_PU' => $da->id_PU]) }}"><i class="fas fa-info-circle"></i></a>
+                                    <a href="{{route('data-utama.edit',['id_PU'=> $da->id_PU])}}" class="btn btn-warning mt-1"><i class="fa fa-pencil-alt"></i></a>
+                                    <a data-id="{{ $da->id_PU }}" class="delete-btn btn btn-danger mt-1"
+                                        href="{{ route('data-utama.destroy', $da->id_PU) }}"><i class="fa fa-trash"></i></a>
                             </td>
                             <td>
                                 <div class="d-flex justify-content-center">
-                                    <a class="btn btn-primary" href="{{ route('data-tgk.index', ['id_PU' => $da->id_PU]) }}">Lihat</a>
+                                    <a class="btn btn-primary" href="{{ route('data-tgk.index', ['id_PU' => $da->id_PU]) }}"><i class="fas fa-eye"></i></a>
                                 </div>
                             </td>
                         </tr>

@@ -192,8 +192,7 @@
                         </table>
                         <div style="display: flex; justify-content: space-between; margin-top: 60px;">
                             <a class="btn btn-danger" style="color: white; float: left;" href="{{route('data-utama.index')}}">Kembali</a>
-                            <a class="btn btn-warning" style="color: white; float: left;" href="{{route('data-utama.edit',['id_PU'=> $data->id_PU])}}">Ubah
-                                Data</a>
+                            <a class="btn btn-warning" style="color: white; float: left;" href="{{route('data-utama.edit',['id_PU'=> $data->id_PU])}}"><i class="fas fa-edit"></i></a>
                             <a class="btn btn-primary" style="color: white; float: right;"
                                 href="{{ route('data-tgk.index', ['id_PU' => $data->id_PU]) }}">Lanjutkan</a>
                         </div>
