@@ -11,8 +11,8 @@
             <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta
             </p>
             <form method="POST">
-                <div class="wrapper">
-                    <pre>DATA UTAMA</pre>
+                <div class="wrapper" >
+                    <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); font-weight: bold;">DATA UTAMA</pre>
                 </div>
                 @csrf
                 {{-- @method('put') --}}
@@ -62,8 +62,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
-                                    <pre>RISALAH TEGAKAN</pre>
+                                <td colspan="2" height="50px">
+                                    <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); margin-top: 5rem; font-weight: bold;">RISALAH TEGAKAN</pre>
                                 </td>
                             </tr>
                             <tr>
@@ -110,8 +110,8 @@
                             </tr>
 
                             <tr>
-                                <td colspan="2">
-                                    <pre style="font-weight: bold; font-size: 18px; text-align: center;">RISALAH LAPANGAN</pre>
+                                <td colspan="2" height="50px">
+                                    <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); margin-top: 5rem; font-weight: bold;">RISALAH LAPANGAN</pre>
                                 </td>
                             </tr>
                             <tr>
@@ -133,8 +133,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
-                                    <pre>RISALAH TANAH</pre>
+                                <td colspan="2" height="50px">
+                                    <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); margin-top: 5rem; font-weight: bold;">RISALAH TANAH</pre>
                                 </td>
                             </tr>
                             <tr>
@@ -150,8 +150,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
-                                    <pre style="font-weight: bold; font-size: 18px; text-align: center;">RISALAH TUMBUHAN BAWAH</pre>
+                                <td colspan="2" height="50px">
+                                    <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); margin-top: 5rem; font-weight: bold;">RISALAH TUMBUHAN BAWAH</pre>
                                 </td>
                             </tr>
                             <tr>
@@ -167,8 +167,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
-                                    <pre style="font-weight: bold; font-size: 18px; text-align: center;">KETERANGAN LAIN</pre>
+                                <td colspan="2" height="50px">
+                                    <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); margin-top: 5rem; font-weight: bold;">KETERANGAN LAIN</pre>
                                 </td>
                             </tr>
                             <tr>

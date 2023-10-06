@@ -874,6 +874,10 @@ label {
     font-size: 13px;
 }
 
+.control-bg{
+    background-color: B0E398;
+}
+
 /* Responsive Styles for 1280px screen width */
 @media screen and (max-width: 1280px) {
     .main {
