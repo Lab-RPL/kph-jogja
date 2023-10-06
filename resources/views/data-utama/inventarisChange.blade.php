@@ -269,7 +269,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <pre style="font-weight: bold; font-size: 18px; text-align: center;">KETERANGAN LAIN</pre>
+                                    <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); margin-top: 5rem; font-weight: bold; font-size: 18px; text-align: center;">KETERANGAN LAIN</pre>
                                 </td>
                             </tr>
                             <tr>

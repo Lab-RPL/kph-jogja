@@ -13,7 +13,7 @@
             </p>
             <form action="{{ route('data-utama.store') }}" method="post">
                 <div class="wrapper">
-                    <pre>RISALAH HUTAN</pre>
+                    <pre class="form-control" style="font-weight: bold; background-color: rgba(216, 245, 199, 0.664);">RISALAH HUTAN</pre>
                 </div>
                 @csrf
                 <center>
@@ -65,8 +65,8 @@
                                         required></td>
                             </tr>
                             <tr>
-                                <td colspan="2" height="65px">
-                                    <pre>RISALAH TEGAKAN</pre>
+                                <td colspan="2" height="50px">
+                                    <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); font-weight: bold; margin-top: 5rem;">RISALAH TEGAKAN</pre>
                                 </td>
                             </tr>
                             <tr>
@@ -121,15 +121,9 @@
                                     </select>
                                 </td>
                             </tr>
-
-                            <!-- line 2 -->
-                            <td colspan="2" height="65px">
-                                <div class="line-table mt-4"></div>
-                            </td>
-
                             <tr>
-                                <td colspan="2" height="65px">
-                                    <pre style="font-weight: bold; font-size: 18px; text-align: center;">RISALAH LAPANGAN</pre>
+                                <td colspan="2" height="50px">
+                                    <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); font-weight: bold; font-size: 18px; text-align: center; margin-top: 5rem;" class="form-control">RISALAH LAPANGAN</pre>
                                 </td>
                             </tr>
                             <tr>
@@ -170,8 +164,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
-                                    <pre>RISALAH TANAH</pre>
+                                <td colspan="2" height="50px">
+                                    <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); font-weight: bold; margin-top: 5rem;">RISALAH TANAH</pre>
                                 </td>
                             </tr>
                             <tr>
@@ -202,7 +196,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <pre style="font-weight: bold; font-size: 18px; text-align: center;">RISALAH TUMBUHAN BAWAH</pre>
+                                    <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); font-weight: bold; font-size: 18px; text-align: center; margin-top: 5rem;">RISALAH TUMBUHAN BAWAH</pre>
                                 </td>
                             </tr>
                             <tr>
@@ -226,7 +220,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <pre style="font-weight: bold; font-size: 18px; text-align: center;">KETERANGAN LAIN</pre>
+                                    <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); font-weight: bold; font-size: 18px; text-align: center; margin-top: 5rem;">KETERANGAN LAIN</pre>
                                 </td>
                             </tr>
                             <tr>
