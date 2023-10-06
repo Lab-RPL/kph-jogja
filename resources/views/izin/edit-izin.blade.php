@@ -50,7 +50,7 @@
                 <div style="display: flex; justify-content: space-between;" class="mt-5">
                     <a class="btn btn-warning" style="font-weight: bold; color: white" href="/data-izin">Kembali</a>
                     <button class="btn btn-primary"
-                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                        style="color: #ffffff; font-weight: bold;"
                         type="submit">Edit Data</button>
                 </div>
             </div>

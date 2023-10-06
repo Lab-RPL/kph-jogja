@@ -42,9 +42,9 @@
                                     <td>{{ $da->luas_izin }} Ha</td>
                                     <td style="justify-content: space-between; align-items:center">
                                         <a href="{{ route('izin.edit', $da->id_izin) }}"
-                                            class="btn btn-warning mb-1 m-l-1">Edit</a>
+                                            class="btn btn-warning mb-1 m-l-1"><i class="fas fa-pencil-alt"></i></a>
                                         <a data-id="{{ $da->id_izin }}" href="{{ route('izin.destroy', $da->id_izin) }}"
-                                            class="btn btn-danger mb-1 m-l-2">Hapus</a>
+                                            class="btn btn-danger mb-1 m-l-2"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endif
