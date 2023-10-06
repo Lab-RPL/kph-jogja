@@ -87,9 +87,9 @@
                                     <td>{{ $da->atraksi_wisata }}</td>
                                     <td style="justify-content: space-between; align-items:center">
                                         <a href="{{ route('potensi.edit', $da->id_hhbk) }}"
-                                            class="btn btn-warning mb-1 m-l-1">Edit</a>
+                                            class="btn btn-warning mb-1 m-l-1"><i class="fas fa-pencil-alt"></i></a>
                                         <a data-id="{{ $da->id_hhbk }}" href="{{ route('potensi.destroy', $da->id_hhbk) }}"
-                                            class="btn btn-danger mb-1 m-l-2">Hapus</a>
+                                            class="btn btn-danger mb-1 m-l-2"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endif
