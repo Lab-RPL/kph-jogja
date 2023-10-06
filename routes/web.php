@@ -90,6 +90,8 @@ Route::get('/petak-read', [petakController::class, 'index2'])->name('petak.index
 Route::get('/petak/{id}/edit', [petakController::class, 'edit'])->name('petak.edit');
 Route::put('/petak/{id}', [petakController::class, 'update'])->name('petak.update');
 Route::get('/petak{id_rph}', [petakController::class, 'destroy'])->name('petak.destroy');
+Route::get('rph/get/{id}', [petakController::class,'getRph']);
+
 
 //Potensi hasil hutan
 Route::get('/data-potensi', [potensiController::class, 'index'])->name('potensi.index');

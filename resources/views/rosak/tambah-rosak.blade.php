@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <form action="{{ Route('rosak.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ Route('rosak.store') }}" method="post"enctype="multipart/form-data">
         @csrf
         <div class="garis">
             <div class="border-lists">
@@ -73,8 +73,8 @@
                     </tbody>
                 </table>
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <a class="btn btn-warning" style="color: white" href="/data-rusak">Kembali</a>
-                    <button class="btn btn-primary" style="color: white" type="submit">Tambah Data</button>
+                    <a class="btn btn-warning" style="color: white; font-weight:bold;" href="/data-rusak">Kembali</a>
+                    <button class="btn btn-primary" style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold" type="submit">Tambah Data</button>
                 </div>
             </div>
         </div>

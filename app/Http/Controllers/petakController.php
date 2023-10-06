@@ -46,6 +46,14 @@ class petakController extends Controller
         return view('petak.tambah-petak-read')->with(['bdh' => $bdh, 'rph' => $rph]);
     }
 
+    public function getRph($id){
+        $rph = DB::table("rph")
+                    ->where("id_bdh", $id)
+                    ->where("IsDelete", 0)
+                    ->pluck("nama_rph","id_rph");
+        return json_encode($rph);
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -63,6 +71,25 @@ class petakController extends Controller
         ]);
 
         return redirect()->route('petak.index', $request->id_rph)
+                        ->with('pesan', 'Data Petak berhasil ditambahkan.');
+    }
+    public function store_read(Request $request)
+    {
+        $request->validate([
+            'id_rph' => 'required',
+            'nomor_ptk' => 'required',
+            'luas_ptk' => 'required',
+            'potensi_ptk' => 'required', 
+        ]);
+
+        Petak::create([
+            'id_rph' => $request->id_rph,
+            'nomor_ptk' => $request->nomor_ptk,
+            'luas_ptk' => $request->luas_ptk,
+            'potensi_ptk' => $request->potensi_ptk,
+        ]);
+
+        return redirect()->route('petak.index2', $request->id_rph)
                         ->with('pesan', 'Data Petak berhasil ditambahkan.');
     }
 

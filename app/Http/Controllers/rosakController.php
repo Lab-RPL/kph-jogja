@@ -108,16 +108,14 @@ class rosakController extends Controller
 
     }
 
-
     public function destroy($id_rusak){
         $rusak = rosak::find($id_rusak);
-        if ($rusak) {
+        if($rusak){
             $rusak->IsDelete = 1;
             $rusak->save();
-        } else {
-            return redirect()->back()->with('error', 'Data not found');
+        }else{
+            return redirect()->back()->with('eror',"Data Not Found");
         }
-        return redirect()->route('rosak.index')->with('success', 'Data Kerusakan/Kehilangan Berhasil Dihapus.');
+        return redirect()->route('rosak.index')->with('pesan',"Data Berhasil Dihapus");
     }
-    
 }
