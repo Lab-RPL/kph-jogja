@@ -190,7 +190,7 @@
                         //DATA-UTAMA
                         (navLink.pathname === '/data-utama' && currentPathname ==='/data-option') ||
                         (navLink.pathname === '/data-utama' && currentPathname ==='/data-result') ||
-                        (navLink.pathname === '/data-utama' && currentPathname ==='/data-tegakan') ||
+                        (navLink.pathname === '/data-utama' && currentPathname.startsWith('/data-tegakan/')) ||
                         (navLink.pathname === '/data-utama' && currentPathname ==='/edit-data') ||
                         //DATA-BDH
                         (navLink.pathname === '/data-bdh' && currentPathname ==='/tambah-bdh') ||
