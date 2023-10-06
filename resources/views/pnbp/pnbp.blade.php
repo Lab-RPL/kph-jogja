@@ -37,9 +37,9 @@
                                 <td>Rp{{ number_format($da->nominal_pnbp, 0, '.', '.') }},00</td>
                                 <td style="justify-content: space-between; align-items:center">
                                     <a href="{{ route('pnbp.edit', $da->id_pnbp) }}"
-                                        class="btn btn-warning mb-1 m-l-1">Edit</a>
+                                        class="btn btn-warning mb-1 m-l-1"><i class="fas fa-pencil-alt"></i></a>
                                     <a data-id="{{ $da->id_pnbp }}" href="{{ route('pnbp.destroy', $da->id_pnbp) }}"
-                                        class="btn btn-danger mb-1 m-l-2">Hapus</a>
+                                        class="btn btn-danger mb-1 m-l-2"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         @endif
