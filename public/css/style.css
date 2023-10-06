@@ -790,7 +790,7 @@ label {
 
 .main.active {
     width: calc(100% - 60px);
-    left: 80px;
+    left: -10px;
 }
 
 .topbar {
