@@ -45,11 +45,11 @@
                 <table id="tabelData" class="table table-bordered">
                     <thead>
                         <tr>
-                            <th style="background-color: #9CC589;">Nama RPH</th>
-                            <th style="background-color: #9CC589;">Nama Kepala RPH</th>
-                            <th style="background-color: #9CC589;">Luas RPH</th>
-                            <th style="background-color: #9CC589;">Petak</th>
-                            <th style="background-color: #9CC589;">Aksi</th>
+                            <th style="background-color: #9CC589;" class="text-center">Nama RPH</th>
+                            <th style="background-color: #9CC589;" class="text-center">Nama Kepala RPH</th>
+                            <th style="background-color: #9CC589;" class="text-center">Luas RPH</th>
+                            <th style="background-color: #9CC589;" class="text-center">Petak</th>
+                            <th style="background-color: #9CC589;" class="text-center">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,12 +60,12 @@
                                     <td>{{ $da->kepala_rph }}</td>
                                     <td>{{ $da->luas_rph }} Ha</td>
                                     <td><a href="{{ route('petak.index', ['id_rph' => $da->id_rph]) }}"
-                                            class="btn btn-success">Lihat</a></td>
+                                            class="btn btn-success"><i class="fas fa-eye"></i></a></td>
                                     <td class="center-align">
                                         <a href="{{ route('rph.edit', $da->id_rph) }}"
-                                            class="btn btn-warning mb-1 m-l-1">Edit</a>
+                                            class="btn btn-warning mb-1 m-l-1"><i class="fas fa-pencil-alt"></i></a>
                                         <a href="{{ route('rph.destroy', $da->id_rph) }}" data-id="{{ $da->id_rph }}"
-                                            class="btn btn-danger mb-1 m-l-1 delete-btn">Hapus</a>
+                                            class="btn btn-danger mb-1 m-l-1 delete-btn"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endif

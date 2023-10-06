@@ -14,7 +14,7 @@
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
                 <table id="tabelData">
                     <tr>
-                        <td><label for="tambah-bdh">Nama BDH</label></td>
+                        <td><label for="tambah-bdh" >Nama BDH</label></td>
                         <td><input type="text" id="tambah-bdh" name="nama_bdh" required></td>
                     </tr>
                     <tr>

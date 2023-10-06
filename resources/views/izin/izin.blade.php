@@ -25,11 +25,11 @@
                 <table id="tabelData" class="table table-bordered">
                     <thead>
                         <tr class="kolom">
-                            <th style="background-color: #9CC589;">Nama Kelompok Tani Hutan</th>
-                            <th style="background-color: #9CC589;">Nomor SK</th>
-                            <th style="background-color: #9CC589;">Petak</th>
-                            <th style="background-color: #9CC589;">Luas Izin</th>
-                            <th style="background-color: #9CC589;">Aksi</th>
+                            <th style="background-color: #9CC589;" class="text-center">Nama Kelompok Tani Hutan</th>
+                            <th style="background-color: #9CC589;" class="text-center">Nomor SK</th>
+                            <th style="background-color: #9CC589;" class="text-center">Petak</th>
+                            <th style="background-color: #9CC589;" class="text-center">Luas Izin</th>
+                            <th style="background-color: #9CC589;" class="text-center">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>

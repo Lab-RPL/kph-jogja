@@ -48,10 +48,10 @@
                 <table id="tabelData" class="table table-bordered table-striped">
                     <thead> 
                         <tr>
-                            <th style="background-color: #9CC589;">Nomor Petak</th>
-                            <th style="background-color: #9CC589;">Luas Petak</th>
-                            <th style="background-color: #9CC589;">Potensi Petak</th>
-                            <th style="background-color: #9CC589;">Aksi</th>
+                            <th style="background-color: #9CC589;" class="text-center">Nomor Petak</th>
+                            <th style="background-color: #9CC589;" class="text-center">Luas Petak</th>
+                            <th style="background-color: #9CC589;" class="text-center">Potensi Petak</th>
+                            <th style="background-color: #9CC589;" class="text-center">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,9 +63,9 @@
                                 <td class="center-align">
 
                                     <a
-                                        href="{{ route('petak.edit', $da->id_ptk) }}"class="btn btn-warning mb-1 m-l-1">Edit</a>
+                                        href="{{ route('petak.edit', $da->id_ptk) }}"class="btn btn-warning mb-1 m-l-1"><i class="fas fa-pencil-alt"></i></a>
                                     <a href="{{ route('petak.destroy', $da->id_ptk) }}" data-id="{{ $da->id_ptk }}"
-                                        class="btn btn-danger mb-1 m-l-1">Hapus</a>
+                                        class="btn btn-danger mb-1 m-l-1"><i class="fa fa-trash"></i></a>
 
                                 </td>
                             </tr>

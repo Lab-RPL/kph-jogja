@@ -42,7 +42,7 @@
                     @if ($luasHutan->isEmpty())
 
                     @else
-                        <a class="btn btn-primary" style="color: white" href="{{ route('luas-hutan.edit', $item->id_luas) }}">Ubah Data</a>
+                        <a class="btn btn-primary" style="color: white" href="{{ route('luas-hutan.edit', $item->id_luas) }}"><i class="fas fa-pencil-alt"></i></a>
                     @endif
                 </div>
             </form>

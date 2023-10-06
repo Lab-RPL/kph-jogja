@@ -32,8 +32,8 @@
                                 <td></td>
                                 <td></td>
                                 <td> 
-                                    <a href=""class="btn btn-danger mb-1 m-l-1"><i class="fa fa-trash"></i></a>
                                     <a href=""class="btn btn-warning mb-1 m-l-1 ms-2"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href=""class="btn btn-danger mb-1 m-l-1"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                     </tbody>
@@ -61,8 +61,8 @@
                                 <td></td>
                                 <td></td>
                                 <td> 
-                                    <a href=""class="btn btn-danger mb-1 m-l-1"><i class="fa fa-trash"></i></a>
                                     <a href=""class="btn btn-warning mb-1 m-l-1 ms-2"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href=""class="btn btn-danger mb-1 m-l-1"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                     </tbody>

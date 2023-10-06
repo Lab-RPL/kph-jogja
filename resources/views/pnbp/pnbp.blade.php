@@ -25,9 +25,9 @@
                 <table id="tabelData" class="table table-bordered">
                     <thead>
                         <tr class="kolom">
-                            <th class="w-25" style="background-color: #9CC589;">Tahun</th>
-                            <th class="w-50" style="background-color: #9CC589;">Nominal</th>
-                            <th class="" style="background-color: #9CC589;">Aksi</th>
+                            <th class="text-center" style="background-color: #9CC589;">Tahun</th>
+                            <th class="text-center" style="background-color: #9CC589;">Nominal</th>
+                            <th class="text-center" style="background-color: #9CC589;">Aksi</th>
                         </tr>
                     </thead>
                     @foreach ($data as $da)

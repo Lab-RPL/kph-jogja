@@ -34,9 +34,9 @@
                 <table id="tabelData" class="table table-bordered">
                     <thead>
                         <tr>
-                            <th style="background-color: #9CC589;">Jenis Tegakan</th>
-                            <th style="background-color: #9CC589;">Luas Tegakan</th>
-                            <th style="background-color: #9CC589;">Volume Tegakan</th>
+                            <th style="background-color: #9CC589;" class="text-center">Jenis Tegakan</th>
+                            <th style="background-color: #9CC589;" class="text-center">Luas Tegakan</th>
+                            <th style="background-color: #9CC589;" class="text-center">Volume Tegakan</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -71,10 +71,10 @@
                 <table id="tabelData2" class="table table-bordered">
                     <thead>
                         <tr>
-                            <th style="background-color: #9CC589;">Nama Wisata</th>
-                            <th style="background-color: #9CC589;">Lokasi Wisata</th>
-                            <th style="background-color: #9CC589;">Atraksi Wisata</th>
-                            <th style="background-color: #9CC589;">Aksi</th>
+                            <th style="background-color: #9CC589;" class="text-center">Nama Wisata</th>
+                            <th style="background-color: #9CC589;" class="text-center">Lokasi Wisata</th>
+                            <th style="background-color: #9CC589;" class="text-center">Atraksi Wisata</th>
+                            <th style="background-color: #9CC589;" class="text-center">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
