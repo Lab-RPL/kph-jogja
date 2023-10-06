@@ -113,7 +113,7 @@
                                     </div>
                                 </div>
                                 <span class="iconBx" style="margin-top: 10px;">
-                                    <a href="{{ route('potensi.index') }}"><ion-icon name="leaf-outline"></ion-icon></a>
+                                    <a href="{{ route('potensi.index') }}"><ion-icon name="medal-outline"></ion-icon></a>
                                 </span>
                                 {{-- <div class="iconBx">
                             <ion-icon name="cart-outline"></ion-icon>
@@ -128,7 +128,7 @@
                                     <div class="cardName"><a href="/data-produksi">Produksi Hasil Hutan</a></div>
                                 </div>
                                 <span class="iconBx" style="margin-top: 10px;">
-                                    <a href="/data-produksi"><ion-icon name="settings-outline"></ion-icon></a>
+                                    <a href="/data-produksi"><ion-icon name="cube-outline"></ion-icon></a>
                                 </span>
                                 {{-- <div class="iconBx">
                             <ion-icon name="chatbubbles-outline"></ion-icon>
@@ -144,7 +144,7 @@
                                     </div>
                                 </div>
                                 <span class="iconBx" style="margin-top: 10px;">
-                                    <a href="{{ route('pnbp.index') }}"><ion-icon name="stats-chart-outline"></ion-icon></a>
+                                    <a href="{{ route('pnbp.index') }}"><ion-icon name="cash-outline"></ion-icon></a>
                                 </span>
                                 {{-- <div class="iconBx">
                             <ion-icon name="cash-outline"></ion-icon>
