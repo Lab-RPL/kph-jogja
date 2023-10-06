@@ -6,8 +6,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <form action="{{ route('admin.update', $data->id_rusak) }}" method="post">
+    <form action="{{ route('admin.update', $rosak->id_rusak) }}" method="post">
         @csrf
+        @method('put')
+
         <div class="garis">
             <div class="border-lists">
                 <h2 class="mt-2 middletext">DATA KERUSAKAN / KEHILANGAN</h2>
@@ -22,37 +24,45 @@
 
                         <tr>
                             <td>Jenis</td>
-                            <td height="50px"><span>X</span> 
-                                <input type="text" id="jenis-rosak" name="jenis_rusak" value="{{ $rosak->jns_rusak == 0 ? 'Rusak' : 'Hilang' }}" readonly >
-                            </td>   
+                            <td height="50px"><span>X</span>
+                                <input type="text" id="jenis-rosak" name="jenis_rusak"
+                                    value="{{ $rosak->jns_rusak == 0 ? 'Rusak' : 'Hilang' }}" readonly>
+                            </td>
                         </tr>
 
                         <tr>
                             <td width="300px">Tanggal Input</td>
-                            <td height="50px"><span>X</span> <input type="date" name="tgl_input" value="{{ $rosak->tgl_input  }}"></td>
+                            <td height="50px"><span>X</span> <input type="date" name="tgl_input"
+                                    value="{{ $rosak->tgl_input }}"></td>
                         </tr>
                         <tr>
                             <td width="300px">Tanggal Kejadian</td>
-                            <td height="50px"><span>X</span> <input type="date" name="tgl_rusak" value="{{ $rosak->tgl_rusak }}"></td>
+                            <td height="50px"><span>X</span> <input type="date" name="tgl_rusak"
+                                    value="{{ $rosak->tgl_rusak }}"></td>
                         </tr>
-                        
-                        {{-- <tr>
+
+                        <tr>
                             <td>Nomor PU</td>
                             <td>
                                 <span>X</span>
-                                <select name="id_PU">
-                                    @foreach ($rosak as $pu)
-                                        @if ($pu->IsDelete == 0)
+                                <select name="id_PU" required>
+                                    <option value="" disabled selected hidden>Pilih Nomor PU</option>
+                                    @foreach ($data_utama as $p)
+                                        @if ($p->IsDelete == 0)
                                             @php
-                                                $selected_petak = $data->id_PU == $ptk->id_PU ? 'selected' : '';
+                                                $selected_pu = $rosak->id_PU;
                                             @endphp
-                                            <option value="{{ $pu->id_PU }}" {{ $selected_petak }}>
-                                                {{ $pu->no_PU }}</option>
+                                            <option value="{{ $p->id_PU }}" {{ $selected_pu }}>{{ $p->no_PU }}
+                                            </option>
                                         @endif
                                     @endforeach
+
+
+
                                 </select>
                             </td>
-                        </tr> --}}
+                        </tr>
+
 
                         <tr>
                             <td rowspan="2">Koordinat PU</td>
@@ -67,11 +77,13 @@
                         </tr>
                         <tr>
                             <td>Foto</td>
-                            <td height="50px"><span>X</span> <input type="file" name="foto" value="{{ $rosak->foto }}"></td>
+                            <td height="50px"><span>X</span> <input type="file" name="foto"
+                                    value="{{ $rosak->foto }}"></td>
                         </tr>
                         <tr id="dimtung" style="display: none;">
                             <td>Diameter Tunggak</td>
-                            <td height="50px"><span>X</span> <input type="text" name="diameter" value="{{ $rosak->diameter }}"></td>
+                            <td height="50px"><span>X</span> <input type="text" name="diameter"
+                                    value="{{ $rosak->diameter }}"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -97,5 +109,4 @@
             }
         });
     </script>
-    
 @endsection

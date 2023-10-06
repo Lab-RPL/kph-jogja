@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\dataUtama;
 use App\Models\rosak;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -56,9 +57,18 @@ class rosakController extends Controller
 
     public function edit($id){
         // Ambil data rosak berdasarkan id
-        $rosak = Rosak::findOrFail($id);
+        // $rosak = Rosak::findOrFail($id);
         
-        return view('rosak.edit-rosak',compact('rosak'));
+
+        $rosak = DB::table('rusak_hilang')
+        ->join('data_utama','rusak_hilang.id_PU','=','data_utama.id_PU')
+        ->select('rusak_hilang.*','data_utama.no_PU')
+        ->where('rusak_hilang.id_rusak',$id)
+        ->where('rusak_hilang.IsDelete',0)
+        ->first();       
+
+        $data_utama = dataUtama::all();
+        return view('rosak.edit-rosak',compact('rosak','data_utama'));
     } 
     
 
