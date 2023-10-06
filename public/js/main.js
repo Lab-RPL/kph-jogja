@@ -21,4 +21,3 @@ toggle.onclick = function () {
 };
 
 //pagination
-
