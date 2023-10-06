@@ -54,10 +54,10 @@
                                     <td>{{ $da->tinggi }}</td>
                                     <td class="center-align">
                                         <a class="btn btn-warning mb-1 m-l-1"
-                                            href="{{ route('data-tgk.edit', $da->id_tgk) }}">Edit</a>
+                                            href="{{ route('data-tgk.edit', $da->id_tgk) }}"><i class="fas fa-pencil-alt"></i></a>
                                         <a class="btn btn-danger mb-1 m-l-1"
                                             href="{{ route('data-tgk.destroy', $da->id_tgk) }}"
-                                            data-id="{{ $da->id_tgk }}">Hapus</a>
+                                            data-id="{{ $da->id_tgk }}"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endif
