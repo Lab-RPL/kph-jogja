@@ -50,21 +50,22 @@
 .cardBox {
     position: relative;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
 }
 
 .cardBox .card {
     position: relative;
     background: var(--white);
-    padding: 30px;
+    padding: 15px;
     border-radius: 20px;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     cursor: pointer;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    width: 240px;
 }
 
 .cardBox .card a {
@@ -89,18 +90,18 @@
 .cardBox .card .numbers {
     position: relative;
     font-weight: 500;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--blue);
 }
 
 .cardBox .card .cardName {
     color: var(--black2);
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-top: 5px;
 }
 
 .cardBox .card .iconBx {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: var(--black2);
 }
 
@@ -125,8 +126,8 @@
 }
 
 .chart-container canvas {
-    max-width: 220px;  /* or any size you prefer */
-    max-height: 300px; /* it's better to keep the pie chart as almost a square */
+    max-width: 420px;  /* or any size you prefer */
+    max-height: 420px; /* it's better to keep the pie chart as almost a square */
     margin: auto;  /* to center the pie chart in the grid cell */
 }
 
@@ -247,7 +248,6 @@ body {
     scrollbar-color: #888 #f1f1f1;
     /* Mengatur warna scrollbar thumb dan track */
 }
-
 .border-liste {
     position: relative;
     border: 3px solid #ccc;
@@ -256,12 +256,12 @@ body {
     width: 100%;
     height: auto;
     /* Ubah ke height:auto agar form menyesuaikan tingginya */
-    margin-top: 6rem;
-    max-height: 650px;
+    margin-top: -3rem;
+    max-height: 780px;
     border-color: white;
-    overflow-y: scroll;
-    -ms-overflow-style: none;
-    margin-bottom: 200px;
+    /* overflow-y: scroll; */
+    /* -ms-overflow-style: none; */
+    margin-bottom: 80px;
     top: 40px;
 }
 

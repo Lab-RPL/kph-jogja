@@ -7,152 +7,176 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
+    <style>
+        .all {
+            display: flex;
+        }
 
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
     <div class="garis1">
         <div class="border-liste">
 
             <form>
                 <!-- ======================= Cards ================== -->
-                <div class="cardBox">
-                    <div class="card">
-                        <div>
-                            <div class="numbers">{{ $totalinven }} <span style="font-size: 25px">Data</span></div>
-                            <div class="cardName">
-                                <a href="{{ route('data-utama.index') }}">Inventaris</a>
+                <div class="all">
+                    <div class="cards">
+                        <div class="cardBox">
+                            <div class="card">
+                                <div>
+                                    <div class="numbers">{{ $totalinven }} <span style="font-size: 20px">Data</span></div>
+                                    <div class="cardName">
+                                        <a href="{{ route('data-utama.index') }}">Inventaris</a>
+                                    </div>
+                                </div>
+                                <span class="iconBx" style="margin-top: 10px;">
+                                    <a href="{{ route('data-utama.index') }}"><ion-icon name="stats-chart-outline"></ion-icon></a>
+                                </span>
+                                {{-- <div class="iconBx">
+                            <ion-icon name="eye-outline"></ion-icon>
+                            </div> --}}
+                            </div>
+
+                            <div class="card">
+                                <div>
+                                    <div class="numbers">{{ $totalbdh }} <span style="font-size: 20px">Data</span></div>
+                                    <div class="cardName">
+                                        <a href="/data-bdh">Badan Daerah Hutan</a>
+                                    </div>
+                                </div>
+                                <span class="iconBx" style="margin-top: 10px;">
+                                    <a href="/data-bdh"><ion-icon name="logo-ionic"></ion-icon></a>
+                                </span>
+                                {{-- <div class="iconBx">
+                            <ion-icon name="cart-outline"></ion-icon>
+                            </div> --}}
                             </div>
                         </div>
-                        <span class="iconBx" style="margin-top: 10px;">
-                            <a href="{{ route('data-utama.index') }}"><ion-icon name="stats-chart-outline"></ion-icon></a>
-                        </span>
-                        {{-- <div class="iconBx">
-                    <ion-icon name="eye-outline"></ion-icon>
-                </div> --}}
+                        <div class="cardBox">
+                            <div class="card">
+                                <div>
+                                    <div class="numbers">{{ $totalrph }} <span style="font-size: 20px">Data</span></div>
+                                    <div class="cardName">
+                                        <a href="{{ route('rph.index2') }}">Rencana Pengelolaan Hutan</a>
+                                    </div>
+                                </div>
+                                <span class="iconBx" style="margin-top: 10px;">
+                                    <a href="{{ route('rph.index2') }}"><ion-icon name="leaf-outline"></ion-icon></a>
+                                </span>
+                                {{-- <div class="iconBx">
+                            <ion-icon name="chatbubbles-outline"></ion-icon>
+                        </div> --}}
+                            </div>
+
+                            <div class="card">
+                                <div>
+                                    <div class="numbers">{{ $totalptk }} <span style="font-size: 20px"> Data</span>
+                                    </div>
+                                    <div class="cardName">
+                                        <a href="{{ route('petak.index2') }}">Petak</a>
+                                    </div>
+                                </div>
+                                <span class="iconBx" style="margin-top: 10px;">
+                                    <a href="{{ route('petak.index2') }}"><ion-icon name="analytics-outline"></ion-icon></a>
+                                </span>
+                                {{-- <div class="iconBx">
+                            <ion-icon name="cash-outline"></ion-icon>
+                        </div> --}}
+                            </div>
+                        </div>
+
+                        <div class="cardBox">
+                            <div class="card">
+                                <div>
+                                    <div class="numbers">{{ $totalPerizinan }} <span style="font-size: 20px">Data</span>
+                                    </div>
+                                    <div class="cardName">
+                                        <a href="{{ route('izin.index') }}">Perizinan Berusaha</a>
+                                    </div>
+                                </div>
+                                <span class="iconBx" style="margin-top: 10px;">
+                                    <a href="{{ route('izin.index') }}"><ion-icon name="shield-checkmark-outline"></ion-icon></a>
+                                </span>
+                                {{-- <div class="iconBx">
+                            <ion-icon name="eye-outline"></ion-icon>
+                        </div> --}}
+                            </div>
+
+                            <div class="card">
+                                <div>
+                                    <div class="numbers">{{ $totalPotensi }} <span style="font-size: 20px">Data</span></div>
+                                    <div class="cardName">
+                                        <a href="{{ route('potensi.index') }}">Potensi Hasil Hutan</a>
+                                    </div>
+                                </div>
+                                <span class="iconBx" style="margin-top: 10px;">
+                                    <a href="{{ route('potensi.index') }}"><ion-icon name="leaf-outline"></ion-icon></a>
+                                </span>
+                                {{-- <div class="iconBx">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </div> --}}
+                            </div>
+                        </div>
+                        <div class="cardBox">
+                            <div class="card">
+                                <div>
+                                    <div class="numbers">{{ $totalProduksi }} <span style="font-size: 20px">Data</span>
+                                    </div>
+                                    <div class="cardName"><a href="/data-produksi">Produksi Hasil Hutan</a></div>
+                                </div>
+                                <span class="iconBx" style="margin-top: 10px;">
+                                    <a href="/data-produksi"><ion-icon name="settings-outline"></ion-icon></a>
+                                </span>
+                                {{-- <div class="iconBx">
+                            <ion-icon name="chatbubbles-outline"></ion-icon>
+                        </div> --}}
+                            </div>
+
+                            <div class="card">
+                                <div>
+                                    <div class="numbers">{{ $totalPajak }} <span style="font-size: 20px"> Data</span>
+                                    </div>
+                                    <div class="cardName">
+                                        <a href="{{ route('pnbp.index') }}">Penerimaan Pajak</a>
+                                    </div>
+                                </div>
+                                <span class="iconBx" style="margin-top: 10px;">
+                                    <a href="{{ route('pnbp.index') }}"><ion-icon name="stats-chart-outline"></ion-icon></a>
+                                </span>
+                                {{-- <div class="iconBx">
+                            <ion-icon name="cash-outline"></ion-icon>
+                        </div> --}}
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <div>
-                            <div class="numbers">{{ $totalbdh }} <span style="font-size: 25px">Data</span></div>
-                            <div class="cardName">
-                                <a href="/data-bdh">Badan Daerah Hutan</a>
-                            </div>
-                        </div>
-                        <span class="iconBx" style="margin-top: 10px;">
-                            <a href="/data-bdh"><ion-icon name="logo-ionic"></ion-icon></a>
-                        </span>
-                        {{-- <div class="iconBx">
-                    <ion-icon name="cart-outline"></ion-icon>
-                </div> --}}
-                    </div>
 
-                    <div class="card">
-                        <div>
-                            <div class="numbers">{{ $totalrph }} <span style="font-size: 25px">Data</span></div>
-                            <div class="cardName">
-                                <a href="{{ route('rph.index2') }}">Rencana Pengelolaan Hutan</a>
-                            </div>
+                    <div class="chart-container">
+                        <canvas id="luasBdhChart" class="chart2" style="margin-bottom: 10px;margin-top: 30px;max-width: 500px;"></canvas>
+                        <div class="bawah">
+                            <canvas id="hasilHutanChart" style="max-width: 220px;max-height:220px;"></canvas>
+                            <canvas id="produksiHutanChart" style="max-width: 220px;"></canvas>
                         </div>
-                        <span class="iconBx" style="margin-top: 10px;">
-                            <a href="{{ route('rph.index2') }}"><ion-icon name="leaf-outline"></ion-icon></a>
-                        </span>
-                        {{-- <div class="iconBx">
-                    <ion-icon name="chatbubbles-outline"></ion-icon>
-                </div> --}}
-                    </div>
-
-                    <div class="card">
-                        <div>
-                            <div class="numbers">{{ $totalptk }} <span style="font-size: 25px"> Data</span></div>
-                            <div class="cardName">
-                                <a href="{{ route('petak.index2') }}">Petak</a>
-                            </div>
-                        </div>
-                        <span class="iconBx" style="margin-top: 10px;">
-                            <a href="{{ route('petak.index2') }}"><ion-icon name="analytics-outline"></ion-icon></a>
-                        </span>
-                        {{-- <div class="iconBx">
-                    <ion-icon name="cash-outline"></ion-icon>
-                </div> --}}
                     </div>
                 </div>
+                <style>
+                    .bawah {
+                        display: flex;
+                    }
 
-                <div class="cardBox">
-                    <div class="card">
-                        <div>
-                            <div class="numbers">{{ $totalPerizinan }} <span style="font-size: 25px">Data</span></div>
-                            <div class="cardName">
-                                <a href="{{ route('izin.index') }}">Perizinan Berusaha</a>
-                            </div>
-                        </div>
-                        <span class="iconBx" style="margin-top: 10px;">
-                            <a href="{{ route('izin.index') }}"><ion-icon name="shield-checkmark-outline"></ion-icon></a>
-                        </span>
-                        {{-- <div class="iconBx">
-                    <ion-icon name="eye-outline"></ion-icon>
-                </div> --}}
-                    </div>
-
-                    <div class="card">
-                        <div>
-                            <div class="numbers">{{ $totalPotensi }} <span style="font-size: 25px">Data</span></div>
-                            <div class="cardName">
-                                <a href="{{ route('potensi.index') }}">Potensi Hasil Hutan</a>
-                            </div>
-                        </div>
-                        <span class="iconBx" style="margin-top: 10px;">
-                           <a href="{{ route('potensi.index') }}"><ion-icon name="leaf-outline"></ion-icon></a>
-                        </span>
-                        {{-- <div class="iconBx">
-                    <ion-icon name="cart-outline"></ion-icon>
-                </div> --}}
-                    </div>
-
-                    <div class="card">
-                        <div>
-                            <div class="numbers">{{ $totalProduksi }} <span style="font-size: 25px">Data</span></div>
-                            <div class="cardName"><a href="/data-produksi">Produksi Hasil Hutan</a></div>
-                        </div>
-                        <span class="iconBx" style="margin-top: 10px;">
-                            <a href="/data-produksi"><ion-icon name="settings-outline"></ion-icon></a>
-                        </span>
-                        {{-- <div class="iconBx">
-                    <ion-icon name="chatbubbles-outline"></ion-icon>
-                </div> --}}
-                    </div>
-
-                    <div class="card">
-                        <div>
-                            <div class="numbers">{{ $totalPajak }} <span style="font-size: 25px"> Data</span></div>
-                            <div class="cardName">
-                                <a href="{{ route('pnbp.index') }}">Penerimaan Pajak</a>
-                            </div>
-                        </div>
-                        <span class="iconBx" style="margin-top: 10px;">
-                            <a href="{{ route('pnbp.index') }}"><ion-icon name="stats-chart-outline"></ion-icon></a>
-                        </span>
-                        {{-- <div class="iconBx">
-                    <ion-icon name="cash-outline"></ion-icon>
-                </div> --}}
-                    </div>
-                </div>
-
-                <div class="chart-container">
-                    <canvas id="luasBdhChart"></canvas>
-                    <canvas id="hasilHutanChart"></canvas>
-                    <canvas id="produksiHutanChart"></canvas>
-                </div>
+                    .chart2 {
+                        width: 800px;
+                    }
+                </style>
 
 
-    {{-- </div> --}}
-    <!-- =========== Scripts =========  -->
-    <script src="/js/main.js"></script>
+                {{-- </div> --}}
+                <!-- =========== Scripts =========  -->
+                <script src="/js/main.js"></script>
 
-    <!-- ====== ionicons ======= -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
                 <!-- ====== ionicons ======= -->
                 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
                 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -160,7 +184,14 @@
 
                 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                 <script>
-                    // Chart 1
+                    < script type = "module"
+                    src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" >
+                </script>
+                <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <script>
                     var ctx1 = document.getElementById('hasilHutanChart');
                     var hasilHutanChart = new Chart(ctx1, {
                         type: 'pie',
@@ -172,13 +203,17 @@
                             }]
                         },
                         options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
+                            // responsive: true,
+                            // maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    display: false
+                                }
+                            }
                         }
                     });
 
 
-                    // Chart 2
                     var ctx2 = document.getElementById('luasBdhChart');
                     var luasBdhChart = new Chart(ctx2, {
                         type: 'pie',
@@ -192,10 +227,14 @@
                         options: {
                             responsive: true,
                             maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    display: false
+                                }
+                            }
                         }
                     });
 
-                    // Chart 3
                     var ctx3 = document.getElementById('produksiHutanChart');
                     var produksiHutanChart = new Chart(ctx3, {
                         type: 'pie',
@@ -209,15 +248,14 @@
                         options: {
                             responsive: true,
                             maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    display: false
+                                }
+                            }
                         }
                     });
                 </script>
 
-//                 {{-- <div class="garis">
-// >>>>>>> Stashed changes
-//         <div class="border-list">
-//             <h2>Dashboard</h2>
-//         </div>
-//     </div> --}}
-@endsection
+            @endsection
 
