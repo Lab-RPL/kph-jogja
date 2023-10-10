@@ -17,7 +17,7 @@
                     <tr>
                         <td>Nomor PU</td>
                         <td>
-                            <select name="id_PU" id="tambah-dataUtama" required class="form-control" disabled >
+                            <select style="width: 400px;" name="id_PU" id="tambah-dataUtama" required class="form-control" disabled >
                                 @foreach ($dataUtama as $dataUtama)
                                     @if ($dataUtama->IsDelete == 0)
                                         <option value="{{ $dataUtama->id_PU }}"
