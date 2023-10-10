@@ -16,7 +16,7 @@ class adminController extends Controller
         // if (Auth::check() && Auth::user()->user_type == 'admin') {
 
         // Tampilkan halaman admin atau lakukan apa pun yang Anda inginkan
-        $data = admin::where('IsDelete', 0)->paginate(5);
+        $data = admin::where('IsDelete', 0)->paginate(1000000000);
         return view("admin.admin", ['data' => $data]);
         // }
     }

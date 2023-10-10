@@ -38,14 +38,16 @@
                                     <td>{{ $da->name }}</td>
                                     <td>{{ $da->user_type }}</td>
                                     <td>
-                                        <a href="{{ route('admin.edit', $da->id) }}" class="btn btn-warning mb-1 m-l-1">Ganti Password / Username</a>
-                                        <a data-id="{{ $da->id }}" href="{{ route('admin.destroy', $da->id) }}"
-                                            class="btn btn-danger mb-1 m-l-2">Hapus</a>
+                                        <!-- Add a condition to check if user type is not admin before rendering the button -->
+                                        @if($da->user_type != 'admin')
+                                            <a href="{{ route('admin.edit', $da->id) }}" class="btn btn-warning mb-1 m-l-1">Ganti Password / Username</a>
+                                            <a data-id="{{ $da->id }}" href="{{ route('admin.destroy', $da->id) }}" class="btn btn-danger mb-1 m-l-2">Hapus</a>
+                                        @endif
                                     </td>
                                 </tr>
                             @endif
                         @endforeach
-                    </tbody>
+                    </tbody>    
                 </table>
                 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
                     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
