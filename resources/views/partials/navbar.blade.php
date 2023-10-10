@@ -192,6 +192,7 @@
                         (navLink.pathname === '/data-utama' && currentPathname ==='/data-result') ||
                         (navLink.pathname === '/data-utama' && currentPathname.startsWith('/data-tegakan/')) ||
                         (navLink.pathname === '/data-utama' && currentPathname ==='/edit-data') ||
+                        (navLink.pathname === '/data-utama' && currentPathname ==='/tambah-tegakan') ||
                         //DATA-BDH
                         (navLink.pathname === '/data-bdh' && currentPathname ==='/tambah-bdh') ||
                         (navLink.pathname === '/data-bdh' && currentPathname ==='/tambah-bdh-read') ||
