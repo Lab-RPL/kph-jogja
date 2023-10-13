@@ -22,10 +22,10 @@
                                         <a href="{{ route('data-utama.index') }}">Inventaris</a>
                                     </div>
                                 </div>
-                                <span class="iconBx" style="margin-top: 10px;">
+                                <div class="iconBx" style="margin-top: 10px;">
                                     <a href="{{ route('data-utama.index') }}"><ion-icon
                                             name="stats-chart-outline"></ion-icon></a>
-                                </span>
+                                </div>
                                 {{-- <div class="iconBx">
                             <ion-icon name="eye-outline"></ion-icon>
                             </div> --}}
@@ -35,7 +35,7 @@
                                 <div>
                                     <div class="numbers">{{ $totalbdh }} <span style="font-size: 20px">Data</span></div>
                                     <div class="cardName">
-                                        <a href="/data-bdh">Badan Daerah Hutan</a>
+                                        <a href="/data-bdh">BDH</a>
                                     </div>
                                 </div>
                                 <span class="iconBx" style="margin-top: 10px;">
@@ -51,7 +51,7 @@
                                 <div>
                                     <div class="numbers">{{ $totalrph }} <span style="font-size: 20px">Data</span></div>
                                     <div class="cardName">
-                                        <a href="{{ route('rph.index2') }}">Rencana Pengelolaan Hutan</a>
+                                        <a href="{{ route('rph.index2') }}">RPH</a>
                                     </div>
                                 </div>
                                 <span class="iconBx" style="margin-top: 10px;">
@@ -148,11 +148,12 @@
 
 
                     <div class="chart-container">
-                        <canvas id="luasBdhChart" class="chart2"></canvas>
                         <div class="bawah">
                             <canvas id="hasilHutanChart" class="chart1"></canvas>
-                            <canvas id="produksiHutanChart" class="chart3"></canvas>
+                            <canvas id="bdh" class="chart1"></canvas>
+                            <canvas id="produksiHutanChart" class="chart1"></canvas>
                         </div>
+                        <canvas id="pnbp" class="chart2"></canvas>
                     </div>
                 </div>
 
@@ -176,6 +177,27 @@
 
                 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                 <script>
+
+                    var ctx1 = document.getElementById('bdh');
+                    var bdh = new Chart(ctx1, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Bdh 1', 'Bdh 2', 'Bdh3','Bdh 4', 'Bdh 5', 'Bdh 6','Bdh 7', 'Bdh 8', 'Bdh 9'],
+                            datasets: [{
+                                data: [35, 60, 5,20, 6, 5,21, 22, 5],
+                                backgroundColor: ["#3cba9f", "#e8c3b9", "#c45850"],
+                            }]
+                        },
+                        options: {
+                            // responsive: true,
+                            // maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    display: false
+                                }
+                            }
+                        }
+                    });
                     var ctx1 = document.getElementById('hasilHutanChart');
                     var hasilHutanChart = new Chart(ctx1, {
                         type: 'pie',
@@ -196,16 +218,14 @@
                             }
                         }
                     });
-
-
-                    var ctx2 = document.getElementById('luasBdhChart');
-                    var luasBdhChart = new Chart(ctx2, {
-                        type: 'pie',
+                    var ctx2 = document.getElementById('pnbp');
+                    var pnbp = new Chart(ctx2, {
+                        type: 'bar',
                         data: {
-                            labels: ['luasbdh 1', 'luasbdh 2', 'luasbdh 3'],
+                            labels: ['2017', '2018', '2019','2020', '2021', '2022','2023', '2024', '2025'],
                             datasets: [{
-                                data: [35, 30, 53],
-                                backgroundColor: ["#3cba9f", "#e8c3b9", "#c45850"],
+                                data: [1000000, 1700000, 700000,500000, 2000000, 1600000,1350000, 100000, 670000],
+                                backgroundColor: ["#3cba9f", "#e8c3b9", "#c45850","#3cba9f", "#e8c3b9", "#c45850","#3cba9f", "#e8c3b9", "#c45850"],
                             }]
                         },
                         options: {
