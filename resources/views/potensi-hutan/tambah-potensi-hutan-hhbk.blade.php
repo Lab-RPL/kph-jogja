@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <form action="{{ route('potensi.store') }}" method="post">
+    <form action="" method="post">
         @csrf
         <div class="garis">
             <div class="border-list">
@@ -14,22 +14,10 @@
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
 
                 <table id="tabelData">
-
-                    <td height="60px">Nama Wisata</td>
-                    <td><input type="text" id="nama-wis" name="nama_wisata" required></td>
-                    </tr>
                     <tr>
-                        <td height="60px">Lokasi Wisata</td>
-                        <td><input type="text" id="lokasi-wis" name="lokasi_wisata" required></td>
+                        <td>Jenis Tegakan</td>
+                        <td height="50px"><input type="text" name="jenis_tgk" required></td>
                     </tr>
-                    <tr>
-                        <td height="60px">Atraksi Wisata</td>
-                        <td><input type="text" id="atraksi-wis" name="atraksi_wisata" required></td>
-                    </tr>
-                    <!-- <tr>
-                                    <td><label for="luas-tanah">Keterangan Lain</label></td>
-                                    <td><input type="text" id="luas-rph" name="luas_tanah" required></td>
-                                </tr> -->
                 </table>
                 <div style="display: flex; justify-content: space-between;" class="mt-5">
                     <a class="btn btn-warning" style="color: white; font-weight: bold" href="/data-potensi">Kembali</a>

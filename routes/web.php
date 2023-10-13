@@ -95,10 +95,14 @@ Route::get('rph/get/{id}', [petakController::class,'getRph']);
 
 //Potensi hasil hutan
 Route::get('/data-potensi', [potensiController::class, 'index'])->name('potensi.index');
-Route::get('/tambah-potensi', [potensiController::class, 'create'])->name('potensi.create');
-Route::post('/data-potensi', [potensiController::class, 'store'])->name('potensi.store');
-Route::get('/data-potensi/{id_hhbk}/edit', [potensiController::class, 'edit'])->name('potensi.edit');
-Route::put('/data-potensi/{id}', [potensiController::class, 'update'])->name('potensi.update');
+Route::get('/tambah-potensi-hhk', [potensiController::class, 'create_hhk'])->name('potensi.create_hhk');
+Route::get('/tambah-potensi-hhbk', [potensiController::class, 'create_hhbk'])->name('potensi.create_hhbk');
+Route::post('/data-potensi-hhk', [potensiController::class, 'store_hhk'])->name('potensi.store_hhk');
+Route::post('/data-potensi-hhbk', [potensiController::class, 'store_hhbk'])->name('potensi.store_hhbk');
+Route::get('/data-potensi-hhk/{id_hhk}/edit', [potensiController::class, 'edit_hhk'])->name('potensi.edit_hhk');
+Route::get('/data-potensi-hhbk/{id_hhbk}/edit', [potensiController::class, 'edit_hhbk'])->name('potensi.edit_hhbk');
+Route::put('/data-potensi-hhk/{id}', [potensiController::class, 'update_hhk'])->name('potensi.update_hhk');
+Route::put('/data-potensi-hhbk/{id}', [potensiController::class, 'update_hhbk'])->name('potensi.update_hhbk');
 Route::get('/data-potensi/{id_hhbk}', [potensiController::class, 'destroy'])->name('potensi.destroy');
 
 // ADMIN

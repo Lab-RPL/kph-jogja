@@ -35,30 +35,23 @@
                     <thead>
                         <tr>
                             <th style="background-color: #9CC589;" class="text-center">Jenis Tegakan</th>
-                            <th style="background-color: #9CC589;" class="text-center">Luas Tegakan</th>
-                            <th style="background-color: #9CC589;" class="text-center">Volume Tegakan</th>
+                            <th style="background-color: #9CC589;" class="text-center">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-
-                        <!-- tesih dummy -->
-                        <tr>
-                            <td>Jenis Jati</td>
-                            <td>xxx</td>
-                            <td>xxx</td>
-                        </tr>
-                        <tr>
-                            <td>Jenis Kayu Putih</td>
-                            <td>xxx</td>
-                            <td>xxx</td>
-                        </tr>
-                        <tr>
-                            <td>Jenis Rimba</td>
-                            <td>xxx</td>
-                            <td>xxx</td>
-                        </tr>
-                        <!-- sampek sini -->
-
+                        {{-- @foreach ($data as $da)
+                            @if ($da->IsDelete == 0)
+                                <tr>
+                                    <td>{{ $da->jenis_tgk }}</td>
+                                    <td style="justify-content: space-between; align-items:center">
+                                        <a href="{{ route('potensi.edit_hhbk', $da->id_hhk) }}"
+                                            class="btn btn-warning mb-1 m-l-1"><i class="fas fa-pencil-alt"></i></a>
+                                        <a data-id="{{ $da->id_hbk }}" href="{{ route('potensi.destroy', $da->id_hbk) }}"
+                                            class="btn btn-danger mb-1 m-l-2"><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            @endif
+                        @endforeach --}}
                     </tbody>
                 </table>
 
@@ -71,35 +64,30 @@
                 <table id="tabelData2" class="table table-bordered">
                     <thead>
                         <tr>
-                            <th style="background-color: #9CC589;" class="text-center">Nama Wisata</th>
-                            <th style="background-color: #9CC589;" class="text-center">Lokasi Wisata</th>
-                            <th style="background-color: #9CC589;" class="text-center">Atraksi Wisata</th>
+                            <th style="background-color: #9CC589;" class="text-center">Jenis Tegakan</th>
                             <th style="background-color: #9CC589;" class="text-center">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-
-                        @foreach ($data as $da)
+                        {{-- @foreach ($data as $da)
                             @if ($da->IsDelete == 0)
                                 <tr>
-                                    <td>{{ $da->nama_wisata }}</td>
-                                    <td>{{ $da->lokasi_wisata }}</td>
-                                    <td>{{ $da->atraksi_wisata }}</td>
+                                    <td>{{ $da->jenis_tgk }}</td>
                                     <td style="justify-content: space-between; align-items:center">
-                                        <a href="{{ route('potensi.edit', $da->id_hhbk) }}"
+                                        <a href="{{ route('potensi.edit_hhbk', $da->id_hhbk) }}"
                                             class="btn btn-warning mb-1 m-l-1"><i class="fas fa-pencil-alt"></i></a>
                                         <a data-id="{{ $da->id_hhbk }}" href="{{ route('potensi.destroy', $da->id_hhbk) }}"
                                             class="btn btn-danger mb-1 m-l-2"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endif
-                        @endforeach
+                        @endforeach --}}
                     </tbody>
                 </table>
                 <div style="display: flex; justify-content: flex-end;" class="nav-item mt-4">
                     <a class="btn btn-primary"
                         style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
-                        href="{{ route('potensi.create') }}">Tambah Data HHBK</a>
+                        href="">Tambah Data</a>
                 </div>
                 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
                     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

@@ -7,28 +7,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <form action="{{ route('potensi.update', ['id' => $hhbk->id_hhbk]) }}" method="POST">
+    <form action="" method="POST">
         @csrf
         @method('put')
         <div class="garis">
             <div class="border-list">
                 <h2>Hasil Hutan Bukan Kayu</h2>
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
-                <input type="hidden" name="id_hhbk" value="{{ $hhbk->id_hhbk }}">
+                <input type="hidden" name="" value="{{}}">
                 <table id="tabelData">
                     <tr>
-                        <td height="60px">Nama Wisata</td>
-                        <td><input type="text" id="nama-wis" name="nama_wisata" value="{{ $hhbk->nama_wisata }}"></td>
-                    </tr>
-                    <tr>
-                        <td height="60px">Lokasi Wisata</td>
-                        <td><input type="text" id="lokasi-wis" name="lokasi_wisata" value="{{ $hhbk->lokasi_wisata }}">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td height="60px">Atraksi Wisata</td>
-                        <td><input type="text" id="atraksi-wis" name="atraksi_wisata"
-                                value="{{ $hhbk->atraksi_wisata }}"></td>
+                        <td height="60px">Jenis Tegakan</td>
+                        <td><input type="text" id="karepmu" name="jenis_tgk" value="{{}}"></td>
                     </tr>
                 </table>
                 <div style="display: flex; justify-content: space-between;" class="mt-5">
