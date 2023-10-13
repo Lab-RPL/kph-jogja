@@ -149,15 +149,30 @@
 
                     <div class="chart-container">
                         <div class="bawah">
-                            <canvas id="hasilHutanChart" class="chart1"></canvas>
-                            <canvas id="bdh" class="chart1"></canvas>
-                            <canvas id="produksiHutanChart" class="chart1"></canvas>
+                            <div class="potensi">
+                                <p>Potensi Hasil Hutan</p>
+                                <canvas id="hasilHutanChart" class="chart1"></canvas>
+                            </div>
+                            <div class="bdh">
+                                <p>BDH</p>
+                                <canvas id="bdh" class="chart1"></canvas>
+                            </div>
+                            <div class="produksi">
+                                <p>Produksi Hasil Hutan</p>
+                                <canvas id="produksiHutanChart" class="chart1"></canvas>
+                            </div>
                         </div>
-                        <canvas id="pnbp" class="chart2"></canvas>
+                            <canvas id="pnbp" class="chart2"></canvas>
                     </div>
                 </div>
-
-
+<style>
+    .produksi p, .bdh p, .potensi p{
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: -20px;
+        margin-top: 5px;
+    }
+</style>
                 {{-- </div> --}}
                 <!-- =========== Scripts =========  -->
                 <script src="/js/main.js"></script>
