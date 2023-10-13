@@ -41,16 +41,17 @@
 
                     </div>
                 </div>
-                
+
                 @if (Session::has('pesan'))
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
                 <table id="tabelData" class="table table-bordered table-striped">
-                    <thead> 
+                    <thead>
                         <tr>
                             <th style="background-color: #9CC589;" class="text-center">Nomor Petak</th>
                             <th style="background-color: #9CC589;" class="text-center">Luas Petak</th>
                             <th style="background-color: #9CC589;" class="text-center">Potensi Petak</th>
+                            <th style="background-color: #9CC589;" class="text-center">Jenis Tegak</th>
                             <th style="background-color: #9CC589;" class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -59,11 +60,25 @@
                             <tr>
                                 <td style="text-align: center">{{ $da->nomor_ptk }}</td>
                                 <td>{{ $da->luas_ptk }} Ha</td>
-                                <td>{{ $da->potensi_ptk }}</td>
+                                <td>
+                                    @if($da->potensi_ptk == 0)
+                                        Kayu
+                                    @elseif($da->potensi_ptk == 1)
+                                        Bukan Kayu
+                                    @else
+                                        Data Tidak Tersedia
+                                    @endif
+                                </td>
+                                                                @if ($da->hhbk_jenis_tgk)
+                                    <td>{{ $da->hhbk_jenis_tgk }}</td>
+                                @else
+                                    <td>{{ $da->hhk_jenis_tgk }}</td>
+                                @endif
+
                                 <td class="center-align">
 
-                                    <a
-                                        href="{{ route('petak.edit', $da->id_ptk) }}"class="btn btn-warning mb-1 m-l-1"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href="{{ route('petak.edit', $da->id_ptk) }}"class="btn btn-warning mb-1 m-l-1"><i
+                                            class="fas fa-pencil-alt"></i></a>
                                     <a href="{{ route('petak.destroy', $da->id_ptk) }}" data-id="{{ $da->id_ptk }}"
                                         class="btn btn-danger mb-1 m-l-1"><i class="fa fa-trash"></i></a>
 
@@ -75,13 +90,14 @@
 
                 {{-- {{ $data->links() }} --}}
                 <div style="display: flex; justify-content: space-between;" class="mt-4">
-                    <a class="btn btn-warning" style="color: white"  onclick="goBack();">Kembali</a>
+                    <a class="btn btn-warning" style="color: white" onclick="goBack();">Kembali</a>
                     <script>
                         function goBack() {
                             window.history.back();
                         }
                     </script>
-                    <a class="btn btn-primary" style="color: white" href="{{ route('petak.create', ['rph' => $id_rph]) }}">Tambah Data</a>
+                    <a class="btn btn-primary" style="color: white"
+                        href="{{ route('petak.create', ['rph' => $id_rph]) }}">Tambah Data</a>
                 </div>
             </form>
         </div>
@@ -111,7 +127,7 @@
             }
         });
     </script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>

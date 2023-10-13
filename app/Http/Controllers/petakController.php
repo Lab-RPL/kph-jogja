@@ -19,13 +19,19 @@ class petakController extends Controller
         $petak_data = petak::with('rph')
             ->where('id_rph', $id_rph)
             ->get();
+    
+        // Menyertakan data jenis_tgk dari tabel hhbk dan hhl
         $data = DB::table('petak')
-            ->where('id_rph', $id_rph)
-            ->where('IsDelete',0)
+            ->leftJoin('hhbk', 'petak.id_hhbk', '=', 'hhbk.id_hhbk')
+            ->leftJoin('hhk', 'petak.id_hhk', '=', 'hhk.id_hhk')
+            ->where('petak.id_rph', $id_rph)
+            ->where('petak.IsDelete', 0)
+            ->select('petak.*', 'hhbk.jenis_tgk as hhbk_jenis_tgk', 'hhk.jenis_tgk as hhk_jenis_tgk')
             ->paginate(10000000000);
+    
         return view('petak.petak', ['data' => $data, 'ptk_data' => $petak_data, 'id_rph' =>$id_rph]);
     }
-
+    
     public function index2(Request $req)
     {
         if (!$req->session()->has('user_id')) {
