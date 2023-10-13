@@ -189,7 +189,7 @@
                 </script>
                 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                 <script>
                     var ctx1 = document.getElementById('bdh');
@@ -233,36 +233,6 @@
                             }
                         }
                     });
-                    var ctx2 = document.getElementById('pnbp');
-                    var pnbp = new Chart(ctx2, {
-                        type: 'bar',
-                        data: {
-                            labels: ['2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
-                            datasets: [
-                                {
-                                    data: [1000000, 1700000, 700000, 500000, 2000000, 1600000, 1350000, 100000, 670000],
-                                    borderColor: "#006C9A",
-                                    backgroundColor: "#006C9A",
-                                    borderWidth: 2,
-                                    type: 'line',
-                                },
-                                {
-                                    data: [1000000, 1700000, 700000, 500000, 2000000, 1600000, 1350000, 100000, 670000],
-                                    backgroundColor: ["#00FFAB"
-                                    ],
-                                }
-                            ]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: {
-                                    display: false
-                                }
-                            }
-                        }
-                    });
 
                     var ctx3 = document.getElementById('produksiHutanChart');
                     var produksiHutanChart = new Chart(ctx3, {
@@ -284,5 +254,53 @@
                             }
                         }
                     });
+                    
+                    $.ajax({
+                        url: '/chart-data',
+                        method: 'GET',
+                        success: function(data) {
+
+                            // Konversi data ke bentuk yang diinginkan
+                            var labels = [];
+                            var chartData = [];
+                            for (var i = 0; i < data.length; i++) {
+                                labels.push(data[i].tahun_pnbp);
+                                chartData.push(data[i].nominal_pnbp);
+                            }
+
+                            // Buat chart dengan data baru
+                            var ctx2 = document.getElementById('pnbp');
+                            var pnbp = new Chart(ctx2, {
+                                type: 'bar',
+                                data: {
+                                    labels: labels,
+                                    datasets: [
+                                        {
+                                            data: chartData,
+                                            borderColor: "#006C9A",
+                                            backgroundColor: "#006C9A",
+                                            borderWidth: 2,
+                                            type: 'line',
+                                        },
+                                        {
+                                            data: chartData,
+                                            backgroundColor: ["#5FCC9C"],
+                                        }
+                                    ]
+                                },
+                                options: {
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    plugins: {
+                                        legend: {
+                                            display: false
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    });
+
+
                 </script>
             @endsection

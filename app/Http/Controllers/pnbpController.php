@@ -15,7 +15,7 @@ class pnbpController extends Controller
             return redirect('/');
         }
 
-        $data = pnbp::where('IsDelete',0)->paginate(5);
+        $data = pnbp::where('IsDelete',0)->paginate(1000000000000000000000);
         return view('pnbp.pnbp', ['data' => $data,]);
     }
     public function create()

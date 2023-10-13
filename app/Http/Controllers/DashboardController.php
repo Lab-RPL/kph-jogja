@@ -20,4 +20,15 @@ class DashboardController extends Controller
         $totalPajak = DB::table('pnbp')->where('IsDelete',0)->count();
         return view('dashboard.dashboard',compact('totalbdh','totalrph','totalptk','totalinven','totalPerizinan','totalPotensi','totalPajak','totalProduksi'));
     }
+
+    public function getChartData() {
+
+        // Ambil data dari database
+        $pnbpData = DB::table('pnbp')
+                        ->select('tahun_pnbp', 'nominal_pnbp')
+                        ->get();
+    
+        // Kembalikan sebagai response JSON
+        return response()->json($pnbpData);
+    }
 }
