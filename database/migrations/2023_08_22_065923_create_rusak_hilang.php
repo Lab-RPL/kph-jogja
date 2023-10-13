@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreign('id_PU')->references('id_PU')->on('data_utama');
             $table->double('koor_x');
             $table->double('koor_y');
+            $table->string('keterangan');
             $table->decimal('diameter')->nullable();
             $table->binary('foto')->nullable();
             $table->boolean('IsDelete')->default(0);

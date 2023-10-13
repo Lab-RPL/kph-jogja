@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('hhk', function (Blueprint $table) {
-            $table->bigIncrements('id_hhk');
+        Schema::create('hhbk', function (Blueprint $table) {
+            $table->bigIncrements('id_hhbk');
             $table->string('jenis_tgk');
-            $table->decimal('luas_hasil_hutan');
-            $table->decimal('volume_hasil_hutan');
             $table->boolean('IsDelete')->default(0);
             $table->timestamps();
         });
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hhk');
+        Schema::dropIfExists('hhbk');
     }
 };

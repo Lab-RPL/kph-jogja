@@ -16,10 +16,15 @@ return new class extends Migration
 
             $table->integer('nomor_ptk');
             $table->decimal('luas_ptk');
-            $table->string('potensi_ptk');
+            $table->boolean('potensi_ptk')->default(0);
             $table->unsignedBigInteger('id_rph');
+            $table->unsignedBigInteger('id_hhk')->nullable();
+            $table->unsignedBigInteger('id_hhbk')->nullable();
             $table->boolean('IsDelete')->default(0);
+            
             $table->foreign('id_rph')->references('id_rph')->on('rph');
+            $table->foreign('id_hhk')->references('id_hhk')->on('hhk');
+            $table->foreign('id_hhbk')->references('id_hhbk')->on('hhbk');
             $table->timestamps();
         });
     }

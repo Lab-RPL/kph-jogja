@@ -11,9 +11,15 @@ class dataTegak extends Model
 
     protected $table = 'data_tegak';
     protected $primaryKey = 'id_tgk';
-    protected $fillable = ["id_tgk","id_PU","no_pohon","jenis_tgk","diameter","tinggi"];
+    protected $fillable = ["id_tgk","id_PU","id_hhk","id_hhbk","no_pohon","diameter","tinggi"];
 
     public function dataUtama(){
         return $this->belongsTo('App\Models\dataUtama', 'id_PU');
+    }
+    public function hhk(){
+        return $this->belongsTo('App\Models\hhk', 'id_hhk');
+    }
+    public function hhbk(){
+        return $this->belongsTo('App\Models\hhbk', 'id_hhbk');
     }
 }

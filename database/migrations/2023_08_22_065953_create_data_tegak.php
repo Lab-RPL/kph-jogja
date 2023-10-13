@@ -15,14 +15,17 @@ return new class extends Migration
             $table->bigIncrements('id_tgk');
 
             $table->unsignedBigInteger('id_PU');
-            $table->foreign('id_PU')->references('id_PU')->on('data_utama');
-
             $table->integer('no_pohon');
-            $table->string('jenis_tgk');
+            $table->unsignedBigInteger('id_hhk')->nullable();
+            $table->unsignedBigInteger('id_hhbk')->nullable();
             $table->decimal('diameter');
             $table->decimal('tinggi');
             $table->boolean('IsDelete')->default(0);
             $table->timestamps();
+
+            $table->foreign('id_PU')->references('id_PU')->on('data_utama');
+            $table->foreign('id_hhk')->references('id_hhk')->on('hhk');
+            $table->foreign('id_hhbk')->references('id_hhbk')->on('hhbk');
         });
     }
 

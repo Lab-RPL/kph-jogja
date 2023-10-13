@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('no_PU');
             $table->double('koor_x');
             $table->double('koor_y');
+            $table->decimal('luas_PU');
             $table->string('tanam_sela');
             $table->integer('tahun_tanam');
             $table->float('jarak_tanam');

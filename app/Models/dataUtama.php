@@ -11,7 +11,7 @@ class dataUtama extends Model
 
     protected $table = "data_utama";
     protected $primaryKey = 'id_PU';
-    protected $fillable = ["id_PU", "tanggal", "id_ptk", "no_PU", "koor_x", "koor_y", "tanam_sela", "tahun_tanam", "jarak_tanam", "umur_tgk", "keadaan_kes", "kerataan_tgk", "kemurnian", "bentuk_lap", "derajat_lereng", "landai_lereng", "kerataan_lap", "jns_tanah", "kedalaman", "dalaman", "jns_bwh", "kerapatan", "penemuan", "erosi", "tinggi_tempat"];
+    protected $fillable = ["id_PU", "tanggal", "id_ptk", "no_PU", "koor_x", "koor_y","luas_PU", "tanam_sela", "tahun_tanam", "jarak_tanam", "umur_tgk", "keadaan_kes", "kerataan_tgk", "kemurnian", "bentuk_lap", "derajat_lereng", "landai_lereng", "kerataan_lap", "jns_tanah", "kedalaman", "dalaman", "jns_bwh", "kerapatan", "penemuan", "erosi", "tinggi_tempat"];
 
     public function bdh()
 {

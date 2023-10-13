@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('hhbk', function (Blueprint $table) {
-            $table->bigIncrements('id_hhbk');
-
-            $table->string('nama_wisata');
-            $table->text('lokasi_wisata');
-            $table->text('atraksi_wisata');
+        Schema::create('hhk', function (Blueprint $table) {
+            $table->bigIncrements('id_hhk');
+            $table->string('jenis_tgk');
             $table->boolean('IsDelete')->default(0);
             $table->timestamps();
         });
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hhbk');
+        Schema::dropIfExists('hhk');
     }
 };
