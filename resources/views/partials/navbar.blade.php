@@ -74,7 +74,7 @@
                     <li class="nav-item">
                         <a href="/data-potensi">
                             <span class="icon">
-                                <ion-icon name="leaf-outline"></ion-icon>
+                                <ion-icon name="medal-outline"></ion-icon>
                             </span>
                             <span class="title">Potensi Hasil Hutan</span>
                         </a>
@@ -83,7 +83,7 @@
                     <li class="nav-item">
                         <a href="/data-produksi">
                             <span class="icon">
-                                <ion-icon name="settings-outline"></ion-icon>
+                                <ion-icon name="cube-outline"></ion-icon>
                             </span>
                             <span class="title">Produksi Hasil Hutan</span>
                         </a>
@@ -92,7 +92,7 @@
                     <li class="nav-item">
                         <a href="/data-pnbp">
                             <span class="icon">
-                                <i class="fas fa-hand-holding-usd fa-2x"></i>
+                                <ion-icon name="cash-outline"></ion-icon>
                             </span>
                             <span class="title">Penerimaan Negara Bukan Pajak</span>
                         </a>

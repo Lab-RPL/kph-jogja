@@ -177,15 +177,15 @@
 
                 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                 <script>
-
                     var ctx1 = document.getElementById('bdh');
                     var bdh = new Chart(ctx1, {
                         type: 'pie',
                         data: {
-                            labels: ['Bdh 1', 'Bdh 2', 'Bdh3','Bdh 4', 'Bdh 5', 'Bdh 6','Bdh 7', 'Bdh 8', 'Bdh 9'],
+                            labels: ['Bdh 1', 'Bdh 2', 'Bdh3', 'Bdh 4', 'Bdh 5'],
                             datasets: [{
-                                data: [35, 60, 5,20, 6, 5,21, 22, 5],
-                                backgroundColor: ["#3cba9f", "#e8c3b9", "#c45850"],
+                                data: [35, 60, 20, 20, 36],
+                                backgroundColor: ["#438A70", "#215B63", "#5FCC9C","#AAFFC7"],
+
                             }]
                         },
                         options: {
@@ -202,10 +202,10 @@
                     var hasilHutanChart = new Chart(ctx1, {
                         type: 'pie',
                         data: {
-                            labels: ['LuasBDH', 'Produksi', 'Potensi'],
+                            labels: ['Potensi 1', 'Potensi 2', 'Potensi 3'],
                             datasets: [{
                                 data: [35, 60, 5],
-                                backgroundColor: ["#3cba9f", "#e8c3b9", "#c45850"],
+                                backgroundColor: ["#438A70", "#215B63", "#5FCC9C","#AAFFC7"],
                             }]
                         },
                         options: {
@@ -222,11 +222,21 @@
                     var pnbp = new Chart(ctx2, {
                         type: 'bar',
                         data: {
-                            labels: ['2017', '2018', '2019','2020', '2021', '2022','2023', '2024', '2025'],
-                            datasets: [{
-                                data: [1000000, 1700000, 700000,500000, 2000000, 1600000,1350000, 100000, 670000],
-                                backgroundColor: ["#3cba9f", "#e8c3b9", "#c45850","#3cba9f", "#e8c3b9", "#c45850","#3cba9f", "#e8c3b9", "#c45850"],
-                            }]
+                            labels: ['2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+                            datasets: [
+                                {
+                                    data: [1000000, 1700000, 700000, 500000, 2000000, 1600000, 1350000, 100000, 670000],
+                                    borderColor: "#006C9A",
+                                    backgroundColor: "#006C9A",
+                                    borderWidth: 2,
+                                    type: 'line',
+                                },
+                                {
+                                    data: [1000000, 1700000, 700000, 500000, 2000000, 1600000, 1350000, 100000, 670000],
+                                    backgroundColor: ["#00FFAB"
+                                    ],
+                                }
+                            ]
                         },
                         options: {
                             responsive: true,
@@ -246,7 +256,7 @@
                             labels: ['Produksi 1', 'Produksi 2', 'Produksi 3'],
                             datasets: [{
                                 data: [50, 45, 5],
-                                backgroundColor: ["#c45850", "#e8c3b9", "#3cba9f"],
+                                backgroundColor: ["#438A70", "#215B63", "#5FCC9C","#AAFFC7"],
                             }]
                         },
                         options: {
