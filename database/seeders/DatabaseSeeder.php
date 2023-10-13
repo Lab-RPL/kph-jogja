@@ -10,6 +10,8 @@ use App\Models\petak;
 use App\Models\rosak;
 use App\Models\dataTegak;
 use App\Models\dataUtama;
+use App\Models\hhk;
+use App\Models\hhbk;
 use App\Models\LuasHutan;
 use Illuminate\Database\Seeder;
 
@@ -149,6 +151,61 @@ class DatabaseSeeder extends Seeder
             'luas_rph' => 21.98,
             'id_bdh' => 1
         ]);
+
+        hhk::create([
+            'id_hhk' => 1,
+            'jenis_tgk' => "Jati" 
+        ]);
+        hhk::create([
+            'id_hhk' => 2,
+            'jenis_tgk' => "Mahoni" 
+        ]);
+        hhk::create([
+            'id_hhk' => 3,
+            'jenis_tgk' => "Akasia" 
+        ]);
+        hhk::create([
+            'id_hhk' => 4,
+            'jenis_tgk' => "Sonokeling" 
+        ]);
+        hhk::create([
+            'id_hhk' => 5,
+            'jenis_tgk' => "Pinus" 
+        ]);
+        hhk::create([
+            'id_hhk' => 6,
+            'jenis_tgk' => "Kayu  Putih" 
+        ]);
+        hhk::create([
+            'id_hhk' => 7,
+            'jenis_tgk' => "Rumba Campus" 
+        ]);
+        hhk::create([
+            'id_hhk' => 8,
+            'jenis_tgk' => "Sengon" 
+        ]);
+        hhk::create([
+            'id_hhk' => 9,
+            'jenis_tgk' => "Eucalyptus" 
+        ]);
+        hhk::create([
+            'id_hhk' => 10,
+            'jenis_tgk' => "Nyamplung" 
+        ]);
+
+        hhbk::create([
+            'id_hhk' => 1,
+            'jenis_tgk' =>  "Kayu Putih"
+        ]);
+        hhbk::create([
+            'id_hhk' => 2,
+            'jenis_tgk' =>  "Wisata Alam"
+        ]);
+        hhbk::create([
+            'id_hhk' => 3,
+            'jenis_tgk' =>  "Summer Air"
+        ]);
+        
         
         // petak::create([
         //     'id_ptk' => 1,
