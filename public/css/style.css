@@ -149,10 +149,6 @@
     margin-top: 30px;
 }
 
-.bawah .chart3 {
-    max-width: 220px;
-}
-
 .chart2 {
     width: 2000px;
     /* margin-bottom: 20px; */
@@ -853,8 +849,9 @@ label {
         margin-top: 1rem;
         margin-bottom: 50rem;
         max-height: 800px;
-        top: 80px;
+        top: -30px;
     }
+
 
     .border-lists {
         margin-bottom: 50rem;
@@ -896,41 +893,48 @@ label {
 }
 
 @media only screen and (max-width: 1366px){
-    .bawah .chart1 {
-        max-width: 180px;
-        max-height: 180px;
-    }
-    
-    .bawah .chart3 {
-        max-width: 180px;
-    }
-    
-    .chart2 {
-        width: 100vh;
-        /* margin-bottom: 20px; */
-        /* margin-top: 30px; */
+    .chart-container canvas {
+        max-width: 618px; /* or any size you prefer */
+        max-height: 420px; /* it's better to keep the pie chart as almost a square */
+        margin-left: 15px;
     }
 
-    .chart-container {
-        margin-bottom: 25px;
+    .bawah .chart1 {
+        max-width: 170px;
+        max-height: 170px;
+        margin-left: 30px;
+        margin-top: 15px;
+    }
+
+    .chart2{
+        width: 100vh;
     }
 
     .cardBox{
         padding: 5px;
+        margin-top: 10px;
     }
 
     .cardBox .card {
-        padding: 10px;
-        width: 200px;
+        padding: 7px;
+        width: 135px;
+    }
+
+    .cardBox .card .cardName {
+        font-size: 1rem;
+        padding-left: 5px;
+        margin-top: 5px;
     }
 
     .cardBox .card .numbers {
         font-weight: 500;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        padding-left: 5px;
     }
 
     .cardBox .card .iconBx{
         font-size: 2.1rem;
+        padding-left: 5px;
     }
 }
 
