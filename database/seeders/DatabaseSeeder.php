@@ -194,72 +194,215 @@ class DatabaseSeeder extends Seeder
         ]);
 
         hhbk::create([
-            'id_hhk' => 1,
+            'id_hhbk' => 1,
             'jenis_tgk' =>  "Kayu Putih"
         ]);
         hhbk::create([
-            'id_hhk' => 2,
+            'id_hhbk' => 2,
             'jenis_tgk' =>  "Wisata Alam"
         ]);
         hhbk::create([
+            'id_hhbk' => 3,
+            'jenis_tgk' =>  "Sumber Air"
+        ]);
+
+        petak::create([
+            'id_ptk' => 1,
+            'nomor_ptk' => 1,
+            'luas_ptk' => 321,
+            'potensi_ptk' => 1,
+            'id_hhk' => 2,
+            'id_rph' => 1
+        ]);
+        petak::create([
+            'id_ptk' => 2,
+            'nomor_ptk' => 2,
+            'luas_ptk' => 321,
+            'id_hhbk' => 2,
+            'id_rph' => 1
+        ]);
+        petak::create([
+            'id_ptk' => 3,
+            'nomor_ptk' => 3,
+            'luas_ptk' => 321,
+            'potensi_ptk' => 1,
+            'id_hhk' => 1,
+            'id_rph' => 2
+        ]);
+        petak::create([
+            'id_ptk' => 4,
+            'nomor_ptk' => 4,
+            'luas_ptk' => 321,
+            'id_hhbk' => 1,
+            'id_rph' => 2
+        ]);
+        petak::create([
+            'id_ptk' => 5,
+            'nomor_ptk' => 5,
+            'luas_ptk' => 321,
+            'potensi_ptk' => 1,
             'id_hhk' => 3,
-            'jenis_tgk' =>  "Summer Air"
+            'id_rph' => 3
+        ]);
+        petak::create([
+            'id_ptk' => 6,
+            'nomor_ptk' => 6,
+            'luas_ptk' => 321,
+            'id_hhbk' => 3,
+            'id_rph' => 3
+        ]);
+        petak::create([
+            'id_ptk' => 7,
+            'nomor_ptk' => 7,
+            'luas_ptk' => 321,
+            'potensi_ptk' => 1,
+            'id_hhk' => 4,
+            'id_rph' => 4
+        ]);
+        petak::create([
+            'id_ptk' => 8,
+            'nomor_ptk' => 8,
+            'luas_ptk' => 321,
+            'id_hhbk' => 1,
+            'id_rph' => 4
+        ]);
+        petak::create([
+            'id_ptk' => 9,
+            'nomor_ptk' => 9,
+            'luas_ptk' => 321,
+            'potensi_ptk' => 1,
+            'id_hhk' => 5,
+            'id_rph' => 5
+        ]);
+        petak::create([
+            'id_ptk' => 10,
+            'nomor_ptk' => 10,
+            'luas_ptk' => 321,
+            'id_hhbk' => 2,
+            'id_rph' => 5
+        ]);
+        petak::create([
+            'id_ptk' => 11,
+            'nomor_ptk' => 11,
+            'luas_ptk' => 321,
+            'potensi_ptk' => 1,
+            'id_hhk' => 6,
+            'id_rph' => 6
+        ]);
+        petak::create([
+            'id_ptk' => 12,
+            'nomor_ptk' => 12,
+            'luas_ptk' => 321,
+            'id_hhbk' => 2,
+            'id_rph' => 6
+        ]);
+        petak::create([
+            'id_ptk' => 13,
+            'nomor_ptk' => 13,
+            'luas_ptk' => 321,
+            'potensi_ptk' => 1,
+            'id_hhk' => 7,
+            'id_rph' => 7
+        ]);
+        petak::create([
+            'id_ptk' => 14,
+            'nomor_ptk' => 14,
+            'luas_ptk' => 321,
+            'id_hhbk' => 3,
+            'id_rph' => 7
+        ]);
+        petak::create([
+            'id_ptk' => 15,
+            'nomor_ptk' => 15,
+            'luas_ptk' => 321,
+            'potensi_ptk' => 1,
+            'id_hhk' => 8,
+            'id_rph' => 8
+        ]);
+        petak::create([
+            'id_ptk' => 16,
+            'nomor_ptk' => 16,
+            'luas_ptk' => 321,
+            'id_hhbk' => 1,
+            'id_rph' => 8
+        ]);
+        petak::create([
+            'id_ptk' => 17,
+            'nomor_ptk' => 17,
+            'luas_ptk' => 321,
+            'potensi_ptk' => 1,
+            'id_hhk' => 9,
+            'id_rph' => 9
+        ]);
+        petak::create([
+            'id_ptk' => 18,
+            'nomor_ptk' => 18,
+            'luas_ptk' => 321,
+            'id_hhbk' => 2,
+            'id_rph' => 9
+        ]);
+        petak::create([
+            'id_ptk' => 19,
+            'nomor_ptk' => 19,
+            'luas_ptk' => 321,
+            'potensi_ptk' => 1,
+            'id_hhk' => 10,
+            'id_rph' => 10
+        ]);
+        petak::create([
+            'id_ptk' => 20,
+            'nomor_ptk' => 20,
+            'luas_ptk' => 321,
+            'id_hhbk' => 3,
+            'id_rph' => 10
         ]);
         
-        
-        // petak::create([
-        //     'id_ptk' => 1,
-        //     'nomor_ptk' => 1,
-        //     'luas_ptk' => 321,
-        //     'potensi_ptk' => 'Wisata Alam',
-        //     'id_rph' => 1
-        // ]);
-        
+        dataUtama::create([
+            'id_PU' => 1,
+            'tanggal' => "2023-10-06",
+            'id_ptk' => 10,
+            'no_PU' => 7,
+            'koor_x' => -93.098734,
+            'koor_y' => 70.0542324,
+            'luas_PU' => 1092.97,
+            'tanam_sela' => "entah",
+            'tahun_tanam' => 1990,
+            'jarak_tanam' => 59,
+            'umur_tgk' => 90,
+            'keadaan_kes' => "Jelek",
+            'kerataan_tgk' => "Agak rata",
+            'kemurnian' => "Murni",
+            'bentuk_lap' => "Punggung",
+            'derajat_lereng' => 23,
+            'landai_lereng' => "Landai",
+            'kerataan_lap' => "Berombak",
+            'jns_tanah' => "Latosol",
+            'kedalaman' => 93,
+            'dalaman' => "Dalam",
+            'jns_bwh' => "entah",
+            'kerapatan' => "Berbukit"
+        ]);
 
-        // dataUtama::create([
-        //     'id_PU' => 1,
-        //     'tanggal' => "2023-10-06",
-        //     'id_ptk' => 10,
-        //     'no_PU' => 7,
-        //     'koor_x' => -93.098734,
-        //     'koor_y' => 70.0542324,
-        //     'tanam_sela' => "entah",
-        //     'tahun_tanam' => 1990,
-        //     'jarak_tanam' => 59,
-        //     'umur_tgk' => 90,
-        //     'keadaan_kes' => "Jelek",
-        //     'kerataan_tgk' => "Agak rata",
-        //     'kemurnian' => "Murni",
-        //     'bentuk_lap' => "Punggung",
-        //     'derajat_lereng' => 23,
-        //     'landai_lereng' => "Landai",
-        //     'kerataan_lap' => "Berombak",
-        //     'jns_tanah' => "Latosol",
-        //     'kedalaman' => 93,
-        //     'dalaman' => "Dalam",
-        //     'jns_bwh' => "entah",
-        //     'kerapatan' => "Berbukit"
-        // ]);
+        dataTegak::create([
+            'id_tgk' => 1,
+            'id_PU' => 1,
+            'no_pohon' => 100,
+            'id_hhbk' => 1,
+            'diameter' => 17,
+            'tinggi' => 90
+        ]);
 
-        // dataTegak::create([
-        //     'id_tgk' => 1,
-        //     'id_PU' => 1,
-        //     'no_pohon' => 100,
-        //     'jenis_tgk' => "Akasia",
-        //     'diameter' => 17,
-        //     'tinggi' => 90
-        // ]);
-
-        // rosak::create([
-        //     'id_rusak' => 1,
-        //     'jns_rusak' => 1,
-        //     'tgl_input' => "2023-10-06",
-        //     'tgl_rusak' => "2023-10-06",
-        //     'id_PU' => 1,
-        //     'koor_x' => 90123,
-        //     'koor_y' => 82321,
-        //     'diameter' => 89
-        // ]);
+        rosak::create([
+            'id_rusak' => 1,
+            'jns_rusak' => 1,
+            'tgl_input' => "2023-10-06",
+            'tgl_rusak' => "2023-10-06",
+            'id_PU' => 1,
+            'koor_x' => 90123,
+            'koor_y' => 82321,
+            'keterangan' => "Kurang Tau",
+            'diameter' => 89
+        ]);
 
         LuasHutan::create([
             'luas_lindung' => "1000",
