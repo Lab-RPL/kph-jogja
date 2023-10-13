@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id_rph');
             $table->string('nama_rph');
             $table->string('kepala_rph');
-            $table->decimal('luas_rph');
+            $table->double('luas_rph');
             $table->unsignedBigInteger('id_bdh');
             $table->boolean('IsDelete')->default(0);
             $table->foreign('id_bdh')->references('id_bdh')->on('bdh');

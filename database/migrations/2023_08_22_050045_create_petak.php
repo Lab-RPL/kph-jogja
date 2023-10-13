@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id_ptk');
 
             $table->integer('nomor_ptk');
-            $table->decimal('luas_ptk');
+            $table->double('luas_ptk');
             $table->boolean('potensi_ptk')->default(0);
             $table->unsignedBigInteger('id_rph');
             $table->unsignedBigInteger('id_hhk')->nullable();

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id_bdh');
             $table->string('nama_bdh');
             $table->string('kepala_bdh');
-            $table->decimal('luas_bdh');
+            $table->double('luas_bdh');
             $table->boolean('IsDelete')->default(0);
             $table->timestamps();
         });

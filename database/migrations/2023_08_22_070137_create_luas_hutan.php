@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('luas_hutan', function (Blueprint $table) {
             $table->bigIncrements("id_luas");
-            $table->decimal('luas_lindung');
-            $table->decimal('luas_produksi');
+            $table->double('luas_lindung');
+            $table->double('luas_produksi');
             $table->boolean('IsDelete')->default(0);
             $table->timestamps();
         });
