@@ -63,6 +63,10 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>Keterangan</td>
+                            <td height="50px"><span>X</span> <input type="text" name="keterangan"></td>
+                        </tr>
+                        <tr>
                             <td>Foto</td>
                             <td height="50px"><span>X</span> <input type="file" name="foto"></td>
                         </tr>

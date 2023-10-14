@@ -91,6 +91,8 @@
                             <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">Nomor
                                 PU</th>
                             <th colspan="2" style="background-color: #9CC589;" class="text-center">Koordinat Rusak</th>
+                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">Keterangan
+                            </th>
                             <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">Foto
                             </th>
                             <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">Aksi
@@ -115,10 +117,23 @@
                                         <td>{{ $ros->no_PU }}</td>
                                         <td>{{ $ros->koor_x }}</td>
                                         <td>{{ $ros->koor_y }}</td>
+                                        <td>{{ $ros->keterangan }}</td>
                                         <td>
-                                            <a href="#" class="open-popup" data-src="/upload/{{ $ros->foto }}">
-                                                <img src="/upload/{{ $ros->foto }}" alt="Foto Kerusakan" width="100px">
-                                            </a>
+                                            <img id="myImg" src="/upload/{{ $ros->foto }}" alt="Foto Kehilangan"
+                                            style="width:100%;max-width:100px">
+
+                                        <!-- The Modal -->
+                                        <div id="myModal" class="modal">
+
+                                            <!-- The Close Button -->
+                                            <span class="close">&times;</span>
+
+                                            <!-- Modal Content (The Image) -->
+                                            <img class="modal-content" id="img01">
+
+                                            <!-- Modal Caption (Image Text) -->
+                                            <div id="caption"></div>
+                                        </div>
                                         </td>
                                         <td>
                                             <a href="{{ route('rosak.edit', $ros->id_rusak) }}"
@@ -158,6 +173,8 @@
                                 Koordinat Kehilangan</th>
                             <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">
                                 Diameter Tunggak</th>
+                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">
+                                Keterangan</th>
                             <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">Foto
                             </th>
                             <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">Aksi
@@ -183,8 +200,9 @@
                                         <td>{{ $ros->koor_x }}</td>
                                         <td>{{ $ros->koor_y }}</td>
                                         <td>{{ $ros->diameter }}</td>
+                                        <td>{{ $ros->keterangan }}</td>
                                         <td> <!-- Trigger the Modal -->
-                                            <img id="myImg" src="/upload/{{ $ros->foto }}" alt="Snow"
+                                            <img id="myImg" src="/upload/{{ $ros->foto }}" alt="Foto Kehilangan"
                                                 style="width:100%;max-width:300px">
 
                                             <!-- The Modal -->
@@ -215,12 +233,12 @@
 
                     </tbody>
                 </table>
-                <div class="popup " id="imagePopup">
+                {{-- <div class="popup " id="imagePopup">
                     <div class="popup-content">
                         <span class="close" onclick="closePopup()">&times;</span>
                         <img src="" alt="Popup Image" class="popup-img" id="popupImage">
                     </div>
-                </div>
+                </div> --}}
 
                 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
                     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
