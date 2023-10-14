@@ -21,9 +21,8 @@
                                 @foreach ($rph as $rph)
                                     @if ($rph->IsDelete == 0)
                                         {{-- <option value="{{ $rph->id_rph }}">{{ $rph->nama_rph }}</option> --}}
-                                        <option value="{{ $rph->id_rph}}"
-                                        @if ($selectedRph != null && $selectedRph == $rph->id_rph)
-                                        selected @endif >{{ $rph->nama_rph }}</option>
+                                        <option value="{{ $rph->id_rph }}"
+                                            @if ($selectedRph != null && $selectedRph == $rph->id_rph) selected @endif>{{ $rph->nama_rph }}</option>
                                     @endif
                                 @endforeach
                             </select>
@@ -43,12 +42,99 @@
                     </tr>
                     <tr>
                         <td><label for="potensi-ptk">Potensi Petak</label></td>
-                        <td><input type="text" id="potensi-ptk" name="potensi_ptk" required></td>
+                        <td>
+                            <select id="potensi-ptk" name="potensi_ptk" required>
+                                <option value=""disabled selected hidden>Pilih Potensi</option>
+                                <option value="0">Kayu</option>
+                                <option value="1">Bukan Kayu</option>
+                            </select>
+                        </td>
                     </tr>
+                    <tr>
+                        <td><label for="id_hhk">Jenis Tegakan</label></td>
+                        <td>
+                            <select id="jenis_tgk_hhk" name="id_hhk"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="id_hhbk">Jenis Tegakan</label></td>
+                        <td>
+                            <select id="jenis_tgk_hhbk" name="id_hhbk"></select>
+                        </td>
+                    </tr>
+
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+                    <script>
+                       $("#potensi-ptk").change(function() {
+    var type = $(this).val();
+    var url = '{{ route('petak.getJenisTgk', ':type') }}';
+    url = url.replace(':type', type);
+
+    $.ajax({
+        url: url,
+        type: 'GET',
+        success: function(data) {
+            var $jenisTgk_hhk = $('#jenis_tgk_hhk');
+            var $jenisTgk_hhbk = $('#jenis_tgk_hhbk');
+
+            // Empty and hide both
+            $jenisTgk_hhk.empty();
+            $jenisTgk_hhbk.empty();
+            $jenisTgk_hhk.hide();
+            $jenisTgk_hhbk.hide();
+
+            for (var i = 0; i < data.length; i++) {
+                if (type == "0") {
+                    $jenisTgk_hhk.append('<option value=' + data[i].id + '>' + data[i].jenis_tgk + '</option>');
+                    $jenisTgk_hhk.show(); // Show this dropdown after populating data
+                } else if (type == "1") {
+                    $jenisTgk_hhbk.append('<option value=' + data[i].id + '>' + data[i].jenis_tgk + '</option>');
+                    $jenisTgk_hhbk.show(); // Show this dropdown after populating data
+                }
+            }
+        }
+    });
+});
+
+                    </script>
+
+                    {{-- <script>
+                        var jenisTgkData = {
+                          "0": [ // For potensi-ptk = 0
+                            {"id_hhk":"1", "jenis_tgk":"Jenis 1"},
+                            {"id_hhk":"2", "jenis_tgk":"Jenis 2"},
+                            // more data...
+                          ],
+                          "1": [ // For potensi-ptk = 1
+                            {"id_hhbk":"3", "jenis_tgk":"Jenis 3"},
+                            {"id_hhbk":"4", "jenis_tgk":"Jenis 4"},
+                            // more data...
+                          ]
+                        }; 
+                        
+                        function changeDropdownOptions() {
+                          const potensiPtk = document.getElementById("potensi-ptk").value;
+                          const jenisTgk = document.getElementById("jenis_tgk");
+                        
+                          // Clear the existing options
+                          jenisTgk.innerHTML = "";
+                        
+                          jenisTgkData[potensiPtk].forEach(item => {
+                            let option = document.createElement("option");
+                            option.value = potensiPtk === "0" ? item.id_hhk : item.id_hhbk; 
+                            option.text = item.jenis_tgk;
+                            jenisTgk.add(option);
+                          });
+                        }
+                        </script> --}}
+
+
                     <!-- <tr>
-                                        <td><label for="luas-tanah">Keterangan Lain</label></td>
-                                        <td><input type="text" id="luas-rph" name="luas_tanah" required></td>
-                                    </tr> -->
+                                                    <td><label for="luas-tanah">Keterangan Lain</label></td>
+                                                    <td><input type="text" id="luas-rph" name="luas_tanah" required></td>
+                                                </tr> -->
                 </table>
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">
                     <button class="btn btn-warning" style="color: white" onclick="return goBack();">Kembali</button>
