@@ -273,7 +273,7 @@
                             var pnbp = new Chart(ctx2, {
                                 type: 'bar',
                                 data: {
-                                    labels: labels,
+                                    labels: labels.sort(),
                                     datasets: [
                                         {
                                             data: chartData,
