@@ -63,6 +63,17 @@ class petakController extends Controller
             ->pluck('nama_rph', 'id_rph');
         return json_encode($rph);
     }
+
+    // public function getTegakan(Request $request) {
+    //     if ($request->potensiId == "0") {
+    //         $data = DB::table('hhk')->where('petak_id', $request->potensiId)->get();
+    //     } else {
+    //         $data = DB::table('hhbk')->where('petak_id', $request->potensiId)->get();
+    //     }
+        
+    //     return response()->json($data);
+    // }
+    
     public function getJenisTgk($type)
     {
         if ($type == '0') {
@@ -77,23 +88,23 @@ class petakController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $this->validate($request, [
             'id_rph' => 'required',
             'nomor_ptk' => 'required',
             'luas_ptk' => 'required',
             'potensi_ptk' => 'required',
+            'id_tgk' => 'required',
         ]);
 
-        $id_hhk = $request->get('id_hhk', 0); // default 0 (update depending on your DB design)
-        $id_hhbk = $request->get('id_hhbk', 0); // default 0 (update depending on your DB design)
-
+        // Membuat entri baru dalam database menggunakan model Eloquent.
         Petak::create([
             'id_rph' => $request->id_rph,
             'nomor_ptk' => $request->nomor_ptk,
             'luas_ptk' => $request->luas_ptk,
             'potensi_ptk' => $request->potensi_ptk,
-            'id_hhk' => $id_hhk,
-            'id_hhbk' => $id_hhbk,
+            'id_tgk' => $request->id_tgk,
+            'id_hhk' => $request->potensi_ptk == 0 ? $request->id_tgk : null, // jika potensi ptk adalah 0 (Kayu), kita ambil id_tgk
+            'id_hhbk' => $request->potensi_ptk == 1 ? $request->id_tgk : null, // jika potensi ptk adalah 1 (Bukan Kayu), kita ambil id_tgk
         ]);
 
         return redirect()

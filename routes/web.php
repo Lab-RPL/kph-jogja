@@ -92,6 +92,7 @@ Route::put('/petak/{id}', [petakController::class, 'update'])->name('petak.updat
 Route::get('/petak{id_rph}', [petakController::class, 'destroy'])->name('petak.destroy');
 Route::get('rph/get/{id}', [petakController::class,'getRph']);
 Route::get('petak/getJenisTgk/{type}', [PetakController::class, 'getJenisTgk'])->name('petak.getJenisTgk');
+// Route::post('/getTegakan',[petakController::class,'getTegakan']);
 
 
 //Potensi hasil hutan
