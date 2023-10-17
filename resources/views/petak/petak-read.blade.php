@@ -50,7 +50,13 @@
                             <tr>
                                 <td>{{ $da->nomor_ptk }}</td>
                                 <td>{{ $da->luas_ptk }} Ha</td>
-                                <td>{{ $da->potensi_ptk }}</td>
+                                <td>   @if($da->potensi_ptk == 0)
+                                    Kayu
+                                @elseif($da->potensi_ptk == 1)
+                                    Bukan Kayu
+                                @else
+                                    Data Tidak Tersedia
+                                @endif</td>
                             </tr>
                         @endforeach
                     </tbody>

@@ -62,9 +62,9 @@
                                 <td>{{ $da->luas_ptk }} Ha</td>
                                 <td>
                                     @if($da->potensi_ptk == 0)
-                                        Kayu
+                                        Hutan Kayu
                                     @elseif($da->potensi_ptk == 1)
-                                        Bukan Kayu
+                                         Hutan Bukan Kayu
                                     @else
                                         Data Tidak Tersedia
                                     @endif

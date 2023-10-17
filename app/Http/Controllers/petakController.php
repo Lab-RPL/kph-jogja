@@ -102,7 +102,7 @@ class petakController extends Controller
             'nomor_ptk' => $request->nomor_ptk,
             'luas_ptk' => $request->luas_ptk,
             'potensi_ptk' => $request->potensi_ptk,
-            'id_tgk' => $request->id_tgk,
+            'id_tgk' => $request->jenis_tgk,
             'id_hhk' => $request->potensi_ptk == 0 ? $request->id_tgk : null, // jika potensi ptk adalah 0 (Kayu), kita ambil id_tgk
             'id_hhbk' => $request->potensi_ptk == 1 ? $request->id_tgk : null, // jika potensi ptk adalah 1 (Bukan Kayu), kita ambil id_tgk
         ]);
@@ -156,6 +156,9 @@ class petakController extends Controller
         $petak->nomor_ptk = $request->nomor_ptk;
         $petak->luas_ptk = $request->luas_ptk;
         $petak->potensi_ptk = $request->potensi_ptk;
+        $petak->id_tgk = $request->jenis_tgk;
+        $petak->id_hhk = $request->potensi_ptk == 0 ? $request->id_tgk : null; // jika potensi ptk adalah 0 (Kayu), kita ambil id_tgk
+        $petak->id_hhbk = $request->potensi_ptk == 1 ? $request->id_tgk : null; // jika potensi ptk adalah 1 (Bukan Kayu), kita ambil id_tgk
 
         $petak->save();
 
