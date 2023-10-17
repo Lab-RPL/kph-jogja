@@ -85,9 +85,18 @@
                         </tr>
                         <tr>
                             <td>Foto</td>
-                            <td height="50px"><span>X</span> <input type="file" name="foto"
-                                    value="{{ $rosak->foto }}"></td>
+                            <td height="50px">
+                                <span>X</span>
+                                @if ($rosak->foto)
+                                    <img src="{{ asset('upload/' . $rosak->foto) }}" style="max-width: 50px;" alt="Foto Kehilangan">
+                                @else
+                                    <p>Foto tidak tersedia</p>
+                                @endif
+                                <input type="file" name="foto">
+                            </td>
                         </tr>
+                        
+                        
                         <tr id="dimtung" style="display: none;">
                             <td>Diameter Tunggak</td>
                             <td height="50px"><span>X</span> <input type="text" name="diameter"
