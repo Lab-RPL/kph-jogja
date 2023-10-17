@@ -97,6 +97,7 @@ class rosakController extends Controller
         $rosak->id_PU = $request->id_PU;
         $rosak->koor_x = $request->koor_x;
         $rosak->koor_y = $request->koor_y;
+        $rosak->keterangan = $request->keterangan;
         $rosak->foto = $imageFileName;
 
        
