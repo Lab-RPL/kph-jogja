@@ -174,7 +174,7 @@ class DatabaseSeeder extends Seeder
         ]);
         hhk::create([
             'id_hhk' => 6,
-            'jenis_tgk' => "Kayu  Putih" 
+            'jenis_tgk' => "Kayu Putih" 
         ]);
         hhk::create([
             'id_hhk' => 7,
@@ -370,7 +370,7 @@ class DatabaseSeeder extends Seeder
             'jarak_tanam' => 59,
             'umur_tgk' => 90,
             'keadaan_kes' => "Jelek",
-            'kerataan_tgk' => "Agak rata",
+            'kerataan_tgk' => "Agak Rata",
             'kemurnian' => "Murni",
             'bentuk_lap' => "Punggung",
             'derajat_lereng' => 23,
