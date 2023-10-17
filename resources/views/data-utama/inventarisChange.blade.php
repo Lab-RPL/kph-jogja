@@ -31,15 +31,7 @@
                                 <td width="300px">Tanggal</td>
                                 <td height="50px"><span>X</span> <input type="date" name="tanggal"
                                         value="{{ $data->tanggal }}" required></td>
-                            </tr>
-                            {{-- <tr>
-                                <td>BDH</td>
-                                <td height="50px"><span>X</span> <input type="text" name=""></td>
-                            </tr>
-                            <tr>
-                                <td>RPH</td>
-                                <td height="50px"><span>X</span> <input type="text"></td>
-                            </tr> --}}
+                                </tr>
                             <tr>
                                 <td>Petak</td>
                                 <td height="50px">
@@ -73,6 +65,12 @@
                             <tr>
                                 <td height="50px">Y <input placeholder="Koordinat Y" type="text" name="koor_y" required
                                         value="{{ $data->koor_y }}"></td>
+                            </tr>
+                            <tr>
+                                <td>Luas Petak Ukur</td>
+                                <td height="50px"><span>X</span> <input type="text" name="luas_PU"
+                                        value="{{ $data->luas_PU }}" required>
+                                </td>
                             </tr>
                             <tr>
                                 <td colspan="2" height="50px">
@@ -208,7 +206,7 @@
                                         <option value="">Pilih Jenis Tanah</option>
                                         <option value="Abu" @if ($data->jns_tanah == 'Abu') selected @endif>Abu
                                         </option>
-                                        <option value="latosol" @if ($data->jns_tanah == 'latosol') selected @endif>Latosol
+                                        <option value="Latosol" @if ($data->jns_tanah == 'Latosol') selected @endif>Latosol
                                         </option>
                                         <option value="Kapur" @if ($data->jns_tanah == 'Kapur') selected @endif>Kapur
                                         </option>
@@ -269,7 +267,8 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); margin-top: 5rem; font-weight: bold; font-size: 18px; text-align: center;">KETERANGAN LAIN</pre>
+                                    <pre class="form-control"
+                                        style="background-color: rgba(216, 245, 199, 0.664); margin-top: 5rem; font-weight: bold; font-size: 18px; text-align: center;">KETERANGAN LAIN</pre>
                                 </td>
                             </tr>
                             <tr>
@@ -307,7 +306,8 @@
                     <div style="display: flex; justify-content: space-between; margin-top: 60px;">
                         <a class="btn btn-danger" style="color: white; font-weight: bold;"
                             onclick="return goBack();">Kembali</a>
-                        <button class="btn btn-primary" style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                        <button class="btn btn-primary"
+                            style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
                             type="submit">Submit</button>
                     </div>
 
@@ -325,18 +325,18 @@
 
     <style>
         /* .border-lists {
-                                        position: relative;
-                                        border: 3px solid #ccc;
-                                        border-radius: 20px;
-                                        padding: 60px;
-                                        max-width: 980px;
-                                        width: 100%;
-                                        height: auto;
-                                        max-height: 550px;
-                                        border-color: #0CB166;
-                                        overflow-y: scroll;
-                                        margin-bottom: 38px;
-                                        } */
+                                            position: relative;
+                                            border: 3px solid #ccc;
+                                            border-radius: 20px;
+                                            padding: 60px;
+                                            max-width: 980px;
+                                            width: 100%;
+                                            height: auto;
+                                            max-height: 550px;
+                                            border-color: #0CB166;
+                                            overflow-y: scroll;
+                                            margin-bottom: 38px;
+                                            } */
 
         pre {
             font-weight: bold;

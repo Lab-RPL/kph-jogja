@@ -62,6 +62,12 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td>Luas Petak Ukur</td>
+                                <td><span>:</span>
+                                    {{ $data->luas_PU }}
+                                </td>
+                            </tr>
+                            <tr>
                                 <td colspan="2">
                                     <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); margin-top: 5rem; font-weight: bold;">RISALAH TEGAKAN</pre>
                                 </td>

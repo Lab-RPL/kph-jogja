@@ -96,6 +96,7 @@ class inventarisController extends Controller
             'no_PU' => $request->no_PU,
             'koor_x' => $request->koor_x,
             'koor_y' => $request->koor_y,
+            'luas_PU' => $request->luas_PU,
             'tanam_sela' => $request->tanam_sela,
             'tahun_tanam' => $request->tahun_tanam,
             'jarak_tanam' => $request->jarak_tanam,
@@ -154,6 +155,7 @@ class inventarisController extends Controller
             'no_PU' => 'required',
             'koor_x' => 'required',
             'koor_y' => 'required',
+            'luas_PU' => 'required',
             'tanam_sela' => 'required',
             'tahun_tanam' => 'required',
             'jarak_tanam' => 'required',
@@ -182,6 +184,7 @@ class inventarisController extends Controller
         $data->no_PU = $request->no_PU;
         $data->koor_x = $request->koor_x;
         $data->koor_y = $request->koor_y;
+        $data->luas_PU = $request->luas_PU;
         $data->tanam_sela = $request->tanam_sela;
         $data->tahun_tanam = $request->tahun_tanam;
         $data->jarak_tanam = $request->jarak_tanam;

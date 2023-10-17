@@ -65,6 +65,10 @@
                                         required></td>
                             </tr>
                             <tr>
+                                <td>Luas Petak Ukur</td>
+                                <td height="50px"><span>X</span> <input type="text" name="luas_PU" required></td>
+                            </tr>
+                            <tr>
                                 <td colspan="2" height="50px">
                                     <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); font-weight: bold; margin-top: 5rem;">RISALAH TEGAKAN</pre>
                                 </td>
@@ -123,7 +127,9 @@
                             </tr>
                             <tr>
                                 <td colspan="2" height="50px">
-                                    <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); font-weight: bold; font-size: 18px; text-align: center; margin-top: 5rem;" class="form-control">RISALAH LAPANGAN</pre>
+                                    <pre class="form-control"
+                                        style="background-color: rgba(216, 245, 199, 0.664); font-weight: bold; font-size: 18px; text-align: center; margin-top: 5rem;"
+                                        class="form-control">RISALAH LAPANGAN</pre>
                                 </td>
                             </tr>
                             <tr>
@@ -196,7 +202,8 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); font-weight: bold; font-size: 18px; text-align: center; margin-top: 5rem;">RISALAH TUMBUHAN BAWAH</pre>
+                                    <pre class="form-control"
+                                        style="background-color: rgba(216, 245, 199, 0.664); font-weight: bold; font-size: 18px; text-align: center; margin-top: 5rem;">RISALAH TUMBUHAN BAWAH</pre>
                                 </td>
                             </tr>
                             <tr>
@@ -220,7 +227,8 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <pre class="form-control" style="background-color: rgba(216, 245, 199, 0.664); font-weight: bold; font-size: 18px; text-align: center; margin-top: 5rem;">KETERANGAN LAIN</pre>
+                                    <pre class="form-control"
+                                        style="background-color: rgba(216, 245, 199, 0.664); font-weight: bold; font-size: 18px; text-align: center; margin-top: 5rem;">KETERANGAN LAIN</pre>
                                 </td>
                             </tr>
                             <tr>
@@ -272,18 +280,18 @@
 
     <style>
         /* .border-lists {
-                                    position: relative;
-                                    border: 3px solid #ccc;
-                                    border-radius: 20px;
-                                    padding: 60px;
-                                    max-width: 980px;
-                                    width: 100%;
-                                    height: auto;
-                                    max-height: 550px;
-                                    border-color: #0CB166;
-                                    overflow-y: scroll;
-                                    margin-bottom: 38px;
-                                    } */
+                                        position: relative;
+                                        border: 3px solid #ccc;
+                                        border-radius: 20px;
+                                        padding: 60px;
+                                        max-width: 980px;
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 550px;
+                                        border-color: #0CB166;
+                                        overflow-y: scroll;
+                                        margin-bottom: 38px;
+                                        } */
 
         pre {
             font-weight: bold;
