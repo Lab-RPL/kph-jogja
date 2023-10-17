@@ -162,17 +162,19 @@
                                 <canvas id="produksiHutanChart" class="chart1"></canvas>
                             </div>
                         </div>
-                            <canvas id="pnbp" class="chart2"></canvas>
+                        <canvas id="pnbp" class="chart2"></canvas>
                     </div>
                 </div>
-<style>
-    .produksi p, .bdh p, .potensi p{
-        text-align: center;
-        font-size: 22px;
-        margin-bottom: -20px;
-        margin-top: 5px;
-    }
-</style>
+                <style>
+                    .produksi p,
+                    .bdh p,
+                    .potensi p {
+                        text-align: center;
+                        font-size: 22px;
+                        margin-bottom: -20px;
+                        margin-top: 5px;
+                    }
+                </style>
                 {{-- </div> --}}
                 <!-- =========== Scripts =========  -->
                 <script src="/js/main.js"></script>
@@ -199,7 +201,7 @@
                             labels: ['Bdh 1', 'Bdh 2', 'Bdh3', 'Bdh 4', 'Bdh 5'],
                             datasets: [{
                                 data: [35, 60, 20, 20, 36],
-                                backgroundColor: ["#438A70", "#215B63", "#5FCC9C","#AAFFC7"],
+                                backgroundColor: ["#438A70", "#215B63", "#5FCC9C", "#AAFFC7"],
 
                             }]
                         },
@@ -220,7 +222,7 @@
                             labels: ['Potensi 1', 'Potensi 2', 'Potensi 3'],
                             datasets: [{
                                 data: [35, 60, 5],
-                                backgroundColor: ["#438A70", "#215B63", "#5FCC9C","#AAFFC7"],
+                                backgroundColor: ["#438A70", "#215B63", "#5FCC9C", "#AAFFC7"],
                             }]
                         },
                         options: {
@@ -241,7 +243,7 @@
                             labels: ['Produksi 1', 'Produksi 2', 'Produksi 3'],
                             datasets: [{
                                 data: [50, 45, 5],
-                                backgroundColor: ["#438A70", "#215B63", "#5FCC9C","#AAFFC7"],
+                                backgroundColor: ["#438A70", "#215B63", "#5FCC9C", "#AAFFC7"],
                             }]
                         },
                         options: {
@@ -254,7 +256,7 @@
                             }
                         }
                     });
-                    
+
                     $.ajax({
                         url: '/chart-data',
                         method: 'GET',
@@ -268,18 +270,24 @@
                                 chartData.push(data[i].nominal_pnbp);
                             }
 
-                            // Buat chart dengan data baru
+                            // Buat chart dengan data ba    ru
                             var ctx2 = document.getElementById('pnbp');
                             var pnbp = new Chart(ctx2, {
                                 type: 'bar',
+                                axisX: {
+                                    title: "Primary X Axis"
+                                },
+                                axisY: {
+                                    title: "Primary Y Axis"
+                                },
                                 data: {
-                                    labels: labels.sort(),
-                                    datasets: [
-                                        {
+                                    labels: labels,
+                                    datasets: [{
                                             data: chartData,
                                             borderColor: "#006C9A",
                                             backgroundColor: "#006C9A",
                                             borderWidth: 2,
+                                            cubicInterpolationMode: 'monotone',
                                             type: 'line',
                                         },
                                         {
@@ -294,13 +302,30 @@
                                     plugins: {
                                         legend: {
                                             display: false
-                                        }
+                                        },
+                                    },
+                                    scales:{
+                                        y:{
+                                            beginAtZero: true,
+                                            title:{
+                                                display:true,
+                                                text:'Nominal Penerimaan Negara Bukan Pajak'
+                                                
+                                            }
+                                        },
+                                        x:{
+                                            beginAtZero: true,
+                                            title:{
+                                                display:true,
+                                                text:'Tahun Penerimaan Negara Bukan Pajak'
+                                            }
+                                        },
                                     }
                                 }
                             });
+                            pnbp.render()
+
                         }
                     });
-
-
                 </script>
             @endsection
