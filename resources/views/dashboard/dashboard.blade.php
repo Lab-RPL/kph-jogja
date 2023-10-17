@@ -149,18 +149,18 @@
 
                     <div class="chart-container">
                         <div class="bawah">
-                            <div class="potensi">
-                                <p>Potensi Hasil Hutan</p>
+                            {{-- <div class="potensi">
+                                <p>Potensi Hasil Hutan</p> --}}
                                 <canvas id="hasilHutanChart" class="chart1"></canvas>
-                            </div>
+                            {{-- </div>
                             <div class="bdh">
-                                <p>BDH</p>
+                                <p>BDH</p> --}}
                                 <canvas id="bdh" class="chart1"></canvas>
-                            </div>
+                            {{-- </div>
                             <div class="produksi">
-                                <p>Produksi Hasil Hutan</p>
+                                <p>Produksi Hasil Hutan</p> --}}
                                 <canvas id="produksiHutanChart" class="chart1"></canvas>
-                            </div>
+                            {{-- </div> --}}
                         </div>
                         <canvas id="pnbp" class="chart2"></canvas>
                     </div>
@@ -211,6 +211,10 @@
                             plugins: {
                                 legend: {
                                     display: false
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'BAGIAN DAERAH HUTAN'
                                 }
                             }
                         }
@@ -231,6 +235,10 @@
                             plugins: {
                                 legend: {
                                     display: false
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'POTENSI HASIL HUTAN'
                                 }
                             }
                         }
@@ -247,13 +255,18 @@
                             }]
                         },
                         options: {
+
                             responsive: true,
                             maintainAspectRatio: false,
                             plugins: {
                                 legend: {
                                     display: false
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'PRODUKSI HASIL HUTAN'
                                 }
-                            }
+                            },
                         }
                     });
 
@@ -303,21 +316,25 @@
                                         legend: {
                                             display: false
                                         },
+                                title: {
+                                    display: true,
+                                    text: 'PENERIMAAN NEGARA BUKAN PAJAK'
+                                }
                                     },
-                                    scales:{
-                                        y:{
+                                    scales: {
+                                        y: {
                                             beginAtZero: true,
-                                            title:{
-                                                display:true,
-                                                text:'Nominal Penerimaan Negara Bukan Pajak'
-                                                
+                                            title: {
+                                                display: true,
+                                                text: 'Nominal Penerimaan Negara Bukan Pajak'
+
                                             }
                                         },
-                                        x:{
+                                        x: {
                                             beginAtZero: true,
-                                            title:{
-                                                display:true,
-                                                text:'Tahun Penerimaan Negara Bukan Pajak'
+                                            title: {
+                                                display: true,
+                                                text: 'Tahun Penerimaan Negara Bukan Pajak'
                                             }
                                         },
                                     }
