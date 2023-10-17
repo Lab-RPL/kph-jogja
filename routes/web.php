@@ -105,7 +105,10 @@ Route::get('/data-potensi-hhk/{id_hhk}/edit', [potensiController::class, 'edit_h
 Route::get('/data-potensi-hhbk/{id_hhbk}/edit', [potensiController::class, 'edit_hhbk'])->name('potensi.edit_hhbk');
 Route::put('/data-potensi-hhk/{id}', [potensiController::class, 'update_hhk'])->name('potensi.update_hhk');
 Route::put('/data-potensi-hhbk/{id}', [potensiController::class, 'update_hhbk'])->name('potensi.update_hhbk');
-Route::get('/data-potensi/{id_hhbk}', [potensiController::class, 'destroy'])->name('potensi.destroy');
+Route::get('/data-potensi/hhbk/{id_hhbk}',[potensiController::class,'destroy_hhbk'])->name('potensi.destroy_hhbk');
+Route::get('/data-potensi/hhk/{id_hhk}',[potensiController::class,'destroy_hhk'])->name('potensi.destroy_hhk');
+// Route::get('/data-potensi/{id_hhk}', [potensiController::class, 'destroy_hhk'])->name('potensi.destroy_hhk');
+// Route::get('/data-potensi/{id_hhbk}', [potensiController::class, 'destroy_hhbk'])->name('potensi.destroy_hhbk');
 
 // ADMIN
 Route::get('/admin', [adminController::class, 'index'])->name('admin.index');

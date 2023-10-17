@@ -11,6 +11,13 @@
             <h2 class="middletext">POTENSI HASIL HUTAN</h2>
             <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
 
+            <div class="form-group">
+                <select class="form-control" id="tableSelect">
+                    <option value="hasil-hutan-kayu">Hasil Hutan Kayu</option>
+                    <option value="hasil-hutan-bukan-kayu">Hasil Hutan Bukan Kayu</option>
+                </select>
+            </div>
+
             <style>
                 div.dataTables_wrapper div.dataTables_filter {
                     text-align: right;
@@ -23,72 +30,86 @@
                 @if (Session::has('pesan'))
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
-                <div class="wrapper">
-                    <div class="hhbk">
-                        <h3>Hasil Hutan Kayu</h3>
+                <div id="wrapper-hasil-hutan-kayu">
+                    <div class="wrapper">
+                        <div class="hhbk">
+                            <h3>Hasil Hutan Kayu</h3>
+                        </div>
+                    </div>
+
+                    <!-- tabel potensi -->
+
+                    <table id="tabelData" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="background-color: #9CC589;" class="text-center">Jenis Tegakan</th>
+                                <th style="background-color: #9CC589;" class="text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($data1 as $da)
+                                @if ($da->IsDelete == 0)
+                                    <tr>
+                                        <td>{{ $da->jenis_tgk }}</td>
+                                        <td style="justify-content: space-between; align-items:center">
+                                            <a href="{{ route('potensi.edit_hhk', $da->id_hhk) }}"
+                                                class="btn btn-warning mb-1 m-l-1"><i class="fas fa-pencil-alt"></i></a>
+                                            <a href="{{ route('potensi.destroy_hhk', ['id_hhk' => $da->id_hhk]) }}"
+                                                class="btn btn-danger mb-1 m-l-2">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endif
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <div style="display: flex; justify-content: flex-end;" class="nav-item mt-4">
+                        <a class="btn btn-primary"
+                            style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                            href="{{ route('potensi.create_hhk')}}">Tambah Data</a>
                     </div>
                 </div>
 
-                <!-- tabel potensi -->
+                <div id="wrapper-hasil-hutan-bukan-kayu" style="display: none">
+                    <div class="wrapper">
+                        <div class="hhbk">
+                            <h3>Hasil Hutan Bukan Kayu</h3>
+                        </div>
+                    </div>
 
-                <table id="tabelData" class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th style="background-color: #9CC589;" class="text-center">Jenis Tegakan</th>
-                            <th style="background-color: #9CC589;" class="text-center">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{-- @foreach ($data as $da)
-                            @if ($da->IsDelete == 0)
-                                <tr>
-                                    <td>{{ $da->jenis_tgk }}</td>
-                                    <td style="justify-content: space-between; align-items:center">
-                                        <a href="{{ route('potensi.edit_hhbk', $da->id_hhk) }}"
+                    <table id="tabelData2" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="background-color: #9CC589;" class="text-center">Jenis Tegakan</th>
+                                <th style="background-color: #9CC589;" class="text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($data as $da)
+                                @if ($da->IsDelete == 0)
+                                    <tr>
+                                        <td>{{ $da->jenis_tgk }}</td>
+                                        <td style="justify-content: space-between; align-items:center">
+                                            <a href="{{ route('potensi.edit_hhbk', $da->id_hhbk) }}"
                                             class="btn btn-warning mb-1 m-l-1"><i class="fas fa-pencil-alt"></i></a>
-                                        <a data-id="{{ $da->id_hbk }}" href="{{ route('potensi.destroy', $da->id_hbk) }}"
-                                            class="btn btn-danger mb-1 m-l-2"><i class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                            @endif
-                        @endforeach --}}
-                    </tbody>
-                </table>
-
-                <div class="wrapper">
-                    <div class="hhbk">
-                        <h3>Hasil Hutan Bukan Kayu</h3>
+                                            <a href="{{ route('potensi.destroy_hhbk', ['id_hhbk' => $da->id_hhbk]) }}"
+                                                class="btn btn-danger mb-1 m-l-2">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endif
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <div style="display: flex; justify-content: flex-end;" class="nav-item mt-4">
+                        <a class="btn btn-primary"
+                            style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                            href="{{ route('potensi.create_hhbk') }}">Tambah Data</a>
                     </div>
                 </div>
 
-                <table id="tabelData2" class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th style="background-color: #9CC589;" class="text-center">Jenis Tegakan</th>
-                            <th style="background-color: #9CC589;" class="text-center">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{-- @foreach ($data as $da)
-                            @if ($da->IsDelete == 0)
-                                <tr>
-                                    <td>{{ $da->jenis_tgk }}</td>
-                                    <td style="justify-content: space-between; align-items:center">
-                                        <a href="{{ route('potensi.edit_hhbk', $da->id_hhbk) }}"
-                                            class="btn btn-warning mb-1 m-l-1"><i class="fas fa-pencil-alt"></i></a>
-                                        <a data-id="{{ $da->id_hhbk }}" href="{{ route('potensi.destroy', $da->id_hhbk) }}"
-                                            class="btn btn-danger mb-1 m-l-2"><i class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                            @endif
-                        @endforeach --}}
-                    </tbody>
-                </table>
-                <div style="display: flex; justify-content: flex-end;" class="nav-item mt-4">
-                    <a class="btn btn-primary"
-                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
-                        href="">Tambah Data</a>
-                </div>
                 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
                     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
                 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
@@ -109,6 +130,18 @@
                         ],
 
                         pageLength: 5 // Menampilkan 5 data per halaman
+                    });
+
+                    document.getElementById('tableSelect').addEventListener('change', function() {
+                        var tableKayu = document.getElementById('wrapper-hasil-hutan-kayu');
+                        var tableBukanKayu = document.getElementById('wrapper-hasil-hutan-bukan-kayu');
+                        if (this.value === 'hasil-hutan-kayu') {
+                            tableKayu.style.display = 'block';
+                            tableBukanKayu.style.display = 'none';
+                        } else {
+                            tableBukanKayu.style.display = 'block';
+                            tableKayu.style.display = 'none';
+                        }
                     });
                 </script>
             </form>

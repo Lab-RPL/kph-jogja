@@ -16,8 +16,9 @@ class potensiController extends Controller
             return redirect('/');
         }
 
-        $data = hhbk::where('IsDelete',0)->paginate(5);
-        return view("potensi-hutan.potensi-hutan",['data'=>$data]);
+        $data = hhbk::where('IsDelete',0)->paginate(100000000);
+        $data1 = hhk::where('IsDelete',0)->paginate(100000000);
+        return view("potensi-hutan.potensi-hutan",compact('data','data1'));
     }
 
     public function create_hhk()
@@ -50,12 +51,55 @@ class potensiController extends Controller
         return redirect('/data-potensi')->with('pesan', 'Data HHBK Berhasil Disimpan');
     }
 
-    public function destroy($id)
-    {
-
-
-        return redirect()->back()->with('pesan', 'Data Hasil Hutan berhasil Dihapus');
+    public function destroy_hhbk($id_hhbk){
+        $hhbk = hhbk::find($id_hhbk);
+        if($hhbk){
+            $hhbk->IsDelete =1;
+            $hhbk->save();
+            return redirect()->back()->with('pesan',"Data Hasil Bukan Kayu Berhasil Dihapus");
+        }
     }
+    public function destroy_hhk($id_hhk){
+        $hhk = hhk::find($id_hhk);
+        if($hhk){
+            $hhk->IsDelete =1;
+            $hhk->save();
+            return redirect()->back()->with('pesan',"Data Hasil Kayu Berhasil Dihapus");
+        }
+    }
+   // Ubah fungsi destroy anda seperti ini.
+// public function destroy_hhk($id) {
+//     // Cek apakah ID tersebut ada di tabel hhk.
+//     $hhk = Hhk::find($id);
+//     if ($hhk) {
+//         $hhk->IsDelete = 1;
+//         $hhk->save();
+
+//         return redirect()->back()->with('pesan', 'Data Hasil Hutan berhasil Dihapus');
+//     }
+
+//     // Cek apakah ID tersebut ada di tabel hhbk.
+//     // $hhbk = Hhbk::find($id);
+//     // if ($hhbk) {
+//     //     $hhbk->IsDelete = 1;
+//     //     $hhbk->save();
+        
+//     //     return redirect()->back()->with('pesan', 'Data Hasil Hutan berhasil Dihapus');
+//     // }
+    
+//     // Kalau ID tersebut tak ada di kedua tabel, maka kasih pesan error.
+//     return redirect()->back()->with('pesan', 'ID tidak ditemukan');
+// }
+
+// public function destroy_hhbk($id_hhbk){
+//     $hhbk = hhbk::find($id_hhbk);
+//     if ($hhbk) {
+//         $hhbk->IsDelete = 1;
+//         $hhbk->save();
+//     }
+
+//     return redirect()->back()->with('pesan','Data Hasil Bukan Kayu berhasil dihapus');
+// }
 
     public function edit_hhk($id)
     {
