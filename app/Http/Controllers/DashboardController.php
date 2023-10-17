@@ -26,6 +26,8 @@ class DashboardController extends Controller
         // Ambil data dari database
         $pnbpData = DB::table('pnbp')
                         ->select('tahun_pnbp', 'nominal_pnbp')
+                        ->where('isDelete', 0)
+                        ->orderBy('tahun_pnbp', 'asc')
                         ->get();
     
         // Kembalikan sebagai response JSON
