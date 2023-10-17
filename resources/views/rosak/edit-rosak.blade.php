@@ -80,6 +80,10 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>Keterangan</td>
+                            <td height="50px"><span>X</span> <input type="text" name="keterangan" value="{{$rosak->keterangan}}"></td>
+                        </tr>
+                        <tr>
                             <td>Foto</td>
                             <td height="50px"><span>X</span> <input type="file" name="foto"
                                     value="{{ $rosak->foto }}"></td>
@@ -89,6 +93,7 @@
                             <td height="50px"><span>X</span> <input type="text" name="diameter"
                                     value="{{ $rosak->diameter }}"></td>
                         </tr>
+
                     </tbody>
                 </table>
                 <div style="display: flex; justify-content: space-between; margin-top: 15px;">
@@ -100,17 +105,25 @@
     </form>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Check value of "jenis-rosak" input
-            var jenisRusakValue = $('#jenis-rosak').val();
-            // If the value is 'Hilang', show the "dimtung" row
-            if (jenisRusakValue == 'Hilang') {
-                $('#dimtung').show();
-            } else {
-                // Otherwise hide it
-                $('#dimtung').hide();
-            }
-        });
-    </script>
+  <script>
+    document.getElementById('jenis-rosak').addEventListener('change', function() {
+        var hilangInput = document.getElementById('dimtung');
+        if (this.value === '1') {
+            hilangInput.style.display = 'table-row'; // Menampilkan elemen 'dimtung' jika jenis adalah 'Hilang'
+        } else {
+            hilangInput.style.display = 'none'; // Menyembunyikan elemen 'dimtung' jika jenis adalah 'Rusak' atau tidak dipilih
+        }
+    });
+
+    // Panggil event change saat halaman dimuat untuk menentukan apakah 'dimtung' harus ditampilkan
+    document.addEventListener('DOMContentLoaded', function() {
+        var hilangInput = document.getElementById('dimtung');
+        var jenisRosak = document.getElementById('jenis-rosak');
+
+        if (jenisRosak.value === '1') {
+            hilangInput.style.display = 'table-row'; // Menampilkan elemen 'dimtung' jika jenis awalnya adalah 'Hilang'
+        }
+    });
+</script>
+
 @endsection

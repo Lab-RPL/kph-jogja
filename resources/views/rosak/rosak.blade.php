@@ -11,65 +11,8 @@
             <h2 class="mt-2 middletext">DATA KERUSAKAN / KEHILANGAN</h2>
             <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
 
-            <style>
-                div.dataTables_wrapper div.dataTables_filter {
-                    text-align: right;
-                    margin-right: 50px;
-                }
-
-                /* Style untuk popup */
-                .popup {
-                    /* display: none; */
-                    height: 0;
-                    justify-content: center;
-                    align-items: center;
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    background-color: rgba(0, 0, 0,0.8);
-                    z-index: 1;
-                    transition: 0.5s
-                }
-
-                /* Style untuk konten popup */
-                .popup-content {
-
-                    /* position: absolute; */
-                    /* top: 50%; */
-                    /* left: 50%; */
-                    background-color: #fff;
-                    transition: 0.5s transform ease-in-out; 
-                    padding: 20px;
-                    border-radius: 5px;
-                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-                    text-align: center;
-                    transform: translateY(-50%);
-
-                }
-
-                .active{
-                    transform: translateY(0);
-                }
-
-                x
-
-                /* Style untuk tombol tutup */
-                .close {
-                    position: absolute;
-                    top: 10px;
-                    right: 10px;
-                    cursor: pointer;
-                }
-
-                /* Style untuk gambar dalam popup */
-                .popup-img {
-                    max-width: 100%;
-                    max-height: 80vh;
-                }
-            </style>
-
             <form>
+                <!-- tabel kerusakan -->
                 <div class="wrapper">
                     <div class="bdh">
                         <h3>Data Kerusakan</h3>
@@ -79,7 +22,6 @@
                 @if (Session::has('pesan'))
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
-                <!-- tabel kerusakan -->
 
                 <table id="tabelData" class="table table-bordered">
                     <thead>
@@ -91,7 +33,8 @@
                             <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">Nomor
                                 PU</th>
                             <th colspan="2" style="background-color: #9CC589;" class="text-center">Koordinat Rusak</th>
-                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">Keterangan
+                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">
+                                Keterangan
                             </th>
                             <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">Foto
                             </th>
@@ -119,28 +62,18 @@
                                         <td>{{ $ros->koor_y }}</td>
                                         <td>{{ $ros->keterangan }}</td>
                                         <td>
-                                            <img id="myImg" src="/upload/{{ $ros->foto }}" alt="Foto Kehilangan"
-                                            style="width:100%;max-width:100px">
-
-                                        <!-- The Modal -->
-                                        <div id="myModal" class="modal">
-
-                                            <!-- The Close Button -->
-                                            <span class="close">&times;</span>
-
-                                            <!-- Modal Content (The Image) -->
-                                            <img class="modal-content" id="img01">
-
-                                            <!-- Modal Caption (Image Text) -->
-                                            <div id="caption"></div>
-                                        </div>
+                                            <a href="#" class="open-popup" data-src="/upload/{{ $ros->foto }}"
+                                                data-caption="Foto Kerusakan">
+                                                <img class="" style="width:100%;max-width:50px"
+                                                    src="/upload/{{ $ros->foto }}" alt="Foto Kerusakan">
+                                            </a>
                                         </td>
                                         <td>
                                             <a href="{{ route('rosak.edit', $ros->id_rusak) }}"
                                                 class="btn btn-warning mb-1 m-l-1 ms-2"><i
                                                     class="fas fa-pencil-alt"></i></a>
                                             <a href="{{ route('rosak.destroy', $ros->id_rusak) }}"
-                                                class="btn btn-danger mb-1 m-l-1 ms-2"><i class="fa fa-trash"></i></a>
+                                                class="btn btn-danger mb-1 m-l-1"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                 @endif
@@ -150,7 +83,9 @@
                     </tbody>
                 </table>
 
-                
+                <br>
+                <br>
+                <!-- Tabel Kehilangan -->
 
                 <div class="wrapper">
                     <div class="bdh">
@@ -158,15 +93,13 @@
                     </div>
                 </div>
 
-                <!-- Tabel Kehilangan -->
-
                 <table id="tabelData2" class="table table-bordered">
                     <thead>
                         <tr>
                             <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">
                                 Tanggal Input</th>
                             <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">
-                                Tanggal Rusak</th>
+                                Tanggal Kehilangan</th>
                             <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">Nomor
                                 PU</th>
                             <th colspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">
@@ -199,46 +132,44 @@
                                         <td>{{ $ros->no_PU }}</td>
                                         <td>{{ $ros->koor_x }}</td>
                                         <td>{{ $ros->koor_y }}</td>
-                                        <td>{{ $ros->diameter }}</td>
+                                        <td style="width: 30px">{{ $ros->diameter }}</td>
                                         <td>{{ $ros->keterangan }}</td>
-                                        <td> <!-- Trigger the Modal -->
-                                            <img id="myImg" src="/upload/{{ $ros->foto }}" alt="Foto Kehilangan"
-                                                style="width:100%;max-width:300px">
-
-                                            <!-- The Modal -->
-                                            <div id="myModal" class="modal">
-
-                                                <!-- The Close Button -->
-                                                <span class="close">&times;</span>
-
-                                                <!-- Modal Content (The Image) -->
-                                                <img class="modal-content" id="img01">
-
-                                                <!-- Modal Caption (Image Text) -->
-                                                <div id="caption"></div>
-                                            </div>
-                                        </td>
                                         <td>
+                                            <a href="#" class="open-popup" data-src="/upload/{{ $ros->foto }}"
+                                                data-caption="Foto Kehilangan">
+                                                <img class="" style="width:100%;max-width:50px"
+                                                    src="/upload/{{ $ros->foto }}" alt="Foto Kehilangan">
+                                            </a>
+                                        </td>
+                                        <td style="width: 100px">
                                             <a href="{{ route('rosak.edit', $ros->id_rusak) }}"
                                                 class="btn btn-warning mb-1 m-l-1 ms-2"><i
                                                     class="fas fa-pencil-alt"></i></a>
                                             <a href="{{ route('rosak.destroy', $ros->id_rusak) }}"
-                                                data-id="{{ $ros->id_rusak }}" class="btn btn-danger mb-1 m-l-1 ms-2"><i
+                                                data-id="{{ $ros->id_rusak }}" class="btn btn-danger mb-1 m-l-1"><i
                                                     class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                 @endif
                             @endif
                         @endforeach
-
                     </tbody>
+
                 </table>
-                {{-- <div class="popup " id="imagePopup">
-                    <div class="popup-content">
-                        <span class="close" onclick="closePopup()">&times;</span>
-                        <img src="" alt="Popup Image" class="popup-img" id="popupImage">
-                    </div>
-                </div> --}}
+                <div class="popup " id="imagePopup">
+                </div>
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- The Close Button -->
+                    <span class="close">&times;</span>
+
+                    <!-- Modal Content (The Image) -->
+                    <img class="modal-content" id="img01">
+
+                    <!-- Modal Caption (Image Text) -->
+                    <div id="caption"></div>
+                </div>
 
                 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
                     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -271,13 +202,25 @@
             </form>
         </div>
     </div>
- 
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
 
     <style>
+        div.dataTables_wrapper div.dataTables_filter {
+            text-align: right;
+            margin-right: 50px;
+        }
+
+        .table-image {
+            max-width: 50px;
+            /* Lebar maksimum gambar */
+            max-height: 100px;
+            /* Tinggi maksimum gambar */
+        }
+
         #myImg {
             border-radius: 5px;
             cursor: pointer;
@@ -373,6 +316,26 @@
                 width: 100%;
             }
         }
+
+        .active {
+            transform: translateY(0);
+        }
+
+        x
+
+        /* Style untuk tombol tutup */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        /* Style untuk gambar dalam popup */
+        .popup-img {
+            max-width: 100%;
+            max-height: 50px;
+        }
     </style>
 
     <script>
@@ -383,45 +346,30 @@
                     pesanSukses.style.display = 'none';
                 }, 5000);
             }
-        });
 
-        const openPopupButtons = document.querySelectorAll('.open-popup');
-        const popup = document.getElementById('imagePopup');
-        const popupImage = document.getElementById('popupImage');
+            const openPopupButtons = document.querySelectorAll('.open-popup');
+            const modal = document.getElementById('myModal');
+            const modalImg = document.getElementById('img01');
+            const captionText = document.getElementById('caption');
 
-        openPopupButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const imageUrl = button.getAttribute('data-src');
-                popupImage.src = imageUrl;
-                popup.style.display = 'flex';
-                document.querySelector('.popup-content').classList.add('active');
-                document.querySelector('.popup').style.height='100%';
+            openPopupButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const imageUrl = button.getAttribute('data-src');
+                    const caption = button.getAttribute('data-caption');
+
+                    modal.style.display = 'block';
+                    modalImg.src = imageUrl;
+                    captionText.innerHTML = caption;
+                });
             });
+
+            // Get the <span> element that closes the modal
+            const span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            };
         });
-
-        function closePopup() {
-            modal.style.display = 'none';
-            popup.style.display = 'none';
-        }
-
-        var modal = document.getElementById("myModal");
-
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById("myImg");
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-        img.onclick = function() {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-        }
-        
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
     </script>
 @endsection
