@@ -61,15 +61,15 @@
                                 <td style="text-align: center">{{ $da->nomor_ptk }}</td>
                                 <td>{{ $da->luas_ptk }} Ha</td>
                                 <td>
-                                    @if($da->potensi_ptk == 0)
+                                    @if ($da->potensi_ptk == 0)
                                         Hutan Kayu
                                     @elseif($da->potensi_ptk == 1)
-                                         Hutan Bukan Kayu
+                                        Hutan Bukan Kayu
                                     @else
                                         Data Tidak Tersedia
                                     @endif
                                 </td>
-                                                                @if ($da->hhbk_jenis_tgk)
+                                @if ($da->hhbk_jenis_tgk)
                                     <td>{{ $da->hhbk_jenis_tgk }}</td>
                                 @else
                                     <td>{{ $da->hhk_jenis_tgk }}</td>
@@ -90,13 +90,9 @@
 
                 {{-- {{ $data->links() }} --}}
                 <div style="display: flex; justify-content: space-between;" class="mt-4">
-                    <a class="btn btn-warning" style="color: white" onclick="goBack();">Kembali</a>
-                    <script>
-                        function goBack() {
-                            window.history.back();
-                        }
-                    </script>
-                    <a class="btn btn-primary" style="color: white"
+                    <a class="btn btn-warning" style="color: white; font-weight:bold;" onclick="return goBack()">Kembali</a>
+                    <a class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
                         href="{{ route('petak.create', ['rph' => $id_rph]) }}">Tambah Data</a>
                 </div>
             </form>
@@ -108,6 +104,10 @@
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     <script>
+        function goBack() {
+            window.history.back();
+        }
+
         $('#tabelData').DataTable({
             lengthMenu: [
                 [5, 10, 25, -1],
@@ -116,8 +116,7 @@
 
             pageLength: 5 // Menampilkan 5 data per halaman
         });
-    </script>
-    <script>
+
         document.addEventListener('DOMContentLoaded', function() {
             const pesanSukses = document.getElementById('pesan-sukses');
             if (pesanSukses) {

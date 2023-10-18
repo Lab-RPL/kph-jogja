@@ -39,15 +39,12 @@
                         <td><input type="text" id="luas-rph" name="luas_rph" required></td>
                     </tr>
                 </table>
-                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <button onclick="goBack()" class="btn btn-warning" style="color: white">Kembali</button>
-
-                    <script>
-                        function goBack() {
-                            window.history.back();
-                        }
-                    </script>
-                    <button class="btn btn-primary" style="color: white" type="submit">Tambah Data</button>
+                <div style="display: flex; justify-content: space-between;" class="mt-4">
+                    <a href="{{ route('rph.index2') }}" class="btn btn-warning"
+                        style="color: white; font-weight:bold;">Kembali</a>
+                    <a class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
+                        type="submit">Submit</a>
                 </div>
             </div>
         </div>

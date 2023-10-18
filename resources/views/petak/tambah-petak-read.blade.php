@@ -15,7 +15,7 @@
                 <table id="tabelData">
                     <tr>
                         <td><label for="tambah-bdh">NAMA BDH</label></td>
-                        <td>  
+                        <td>
                             <select name="id_bdh" id="tambah-bdh" required class="form-select">
                                 <option value="">Pilih BDH</option>
                                 @foreach ($bdh as $bdh)
@@ -38,7 +38,7 @@
                                     @endif
                                 @endforeach
                             </select>
-                            
+
                         </td>
                     </tr>
                     <tr>
@@ -50,72 +50,106 @@
                         <td><input type="text" id="luas-rph" name="luas_ptk" required></td>
                     </tr>
                     <tr>
-                        <td><label for="luas-rph">Potensi Petak</label></td>
-                        <td><input type="text" id="luas-rph" name="potensi_ptk" required></td>
+                        <td><label for="potensi-ptk">Potensi Petak</label></td>
+                        <td>
+                            <select id="potensi-ptk" name="potensi_ptk" required>
+                                <option value=""disabled selected hidden>Pilih Potensi</option>
+                                <option value="0">Hutan Kayu</option>
+                                <option value="1">Hutan Bukan Kayu</option>
+                            </select>
+                        </td>
                     </tr>
+                    <tr>
+                        <td><label for="jenis_tgk">Jenis Tegakan</label></td>
+                        <td>
+                            <select id="jenis_tgk" name="id_tgk">
+                            </select>
+                        </td>
+                    </tr>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                 </table>
-                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <button onclick="goBack()" class="btn btn-warning" style="color: white">Kembali</button>
-
-                    <script>
-                        function goBack() {
-                            window.history.back();
-                        }
-                    </script>
-                    <button class="btn btn-primary" style="color: white" type="submit">Tambah Data</button>
+                <div style="display: flex; justify-content: space-between;" class="mt-4">
+                    <a href="{{ route('petak.index2') }}" class="btn btn-warning" style="color: white; font-weight:bold;">Kembali</a>
+                    <a class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
+                        type="submit">Submit</a>
                 </div>
             </div>
         </div>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('select[name="id_bdh"]').on('change', function() {
-            var bdhID = $(this).val();
-            if(bdhID) {
-                $.ajax({
-                    url: '/rph/get/'+bdhID,
-                    type: "GET",
-                    dataType: "json",
-                    success:function(data) {
-                        $('select[name="id_rph"]').empty();
-                        $.each(data, function(key, value) {
-                            $('select[name="id_rph"]').append('<option value="'+ key +'">'+ value +'</option>');
-                        });
-                    }
-                });
-            }else{
-                $('select[name="id_rph"]').empty();
-            }
-        });
-    });
-</script>
+    <script type="text/javascript">
+        $("#potensi-ptk").change(function() {
+            var type = $(this).val();
+            var url = '{{ route('petak.getJenisTgk', ':type') }}';
+            url = url.replace(':type', type);
 
-<script>
-    $(document).ready(function() {
-    $('select[name="id_bdh"]').on('change', function() {
-        var bdhID = $(this).val();
-        if (bdhID) {
             $.ajax({
-                url: '/rph/get/'+bdhID,
-                type: "GET",
-                dataType: "json",
+                url: url,
+                type: 'GET',
                 success: function(data) {
-                    $('select[name="id_rph"]').empty();
-                    $('select[name="id_rph"]').prop('disabled', false); // Enable select RPH
-                    $.each(data, function(key, value) {
-                        $('select[name="id_rph"]').append('<option value="' +
-                            key + '">' + value + '</option>');
-                    });
+                    var $jenisTgk = $('#jenis_tgk');
+                    $jenisTgk.empty(); // Kosongkan opsi saat ini
+
+                    for (var i = 0; i < data.length; i++) {
+                        if (type === '0') {
+                            $jenisTgk.append('<option value=' + data[i].id_hhk + '>' + data[i]
+                                .jenis_tgk + '</option>');
+                        } else if (type === '1') {
+                            $jenisTgk.append('<option value=' + data[i].id_hhbk + '>' + data[i]
+                                .jenis_tgk + '</option>');
+                        }
+                    }
                 }
             });
-        } else {
-            $('select[name="id_rph"]').empty();
-            $('select[name="id_rph"]').prop('disabled', true); // Disable select RPH if no BDH selected
-        }
-    });
-});
+        });
 
-</script>
-    
+        $(document).ready(function() {
+            $('select[name="id_bdh"]').on('change', function() {
+                var bdhID = $(this).val();
+                if (bdhID) {
+                    $.ajax({
+                        url: '/rph/get/' + bdhID,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(data) {
+                            $('select[name="id_rph"]').empty();
+                            $.each(data, function(key, value) {
+                                $('select[name="id_rph"]').append('<option value="' +
+                                    key + '">' + value + '</option>');
+                            });
+                        }
+                    });
+                } else {
+                    $('select[name="id_rph"]').empty();
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            $('select[name="id_bdh"]').on('change', function() {
+                var bdhID = $(this).val();
+                if (bdhID) {
+                    $.ajax({
+                        url: '/rph/get/' + bdhID,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(data) {
+                            $('select[name="id_rph"]').empty();
+                            $('select[name="id_rph"]').prop('disabled',
+                                false); // Enable select RPH
+                            $.each(data, function(key, value) {
+                                $('select[name="id_rph"]').append('<option value="' +
+                                    key + '">' + value + '</option>');
+                            });
+                        }
+                    });
+                } else {
+                    $('select[name="id_rph"]').empty();
+                    $('select[name="id_rph"]').prop('disabled',
+                        true); // Disable select RPH if no BDH selected
+                }
+            });
+        });
+    </script>
 @endsection

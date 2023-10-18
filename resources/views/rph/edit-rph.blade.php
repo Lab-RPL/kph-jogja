@@ -50,18 +50,19 @@
                     <td><input type="text" id="luas-rph" name="luas_rph" value="{{ $rph->luas_rph }}"></td>
                 </tr>
             </table>
-            <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                <a class="btn btn-warning" style="color: white" href="/data-bdh" onclick="return goBack();">Kembali</a>
-
-                <script>
-                    function goBack() {
-                        window.history.back();
-                        return false;
-                    }
-                </script>
-                <button class="btn btn-primary" style="color: white" type="submit">Edit Data</button>
+            <div style="display: flex; justify-content: space-between;" class="mt-4">
+                <a class="btn btn-warning" style="color: white; font-weight:bold;" onclick="return goBack()">Kembali</a>
+                <button class="btn btn-primary"
+                    style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
+                    type="submit">Submit</button>
             </div>
         </div>
     </div>
 </form>
+<script>
+    function goBack() {
+        window.history.back();
+        return false;
+    }
+</script>
 @endsection

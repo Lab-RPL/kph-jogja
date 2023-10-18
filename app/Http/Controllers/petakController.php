@@ -39,7 +39,13 @@ class petakController extends Controller
         if (!$req->session()->has('user_id')) {
             return redirect('/');
         }
-        $data = Petak::where('IsDelete', 0)->paginate(100000000);
+        $data =  DB::table('petak')
+        ->leftJoin('hhbk', 'petak.id_hhbk', '=', 'hhbk.id_hhbk')
+        ->leftJoin('hhk', 'petak.id_hhk', '=', 'hhk.id_hhk')
+        ->where('petak.IsDelete', 0)
+        ->select('petak.*', 'hhbk.jenis_tgk as hhbk_jenis_tgk', 'hhk.jenis_tgk as hhk_jenis_tgk')
+        ->paginate(10000000000);
+
         return view('petak.petak-read', ['data' => $data]);
     }
     public function create(Request $request)
@@ -119,6 +125,7 @@ class petakController extends Controller
             'nomor_ptk' => 'required',
             'luas_ptk' => 'required',
             'potensi_ptk' => 'required',
+            'id_tgk' => 'required',
         ]);
 
         Petak::create([
@@ -126,6 +133,9 @@ class petakController extends Controller
             'nomor_ptk' => $request->nomor_ptk,
             'luas_ptk' => $request->luas_ptk,
             'potensi_ptk' => $request->potensi_ptk,
+            'id_tgk' => $request->jenis_tgk,
+            'id_hhk' => $request->potensi_ptk == 0 ? $request->id_tgk : null, // jika potensi ptk adalah 0 (Kayu), kita ambil id_tgk
+            'id_hhbk' => $request->potensi_ptk == 1 ? $request->id_tgk : null,
         ]);
 
         return redirect()
@@ -138,9 +148,10 @@ class petakController extends Controller
         $petak = petak::findOrFail($id);
         $rphs = rph::where('IsDelete', 0)->get();
 
-        return view('petak.edit-petak', ['petak' => $petak, 'rphs' => $rphs]);
+        return view('petak.edit-petak', ['petak' => $petak, 'rphs' => $rphs,'id_ptk' => $id]);
     }
 
+    
     public function update(Request $request, $id)
     {
         $this->validate($request, [
@@ -156,7 +167,6 @@ class petakController extends Controller
         $petak->nomor_ptk = $request->nomor_ptk;
         $petak->luas_ptk = $request->luas_ptk;
         $petak->potensi_ptk = $request->potensi_ptk;
-        $petak->id_tgk = $request->jenis_tgk;
         $petak->id_hhk = $request->potensi_ptk == 0 ? $request->id_tgk : null; // jika potensi ptk adalah 0 (Kayu), kita ambil id_tgk
         $petak->id_hhbk = $request->potensi_ptk == 1 ? $request->id_tgk : null; // jika potensi ptk adalah 1 (Bukan Kayu), kita ambil id_tgk
 

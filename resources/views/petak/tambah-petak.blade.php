@@ -26,10 +26,7 @@
                                     @endif
                                 @endforeach
                             </select>
-
                             <input type="hidden" name="id_rph" value="{{ $selectedRph }}" />
-
-
                         </td>
                     </tr>
                     <tr></tr>
@@ -54,44 +51,10 @@
                         <td><label for="jenis_tgk">Jenis Tegakan</label></td>
                         <td>
                             <select id="jenis_tgk" name="id_tgk">
-
                             </select>
-
                         </td>
                     </tr>
-
-
-
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-                    <script>
-                        $("#potensi-ptk").change(function() {
-                            var type = $(this).val();
-                            var url = '{{ route('petak.getJenisTgk', ':type') }}';
-                            url = url.replace(':type', type);
-
-                            $.ajax({
-                                url: url,
-                                type: 'GET',
-                                success: function(data) {
-                                    var $jenisTgk = $('#jenis_tgk');
-                                    $jenisTgk.empty(); // Kosongkan opsi saat ini
-
-                                    for (var i = 0; i < data.length; i++) {
-                                        if (type === '0') {
-                                            $jenisTgk.append('<option value=' + data[i].id_hhk + '>' + data[i]
-                                                .jenis_tgk + '</option>');
-                                        } else if (type === '1') {
-                                            $jenisTgk.append('<option value=' + data[i].id_hhbk + '>' + data[i]
-                                                .jenis_tgk + '</option>');
-                                        }
-                                    }
-                                }
-                            });
-                        });
-                    </script>
-
-
                     {{-- <script>
                         var jenisTgkData = {
                           "0": [ // For potensi-ptk = 0
@@ -124,22 +87,48 @@
 
 
                     <!-- <tr>
-                                                            <td><label for="luas-tanah">Keterangan Lain</label></td>
-                                                            <td><input type="text" id="luas-rph" name="luas_tanah" required></td>
-                                                        </tr> -->
+                                                                                <td><label for="luas-tanah">Keterangan Lain</label></td>
+                                                                                <td><input type="text" id="luas-rph" name="luas_tanah" required></td>
+                                                                            </tr> -->
                 </table>
-                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <button class="btn btn-warning" style="color: white" onclick="return goBack();">Kembali</button>
-
-                    <script>
-                        function goBack() {
-                            window.history.back();
-                            return false;
-                        }
-                    </script>
-                    <button class="btn btn-primary" style="color: white" type="submit">Submit</button>
+                <div style="display: flex; justify-content: space-between;" class="mt-4">
+                    <a class="btn btn-warning" style="color: white; font-weight:bold;" onclick="return goBack()">Kembali</a>
+                    <button class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
+                        type="submit">Submit</button>
                 </div>
             </div>
         </div>
     </form>
+    <script>
+        $("#potensi-ptk").change(function() {
+            var type = $(this).val();
+            var url = '{{ route('petak.getJenisTgk', ':type') }}';
+            url = url.replace(':type', type);
+
+            $.ajax({
+                url: url,
+                type: 'GET',
+                success: function(data) {
+                    var $jenisTgk = $('#jenis_tgk');
+                    $jenisTgk.empty(); // Kosongkan opsi saat ini
+
+                    for (var i = 0; i < data.length; i++) {
+                        if (type === '0') {
+                            $jenisTgk.append('<option value=' + data[i].id_hhk + '>' + data[i]
+                                .jenis_tgk + '</option>');
+                        } else if (type === '1') {
+                            $jenisTgk.append('<option value=' + data[i].id_hhbk + '>' + data[i]
+                                .jenis_tgk + '</option>');
+                        }
+                    }
+                }
+            });
+        });
+
+        function goBack() {
+            window.history.back();
+            return false;
+        }
+    </script>
 @endsection
