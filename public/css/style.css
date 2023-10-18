@@ -124,7 +124,7 @@
 }
 
 .chart-container canvas {
-    max-width: 600px; /* or any size you prefer */
+    max-width: 700px; /* or any size you prefer */
     max-height: 420px; /* it's better to keep the pie chart as almost a square */
     margin: auto; /* to center the pie chart in the grid cell */
 }
@@ -788,9 +788,10 @@ label {
 }
 
 .main.active {
-    width: calc(100% - 60px);
-    left: -10px;
+    width: calc(100% - 70px);
+    left: 90px;
 }
+
 
 .topbar {
     width: 100%;
