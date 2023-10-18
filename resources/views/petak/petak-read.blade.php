@@ -43,6 +43,7 @@
                             <th style="background-color: #9CC589;">Nomor Petak</th>
                             <th style="background-color: #9CC589;">Luas Petak</th>
                             <th style="background-color: #9CC589;">Potensi Petak</th>
+                            <th style="background-color: #9CC589;">Jenis Tegakan</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,13 +51,20 @@
                             <tr>
                                 <td>{{ $da->nomor_ptk }}</td>
                                 <td>{{ $da->luas_ptk }} Ha</td>
-                                <td>   @if($da->potensi_ptk == 0)
-                                    Kayu
-                                @elseif($da->potensi_ptk == 1)
-                                    Bukan Kayu
+                                <td>
+                                    @if ($da->potensi_ptk == 0)
+                                        Hutan Kayu
+                                    @elseif($da->potensi_ptk == 1)
+                                        Hutan Bukan Kayu
+                                    @else
+                                        Data Tidak Tersedia
+                                    @endif
+                                </td>
+                                @if ($da->hhbk_jenis_tgk)
+                                    <td>{{ $da->hhbk_jenis_tgk }}</td>
                                 @else
-                                    Data Tidak Tersedia
-                                @endif</td>
+                                    <td>{{ $da->hhk_jenis_tgk }}</td>
+                                @endif
                             </tr>
                         @endforeach
                     </tbody>
