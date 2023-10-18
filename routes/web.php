@@ -159,3 +159,8 @@ Route::get('/tambah-luas-hutan', [LuasHutanController::class, 'create'])->name('
 //Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 Route::get('/chart-data', [DashboardController::class, 'getChartData']);
+
+//rekap
+Route::get('/data-rekap', function () {
+    return view('rekap.rekap');
+});

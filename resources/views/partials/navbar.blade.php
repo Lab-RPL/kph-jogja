@@ -115,6 +115,15 @@
                             <span class="title">Luas Hutan</span>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a href="/data-rekap">
+                            <span class="icon">
+                                <ion-icon name="file-tray-stacked-outline"></ion-icon>
+                            </span>
+                            <span class="title">Rekap Data</span>
+                        </a>
+                    </li>
         
                     <li class="nav-item">
                         <a href="/logout">

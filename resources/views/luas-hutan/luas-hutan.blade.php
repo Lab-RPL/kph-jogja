@@ -7,7 +7,7 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <div class="garis">
         <div class="border-lists"  >
-            <h2 class="mt-2 middletext">Luas Hutan</h2>
+            <h2 class="mt-2 middletext">LUAS HUTAN</h2>
             <p class="lead undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
 
             <form>
