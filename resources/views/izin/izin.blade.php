@@ -29,6 +29,7 @@
                             <th style="background-color: #9CC589;" class="text-center">Nomor SK</th>
                             <th style="background-color: #9CC589;" class="text-center">Petak</th>
                             <th style="background-color: #9CC589;" class="text-center">Luas Izin</th>
+                            <th style="background-color: #9CC589;" class="text-center">Luas Izin</th>
                             <th style="background-color: #9CC589;" class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -40,6 +41,13 @@
                                     <td>{{ $da->no_SK }}</td>
                                     <td>{{ $da->nomor_ptk }}</td>
                                     <td>{{ $da->luas_izin }} Ha</td>
+                                    <td>
+                                        @if ($da->hhbk_jenis_tgk)
+                                            {{ $da->hhbk_jenis_tgk }}
+                                        @else
+                                            {{ $da->hhk_jenis_tgk }}
+                                        @endif
+                                    </td>
                                     <td style="justify-content: space-between; align-items:center">
                                         <a href="{{ route('izin.edit', $da->id_izin) }}"
                                             class="btn btn-warning mb-1 m-l-1"><i class="fas fa-pencil-alt"></i></a>

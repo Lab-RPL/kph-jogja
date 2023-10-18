@@ -61,15 +61,15 @@
                                 <td style="text-align: center">{{ $da->nomor_ptk }}</td>
                                 <td>{{ $da->luas_ptk }} Ha</td>
                                 <td>
-                                    @if($da->potensi_ptk == 0)
+                                    @if ($da->potensi_ptk == 0)
                                         Hutan Kayu
                                     @elseif($da->potensi_ptk == 1)
-                                         Hutan Bukan Kayu
+                                        Hutan Bukan Kayu
                                     @else
                                         Data Tidak Tersedia
                                     @endif
                                 </td>
-                                                                @if ($da->hhbk_jenis_tgk)
+                                @if ($da->hhbk_jenis_tgk)
                                     <td>{{ $da->hhbk_jenis_tgk }}</td>
                                 @else
                                     <td>{{ $da->hhk_jenis_tgk }}</td>

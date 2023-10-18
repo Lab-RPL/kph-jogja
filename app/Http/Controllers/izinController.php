@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\hhk;
+use App\Models\hhbk;
 use Illuminate\Http\Request;
 use App\Models\izin;
 use App\Models\petak;
@@ -14,22 +15,39 @@ class izinController extends Controller
         if (!$req->session()->has('user_id')) {
             return redirect('/');
         }
-
+    
         $data = DB::table('izin_kelola')
             ->join('petak', 'izin_kelola.id_ptk', '=', 'petak.id_ptk')
-            ->select('izin_kelola.*', 'petak.nomor_ptk')
+            ->leftJoin('hhbk', 'petak.id_hhbk', '=', 'hhbk.id_hhbk')
+            ->leftJoin('hhk', 'petak.id_hhk', '=', 'hhk.id_hhk')
+            ->select('izin_kelola.*', 'petak.nomor_ptk', 'hhbk.jenis_tgk as hhbk_jenis_tgk', 'hhk.jenis_tgk as hhk_jenis_tgk')
             ->where('izin_kelola.IsDelete', 0)
             ->paginate(1000000);
-
-        return view('izin.izin', compact('data'));
+    
+        // Mengambil data dari model hhk dan hhbk
+        $hhkData = hhk::all();
+        $hhbkData = hhbk::all();
+    
+        return view('izin.izin', compact('data', 'hhkData', 'hhbkData'));
     }
-
-    public function create()
+    
+    public function create(Request $request)
     {
+        $selectedTgk = $request->query('hhbk','', null);
+        $jenis_tgk = hhbk::all();
         $petak = petak::all();
-        return view('izin.tambah-izin', compact('petak'));
+        return view('izin.tambah-izin', compact('petak','jenis_tgk','selectedTgk'));
     }
-
+    public function getJenisTegakan($id_ptk)
+    {
+        $jenisTegakan = DB::table("petak")
+            ->where("id_ptk", $id_ptk)
+            ->select('id_hhk', 'id_hhbk')
+            ->get();
+    
+        return response()->json($jenisTegakan);
+    }
+    
     public function store(Request $request)
     {
         $izin = new izin();

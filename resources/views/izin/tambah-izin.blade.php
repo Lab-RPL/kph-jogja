@@ -32,9 +32,72 @@
                                         <option value="{{ $petak->id_ptk }}">{{ $petak->nomor_ptk }}</option>
                                     @endif
                                 @endforeach
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jenis Tegakan</td>
+                        <td>
+                            <select name="jenis_tgk" id="jenis_tgk">
+
+
                             </select>
                         </td>
                     </tr>
+                    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const petakSelect = document.querySelector('select[name="petak_izin"]');
+    const jenisTgkSelect = document.querySelector('select[name="jenis_tgk"]');
+
+    petakSelect.addEventListener("change", function () {
+        const selectedPetakId = this.value;
+
+        // Kirim permintaan AJAX atau fetch ke server untuk mendapatkan data "Jenis Tegakan" berdasarkan "Nomor Petak".
+        fetch(`/get-jenis-tegakan/${selectedPetakId}`)
+            .then(response => response.json())
+            .then(data => {
+                jenisTgkSelect.innerHTML = ''; // Hapus opsi yang ada
+
+                data.forEach(option => {
+    const newOption = document.createElement('option');
+    newOption.value = option.id_hhk || option.id_hhbk; // Menggunakan id_hhk jika ada, jika tidak, maka gunakan id_hhbk
+    newOption.text = option.id_hhk || option.jenis_tgk; // Menggunakan jenis_tgk jika ada, jika tidak, maka gunakan jenis_tgk
+    jenisTgkSelect.appendChild(newOption);
+});
+
+            })
+            .catch(error => {
+                console.error('Terjadi kesalahan saat mengambil data jenis tegakan:', error);
+            });
+    });
+});
+</script>
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    {{-- <script>
+                        $(document).ready(function() {
+                            $('select[name="petak_izin"]').on('change', function() {
+                                var id_ptk = $(this).val();
+                                if (id_ptk) {
+                                    $.ajax({
+                                        url: '/tambah-izin/' + id_ptk,
+                                        type: "GET",
+                                        dataType: "json",
+                                        success: function(data) {
+                                            $('select[name="jenis_tgk"]').empty();
+                                            $.each(data, function(key, value) {
+                                                $('select[name="jenis_tgk"]').append('<option value="' +
+                                                    key + '">' + value + '</option>');
+                                            });
+                                        }
+                                    });
+                                } else {
+                                    $('select[name="jenis_tgk"]').empty();
+                                }
+                            });
+                        });
+                    </script> --}}
+                    
+
                     <tr>
                         <td height="60px">Luas Izin</td>
                         <td><input type="text" id="luas-izin" name="luas_izin" required></td>

@@ -125,6 +125,8 @@ Route::get('/tambah-izin', [izinController::class, 'create'])->name('izin.create
 Route::get('/data-izin/{id_izin}/edit', [izinController::class, 'edit'])->name('izin.edit');
 Route::put('/data-izin/{id}', [izinController::class, 'update'])->name('izin.update');
 Route::get('/data-izin/{id_izin}', [izinController::class, 'destroy'])->name('izin.destroy');
+Route::get('/get-jenis-tegakan/{id_ptk}', [izinController::class,'getJenisTegakan']);
+
 
 // KERUSAKAN/KEHILANGAN
 
