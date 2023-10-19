@@ -26,7 +26,7 @@
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
 
-                <table id="tabelData" class="table table-bordered" >
+                <table id="tabelData" class="table table-bordered" style="margin-left: -2rem;">
                     <thead>
                             <th rowspan="2" style="background-color: #9CC589;">
                                 <div class="sub-table-inventaris">NOMOR PU</div>
@@ -107,11 +107,33 @@
                             <td>
                                 <div class="txt">{{ $da->koor_y }}</div>
                             </td>
-                            <td>
-                                    <a class="btn btn-primary" href="{{ route('data-utama.detail',['id_PU' => $da->id_PU]) }}"><i class="fas fa-info-circle"></i></a>
-                                    <a href="{{route('data-utama.edit',['id_PU'=> $da->id_PU])}}" class="btn btn-warning mt-1"><i class="fa fa-pencil-alt"></i></a>
-                                    <a data-id="{{ $da->id_PU }}" class="delete-btn btn btn-danger mt-1"
-                                        href="{{ route('data-utama.destroy', $da->id_PU) }}"><i class="fa fa-trash"></i></a>
+                            <td style="width: 100px">
+                                <div class="container">
+                                    <div class="container">
+                                        <div class="text-center">
+                                            <div class="button-container">
+                                                {{-- <a class="btn btn-primary" href="{{ route('data-utama.detail',['id_PU' => $da->id_PU]) }}">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </a>
+                                                <div class="additional-buttons above">
+                                                    <a class="btn btn-warning" href="{{route('data-utama.edit',['id_PU'=> $da->id_PU])}}"><i class="fas fa-pencil-alt"></i></a>
+                                                    
+                                                </div>
+                                                <div class="additional-buttons below">
+                                                    <a data-id="{{ $da->id_PU }}" class="btn btn-danger" href="{{ route('data-utama.destroy', $da->id_PU) }}"><i class="fa fa-trash"></i></a>
+                                                   
+                                                </div> --}}
+
+                                                <span style="background-color: #198754" class="form-control action" id="toggleButton"><i style="color: white;" class="fa fa-arrow-down"></i></span>
+                                                <div id="buttonContainer" style="display: none;">
+                                                    <button id="button1" class="btn btn-primary mt-1"><i class="fa fa-info-circle"></i></button>
+                                                    <button id="button2" class="btn btn-warning mt-1"><i class="fas fa-pencil-alt"></i></button>
+                                                    <button id="button3" class="btn btn-danger mt-1"><i class="fa fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                             <td>
                                 <div class="d-flex justify-content-center">
@@ -132,12 +154,18 @@
             </form>
         </div>
     </div>
-
+    <style>
+        .action{
+            cursor: pointer;
+        }
+    </style>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     <script>
+       
+
         $('#tabelData').DataTable({
             lengthMenu: [
                 [5, 10, 25, -1],
@@ -147,7 +175,64 @@
             pageLength: 5 // Menampilkan 5 data per halaman
         });
     </script>
+    <script>
+            const toggleButton = document.getElementById("toggleButton");
+            const buttonContainer = document.getElementById("buttonContainer");
 
+            toggleButton.addEventListener("click", function() {
+                if (buttonContainer.style.display === "none") {            
+                    buttonContainer.style.display = "block";
+                } else {
+                    buttonContainer.style.display = "none";
+                }
+            });
+
+            buttonContainer.addEventListener("click", function(event) {
+                if (event.target.id.startsWith("button")) {
+                    alert("Anda mengklik " + event.target.textContent);
+                }
+            });
+    </script>
+     <style>
+        .button-container {
+            margin-top: 1.9rem;
+            margin-left: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .additional-buttons {
+            display: none;
+            left: 0;
+            top: -45px; 
+            bottom: -45px; 
+        }
+
+        .button-container:hover .additional-buttons {
+            display: block;
+        }
+
+        .additional-buttons.above {
+            top: -75px;
+            bottom: auto;
+        }
+
+        .button-container:hover .additional-buttons.above {
+            top: -37px;
+            transition: 0.5s;
+        }
+
+        .additional-buttons.below {
+            top: auto;
+            bottom: -75px;
+        }
+
+        .button-container:hover .additional-buttons.below {
+            bottom: -37px;
+            transition: 0.5s;
+        }
+
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const pesanSukses = document.getElementById('pesan-sukses');
