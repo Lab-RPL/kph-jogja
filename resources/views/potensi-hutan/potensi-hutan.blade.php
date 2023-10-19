@@ -26,6 +26,29 @@
                     text-align: right;
                     margin-right: 50px;
                 }
+
+                
+                .nav-tabs .nav-item .nav-link {
+                    background-color: #F5F5F5;
+                    color: #000;
+                }
+
+                .nav-tabs .nav-item .nav-link.active {
+                    color: #000000;
+                    background-color: #CDFAD5;
+                }
+
+                .tab-content {
+                    border: 1px solid #dee2e6;
+                    border-top: transparent;
+                    padding: 15px;
+                }
+
+                .tab-content .tab-pane {
+                    background-color: #FFF;
+                    min-height: 200px;
+                    height: auto;
+                }
             </style>
 
             <form>
@@ -37,7 +60,7 @@
 
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" data-bs-toggle="tab" href="#hhk">Hasil Hutan Kayu</a>
+                        <a class="nav-link active " data-bs-toggle="tab" href="#hhk">Hasil Hutan Kayu</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="tab" href="#hhbk">Hasil Hutan Bukan Kayu</a>
@@ -46,7 +69,7 @@
 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div id="hhk" class="container tab-pane active"><br>
+                    <div id="hhk" class="container tab-pane active">
                         <div id="wrapper-hasil-hutan-kayu">
                             {{-- <div class="wrapper">
                                 <div class="hhbk">
@@ -86,10 +109,10 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            
+
                         </div>
                     </div>
-                    <div id="hhbk" class="container tab-pane fade"><br>
+                    <div id="hhbk" class="container tab-pane fade">
                         <div id="wrapper-hasil-hutan-bukan-kayu">
                             {{-- <div class="wrapper">
                                 <div class="hhbk">
@@ -108,7 +131,7 @@
                                         <th style="background-color: #9CC589;" class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
-                                
+
                                 <tbody>
                                     @foreach ($data as $da)
                                         @if ($da->IsDelete == 0)
@@ -128,7 +151,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            
+
                         </div>
                     </div>
                 </div>
