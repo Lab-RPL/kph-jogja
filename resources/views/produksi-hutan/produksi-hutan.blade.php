@@ -10,10 +10,10 @@
             <h2 class="mt-2 middletext">PRODUKSI HASIL HUTAN</h2>
             <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
             <form>
-                <div class="wrapper">
+                <div class="center">
                     <div class="bdh">
                         <pre class="form-control" style="font-weight: bold; background-color:
-                        rgba(216, 245, 199, 0.664);padding-left:320px;padding-right:320px"  >Produksi Hasil Hutan</pre>
+                        rgba(216, 245, 199, 0.664);padding-left:265px;padding-right:265px;text-align:center">Produksi Hasil Hutan Kayu</pre>
                     </div>
                 </div>
                 @csrf
@@ -40,10 +40,10 @@
                     </tbody>
                 </table>
 
-                <div class="wrapper">
+                <div class="center">
                     <div class="bdh">
                         <pre class="form-control" style="font-weight: bold; background-color:
-                            rgba(216, 245, 199, 0.664);padding-left:265px;padding-right:265px;margin-top:20px"  >Produksi Hasil Hutan Bukan Kayu</pre>
+                        rgba(216, 245, 199, 0.664);margin-top:40px;text-align:center">Produksi Hasil Hutan Bukan Kayu</pre>
                     </div>
                 </div>
 
