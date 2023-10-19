@@ -9,12 +9,13 @@ use App\Http\Controllers\izinController;
 use App\Http\Controllers\pnbpController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\petakController;
+use App\Http\Controllers\rekapController;
+use App\Http\Controllers\rosakController;
+use App\Http\Controllers\tegakController;
 use App\Http\Controllers\potensiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LuasHutanController;
 use App\Http\Controllers\inventarisController;
-use App\Http\Controllers\rosakController;
-use App\Http\Controllers\tegakController;
 
 /*
 |--------------------------------------------------------------------------
@@ -161,6 +162,4 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/chart-data', [DashboardController::class, 'getChartData']);
 
 //rekap
-Route::get('/data-rekap', function () {
-    return view('rekap.rekap');
-});
+Route::get('/data-rekap', [rekapController::class, 'index'])->name('rekap-read');
