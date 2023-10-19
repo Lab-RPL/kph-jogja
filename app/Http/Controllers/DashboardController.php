@@ -33,4 +33,16 @@ class DashboardController extends Controller
         // Kembalikan sebagai response JSON
         return response()->json($pnbpData);
     }
+
+    public function getPieChartData() {
+        $bdhData = DB::table('bdh')
+        ->select('nama_bdh', 'luas_bdh')
+        ->where('IsDelete', 0)
+        ->orderBy('nama_bdh', 'asc')
+        ->get();
+
+        return response()->json($bdhData);
+    }
+
+
 }

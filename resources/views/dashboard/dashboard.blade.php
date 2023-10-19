@@ -194,20 +194,29 @@
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                 <script>
+
+                    // Chart BDH
+                    
+                    $.get("/dashboard/bdh", function(response) {
+                    var labels = response.map(function(e) {
+                        return e.nama_bdh;
+                    });
+                    var data = response.map(function(e) {
+                        return e.luas_bdh;
+                    });
+
+                    // create chart
                     var ctx1 = document.getElementById('bdh');
                     var bdh = new Chart(ctx1, {
                         type: 'pie',
                         data: {
-                            labels: ['Bdh 1', 'Bdh 2', 'Bdh3', 'Bdh 4', 'Bdh 5'],
+                            labels: labels,
                             datasets: [{
-                                data: [35, 60, 20, 20, 36],
+                                data: data,
                                 backgroundColor: ["#438A70", "#215B63", "#5FCC9C", "#AAFFC7"],
-
                             }]
                         },
                         options: {
-                            // responsive: true,
-                            // maintainAspectRatio: false,
                             plugins: {
                                 legend: {
                                     display: false
@@ -219,8 +228,13 @@
                             }
                         }
                     });
-                    var ctx1 = document.getElementById('hasilHutanChart');
-                    var hasilHutanChart = new Chart(ctx1, {
+                });
+
+
+                    //Chart Potensi
+                    
+                    var ctx2 = document.getElementById('hasilHutanChart');
+                    var hasilHutanChart = new Chart(ctx2, {
                         type: 'pie',
                         data: {
                             labels: ['Potensi 1', 'Potensi 2', 'Potensi 3'],
@@ -243,6 +257,8 @@
                             }
                         }
                     });
+
+                    //Chart Produksi
 
                     var ctx3 = document.getElementById('produksiHutanChart');
                     var produksiHutanChart = new Chart(ctx3, {
