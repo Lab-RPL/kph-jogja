@@ -12,11 +12,12 @@
             <form>
                 <div class="wrapper">
                     <div class="bdh">
-                        <h3>Produksi Hasil Hutan Kayu</h3>
+                        <pre class="form-control" style="font-weight: bold; background-color:
+                        rgba(216, 245, 199, 0.664);padding-left:320px;padding-right:320px"  >Produksi Hasil Hutan</pre>
                     </div>
                 </div>
                 @csrf
-                
+
                 <!-- tabel kayu -->
 
                 <table id="tabelData" class="table table-bordered">
@@ -31,7 +32,7 @@
                             <tr>
                                 <td></td>
                                 <td></td>
-                                <td> 
+                                <td>
                                     <a href=""class="btn btn-warning mb-1 m-l-1 ms-2"><i class="fas fa-pencil-alt"></i></a>
                                     <a href=""class="btn btn-danger mb-1 m-l-1"><i class="fa fa-trash"></i></a>
                                 </td>
@@ -41,7 +42,8 @@
 
                 <div class="wrapper">
                     <div class="bdh">
-                        <h3>Produksi Hasil Hutan Bukan Kayu</h3>
+                        <pre class="form-control" style="font-weight: bold; background-color:
+                            rgba(216, 245, 199, 0.664);padding-left:265px;padding-right:265px;margin-top:20px"  >Produksi Hasil Hutan Bukan Kayu</pre>
                     </div>
                 </div>
 
@@ -60,7 +62,7 @@
                             <tr>
                                 <td></td>
                                 <td></td>
-                                <td> 
+                                <td>
                                     <a href=""class="btn btn-warning mb-1 m-l-1 ms-2"><i class="fas fa-pencil-alt"></i></a>
                                     <a href=""class="btn btn-danger mb-1 m-l-1"><i class="fa fa-trash"></i></a>
                                 </td>
