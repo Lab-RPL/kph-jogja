@@ -16,7 +16,6 @@
         .my-custom-table th {
             background-color: #B0E398;
             color: black;
-
         }
 
         .my-custom-table td {
@@ -37,24 +36,34 @@
                 <table id="tabelData" class="table table-bordered, my-custom-table">
                     <thead>
                         <tr class="kolom">
-                            <th class="">Jenis</th>
-                            <th class="">No. Pohon</th>
-                            <th class="">Diameter</th>
-                            <th class="">Tinggi</th>
-                            <th class="">Aksi</th>
+                            <th class="" style="width: 14%;">No. Pohon</th>
+                            <th class="" style="width: 15%; text-align: center;">Jenis</th>
+                            <th class="" style="text-align: center;">Diameter</th>
+                            <th class=""style="text-align: center;">Tinggi</th>
+                            <th class=""style="text-align: center;">Diameter ²</th>
+                            <th class=""style="text-align: center;">Volume</th>
+                            <th class=""style="text-align: center;">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($data as $da)
                             @if ($da->IsDelete == 0)
                                 <tr>
-                                    <td>{{ $da->jenis_tgk }}</td>
                                     <td>{{ $da->no_pohon }}</td>
-                                    <td>{{ $da->diameter }}</td>
-                                    <td>{{ $da->tinggi }}</td>
+                                    @if ($da->hhbk_jenis_tgk)
+                                        <td>{{ $da->hhbk_jenis_tgk }}</td>
+                                    @else
+                                        <td>{{ $da->hhk_jenis_tgk }}</td>
+                                    @endif
+                                    <td>{{ $da->diameter }} cm</td>
+                                    <td>{{ $da->tinggi }} m</td>
+                                    <td>{{ $da->diameter * $da->diameter }} cm²</td>
+                                    <td>{{ 3.14 * ($da->diameter / 2) * ($da->diameter / 2) * $da->tinggi }} m³</td>
+
                                     <td class="center-align">
                                         <a class="btn btn-warning mb-1 m-l-1"
-                                            href="{{ route('data-tgk.edit', $da->id_tgk) }}"><i class="fas fa-pencil-alt"></i></a>
+                                            href="{{ route('data-tgk.edit', $da->id_tgk) }}"><i
+                                                class="fas fa-pencil-alt"></i></a>
                                         <a class="btn btn-danger mb-1 m-l-1"
                                             href="{{ route('data-tgk.destroy', $da->id_tgk) }}"
                                             data-id="{{ $da->id_tgk }}"><i class="fa fa-trash"></i></a>

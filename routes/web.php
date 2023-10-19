@@ -51,6 +51,7 @@ Route::post('/data-tegakan', [tegakController::class, 'store'])->name('data-tgk.
 Route::get('/data-tegakan/{id}/edit', [tegakController::class, 'edit'])->name('data-tgk.edit');
 Route::put('/data-tegakan/{id}', [tegakController::class, 'update'])->name('data-tgk.update');
 Route::get('/data-tegakan{id_PU}', [tegakController::class, 'destroy'])->name('data-tgk.destroy');
+Route::get('data-tegakan/getJenisTgk/{type}', [tegakController::class, 'getJenisTgk'])->name('data-tgk.getJenisTgk');
 
 // BDH
 Route::get('/data-bdh', [bdhController::class, 'index']);

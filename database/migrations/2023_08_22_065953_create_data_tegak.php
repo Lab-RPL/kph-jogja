@@ -16,6 +16,7 @@ return new class extends Migration
 
             $table->unsignedBigInteger('id_PU');
             $table->integer('no_pohon');
+            $table->boolean('potensi_ptk')->default(0);
             $table->unsignedBigInteger('id_hhk')->nullable();
             $table->unsignedBigInteger('id_hhbk')->nullable();
             $table->decimal('diameter');
