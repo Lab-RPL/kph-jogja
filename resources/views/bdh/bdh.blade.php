@@ -42,7 +42,8 @@
                                             class="btn btn-success"><i class="fas fa-eye"></i></a>
                                     </td>
                                     <td>
-                                        <a href="{{ route('bdh.edit', $da->id_bdh) }}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                        <a href="{{ route('bdh.edit', $da->id_bdh) }}" class="btn btn-warning"><i
+                                                class="fas fa-pencil-alt"></i></a>
                                         <a data-id="{{ $da->id_bdh }}" class="delete-btn btn btn-danger"
                                             href="{{ route('bdh.destroy', $da->id_bdh) }}"><i class="fa fa-trash"></i></a>
                                     </td>
@@ -53,14 +54,11 @@
                 </table>
 
                 {{-- {{ $data->links() }} --}}
-                <div style="display: flex; justify-content: flex-end;" class="nav-item">
-                    <a class="btn btn-primary me-1 mt-4" href="/tambah-bdh">Tambah Data</a>
+                <div style="display: flex; justify-content: flex-end;" class="mt-4">
+                    <a class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
+                        href="{{ route('bdh.create') }}">Tambah Data</a>
                 </div>
-                <script>
-                    setTimeout(function() {
-                        document.getElementById('pesan-sukses').style.display = 'none';
-                    }, 5000); // 5000 milidetik = 5 detik
-                </script>
             </form>
         </div>
     </div>
@@ -70,6 +68,10 @@
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     <script>
+        setTimeout(function() {
+            document.getElementById('pesan-sukses').style.display = 'none';
+        }, 5000);
+
         $('#tabelData').DataTable({
             lengthMenu: [
                 [5, 10, 25, -1],
@@ -78,9 +80,16 @@
 
             pageLength: 5 // Menampilkan 5 data per halaman
         });
-    </script>
 
-    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pesanSukses = document.getElementById('pesan-sukses');
+            if (pesanSukses) {
+                setTimeout(function() {
+                    pesanSukses.style.display = 'none';
+                }, 5000);
+            }
+        });
+
         document.querySelectorAll('.delete-btn').forEach(function(deleteButton) {
             deleteButton.addEventListener('click', function(event) {
                 event.preventDefault();
@@ -124,19 +133,6 @@
             });
         });
     </script>
-
-    {{-- script Notif --}}
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const pesanSukses = document.getElementById('pesan-sukses');
-            if (pesanSukses) {
-                setTimeout(function() {
-                    pesanSukses.style.display = 'none';
-                }, 5000);
-            }
-        });
-    </script>
-
 
     {{-- cdn non data tables --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

@@ -13,7 +13,7 @@
                 <h2 class="mt-2">DATA RPH</h2>
                 <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
                 <table id="tabelData">
-                    
+
                     <tr>
                         <td><label for="tambah-bdh">NAMA BDH</label></td>
                         <td>
@@ -21,20 +21,19 @@
                                 @foreach ($bdh as $bdh)
                                     @if ($bdh->IsDelete == 0)
                                         <option value="{{ $bdh->id_bdh }}"
-                                        @if($selectedBdh != null && $selectedBdh == $bdh->id_bdh) selected @endif
-                                        >{{ $bdh->nama_bdh }}</option>
+                                            @if ($selectedBdh != null && $selectedBdh == $bdh->id_bdh) selected @endif>{{ $bdh->nama_bdh }}</option>
                                     @endif
                                 @endforeach
                             </select>
-                            
+
                             <!-- Use a hidden input to submit the selected value from the disabled select -->
                             <input type="hidden" name="id_bdh" value="{{ $selectedBdh }}" />
-                            
-                            
+
+
                         </td>
                     </tr>
-                    
-                    
+
+
 
                     <tr>
                         <td><label for="tambah-rph">Nama RPH</label></td>
@@ -49,19 +48,19 @@
                         <td><input type="text" id="luas-rph" name="luas_rph" required></td>
                     </tr>
                 </table>
-                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <button onclick="goBack()" class="btn btn-warning" style="color: white">Kembali</button>
-
-                    <script>
-                        function goBack() {
-                            window.history.back();
-                        }
-                    </script>
-                    <button class="btn btn-primary" style="color: white" type="submit">Tambah Data</button>
+                <div style="display: flex; justify-content: space-between;" class="mt-4">
+                    <a class="btn btn-warning" style="color: white; font-weight:bold;" onclick="return goBack()">Kembali</a>
+                    <button class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
+                        type="submit">Submit</button>
                 </div>
             </div>
         </div>
     </form>
-    
-    
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 @endsection

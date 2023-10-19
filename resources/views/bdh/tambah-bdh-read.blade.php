@@ -26,21 +26,23 @@
                         <td><input type="text" id="luas-bdh" name="luas_bdh" required></td>
                     </tr>
                 </table>
-                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <a class="btn btn-warning" style="color: white" href="{{ route('bdh.index.2') }}">Kembali</a>
-                    <button class="btn btn-primary" style="color: white" type="submit">Tambah Data</button>
+                <div style="display: flex; justify-content: space-between;" class="mt-4">
+                    <a href="{{ route('bdh.index.2') }}" class="btn btn-warning"
+                        style="color: white; font-weight:bold;">Kembali</a>
+                    <a class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
+                        type="submit">Submit</a>
                 </div>
             </div>
         </div>
-        <script>
-            setTimeout(function() {
-                document.getElementById('pesan-sukses').style.display = 'none';
-            }, 5000); // 5000 milidetik = 5 detik
-        </script>
     </form>
 
     {{-- script Notif --}}
     <script>
+        setTimeout(function() {
+                document.getElementById('pesan-sukses').style.display = 'none';
+            }, 5000); 
+
         document.addEventListener('DOMContentLoaded', function() {
             const pesanSukses = document.getElementById('pesan-sukses');
             if (pesanSukses) {

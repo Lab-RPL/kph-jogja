@@ -62,8 +62,8 @@
                                     <td><a href="{{ route('petak.index', ['id_rph' => $da->id_rph]) }}"
                                             class="btn btn-success"><i class="fas fa-eye"></i></a></td>
                                     <td class="center-align">
-                                        <a href="{{ route('rph.edit', $da->id_rph) }}"
-                                            class="btn btn-warning mb-1 m-l-1"><i class="fas fa-pencil-alt"></i></a>
+                                        <a href="{{ route('rph.edit', $da->id_rph) }}" class="btn btn-warning mb-1 m-l-1"><i
+                                                class="fas fa-pencil-alt"></i></a>
                                         <a href="{{ route('rph.destroy', $da->id_rph) }}" data-id="{{ $da->id_rph }}"
                                             class="btn btn-danger mb-1 m-l-1 delete-btn"><i class="fa fa-trash"></i></a>
                                     </td>
@@ -77,22 +77,12 @@
                     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
                 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
                 <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-                <script>
-                    $('#tabelData').DataTable({
-                        lengthMenu: [
-                            [5, 10, 25, -1],
-                            [5, 10, 25, "All"]
-                        ],
-
-                        pageLength: 5 // Menampilkan 5 data per halaman
-                    });
-                </script>
 
                 {{-- {{ $data->links() }} --}}
                 <div style="display: flex; justify-content: space-between;" class="mt-4">
-                    <a class="btn btn-warning mt-3" style="color: white" href="/data-bdh">Kembali</a>
-                    <!-- Redirect ke halaman tambah dengan query "bdh" (Cth: ?bdh=1) -->
-                    <a class="btn btn-primary mt-3" style="color: white"
+                    <a class="btn btn-warning" style="color: white; font-weight:bold;" onclick="return goBack()">Kembali</a>
+                    <a class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
                         href="{{ route('rph.create', ['bdh' => $id_bdh]) }}">Tambah Data</a>
                 </div>
             </form>
@@ -152,6 +142,20 @@
 
     {{-- script Notif --}}
     <script>
+        function goBack() {
+            window.history.back();
+            return false;
+        }
+
+        $('#tabelData').DataTable({
+            lengthMenu: [
+                [5, 10, 25, -1],
+                [5, 10, 25, "All"]
+            ],
+
+            pageLength: 5 // Menampilkan 5 data per halaman
+        });
+
         document.addEventListener('DOMContentLoaded', function() {
             const pesanSukses = document.getElementById('pesan-sukses');
             if (pesanSukses) {

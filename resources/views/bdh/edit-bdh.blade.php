@@ -28,11 +28,18 @@
                         <td><input type="text" id="luas-tanah" name="luas_bdh" value="{{ $bdh->luas_bdh }}"></td>
                     </tr>
                 </table>
-                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                    <a class="btn btn-warning" style="color: white" href="/data-bdh">Kembali</a>
-                    <button class="btn btn-primary" style="color: white" type="submit">Submit</button>
+                <div style="display: flex; justify-content: space-between;" class="mt-4">
+                    <a class="btn btn-warning" style="color: white; font-weight:bold;" onclick="return goBack()">Kembali</a>
+                    <button class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
+                        type="submit">Submit</button>
                 </div>
             </div>
         </div>
     </form>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 @endsection
