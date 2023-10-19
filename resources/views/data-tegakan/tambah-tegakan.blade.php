@@ -32,9 +32,54 @@
                     </tr>
 
                     <tr>
-                        <td >Jenis Tegakan</td>
-                        <td><input type="text" id="tambah-tegakan" name="jenis_tgk" required></td>
+                        <td><label for="potensi-ptk">Potensi Petak</label></td>
+                        <td>
+                            <select id="potensi-ptk" name="potensi_ptk" required>
+                                <option value=""disabled selected hidden>Pilih Potensi</option>
+                                <option value="0">Hutan Kayu</option>
+                                <option value="1">Hutan Bukan Kayu</option>
+                            </select>
+                        </td>
                     </tr>
+
+                    <tr>
+                        <td><label for="jenis_tgk"> Tegakan</label></td>
+                        <td>
+                            <select id="jenis_tgk" name="id_tgk">
+
+                            </select>
+                        </td>
+                    </tr>
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+                    <script>
+                        $("#potensi-ptk").change(function() {
+                            var type = $(this).val();
+                            var url = '{{ route('petak.getJenisTgk', ':type') }}';
+                            url = url.replace(':type', type);
+
+                            $.ajax({
+                                url: url,
+                                type: 'GET',
+                                success: function(data) {
+                                    var $jenisTgk = $('#jenis_tgk');
+                                    $jenisTgk.empty(); // Kosongkan opsi saat ini
+
+                                    for (var i = 0; i < data.length; i++) {
+                                        if (type === '0') {
+                                            $jenisTgk.append('<option value=' + data[i].id_hhk + '>' + data[i]
+                                                .jenis_tgk + '</option>');
+                                        } else if (type === '1') {
+                                            $jenisTgk.append('<option value=' + data[i].id_hhbk + '>' + data[i]
+                                                .jenis_tgk + '</option>');
+                                        }
+                                    }
+                                }
+                            });
+                        });
+                    </script>
+
                     <tr>
                         <td>Nomor Pohon</td>
                         <td><input type="text" id="tambah-tegakan" name="no_pohon" required></td>

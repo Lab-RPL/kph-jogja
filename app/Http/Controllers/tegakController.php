@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\dataTegak;
 use App\Models\dataUtama;
+use App\Models\hhk;
+use App\Models\hhbk;
 use Illuminate\Http\Request;
 
 class tegakController extends Controller
@@ -17,8 +19,11 @@ class tegakController extends Controller
 
         $data = DB::table('data_tegak')
             ->join('data_utama', 'data_utama.id_PU', '=', 'data_tegak.id_PU')
+            ->leftJoin('hhbk', 'data_tegak.id_hhbk', '=', 'hhbk.id_hhbk')
+            ->leftJoin('hhk', 'data_tegak.id_hhk', '=', 'hhk.id_hhk')
             ->where('data_tegak.id_PU', $id_PU)
             ->where('data_tegak.IsDelete', 0)
+            ->select('data_tegak.*', 'hhbk.jenis_tgk as hhbk_jenis_tgk', 'hhk.jenis_tgk as hhk_jenis_tgk')
             ->paginate(100000000);
 
         return view('data-tegakan.inventarisTegakan', ['data' => $data, 'id_PU' => $id_PU]);
@@ -45,15 +50,37 @@ class tegakController extends Controller
         return view('data-tegakan.tambah-tegakan', compact("dataUtama", "selectedDataUtama"));
     }
 
+    public function getJenisTgk($type)
+    {
+        if ($type == '0') {
+            //Fetch hhk data
+            $jenisTgk = hhk::all();
+        } elseif ($type == '1') {
+            //Fetch hhbk data
+            $jenisTgk = hhbk::all();
+        }
+        return response()->json($jenisTgk);
+    }
+
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'id_PU'    => 'required',
+            'no_pohon'=> 'required',
+            'potensi_ptk'=> 'required',
+            'diameter'  => 'required',
+            'tinggi'  => 'required',
+            'id_tgk' => 'required',
+        ]);
 
         dataTegak::create([
             'id_PU' => $request->id_PU,
-            'jenis_tgk' => $request->jenis_tgk,
             'no_pohon' => $request->no_pohon,
+            'id_hhk' => $request->potensi_ptk == 0 ? $request->id_tgk : null,
+            'id_hhbk' => $request->potensi_ptk == 1 ? $request->id_tgk : null,
             'diameter' => $request->diameter,
-            'tinggi' => $request->tinggi
+            'tinggi' => $request->tinggi,
+            'id_tgk' => $request->jenis_tgk,
         ]);
 
         return redirect()->route('data-tgk.index', $request->id_PU) // Gantikan dengan nama route yang sesuai
@@ -70,17 +97,20 @@ class tegakController extends Controller
     public function update(Request $request, $id){
         $this->validate($request, [
             'id_PU'    => 'required',
-            'jenis_tgk'  => 'required',
             'no_pohon'=> 'required',
+            'potensi_ptk'=> 'required',
             'diameter'  => 'required',
-            'tinggi'  => 'required'
+            'tinggi'  => 'required',
         ]);
 
         $dataTegak = dataTegak::findOrFail($id);
 
         $dataTegak->id_PU     = $request->id_PU;
-        $dataTegak->jenis_tgk   = $request->jenis_tgk;
         $dataTegak->no_pohon = $request->no_pohon;
+        $dataTegak->potensi_ptk = $request->potensi_ptk;
+        $dataTegak->id_tgk = $request->jenis_tgk;
+        $dataTegak->id_hhk = $request->potensi_ptk == 0 ? $request->id_tgk : null;
+        $dataTegak->id_hhbk = $request->potensi_ptk == 1 ? $request->id_tgk : null;
         $dataTegak->diameter  = $request->diameter;
         $dataTegak->tinggi  = $request->tinggi;
     

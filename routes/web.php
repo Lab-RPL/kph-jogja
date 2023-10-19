@@ -51,6 +51,7 @@ Route::post('/data-tegakan', [tegakController::class, 'store'])->name('data-tgk.
 Route::get('/data-tegakan/{id}/edit', [tegakController::class, 'edit'])->name('data-tgk.edit');
 Route::put('/data-tegakan/{id}', [tegakController::class, 'update'])->name('data-tgk.update');
 Route::get('/data-tegakan{id_PU}', [tegakController::class, 'destroy'])->name('data-tgk.destroy');
+Route::get('data-tegakan/getJenisTgk/{type}', [tegakController::class, 'getJenisTgk'])->name('data-tgk.getJenisTgk');
 
 // BDH
 Route::get('/data-bdh', [bdhController::class, 'index']);
@@ -162,6 +163,7 @@ Route::get('/tambah-luas-hutan', [LuasHutanController::class, 'create'])->name('
 //Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 Route::get('/chart-data', [DashboardController::class, 'getChartData']);
+Route::get('/dashboard/bdh', [DashboardController::class, 'getPieChartData']);
 
 //rekap
 Route::get('/data-rekap', [rekapController::class, 'index'])->name('rekap-read');
