@@ -170,7 +170,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: -30px auto auto 60px;
+    margin: -30px auto auto 30px;
 }
 
 .garis1 {
@@ -215,11 +215,12 @@ body {
     border-radius: 10px;
     padding: 60px;
     left: 20px;
-    max-width: 980px;
+    max-width: 3000px;
     width: 100%;
     margin-top: 2%;
     height: 100%;
-    max-height: 35rem;
+    max-height: 700px;
+    margin-top: -20px;
     border-color: #0cb166;
     overflow-y: scroll;
     margin-bottom: 38px;

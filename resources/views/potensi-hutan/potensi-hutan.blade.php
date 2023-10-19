@@ -37,10 +37,10 @@
 
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" data-bs-toggle="tab" href="#hhk">hhk</a>
+                        <a class="nav-link active" data-bs-toggle="tab" href="#hhk">Hasil Hutan Kayu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#hhbk">hhbk</a>
+                        <a class="nav-link" data-bs-toggle="tab" href="#hhbk">Hasil Hutan Bukan Kayu</a>
                     </li>
                 </ul>
 
@@ -48,12 +48,16 @@
                 <div class="tab-content">
                     <div id="hhk" class="container tab-pane active"><br>
                         <div id="wrapper-hasil-hutan-kayu">
-                            <div class="wrapper">
+                            {{-- <div class="wrapper">
                                 <div class="hhbk">
                                     <h3>Hasil Hutan Kayu</h3>
                                 </div>
+                            </div> --}}
+                            <div style="display: flex; justify-content: flex-start;" class="nav-item mt-4">
+                                <a class="btn btn-primary"
+                                    style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                                    href="{{ route('potensi.create_hhk') }}">Tambah Data</a>
                             </div>
-
                             <!-- tabel potensi -->
 
                             <table id="tabelData" class="table table-bordered">
@@ -82,21 +86,21 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            <div style="display: flex; justify-content: flex-end;" class="nav-item mt-4">
-                                <a class="btn btn-primary"
-                                    style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
-                                    href="{{ route('potensi.create_hhk') }}">Tambah Data</a>
-                            </div>
+                            
                         </div>
                     </div>
                     <div id="hhbk" class="container tab-pane fade"><br>
                         <div id="wrapper-hasil-hutan-bukan-kayu">
-                            <div class="wrapper">
+                            {{-- <div class="wrapper">
                                 <div class="hhbk">
                                     <h3>Hasil Hutan Bukan Kayu</h3>
                                 </div>
+                            </div> --}}
+                            <div style="display: flex; justify-content: flex-start;" class="nav-item mt-4">
+                                <a class="btn btn-primary"
+                                    style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                                    href="{{ route('potensi.create_hhbk') }}">Tambah Data</a>
                             </div>
-
                             <table id="tabelData2" class="table table-bordered">
                                 <thead>
                                     <tr>
@@ -104,6 +108,7 @@
                                         <th style="background-color: #9CC589;" class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
+                                
                                 <tbody>
                                     @foreach ($data as $da)
                                         @if ($da->IsDelete == 0)
@@ -123,11 +128,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            <div style="display: flex; justify-content: flex-end;" class="nav-item mt-4">
-                                <a class="btn btn-primary"
-                                    style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
-                                    href="{{ route('potensi.create_hhbk') }}">Tambah Data</a>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
