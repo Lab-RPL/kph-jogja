@@ -107,6 +107,11 @@
                             <td>
                                 <div class="txt">{{ $da->koor_y }}</div>
                             </td>
+                            <td>
+                                <div class="d-flex justify-content-center">
+                                    <a class="btn btn-primary" href="{{ route('data-tgk.index', ['id_PU' => $da->id_PU]) }}"><i class="fas fa-eye"></i></a>
+                                </div>
+                            </td>
                             <td style="width: 100px">
                                 <div class="container">
                                     <div class="container">
@@ -133,11 +138,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex justify-content-center">
-                                    <a class="btn btn-primary" href="{{ route('data-tgk.index', ['id_PU' => $da->id_PU]) }}"><i class="fas fa-eye"></i></a>
                                 </div>
                             </td>
                         </tr>
