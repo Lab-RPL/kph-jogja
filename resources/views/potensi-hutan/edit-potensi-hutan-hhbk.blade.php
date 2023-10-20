@@ -20,10 +20,6 @@
                         <td height="60px">Jenis Tegakan</td>
                         <td><input type="text" id="mbh" name="jenis_tgk" value="{{ $hhbk->jenis_tgk }}" required></td>
                     </tr>
-                    <tr>
-                        <td height="60px">Faktor Koreksi</td>
-                        <td><input type="text" id="mbh" name="koreksi" value="{{ $hhbk->koreksi }}" required></td>
-                    </tr>
                 </table>
                 <div style="display: flex; justify-content: space-between;" class="mt-5">
                     <a class="btn btn-warning" style="color: white; font-weight: bold;" href="/data-potensi">Kembali</a>
