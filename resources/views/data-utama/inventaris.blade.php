@@ -112,12 +112,12 @@
                                     <a class="btn btn-primary" href="{{ route('data-tgk.index', ['id_PU' => $da->id_PU]) }}"><i class="fas fa-eye"></i></a>
                                 </div>
                             </td>
-                            <td style="width: 100px">
+                            <td>
                                 <div class="container">
                                     <div class="container">
                                         <div class="text-center">
                                             <div class="button-container">
-                                                <a class="btn btn-primary" href="{{ route('data-utama.detail',['id_PU' => $da->id_PU]) }}">
+                                                <a class="btn btn-info" href="{{ route('data-utama.detail',['id_PU' => $da->id_PU]) }}">
                                                     <i class="fa fa-info-circle"></i>
                                                 </a>
                                                 <div class="additional-buttons above">
@@ -144,13 +144,6 @@
                     @endforeach
                     </tbody>
                 </table>
-
-                <div style="display: flex; justify-content: flex-end;">
-                    <a class="btn btn-primary mt-4"
-                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
-                        href="{{ route('data-utama.create') }}">Tambah Data</a> {{--  sementara --}}
-                </div>
-
             </form>
         </div>
     </div>
