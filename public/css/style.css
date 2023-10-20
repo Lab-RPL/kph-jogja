@@ -912,14 +912,13 @@ label {
         max-width: 618px; /* or any size you prefer */
         max-height: 420px; /* it's better to keep the pie chart as almost a square */
         margin-left: 15px;
-        margin-top: 20px;
     }
 
     .bawah .chart1 {
         max-width: 170px;
         max-height: 170px;
         margin-left: 30px;
-        margin-top: 15px;
+        margin-top: 85px;
     }
 
     .chart2{
@@ -928,7 +927,7 @@ label {
 
     .cardBox{
         padding: 5px;
-        margin-top: 10px;
+        margin-top: 20px;
     }
 
     .cardBox .card {
