@@ -67,7 +67,7 @@
                                         Tanggal Rusak</th>
                                     <th rowspan="2" valign="middle" style="background-color: #9CC589;"
                                         class="text-center">Nomor
-                                        PU</th>
+                                        Petak</th>
                                     <th colspan="2" style="background-color: #9CC589;" class="text-center">Koordinat
                                         Rusak</th>
                                     <th rowspan="2" valign="middle" style="background-color: #9CC589;"
@@ -97,7 +97,7 @@
                                             <tr>
                                                 <td>{{ $ros->tgl_input }}</td>
                                                 <td>{{ $ros->tgl_rusak }}</td>
-                                                <td>{{ $ros->no_PU }}</td>
+                                                <td>{{ $ros->nomor_ptk }}</td>
                                                 <td>{{ $ros->koor_x }}</td>
                                                 <td>{{ $ros->koor_y }}</td>
                                                 <td>{{ $ros->keterangan }}</td>
@@ -141,7 +141,7 @@
                                         Tanggal Kehilangan</th>
                                     <th rowspan="2" valign="middle" style="background-color: #9CC589;"
                                         class="text-center">Nomor
-                                        PU</th>
+                                        Petak</th>
                                     <th colspan="2" valign="middle" style="background-color: #9CC589;"
                                         class="text-center">
                                         Koordinat Kehilangan</th>
@@ -174,7 +174,7 @@
                                             <tr>
                                                 <td>{{ $ros->tgl_input }}</td>
                                                 <td>{{ $ros->tgl_rusak }}</td>
-                                                <td>{{ $ros->no_PU }}</td>
+                                                <td>{{ $ros->nomor_ptk }}</td>
                                                 <td>{{ $ros->koor_x }}</td>
                                                 <td>{{ $ros->koor_y }}</td>
                                                 <td style="width: 30px">{{ $ros->diameter }}</td>

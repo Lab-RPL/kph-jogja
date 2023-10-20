@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\dataUtama;
+use App\Models\petak;
 use App\Models\rosak;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,15 +19,15 @@ class rosakController extends Controller
     }
 
     $data = DB::table('rusak_hilang')
-    ->join('data_utama','rusak_hilang.id_PU','=','data_utama.id_PU')
-    ->select('rusak_hilang.*','data_utama.no_PU')
+    ->join('petak','rusak_hilang.id_ptk','=','petak.id_ptk')
+    ->select('rusak_hilang.*','petak.nomor_ptk')
     ->paginate(100000);
     return view('rosak.rosak',compact('data'));
 }
 
 
     public function create(){
-        $data = DB::table('data_utama')->get();
+        $data = DB::table('petak')->get();
         return view('rosak.tambah-rosak',compact('data'));
 
     }
@@ -41,7 +42,7 @@ class rosakController extends Controller
         $rosak->jns_rusak = $request->jns_rusak;
         $rosak->tgl_input = $request->tgl_input;
         $rosak->tgl_rusak = $request->tgl_rusak;
-        $rosak->id_PU = $request->id_PU;
+        $rosak->id_ptk = $request->id_ptk;
         $rosak->koor_x = $request->koor_x;
         $rosak->koor_y = $request->koor_y;
         $rosak->keterangan = $request->keterangan;
@@ -71,44 +72,43 @@ class rosakController extends Controller
         
 
         $rosak = DB::table('rusak_hilang')
-        ->join('data_utama','rusak_hilang.id_PU','=','data_utama.id_PU')
-        ->select('rusak_hilang.*','data_utama.no_PU')
+        ->join('petak','rusak_hilang.id_ptk','=','petak.id_ptk')
+        ->select('rusak_hilang.*','petak.nomor_ptk')
         ->where('rusak_hilang.id_rusak',$id)
         ->where('rusak_hilang.IsDelete',0)
         ->first();       
 
-        $data_utama = dataUtama::all();
-        return view('rosak.edit-rosak',compact('rosak','data_utama'));
+        $petak = petak::all();
+        return view('rosak.edit-rosak',compact('rosak','petak'));
     } 
     
 
-    public function update(Request $request, $id){
-
-    
-        $image = $request->file('foto');
-        $imageFileName = $this->generateRandomString();
-        $image->move(public_path() . "/upload", $imageFileName);
+    public function update(Request $request, $id){   
 
         $rosak = rosak::find($id);
-
+    
+        if($request->hasFile('foto')){
+            $image = $request->file('foto');
+            $imageFileName = $this->generateRandomString();
+            $image->move(public_path() . "/upload", $imageFileName);
+            $rosak->foto = $imageFileName;
+        }
+    
         $rosak->jns_rusak = $request->jns_rusak;
         $rosak->tgl_input = $request->tgl_input;
         $rosak->tgl_rusak = $request->tgl_rusak;
-        $rosak->id_PU = $request->id_PU;
+        $rosak->id_ptk = $request->id_ptk;
         $rosak->koor_x = $request->koor_x;
         $rosak->koor_y = $request->koor_y;
         $rosak->keterangan = $request->keterangan;
-        $rosak->foto = $imageFileName;
-
-       
-        
-
+    
         $rosak->diameter = $request->diameter;
         $rosak->save();
-
+    
         return redirect()->route('rosak.index')->with('pesan', 'Data Kerusakan/Kehilangan Berhasil Diupdate');
-
+    
     }
+    
 
     public function destroy($id_rusak){
         $rusak = rosak::find($id_rusak);
