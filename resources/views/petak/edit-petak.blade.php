@@ -21,8 +21,7 @@
                                 @if ($rph->IsDelete == 0 && $rph->id_rph == $petak->id_rph)
                                     <input value=" {{ $rph->nama_rph }}" id="tambah-rph" type="text" name="nama_rph"
                                         disabled>
-                                        <input value="{{ $rph->id_rph }}" id="tambah-rph" type="hidden" name="id_rph">
-
+                                    <input value="{{ $rph->id_rph }}" id="tambah-rph" type="hidden" name="id_rph">
                                 @break
                             @endif
                         @endforeach
@@ -119,28 +118,38 @@
     </div>
 </form>
 <script>
-    $("#potensi-ptk").change(function() {
-        var type = $(this).val();
-        var url = '{{ route('petak.getJenisTgk', ':type') }}';
-        url = url.replace(':type', type);
+$(document).ready(function() {
+    var $jenisTgk = $('#jenis_tgk');
+    
+    function fetchJenisTgk(value) {
+        var url = '{{ route('petak.getJenisTgk', ':value') }}';
+        url = url.replace(':value', value);
+        var selectedType = value === '0' ? "{{ $petak->id_hhk }}" : "{{ $petak->id_hhbk }}";
 
         $.ajax({
             url: url,
             type: 'GET',
             success: function(data) {
-                var $jenisTgk = $('#jenis_tgk');
-                $jenisTgk.empty(); // Kosongkan opsi saat ini
+                console.log(data);
+                $jenisTgk.empty();
 
                 for (var i = 0; i < data.length; i++) {
-                    var optionValue = type === '0' ? data[i].id_hhk : data[i].id_hhbk;
+                    var optionValue = value === '0' ? data[i].id_hhk : data[i].id_hhbk;
                     var optionText = data[i].jenis_tgk;
+                    var selected = (optionValue == selectedType) ? 'selected' : '';
 
-                    $jenisTgk.append('<option value="' + optionValue + '">' + optionText +
-                        '</option>');
+                    $jenisTgk.append('<option value="' + optionValue + '" ' + selected + ' >' + optionText + '</option>');
                 }
             }
         });
-    });
+    }
+
+    $("#potensi-ptk").change(function() {
+        fetchJenisTgk($(this).val());
+    }).trigger('change');
+});
+
+
 
     function goBack() {
         window.history.back();
