@@ -27,6 +27,11 @@
                 @endif
 
                 <table id="tabelData" class="table table-bordered" style="margin-left: -2rem;">
+                    <div style="display: flex;">
+                        <a class="btn btn-primary mt-2"
+                            style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                            href="{{ route('data-utama.create') }}">Tambah Data</a> {{--  sementara --}}
+                    </div>
                     <thead>
                             <th rowspan="2" style="background-color: #9CC589;">
                                 <div class="sub-table-inventaris">NOMOR PU</div>
@@ -47,10 +52,10 @@
                                 <div class="text-center" style="font-size: 13px;">KOORDINAT</div>
                             </th>
                             <th rowspan="2" style="background-color: #9CC589;">
-                                <div class="sub-table-inventaris">OPTION</div>
+                                <div class="sub-table-inventaris">DATA TEGAK</div>
                             </th>
                             <th rowspan="2" style="background-color: #9CC589;">
-                                <div class="sub-table-inventaris">DATA TEGAK</div>
+                                <div class="sub-table-inventaris">OPTION</div>
                             </th>
 
                         </tr>
