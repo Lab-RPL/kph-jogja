@@ -838,6 +838,17 @@ label {
 }
 
 @media only screen and (min-width: 1920px) {
+
+    .border-lists {
+        max-height: 800px;
+        top: -80px;
+    }
+
+    .border-liste {
+        top: -80px;
+        max-width: 800px;
+    }
+
     .main {
         width: calc(100% - 240px);
         left: 220px;
@@ -862,7 +873,7 @@ label {
         position: relative;
         width: 90px;
         height: 60px;
-        right: 5px;
+        right: -5px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
