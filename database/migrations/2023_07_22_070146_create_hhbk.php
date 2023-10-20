@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('hhbk', function (Blueprint $table) {
             $table->bigIncrements('id_hhbk');
             $table->string('jenis_tgk');
-            $table->decimal('koreksi');
             $table->boolean('IsDelete')->default(0);
             $table->timestamps();
         });

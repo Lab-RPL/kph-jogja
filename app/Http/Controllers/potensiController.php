@@ -48,7 +48,6 @@ class potensiController extends Controller
         $hhbk = new hhbk();
 
         $hhbk->jenis_tgk = $request->jenis_tgk;
-        $hhbk->koreksi = $request->koreksi;
         $hhbk->save();
         return redirect('/data-potensi')->with('pesan', 'Data Hasil Hutan Bukan Kayu Berhasil Disimpan');
     }
@@ -132,12 +131,10 @@ class potensiController extends Controller
     {
         $this->validate($request, [
             'jenis_tgk'  => 'required',
-            'koreksi'  => 'required',
         ]);
         
         $hhbk = hhbk::where('id_hhbk', $id)->first();
         $hhbk->jenis_tgk = $request->jenis_tgk;
-        $hhbk->koreksi = $request->koreksi;
         $hhbk->save();
         return redirect('/data-potensi')->with('pesan', 'Data Hasil Hutan Bukan Kayu Berhasil Diperbaharui');
     }

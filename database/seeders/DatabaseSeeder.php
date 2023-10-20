@@ -154,42 +154,52 @@ class DatabaseSeeder extends Seeder
 
         hhk::create([
             'id_hhk' => 1,
+            'koreksi' => 0.70,
             'jenis_tgk' => "Jati" 
         ]);
         hhk::create([
             'id_hhk' => 2,
+            'koreksi' => 0.60,
             'jenis_tgk' => "Mahoni" 
         ]);
         hhk::create([
             'id_hhk' => 3,
+            'koreksi' => 0.60,
             'jenis_tgk' => "Akasia" 
         ]);
         hhk::create([
             'id_hhk' => 4,
+            'koreksi' => 0.60,
             'jenis_tgk' => "Sonokeling" 
         ]);
         hhk::create([
             'id_hhk' => 5,
+            'koreksi' => 0.60,
             'jenis_tgk' => "Pinus" 
         ]);
         hhk::create([
             'id_hhk' => 6,
+            'koreksi' => 0.60,
             'jenis_tgk' => "Kayu Putih" 
         ]);
         hhk::create([
             'id_hhk' => 7,
+            'koreksi' => 0.60,
             'jenis_tgk' => "Rumba Campus" 
         ]);
         hhk::create([
             'id_hhk' => 8,
+            'koreksi' => 0.60,
             'jenis_tgk' => "Sengon" 
         ]);
         hhk::create([
             'id_hhk' => 9,
+            'koreksi' => 0.60,
             'jenis_tgk' => "Eucalyptus" 
         ]);
         hhk::create([
             'id_hhk' => 10,
+            'koreksi' => 0.60,
             'jenis_tgk' => "Nyamplung" 
         ]);
 
@@ -367,7 +377,7 @@ class DatabaseSeeder extends Seeder
             'luas_PU' => 10.97,
             'tanam_sela' => "entah",
             'tahun_tanam' => 1990,
-            'jarak_tanam' => 59,
+            'jarak_tanam' => "3x3",
             'umur_tgk' => 90,
             'keadaan_kes' => "Jelek",
             'kerataan_tgk' => "Agak Rata",
@@ -395,7 +405,7 @@ class DatabaseSeeder extends Seeder
             'luas_PU' => 2.97,
             'tanam_sela' => "entah",
             'tahun_tanam' => 1990,
-            'jarak_tanam' => 59,
+            'jarak_tanam' => "3x3",
             'umur_tgk' => 90,
             'keadaan_kes' => "Jelek",
             'kerataan_tgk' => "Agak Rata",
@@ -423,7 +433,7 @@ class DatabaseSeeder extends Seeder
             'luas_PU' => 17.97,
             'tanam_sela' => "entah",
             'tahun_tanam' => 1990,
-            'jarak_tanam' => 59,
+            'jarak_tanam' => "5x9",
             'umur_tgk' => 90,
             'keadaan_kes' => "Jelek",
             'kerataan_tgk' => "Agak Rata",
@@ -456,7 +466,7 @@ class DatabaseSeeder extends Seeder
             'jns_rusak' => 1,
             'tgl_input' => "2023-10-06",
             'tgl_rusak' => "2023-10-06",
-            'id_PU' => 1,
+            'id_ptk' => 1,
             'koor_x' => 90123,
             'koor_y' => 82321,
             'keterangan' => "Kurang Tau",
