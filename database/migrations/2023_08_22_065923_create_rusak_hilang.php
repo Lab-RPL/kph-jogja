@@ -16,8 +16,8 @@ return new class extends Migration
             $table->boolean('jns_rusak')->default(0);
             $table->date('tgl_input');
             $table->date('tgl_rusak');
-            $table->unsignedBigInteger('id_PU');
-            $table->foreign('id_PU')->references('id_PU')->on('data_utama');
+            $table->unsignedBigInteger('id_ptk');
+            $table->foreign('id_ptk')->references('id_ptk')->on('petak');
             $table->double('koor_x');
             $table->double('koor_y');
             $table->string('keterangan');
