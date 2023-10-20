@@ -887,7 +887,7 @@ label {
     }
 }
 
-@media only screen and (min-width: 1680px){
+@media only screen and (max-width: 1680px){
     .border-lists{
         max-height: 800px;
         max-width: 2000px;
@@ -903,11 +903,16 @@ label {
     }
 }
 
-@media only screen and (max-width: 1366px){
+@media only screen and (min-width: 1366px){
+    .border-lists{
+        max-height: 600px;
+    }
+
     .chart-container canvas {
         max-width: 618px; /* or any size you prefer */
         max-height: 420px; /* it's better to keep the pie chart as almost a square */
         margin-left: 15px;
+        margin-top: 20px;
     }
 
     .bawah .chart1 {
