@@ -24,7 +24,7 @@ return new class extends Migration
             $table->double('luas_PU');
             $table->string('tanam_sela');
             $table->integer('tahun_tanam');
-            $table->float('jarak_tanam');
+            $table->string('jarak_tanam');
             $table->integer('umur_tgk');
             $table->string('keadaan_kes');
             $table->string('kerataan_tgk');

@@ -35,11 +35,12 @@ class potensiController extends Controller
     public function store_hhk(Request $request)
     {
 
-        $hhbk = new hhk();
+        $hhk = new hhk();
 
-        $hhbk->jenis_tgk = $request->jenis_tgk;
-        $hhbk->save();
-        return redirect('/data-potensi')->with('pesan', 'Data HHK Berhasil Disimpan');
+        $hhk->jenis_tgk = $request->jenis_tgk;
+        $hhk->koreksi = $request->koreksi;
+        $hhk->save();
+        return redirect('/data-potensi')->with('pesan', 'Data Hasil Hutan Kayu Berhasil Disimpan');
     }
     public function store_hhbk(Request $request)
     {
@@ -47,8 +48,9 @@ class potensiController extends Controller
         $hhbk = new hhbk();
 
         $hhbk->jenis_tgk = $request->jenis_tgk;
+        $hhbk->koreksi = $request->koreksi;
         $hhbk->save();
-        return redirect('/data-potensi')->with('pesan', 'Data HHBK Berhasil Disimpan');
+        return redirect('/data-potensi')->with('pesan', 'Data Hasil Hutan Bukan Kayu Berhasil Disimpan');
     }
 
     public function destroy_hhbk($id_hhbk){
@@ -56,7 +58,7 @@ class potensiController extends Controller
         if($hhbk){
             $hhbk->IsDelete =1;
             $hhbk->save();
-            return redirect()->back()->with('pesan',"Data Hasil Bukan Kayu Berhasil Dihapus");
+            return redirect()->back()->with('pesan',"Data Hasil Hutan Bukan Kayu Berhasil Dihapus");
         }
     }
     public function destroy_hhk($id_hhk){
@@ -64,7 +66,7 @@ class potensiController extends Controller
         if($hhk){
             $hhk->IsDelete =1;
             $hhk->save();
-            return redirect()->back()->with('pesan',"Data Hasil Kayu Berhasil Dihapus");
+            return redirect()->back()->with('pesan',"Data Hasil Hutan Kayu Berhasil Dihapus");
         }
     }
    // Ubah fungsi destroy anda seperti ini.
@@ -115,26 +117,28 @@ class potensiController extends Controller
     public function update_hhk(Request $request, $id)
     {
         $this->validate($request, [
-            'id_hhk'    => 'required',
             'jenis_tgk'  => 'required',
+            'koreksi'  => 'required',
         ]);
         
         $hhk = hhk::where('id_hhk', $id)->first();
         $hhk->jenis_tgk = $request->jenis_tgk;
+        $hhk->koreksi = $request->koreksi;
         $hhk->save();
-        return redirect('/data-potensi')->with('pesan', 'Data HHK Berhasil Diperbaharui');
+        return redirect('/data-potensi')->with('pesan', 'Data Hasil Hutan Kayu Berhasil Diperbaharui');
     }
     
     public function update_hhbk(Request $request, $id)
     {
         $this->validate($request, [
-            'id_hhbk'    => 'required',
             'jenis_tgk'  => 'required',
+            'koreksi'  => 'required',
         ]);
         
         $hhbk = hhbk::where('id_hhbk', $id)->first();
         $hhbk->jenis_tgk = $request->jenis_tgk;
+        $hhbk->koreksi = $request->koreksi;
         $hhbk->save();
-        return redirect('/data-potensi')->with('pesan', 'Data HHBK Berhasil Diperbaharui');
+        return redirect('/data-potensi')->with('pesan', 'Data Hasil Hutan Bukan Kayu Berhasil Diperbaharui');
     }
 }

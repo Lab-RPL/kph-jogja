@@ -87,6 +87,7 @@
                                 <thead>
                                     <tr>
                                         <th style="background-color: #9CC589;" class="text-center">Jenis Tegakan</th>
+                                        <th style="background-color: #9CC589;" class="text-center">Faktor Koreksi</th>
                                         <th style="background-color: #9CC589;" class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
@@ -95,6 +96,7 @@
                                         @if ($da->IsDelete == 0)
                                             <tr>
                                                 <td>{{ $da->jenis_tgk }}</td>
+                                                <td>{{ $da->koreksi }}</td>
                                                 <td style="justify-content: space-between; align-items:center">
                                                     <a href="{{ route('potensi.edit_hhk', $da->id_hhk) }}"
                                                         class="btn btn-warning mb-1 m-l-1"><i
@@ -128,6 +130,7 @@
                                 <thead>
                                     <tr>
                                         <th style="background-color: #9CC589;" class="text-center">Jenis Tegakan</th>
+                                        <th style="background-color: #9CC589;" class="text-center">Faktor Koreksi</th>
                                         <th style="background-color: #9CC589;" class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
@@ -137,6 +140,7 @@
                                         @if ($da->IsDelete == 0)
                                             <tr>
                                                 <td>{{ $da->jenis_tgk }}</td>
+                                                <td>{{ $da->koreksi }}</td>
                                                 <td style="justify-content: space-between; align-items:center">
                                                     <a href="{{ route('potensi.edit_hhbk', $da->id_hhbk) }}"
                                                         class="btn btn-warning mb-1 m-l-1"><i
