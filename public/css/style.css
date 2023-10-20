@@ -130,7 +130,7 @@
     max-width: 220px;
     max-height: 220px;
     margin-left: 10px;
-    margin-top: 30px;
+    margin-top: 100px;
 }
 
 .chart2 {
@@ -783,7 +783,7 @@ label {
     position: relative;
     width: 90px;
     height: 60px;
-    left: -10px;
+    left: -70px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -841,11 +841,12 @@ label {
 
     .border-lists {
         top: -80px;
+        max-height: 750px;
     }
 
     .border-liste {
         top: -80px;
-        max-width: 800px;
+        max-width: 1000px;
     }
 
     .main {
@@ -872,7 +873,7 @@ label {
         position: relative;
         width: 90px;
         height: 60px;
-        right: -5px;
+        left: -120px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -885,11 +886,15 @@ label {
     .border-lists{
         max-height: 800px;
         max-width: 2000px;
-        top: -50px;
+        top: -10px;
     }
 
     .border-liste{
-        top: -50px;
+        top: -20px;
+    }
+
+    .cardBox{
+        top: 50px;
     }
 }
 
