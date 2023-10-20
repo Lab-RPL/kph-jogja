@@ -219,7 +219,7 @@ body {
     width: 100%;
     margin-top: 2%;
     height: 100%;
-    max-height: 600px;
+    max-height: 700px;
     margin-top: -20px;
     border-color: #0cb166;
     overflow-y: scroll;
@@ -783,7 +783,7 @@ label {
     position: relative;
     width: 90px;
     height: 60px;
-    left: -70px;
+    left: -10px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -837,10 +837,11 @@ label {
     }
 }
 
+
 @media only screen and (min-width: 1920px) {
 
     .border-lists {
-        top: -80px;
+        top: -40px;
         max-height: 750px;
     }
 
@@ -850,8 +851,8 @@ label {
     }
 
     .main {
-        width: calc(100% - 240px);
-        left: 220px;
+        width: calc(100% - 180px);
+        left: 250px;
     }
 
     .main.active {
@@ -869,11 +870,15 @@ label {
         left: -30px;
     }
 
+    .border-lists{
+        margin-top: 30%;
+    }
+
     .toggle {
         position: relative;
         width: 90px;
         height: 60px;
-        left: -120px;
+        left: 10px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -882,7 +887,7 @@ label {
     }
 }
 
-@media only screen and (max-width: 1680px){
+@media only screen and (min-width: 1680px){
     .border-lists{
         max-height: 800px;
         max-width: 2000px;
