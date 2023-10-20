@@ -18,6 +18,10 @@
                         <td>Jenis Tegakan</td>
                         <td height="50px"><input type="text" name="jenis_tgk" required></td>
                     </tr>
+                    <tr>
+                        <td>Faktor Koreksi</td>
+                        <td height="50px"><input type="text" name="koreksi" required></td>
+                    </tr>
                 </table>
                 <div style="display: flex; justify-content: space-between;" class="mt-5">
                     <a class="btn btn-warning" style="color: white; font-weight: bold" href="/data-potensi">Kembali</a>

@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <form action="{{ route('potensi.edit_hhbk', $hhbk->id_hhbk) }}" method="POST">
+    <form action="{{ route('potensi.update_hhbk', $hhbk->id_hhbk) }}" method="POST">
         @csrf
         @method('put')
         <div class="garis">
@@ -18,7 +18,11 @@
                 <table id="tabelData">
                     <tr>
                         <td height="60px">Jenis Tegakan</td>
-                        <td><input type="text" id="mbh" name="jenis_tgk" value="{{ $hhbk->jenis_tgk }}"></td>
+                        <td><input type="text" id="mbh" name="jenis_tgk" value="{{ $hhbk->jenis_tgk }}" required></td>
+                    </tr>
+                    <tr>
+                        <td height="60px">Faktor Koreksi</td>
+                        <td><input type="text" id="mbh" name="koreksi" value="{{ $hhbk->koreksi }}" required></td>
                     </tr>
                 </table>
                 <div style="display: flex; justify-content: space-between;" class="mt-5">
