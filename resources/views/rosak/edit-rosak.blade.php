@@ -46,17 +46,17 @@
                         </tr>
 
                         <tr>
-                            <td>Nomor PU</td>
+                            <td>Nomor Petak</td>
                             <td>
                                 <span>X</span>
-                                <select name="id_PU" required>
-                                    <option value="" disabled selected hidden>Pilih Nomor PU</option>
-                                    @foreach ($data_utama as $p)
+                                <select name="id_ptk" required>
+                                    <option value="" disabled selected hidden>Pilih Nomor Petak</option>
+                                    @foreach ($petak as $p)
                                         @if ($p->IsDelete == 0)
                                             @php
-                                                $selected_pu = $rosak->id_PU ? 'selected' :'';
+                                                $selected_ptk = $rosak->id_ptk ? 'selected' :'';
                                             @endphp
-                                            <option value="{{ $p->id_PU }}" {{ $selected_pu }}>{{ $p->no_PU }}
+                                            <option value="{{ $p->id_ptk }}" {{ $selected_ptk }}>{{ $p->nomor_ptk }}
                                             </option>
                                         @endif
                                     @endforeach

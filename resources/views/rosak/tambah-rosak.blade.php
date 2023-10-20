@@ -39,14 +39,14 @@
                             <td height="50px"><span>X</span> <input type="date" name="tgl_rusak" required></td>
                         </tr>
                         <tr>
-                            <td>Nomor PU</td>
+                            <td>Nomor Petak</td>
                             <td>
                                 <span>X</span>
-                                <select name="id_PU" required>
-                                    <option value="" disabled selected hidden>Pilih Nomor PU</option>
+                                <select name="id_ptk" required>
+                                    <option value="" disabled selected hidden>Pilih Nomor Petak</option>
                                     @foreach ($data as $p)
-                                        <option value="{{ $p->id_PU }}">
-                                            {{ $p->no_PU }}
+                                        <option value="{{ $p->id_ptk }}">
+                                            {{ $p->nomor_ptk }}
                                         </option>
                                     @endforeach
                                 </select>
