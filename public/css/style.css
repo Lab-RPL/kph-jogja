@@ -841,11 +841,12 @@ label {
 
     .border-lists {
         top: -80px;
+        max-height: 750px;
     }
 
     .border-liste {
         top: -80px;
-        max-width: 800px;
+        max-width: 1000px;
     }
 
     .main {
@@ -872,7 +873,7 @@ label {
         position: relative;
         width: 90px;
         height: 60px;
-        right: -5px;
+        left: -120px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
