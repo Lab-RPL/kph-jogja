@@ -10,152 +10,203 @@
         <div class="border-lists">
             <h2 class="mt-2 middletext">DATA KERUSAKAN / KEHILANGAN</h2>
             <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
+            <style>
+                .nav-tabs .nav-item .nav-link {
+                    background-color: #F5F5F5;
+                    color: #000;
+                }
 
+                .nav-tabs .nav-item .nav-link.active {
+                    color: #000000;
+                    background-color: #CDFAD5;
+                }
+
+                .tab-content {
+                    border: 1px solid #dee2e6;
+                    border-top: transparent;
+                    padding: 15px;
+                }
+
+                .tab-content .tab-pane {
+                    background-color: #FFF;
+                    min-height: 200px;
+                    height: auto;
+                }
+            </style>
             <form>
-                <!-- tabel kerusakan -->
-                <div class="wrapper">
-                    <div class="bdh">
-                        <h3>Data Kerusakan</h3>
-                    </div>
-                </div>
                 @csrf
                 @if (Session::has('pesan'))
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
 
-                <table id="tabelData" class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">
-                                Tanggal Input</th>
-                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">
-                                Tanggal Rusak</th>
-                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">Nomor
-                                PU</th>
-                            <th colspan="2" style="background-color: #9CC589;" class="text-center">Koordinat Rusak</th>
-                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">
-                                Keterangan
-                            </th>
-                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">Foto
-                            </th>
-                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">Aksi
-                            </th>
-                        </tr>
-                        <tr>
-                            <th style="background-color: #9CC589;">
-                                <div style="text-align: center">X</div>
-                            </th>
-                            <th style="background-color: #9CC589;">
-                                <div style="text-align: center;">Y</div>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($data as $ros)
-                            @if ($ros->jns_rusak == 0)
-                                @if ($ros->IsDelete == 0)
-                                    <tr>
-                                        <td>{{ $ros->tgl_input }}</td>
-                                        <td>{{ $ros->tgl_rusak }}</td>
-                                        <td>{{ $ros->no_PU }}</td>
-                                        <td>{{ $ros->koor_x }}</td>
-                                        <td>{{ $ros->koor_y }}</td>
-                                        <td>{{ $ros->keterangan }}</td>
-                                        <td>
-                                            <a href="#" class="open-popup" data-src="/upload/{{ $ros->foto }}"
-                                                data-caption="Foto Kerusakan">
-                                                <img class="" style="width:100%;max-width:50px"
-                                                    src="/upload/{{ $ros->foto }}" alt="Foto Kerusakan">
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="{{ route('rosak.edit', $ros->id_rusak) }}"
-                                                class="btn btn-warning mb-1 m-l-1 ms-2"><i
-                                                    class="fas fa-pencil-alt"></i></a>
-                                            <a href="{{ route('rosak.destroy', $ros->id_rusak) }}"
-                                                class="btn btn-danger mb-1 m-l-1"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                @endif
-                            @endif
-                        @endforeach
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active " data-bs-toggle="tab" href="#rusak">Kerusakan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#hilang">Kehilangan</a>
+                    </li>
+                </ul>
 
-                    </tbody>
-                </table>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div id="rusak" class="container tab-pane active">
+                        <div style="display: flex; justify-content: flex-start;">
+                            <a class="btn btn-primary mt-4"
+                                style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                                href="/tambah-rosak">Tambah Data</a>
+                        </div>
+                        <table id="tabelData" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2" valign="middle" style="background-color: #9CC589;"
+                                        class="text-center">
+                                        Tanggal Input</th>
+                                    <th rowspan="2" valign="middle" style="background-color: #9CC589;"
+                                        class="text-center">
+                                        Tanggal Rusak</th>
+                                    <th rowspan="2" valign="middle" style="background-color: #9CC589;"
+                                        class="text-center">Nomor
+                                        PU</th>
+                                    <th colspan="2" style="background-color: #9CC589;" class="text-center">Koordinat
+                                        Rusak</th>
+                                    <th rowspan="2" valign="middle" style="background-color: #9CC589;"
+                                        class="text-center">
+                                        Keterangan
+                                    </th>
+                                    <th rowspan="2" valign="middle" style="background-color: #9CC589;"
+                                        class="text-center">Foto
+                                    </th>
+                                    <th rowspan="2" valign="middle" style="background-color: #9CC589;"
+                                        class="text-center">Aksi
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #9CC589;">
+                                        <div style="text-align: center">X</div>
+                                    </th>
+                                    <th style="background-color: #9CC589;">
+                                        <div style="text-align: center;">Y</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($data as $ros)
+                                    @if ($ros->jns_rusak == 0)
+                                        @if ($ros->IsDelete == 0)
+                                            <tr>
+                                                <td>{{ $ros->tgl_input }}</td>
+                                                <td>{{ $ros->tgl_rusak }}</td>
+                                                <td>{{ $ros->no_PU }}</td>
+                                                <td>{{ $ros->koor_x }}</td>
+                                                <td>{{ $ros->koor_y }}</td>
+                                                <td>{{ $ros->keterangan }}</td>
+                                                <td>
+                                                    <a href="#" class="open-popup"
+                                                        data-src="/upload/{{ $ros->foto }}"
+                                                        data-caption="Foto Kerusakan">
+                                                        <img class="" style="width:100%;max-width:50px"
+                                                            src="/upload/{{ $ros->foto }}" alt="Foto Kerusakan">
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('rosak.edit', $ros->id_rusak) }}"
+                                                        class="btn btn-warning mb-1 m-l-1 ms-2"><i
+                                                            class="fas fa-pencil-alt"></i></a>
+                                                    <a href="{{ route('rosak.destroy', $ros->id_rusak) }}"
+                                                        class="btn btn-danger mb-1 m-l-1"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endif
+                                    @endif
+                                @endforeach
 
-                <br>
-                <br>
-                <!-- Tabel Kehilangan -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="hilang" class="container tab-pane fade">
+                        <div style="display: flex; justify-content: flex-start;">
+                            <a class="btn btn-primary mt-4"
+                                style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                                href="/tambah-rosak">Tambah Data</a>
+                        </div>
+                        <table id="tabelData2" class="table table-bordered" width="915px">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2" valign="middle" style="background-color: #9CC589;"
+                                        class="text-center">
+                                        Tanggal Input</th>
+                                    <th rowspan="2" valign="middle" style="background-color: #9CC589;"
+                                        class="text-center">
+                                        Tanggal Kehilangan</th>
+                                    <th rowspan="2" valign="middle" style="background-color: #9CC589;"
+                                        class="text-center">Nomor
+                                        PU</th>
+                                    <th colspan="2" valign="middle" style="background-color: #9CC589;"
+                                        class="text-center">
+                                        Koordinat Kehilangan</th>
+                                    <th rowspan="2" valign="middle" style="background-color: #9CC589;"
+                                        class="text-center">
+                                        Diameter Tunggak</th>
+                                    <th rowspan="2" valign="middle" style="background-color: #9CC589;"
+                                        class="text-center">
+                                        Keterangan</th>
+                                    <th rowspan="2" valign="middle" style="background-color: #9CC589;"
+                                        class="text-center">Foto
+                                    </th>
+                                    <th rowspan="2" valign="middle" style="background-color: #9CC589;"
+                                        class="text-center">Aksi
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #9CC589;">
+                                        <div style="text-align: center;">X</div>
+                                    </th>
+                                    <th style="background-color: #9CC589;">
+                                        <div style="text-align: center;">Y</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($data as $ros)
+                                    @if ($ros->jns_rusak == 1)
+                                        @if ($ros->IsDelete == 0)
+                                            <tr>
+                                                <td>{{ $ros->tgl_input }}</td>
+                                                <td>{{ $ros->tgl_rusak }}</td>
+                                                <td>{{ $ros->no_PU }}</td>
+                                                <td>{{ $ros->koor_x }}</td>
+                                                <td>{{ $ros->koor_y }}</td>
+                                                <td style="width: 30px">{{ $ros->diameter }}</td>
+                                                <td>{{ $ros->keterangan }}</td>
+                                                <td>
+                                                    <a href="#" class="open-popup"
+                                                        data-src="/upload/{{ $ros->foto }}"
+                                                        data-caption="Foto Kehilangan">
+                                                        <img class="" style="width:100%;max-width:50px"
+                                                            src="/upload/{{ $ros->foto }}" alt="Foto Kehilangan">
+                                                    </a>
+                                                </td>
+                                                <td style="width: 100px">
+                                                    <a href="{{ route('rosak.edit', $ros->id_rusak) }}"
+                                                        class="btn btn-warning mb-1 m-l-1 ms-2"><i
+                                                            class="fas fa-pencil-alt"></i></a>
+                                                    <a href="{{ route('rosak.destroy', $ros->id_rusak) }}"
+                                                        data-id="{{ $ros->id_rusak }}"
+                                                        class="btn btn-danger mb-1 m-l-1"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endif
+                                    @endif
+                                @endforeach
+                            </tbody>
 
-                <div class="wrapper">
-                    <div class="bdh">
-                        <h3>Data Kehilangan</h3>
+                        </table>
                     </div>
                 </div>
 
-                <table id="tabelData2" class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">
-                                Tanggal Input</th>
-                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">
-                                Tanggal Kehilangan</th>
-                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">Nomor
-                                PU</th>
-                            <th colspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">
-                                Koordinat Kehilangan</th>
-                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">
-                                Diameter Tunggak</th>
-                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">
-                                Keterangan</th>
-                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">Foto
-                            </th>
-                            <th rowspan="2" valign="middle" style="background-color: #9CC589;" class="text-center">Aksi
-                            </th>
-                        </tr>
-                        <tr>
-                            <th style="background-color: #9CC589;">
-                                <div style="text-align: center;">X</div>
-                            </th>
-                            <th style="background-color: #9CC589;">
-                                <div style="text-align: center;">Y</div>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($data as $ros)
-                            @if ($ros->jns_rusak == 1)
-                                @if ($ros->IsDelete == 0)
-                                    <tr>
-                                        <td>{{ $ros->tgl_input }}</td>
-                                        <td>{{ $ros->tgl_rusak }}</td>
-                                        <td>{{ $ros->no_PU }}</td>
-                                        <td>{{ $ros->koor_x }}</td>
-                                        <td>{{ $ros->koor_y }}</td>
-                                        <td style="width: 30px">{{ $ros->diameter }}</td>
-                                        <td>{{ $ros->keterangan }}</td>
-                                        <td>
-                                            <a href="#" class="open-popup" data-src="/upload/{{ $ros->foto }}"
-                                                data-caption="Foto Kehilangan">
-                                                <img class="" style="width:100%;max-width:50px"
-                                                    src="/upload/{{ $ros->foto }}" alt="Foto Kehilangan">
-                                            </a>
-                                        </td>
-                                        <td style="width: 100px">
-                                            <a href="{{ route('rosak.edit', $ros->id_rusak) }}"
-                                                class="btn btn-warning mb-1 m-l-1 ms-2"><i
-                                                    class="fas fa-pencil-alt"></i></a>
-                                            <a href="{{ route('rosak.destroy', $ros->id_rusak) }}"
-                                                data-id="{{ $ros->id_rusak }}" class="btn btn-danger mb-1 m-l-1"><i
-                                                    class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                @endif
-                            @endif
-                        @endforeach
-                    </tbody>
 
-                </table>
+
                 <div class="popup " id="imagePopup">
                 </div>
                 <!-- The Modal -->
@@ -194,11 +245,7 @@
                         pageLength: 5 // Menampilkan 5 data per halaman
                     });
                 </script>
-                <div style="display: flex; justify-content: flex-end;">
-                    <a class="btn btn-primary mt-4"
-                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
-                        href="/tambah-rosak">Tambah Data</a>
-                </div>
+                
             </form>
         </div>
     </div>

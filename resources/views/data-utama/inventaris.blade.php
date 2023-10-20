@@ -112,7 +112,7 @@
                                     <div class="container">
                                         <div class="text-center">
                                             <div class="button-container">
-                                                {{-- <a class="btn btn-primary" href="{{ route('data-utama.detail',['id_PU' => $da->id_PU]) }}">
+                                                <a class="btn btn-primary" href="{{ route('data-utama.detail',['id_PU' => $da->id_PU]) }}">
                                                     <i class="fa fa-info-circle"></i>
                                                 </a>
                                                 <div class="additional-buttons above">
@@ -122,14 +122,14 @@
                                                 <div class="additional-buttons below">
                                                     <a data-id="{{ $da->id_PU }}" class="btn btn-danger" href="{{ route('data-utama.destroy', $da->id_PU) }}"><i class="fa fa-trash"></i></a>
                                                    
-                                                </div> --}}
-
-                                                <span style="background-color: #198754" class="form-control action" id="toggleButton"><i style="color: white;" class="fa fa-arrow-down"></i></span>
-                                                <div id="buttonContainer" style="display: none;">
-                                                    <button id="button1" class="btn btn-primary mt-1"><i class="fa fa-info-circle"></i></button>
-                                                    <button id="button2" class="btn btn-warning mt-1"><i class="fas fa-pencil-alt"></i></button>
-                                                    <button id="button3" class="btn btn-danger mt-1"><i class="fa fa-trash"></i></button>
                                                 </div>
+
+                                                {{-- <span style="background-color: #198754" class="form-control action" id="toggleButton"><i style="color: white;" class="fa fa-arrow-down"></i></span>
+                                                <div id="buttonContainer" style="display: none;">
+                                                    <a id="button1" class="btn btn-primary mt-1" href="{{ route('data-utama.detail',['id_PU' => $da->id_PU]) }}"><i class="fa fa-info-circle"></i></a>
+                                                    <a id="button2" class="btn btn-warning mt-1" href="{{route('data-utama.edit',['id_PU'=> $da->id_PU])}}"><i class="fas fa-pencil-alt"></i></a>
+                                                    <a id="button3" class="btn btn-danger mt-1" data-id="{{ $da->id_PU }}" href="{{ route('data-utama.destroy', $da->id_PU) }}"><i class="fa fa-trash"></i></a>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -184,12 +184,6 @@
                     buttonContainer.style.display = "block";
                 } else {
                     buttonContainer.style.display = "none";
-                }
-            });
-
-            buttonContainer.addEventListener("click", function(event) {
-                if (event.target.id.startsWith("button")) {
-                    alert("Anda mengklik " + event.target.textContent);
                 }
             });
     </script>
