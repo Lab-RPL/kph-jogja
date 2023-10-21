@@ -220,7 +220,6 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 1,
             'nomor_ptk' => 1,
             'luas_ptk' => 321,
-            'potensi_ptk' => 1,
             'id_hhk' => 2,
             'id_rph' => 1
         ]);
@@ -228,6 +227,7 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 2,
             'nomor_ptk' => 2,
             'luas_ptk' => 321,
+            'potensi_ptk' => 1,
             'id_hhbk' => 2,
             'id_rph' => 1
         ]);
@@ -235,7 +235,6 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 3,
             'nomor_ptk' => 3,
             'luas_ptk' => 321,
-            'potensi_ptk' => 1,
             'id_hhk' => 1,
             'id_rph' => 2
         ]);
@@ -243,6 +242,7 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 4,
             'nomor_ptk' => 4,
             'luas_ptk' => 321,
+            'potensi_ptk' => 1,
             'id_hhbk' => 1,
             'id_rph' => 2
         ]);
@@ -250,7 +250,6 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 5,
             'nomor_ptk' => 5,
             'luas_ptk' => 321,
-            'potensi_ptk' => 1,
             'id_hhk' => 3,
             'id_rph' => 3
         ]);
@@ -258,6 +257,7 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 6,
             'nomor_ptk' => 6,
             'luas_ptk' => 321,
+            'potensi_ptk' => 1,
             'id_hhbk' => 3,
             'id_rph' => 3
         ]);
@@ -265,7 +265,6 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 7,
             'nomor_ptk' => 7,
             'luas_ptk' => 321,
-            'potensi_ptk' => 1,
             'id_hhk' => 4,
             'id_rph' => 4
         ]);
@@ -273,6 +272,7 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 8,
             'nomor_ptk' => 8,
             'luas_ptk' => 321,
+            'potensi_ptk' => 1,
             'id_hhbk' => 1,
             'id_rph' => 4
         ]);
@@ -280,7 +280,6 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 9,
             'nomor_ptk' => 9,
             'luas_ptk' => 321,
-            'potensi_ptk' => 1,
             'id_hhk' => 5,
             'id_rph' => 5
         ]);
@@ -288,6 +287,7 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 10,
             'nomor_ptk' => 10,
             'luas_ptk' => 321,
+            'potensi_ptk' => 1,
             'id_hhbk' => 2,
             'id_rph' => 5
         ]);
@@ -295,7 +295,6 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 11,
             'nomor_ptk' => 11,
             'luas_ptk' => 321,
-            'potensi_ptk' => 1,
             'id_hhk' => 6,
             'id_rph' => 6
         ]);
@@ -303,6 +302,7 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 12,
             'nomor_ptk' => 12,
             'luas_ptk' => 321,
+            'potensi_ptk' => 1,
             'id_hhbk' => 2,
             'id_rph' => 6
         ]);
@@ -310,7 +310,6 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 13,
             'nomor_ptk' => 13,
             'luas_ptk' => 321,
-            'potensi_ptk' => 1,
             'id_hhk' => 7,
             'id_rph' => 7
         ]);
@@ -318,6 +317,7 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 14,
             'nomor_ptk' => 14,
             'luas_ptk' => 321,
+            'potensi_ptk' => 1,
             'id_hhbk' => 3,
             'id_rph' => 7
         ]);
@@ -325,7 +325,6 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 15,
             'nomor_ptk' => 15,
             'luas_ptk' => 321,
-            'potensi_ptk' => 1,
             'id_hhk' => 8,
             'id_rph' => 8
         ]);
@@ -333,6 +332,7 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 16,
             'nomor_ptk' => 16,
             'luas_ptk' => 321,
+            'potensi_ptk' => 1,
             'id_hhbk' => 1,
             'id_rph' => 8
         ]);
@@ -340,7 +340,6 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 17,
             'nomor_ptk' => 17,
             'luas_ptk' => 321,
-            'potensi_ptk' => 1,
             'id_hhk' => 9,
             'id_rph' => 9
         ]);
@@ -348,6 +347,7 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 18,
             'nomor_ptk' => 18,
             'luas_ptk' => 321,
+            'potensi_ptk' => 1,
             'id_hhbk' => 2,
             'id_rph' => 9
         ]);
@@ -355,7 +355,6 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 19,
             'nomor_ptk' => 19,
             'luas_ptk' => 321,
-            'potensi_ptk' => 1,
             'id_hhk' => 10,
             'id_rph' => 10
         ]);
@@ -363,6 +362,7 @@ class DatabaseSeeder extends Seeder
             'id_ptk' => 20,
             'nomor_ptk' => 20,
             'luas_ptk' => 321,
+            'potensi_ptk' => 1,
             'id_hhbk' => 3,
             'id_rph' => 10
         ]);
