@@ -173,26 +173,40 @@ class rphController extends Controller
 
     public function destroy($id_rph)
     {
-        // Temukan RPH dengan id yang diberikan
+        // Find the RPH with the provided id
         $rph = Rph::findOrFail($id_rph);
     
-        // Ubah nilai is_delete menjadi 1
-        $rph->IsDelete = 1;
-        $rph->save();
-    
-        // Temukan petak yang berelasi dengan RPH ini
-        // Misalkan ada kolom 'rph_id' pada table Petak yang menyimpan relasi dengan RPH
-        // Anda perlu mengganti 'Petak' dengan nama model Petak yang sebenarnya
+        // Find the blocks related to this RPH
         $related_petak = petak::where('id_rph', $id_rph)->get();
     
-        // Ubah nilai IsDelete pada petak yang berelasi menjadi 1
+        $canDelete = true;
+        // Check if any related Petak is not deleted.
         foreach ($related_petak as $petak) {
-            $petak->IsDelete = 1;
-            $petak->save();
+            if ($petak->IsDelete == 0) {
+                $canDelete = false;
+                break;
+            }
         }
     
-        // Redirect ke halaman sebelumnya atau halaman yang diinginkan
-        return redirect()->back()->with('pesan', 'RPH dan petak terkait dihapus');
+        if ($canDelete) {
+            // Change the value of is_delete to 1
+            $rph->IsDelete = 1;
+            $rph->save();
+    
+            // Change the IsDelete value of the related block to 1
+            foreach ($related_petak as $petak) {
+                $petak->IsDelete = 1;
+                $petak->save();
+            }
+    
+            // Redirect to the previous page or desired page
+            return redirect()->back()->with('pesan', 'RPH dan petak terkait dihapus');
+            
+        } else {
+            // SweetAlert code here
+            return redirect()->back()->with('error', 'Data tidak bisa dihapus dikarenakan masih mempunyai petak');
+        }
     }
+    
     
 }
