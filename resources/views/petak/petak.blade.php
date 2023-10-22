@@ -80,8 +80,7 @@
                                     <a href="{{ route('petak.edit', $da->id_ptk) }}"class="btn btn-warning mb-1 m-l-1"><i
                                             class="fas fa-pencil-alt"></i></a>
                                     <a href="{{ route('petak.destroy', $da->id_ptk) }}" data-id="{{ $da->id_ptk }}"
-                                        class="btn btn-danger mb-1 m-l-1"><i class="fa fa-trash"></i></a>
-
+                                        class="btn btn-danger mb-1 m-l-1 delete-btn"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         @endforeach
@@ -90,7 +89,8 @@
 
                 {{-- {{ $data->links() }} --}}
                 <div style="display: flex; justify-content: space-between;" class="mt-4">
-                    <a class="btn btn-warning" style="color: white; font-weight:bold;" onclick="return goBack()">Kembali</a>
+                    <a class="btn btn-warning" style="color: white; font-weight:bold;" href="javascript:void(0);"
+                        onclick="window.history.back();">Kembali</a>
                     <a class="btn btn-primary"
                         style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
                         href="{{ route('petak.create', ['rph' => $id_rph]) }}">Tambah Data</a>
@@ -122,8 +122,51 @@
             if (pesanSukses) {
                 setTimeout(function() {
                     pesanSukses.style.display = 'none';
-                }, 5000);
+                }, 2000);
             }
+        });
+
+        document.querySelectorAll('.delete-btn').forEach(function(deleteButton) {
+            deleteButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                const id_ptk = this.dataset.id;
+                const deleteUrl = this.getAttribute('href');
+
+                Swal.fire({
+                    title: 'Apakah kamu yakin?',
+                    text: "Data yang dihapus tidak dapat dikembalikan!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya, hapus!',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Buat elemen form dengan CSRF-token dan metode DELETE
+                        const deleteForm = document.createElement('form');
+                        deleteForm.method = 'GET';
+                        deleteForm.action = deleteUrl;
+
+                        const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+                        const csrfInput = document.createElement('input');
+                        csrfInput.type = 'hidden';
+                        csrfInput.name = '_token';
+                        csrfInput.value = csrfToken;
+                        deleteForm.appendChild(csrfInput);
+
+                        const deleteMethodInput = document.createElement('input');
+                        deleteMethodInput.type = 'hidden';
+                        deleteMethodInput.name = '_method';
+                        deleteMethodInput.value = 'DELETE';
+                        deleteForm.appendChild(deleteMethodInput);
+
+                        // Tambahkan form ke DOM dan kirim form untuk menghapus entri 
+                        document.body.appendChild(deleteForm);
+                        deleteForm.submit();
+                    }
+                });
+            });
         });
     </script>
 
