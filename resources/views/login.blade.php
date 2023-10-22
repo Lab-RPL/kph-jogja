@@ -25,6 +25,8 @@
     <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="icon" href="{{ asset('images/LogoKPH.png') }}" type="icon">
+
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <!--===============================================================================================-->
 </head>
