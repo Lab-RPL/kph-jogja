@@ -15,7 +15,7 @@
     <div class="garis">
         <div class="border-list">
             <h2>DATA ADMIN</h2>
-            <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
+            <p>Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Daerah Istimewa Yogyakarta</p>
             <form>
                 @csrf
                 <table id="tabelData" class="table table-bordered table-striped">
