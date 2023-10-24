@@ -39,6 +39,9 @@
                     </div>
                 </div>
                 @csrf
+                @if (Session::has('error'))
+                    <div id="pesan-error" data-error="{{ Session::get('error') }}" style="display: none;"></div>
+                @endif
                 @if (Session::has('pesan'))
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
@@ -157,6 +160,68 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
+            const pesanSukses = document.getElementById('pesan-sukses');
+            if (pesanSukses) {
+                setTimeout(function() {
+                    pesanSukses.style.display = 'none';
+                }, 5000);
+            }
+        });
+
+        document.querySelectorAll('.delete-btn').forEach(function(deleteButton) {
+            deleteButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                const id_bdh = this.dataset.id;
+                const deleteUrl = this.getAttribute('href');
+
+                Swal.fire({
+                    title: 'Apakah kamu yakin?',
+                    text: "Data yang dihapus tidak dapat dikembalikan!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya, hapus!',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Buat elemen form dengan CSRF-token dan metode DELETE
+                        const deleteForm = document.createElement('form');
+                        deleteForm.method = 'GET';
+                        deleteForm.action = deleteUrl;
+
+                        const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+                        const csrfInput = document.createElement('input');
+                        csrfInput.type = 'hidden';
+                        csrfInput.name = '_token';
+                        csrfInput.value = csrfToken;
+                        deleteForm.appendChild(csrfInput);
+
+                        const deleteMethodInput = document.createElement('input');
+                        deleteMethodInput.type = 'hidden';
+                        deleteMethodInput.name = '_method';
+                        deleteMethodInput.value = 'DELETE';
+                        deleteForm.appendChild(deleteMethodInput);
+
+                        // Tambahkan form ke DOM dan kirim form untuk menghapus entri
+                        document.body.appendChild(deleteForm);
+                        deleteForm.submit();
+                    }
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const pesanError = document.getElementById('pesan-error');
+            if (pesanError) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: pesanError.dataset.error,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+
             const pesanSukses = document.getElementById('pesan-sukses');
             if (pesanSukses) {
                 setTimeout(function() {

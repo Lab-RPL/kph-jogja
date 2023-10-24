@@ -94,22 +94,31 @@ class bdhController extends Controller
     //     Hapus BDH
     public function destroy($id_bdh)
     {
-        // Cari entri 'rph' yang terkait dengan 'id_bdh'
-        $rph_entries = Rph::where('id_bdh', $id_bdh)->get();
-
-        // Ubah 'IsDelete' menjadi '1' untuk semua entri 'rph' yang ditemukan
-        foreach ($rph_entries as $entry) {
-            $entry->IsDelete = 1;
-            $entry->save();
+        // Cari entri 'rph' yang terkait dengan 'id_bdh' dan 'IsDelete' masih 0
+        $rph_entries = Rph::where('id_bdh', $id_bdh)->where('IsDelete', 0)->get();
+        
+        // Jika ada entri rph yang 'IsDelete' masih 0, maka return dengan pesan error
+        if(!$rph_entries->isEmpty()) {
+            return redirect('/data-bdh')->with('error', 'Data tidak bisa dihapus dikaranakan masih mempunyai RPH.');
         }
-
-        // Setelah semua entri 'rph' terkait diperbarui, perbarui entri 'bdh'
-        $bdh_entry = bdh::where('id_bdh', $id_bdh)->first();
-        $bdh_entry->IsDelete = 1;
-        $bdh_entry->save();
-
-        return redirect('/data-bdh')->with('pesan', 'Data BDH dan RPH terkait berhasil Dihapus');
+    
+        // Jika tidak ada entri rph yang 'IsDelete' masih 0, maka lanjutkan ke proses penghapusan
+        else {
+            $bdh_entry = bdh::where('id_bdh', $id_bdh)->first();
+    
+            // Jika tidak ada entri bdh, maka return dengan pesan error
+            if(!$bdh_entry) {
+                return redirect('/data-bdh')->with('pesan', 'Data BDH tidak ditemukan.');
+            }
+    
+            // Ubah 'IsDelete' menjadi '1' untuk entri 'bdh'
+            $bdh_entry->IsDelete = 1;
+            $bdh_entry->save();
+    
+            return redirect('/data-bdh')->with('pesan', 'Data BDH berhasil Dihapus');
+        }
     }
+    
 
     //   Edit BDH       
 

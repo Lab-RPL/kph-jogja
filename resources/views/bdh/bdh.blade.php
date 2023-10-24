@@ -16,8 +16,17 @@
         <div class="border-lists">
             <h2 class="mt-2 middletext">DATA BDH</h2>
             <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
+            <div style="display: flex; justify-content: flex-start;">
+                <a class="btn btn-primary"
+                    style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
+                    href="{{ route('bdh.create') }}">Tambah Data</a>
+            </div>
             <form>
                 @csrf
+                @if (Session::has('error'))
+                    <div id="pesan-error" data-error="{{ Session::get('error') }}" style="display: none;"></div>
+                @endif
+
                 @if (Session::has('pesan'))
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
@@ -54,11 +63,11 @@
                 </table>
 
                 {{-- {{ $data->links() }} --}}
-                <div style="display: flex; justify-content: flex-end;" class="mt-4">
+                {{-- <div style="display: flex; justify-content: flex-end;" class="mt-4">
                     <a class="btn btn-primary"
                         style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
                         href="{{ route('bdh.create') }}">Tambah Data</a>
-                </div>
+                </div> --}}
             </form>
         </div>
     </div>
@@ -131,6 +140,25 @@
                     }
                 });
             });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const pesanError = document.getElementById('pesan-error');
+            if (pesanError) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: pesanError.dataset.error,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+
+            const pesanSukses = document.getElementById('pesan-sukses');
+            if (pesanSukses) {
+                setTimeout(function() {
+                    pesanSukses.style.display = 'none';
+                }, 5000);
+            }
         });
     </script>
 
