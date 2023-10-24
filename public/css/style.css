@@ -783,6 +783,7 @@ label {
     width: 90px;
     height: 60px;
     left: -10px;
+    left: -40px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -818,7 +819,7 @@ label {
 
 /* ====================== Responsive Design ========================== */
 
-@media screen and (min-width: 2561px) {
+@media screen and (min-width: 2560px) {
     .border-liste {
         max-width: 200rem;
         margin-left: auto;
@@ -836,6 +837,7 @@ label {
 }
 
 @media screen and (min-width: 1920px) and (max-width: 2560px) {
+
     .border-liste {
         top: -80px;
         max-width: 1000px;
@@ -890,19 +892,34 @@ label {
 
 }
 
-@media screen and (min-width: 1367px) and (max-width: 1680px) {
+@media screen and (min-width: 1366px) and (max-width: 1680px) {
+
+    .bawah .chart1 {
+        max-width: 240px;
+        max-height: 240px;
+        margin-left: 10px;
+        margin-top: 85px;
+    }
+
+    .chart-container canvas {
+        margin-top: 60px;
+        max-width: 730px; /* or any size you prefer */
+        max-height: 520px; /* it's better to keep the pie chart as almost a square */
+        margin-left: 25px;
+    }
+
     .border-list{
         top: -39px;
         height: 50rem;
     }
 
     .border-liste{
-        top: -90px;
+        top: -60px;
     }
 
     .border-lists{
-        top: -70px;
-        max-height: 800px;
+        top: -10px;
+        max-height: 850px;
     }
 
     .toggle{
@@ -924,24 +941,37 @@ label {
     }
 
     .cardBox .card .cardName {
-        font-size: 1rem;
-        padding-left: 5px;
+        font-size: 1.0rem;
+        padding-left: 2px;
         margin-top: 5px;
     }
 
     .cardBox .card .numbers {
         font-weight: 500;
-        font-size: 1.5rem;
+        font-size: 1.9rem;
         padding-left: 5px;
     }
 
     .cardBox .card .iconBx{
-        font-size: 2.1rem;
+        font-size: 3.1rem;
         padding-left: 5px;
     }
 
     .bawah .chart1{
         margin-top: 50px;
+    }
+
+    .cardBox .card {
+        position: relative;
+        background: var(--white);
+        padding: 25px;
+        border-radius: 20px;
+        display: flex;
+        /* flex-direction: row;
+        justify-content: space-between; */
+        cursor: pointer;
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+        width: 180px;
     }
 
 }
