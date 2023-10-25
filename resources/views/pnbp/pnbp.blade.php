@@ -18,6 +18,11 @@
             </style>
 
             <form>
+                <div style="display: flex; justify-content: flex-start;" class="mt-4">
+                    <a class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                        href="{{ route('pnbp.create') }}">Tambah Data</a>
+                </div>
                 @csrf
                 @if (Session::has('pesan'))
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
@@ -36,8 +41,8 @@
                                 <td>{{ $da->tahun_pnbp }}</td>
                                 <td>Rp{{ number_format($da->nominal_pnbp, 0, '.', '.') }},00</td>
                                 <td style="justify-content: space-between; align-items:center">
-                                    <a href="{{ route('pnbp.edit', $da->id_pnbp) }}"
-                                        class="btn btn-warning mb-1 m-l-1"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href="{{ route('pnbp.edit', $da->id_pnbp) }}" class="btn btn-warning mb-1 m-l-1"><i
+                                            class="fas fa-pencil-alt"></i></a>
                                     <a data-id="{{ $da->id_pnbp }}" href="{{ route('pnbp.destroy', $da->id_pnbp) }}"
                                         class="btn btn-danger mb-1 m-l-2"><i class="fa fa-trash"></i></a>
                                 </td>
@@ -47,11 +52,7 @@
                 </table>
 
                 {{-- {{ $data->links() }} --}}
-                <div style="display: flex; justify-content: flex-end;" class="mt-4">
-                    <a class="btn btn-primary"
-                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
-                        href="{{ route('pnbp.create') }}">Tambah Data</a>
-                </div>
+
 
                 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
                     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

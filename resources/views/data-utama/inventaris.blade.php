@@ -26,7 +26,7 @@
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
                 @endif
 
-                <table id="tabelData" class="table table-bordered" style="margin-left: -2rem;">
+                <table id="tabelData" class="table table-bordered">
                     <div style="display: flex;">
                         <a class="btn btn-primary mt-2"
                             style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
@@ -125,11 +125,11 @@
                                                 <a class="btn btn-info" href="{{ route('data-utama.detail',['id_PU' => $da->id_PU]) }}">
                                                     <i class="fa fa-info-circle"></i>
                                                 </a>
-                                                <div class="additional-buttons above">
+                                                <div class="additional-buttons above mt-1">
                                                     <a class="btn btn-warning" href="{{route('data-utama.edit',['id_PU'=> $da->id_PU])}}"><i class="fas fa-pencil-alt"></i></a>
                                                     
                                                 </div>
-                                                <div class="additional-buttons below">
+                                                <div class="additional-buttons below mt-1">
                                                     <a data-id="{{ $da->id_PU }}" class="btn btn-danger" href="{{ route('data-utama.destroy', $da->id_PU) }}"><i class="fa fa-trash"></i></a>
                                                    
                                                 </div>

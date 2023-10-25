@@ -1,8 +1,8 @@
 @extends('layouts.main')
 @section('content')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 
@@ -20,11 +20,11 @@
                 $previous_bdh_name = '';
                 ?>
                 @foreach ($rph_data as $item)
-                    <?php
+                <?php
                     $current_bdh_name = $item->bdh->nama_bdh;
                     ?>
                     @if ($current_bdh_name != $previous_bdh_name)
-                        {{ $current_bdh_name }}
+                    {{ $current_bdh_name }}
                     @endif
                     <?php
                     $previous_bdh_name = $current_bdh_name;
@@ -33,6 +33,12 @@
             </h2>
             <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
             <form>
+                <div style="display: flex; justify-content: space-between;" class="mt-4">
+                    <a class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
+                        href="{{ route('rph.create', ['bdh' => $id_bdh]) }}">Tambah Data</a>
+                    <a class="btn btn-warning" style="color: white; font-weight:bold;" onclick="return goBack()">Kembali</a>
+                </div>
                 <div class="wrapper">
                     <div class="bdh">
 
@@ -82,12 +88,6 @@
                 <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
                 {{-- {{ $data->links() }} --}}
-                <div style="display: flex; justify-content: space-between;" class="mt-4">
-                    <a class="btn btn-warning" style="color: white; font-weight:bold;" onclick="return goBack()">Kembali</a>
-                    <a class="btn btn-primary"
-                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
-                        href="{{ route('rph.create', ['bdh' => $id_bdh]) }}">Tambah Data</a>
-                </div>
             </form>
         </div>
     </div>

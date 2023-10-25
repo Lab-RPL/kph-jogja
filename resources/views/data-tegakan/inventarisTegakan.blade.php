@@ -25,10 +25,15 @@
 
     <div class="garis">
         <div class="border-list">
-            <h2 class="mt-2">DATA TEGAKAN</h2>
+            <h2 class="mt-2 middletext">DATA TEGAKAN</h2>
             <p class="lead">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
 
             <form>
+                <div style="display: flex; justify-content: flex-start;" class="mt-4">
+                    <a class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
+                        href="{{ route('data-tgk.create', ['data_utama' => $id_PU]) }}">Tambah Data</a>
+                </div>
                 @csrf
                 @if (Session::has('pesan'))
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
@@ -98,11 +103,6 @@
                         }
                     });
                 </script>
-                <div style="display: flex; justify-content: flex-end;" class="mt-4">
-                    <a class="btn btn-primary"
-                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
-                        href="{{ route('data-tgk.create', ['data_utama' => $id_PU]) }}">Tambah Data</a>
-                </div>
             </form>
         </div>
     </div>

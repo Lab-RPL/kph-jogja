@@ -41,7 +41,7 @@
                 .tab-content {
                     border: 1px solid #dee2e6;
                     border-top: transparent;
-                    padding: 15px;
+                    padding: 1px 15px 15px 15px;
                 }
 
                 .tab-content .tab-pane {
