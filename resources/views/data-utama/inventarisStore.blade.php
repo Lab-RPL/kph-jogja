@@ -26,7 +26,7 @@
                             </style>
                             <tr>
                                 <td width="300px">Tanggal</td>
-                                <td height="50px"><span>X</span> <input type="date" name="tanggal" required></td>
+                                <td height="50px"><span>X</span> <input style="width: 25rem;" type="date" name="tanggal" required></td>
                             </tr>
                             {{-- <tr>
                                 <td>BDH</td>
@@ -40,7 +40,7 @@
                                 <td>Petak</td>
                                 <td height="50px">
                                     <span>X</span>
-                                    <select name="id_ptk" required>
+                                    <select style="width: 25rem;" name="id_ptk" required>
                                         <option value="" disabled selected hidden>Pilih Nomor Petak</option>
                                         @foreach ($petak as $petak)
                                             @if ($petak->IsDelete == 0)
@@ -95,7 +95,7 @@
                             <tr>
                                 <td>Keadaan Kesehatan</td>
                                 <td height="50px"><span>X</span>
-                                    <select name="keadaan_kes" required>
+                                    <select style="width: 25rem;" name="keadaan_kes" required>
                                         <option value="" disabled selected hidden>Pilih Keadaan</option>
                                         <option value="Baik">Baik</option>
                                         <option value="Sedang">Sedang</option>
@@ -106,7 +106,7 @@
                             <tr>
                                 <td>Kerataan</td>
                                 <td height="50px"><span>X</span>
-                                    <select name="kerataan_tgk" required>
+                                    <select style="width: 25rem;" name="kerataan_tgk" required>
                                         <option value="" disabled selected hidden>Pilih Kerataan</option>
                                         <option value="Rata">Rata</option>
                                         <option value="Agak Rata">Agak Rata</option>
@@ -117,7 +117,7 @@
                             <tr>
                                 <td>Kemurnian</td>
                                 <td height="50px"><span>X</span>
-                                    <select name="kemurnian" required>
+                                    <select style="width: 25rem;" name="kemurnian" required>
                                         <option value="" disabled selected hidden>Pilih Kemurnian</option>
                                         <option value="Murni">Murni</option>
                                         <option value="Agak Murni">Agak Murni</option>
@@ -135,7 +135,7 @@
                             <tr>
                                 <td>Bentuk Lapangan </td>
                                 <td height="50px"><span>X</span>
-                                    <select name="bentuk_lap" required>
+                                    <select style="width: 25rem;" name="bentuk_lap" required>
                                         <option value="" disabled selected hidden>Pilih Bentuk Lapangan</option>
                                         <option value="Puncak">Puncak</option>
                                         <option value="Punggung">Punggung</option>
@@ -148,9 +148,9 @@
                             <tr>
                                 <td>Derajat Lereng </td>
                                 <td height="50px"><span>X</span>
-                                    <input type="text" style="width: 75px" placeholder="00°" name="derajat_lereng"
+                                    <input  type="text" style="width: 75px" placeholder="00°" name="derajat_lereng"
                                         required>
-                                    <select name="landai_lereng" required>
+                                    <select style="width: 20rem;" name="landai_lereng" required>
                                         <option value="" disabled selected hidden>Pilih Data</option>
                                         <option value="Rata">Rata</option>
                                         <option value="Landai">Landai</option>
@@ -162,7 +162,7 @@
                             <tr>
                                 <td>Kerataan </td>
                                 <td height="50px"><span>X</span>
-                                    <select name="kerataan_lap" required>
+                                    <select style="width: 25rem;" name="kerataan_lap" required>
                                         <option value="" disabled selected hidden>Pilih Kerataan</option>
                                         <option value="Berbukit">Berbukit</option>
                                         <option value="Berombak">Berombak</option>
@@ -177,7 +177,7 @@
                             <tr>
                                 <td>Jenis Tanah</td>
                                 <td><span>X</span>
-                                    <select name="jns_tanah" required>
+                                    <select style="width: 25rem;" name="jns_tanah" required>
                                         <option value="" disabled selected hidden>Pilih Jenis Tanah</option>
                                         <option value="Abu">Abu</option>
                                         <option value="latosol">Latosol</option>
@@ -190,9 +190,9 @@
                             <tr>
                                 <td>Kedalaman </td>
                                 <td height="50px"><span>X</span>
-                                    <input type="text" style="width: 80px;" placeholder="m" name="kedalaman"
+                                    <input type="text" style="width: 4.7rem;" placeholder="m" name="kedalaman"
                                         required>
-                                    <select style="width: 8rem;" name="dalaman" required>
+                                    <select style="width: 20rem;" name="dalaman" required>
                                         <option value="" disabled selected hidden>Pilih Data</option>
                                         <option value="Dalam">Dalam</option>
                                         <option value="Agak Dalam">Agak Dalam</option>
@@ -209,14 +209,14 @@
                             <tr>
                                 <td>Jenis </td>
                                 <td height="50px"><span>X</span>
-                                    <input type="text" style="width: 150px;" name="jns_bwh">
+                                    <input style="width: 25rem;" type="text" style="width: 150px;" name="jns_bwh">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Kerapatan</td>
                                 <td>
                                     <span>X</span>
-                                    <select style="width: 150px;" name="kerapatan" required>
+                                    <select style="width: 25rem;" style="width: 150px;" name="kerapatan" required>
                                         <option value="" disabled selected hidden>Pilih Kerapatan</option>
                                         <option value="Rapat">Rapat</option>
                                         <option value="Berbukit">Berbukit</option>
@@ -235,14 +235,14 @@
                                 <td>Penemuan Lapangan Lain</td>
                                 <td>
                                     <span>X</span>
-                                    <input type="text" style="width: 350px;" name="penemuan">
+                                    <input type="text" style="width: 25rem;" name="penemuan">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Erosi</td>
                                 <td>
                                     <span>X</span>
-                                    <select style="width: 150px;" name="erosi">
+                                    <select style="width: 25rem;" name="erosi">
                                         <option value="" disabled selected hidden>Pilih Data</option>
                                         <option value="Ada">Ada</option>
                                         <option value="Tidak Erosi">Tidak Erosi</option>
@@ -253,7 +253,7 @@
                                 <td>Ketinggian Tempat</td>
                                 <td>
                                     <span>X</span>
-                                    <input type="text" style="width: 150px;" name="tinggi_tempat" placeholder="m">
+                                    <input type="text" style="width: 25rem;" name="tinggi_tempat" placeholder="m">
                                 </td>
                             </tr>
                         </tbody>

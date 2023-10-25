@@ -29,14 +29,14 @@
                             </style>
                             <tr>
                                 <td width="300px">Tanggal</td>
-                                <td height="50px"><span>X</span> <input type="date" name="tanggal"
+                                <td height="50px"><span>X</span> <input style="width: 25rem;" type="date" name="tanggal"
                                         value="{{ $data->tanggal }}" required></td>
                                 </tr>
                             <tr>
                                 <td>Petak</td>
                                 <td height="50px">
                                     <span>X</span>
-                                    <select name="id_ptk" required>
+                                    <select style="width: 25rem;" name="id_ptk" required>
                                         <option value="" selected disabled hidden>Pilih Nomor Petak</option>
                                         @foreach ($petak as $ptk)
                                             @if ($ptk->IsDelete == 0)
@@ -100,7 +100,7 @@
                             <tr>
                                 <td>Keadaan Kesehatan</td>
                                 <td height="50px"><span>X</span>
-                                    <select name="keadaan_kes" required>
+                                    <select style="width: 25rem;" name="keadaan_kes" required>
                                         <option value="">Pilih Keadaan</option>
                                         <option value="Baik" @if ($data->keadaan_kes == 'Baik') selected @endif>Baik
                                         </option>
@@ -115,7 +115,7 @@
                             <tr>
                                 <td>Kerataan</td>
                                 <td height="50px"><span>X</span>
-                                    <select name="kerataan_tgk" required>
+                                    <select style="width: 25rem;" name="kerataan_tgk" required>
                                         <option value="">Pilih Kerataan</option>
                                         <option value="Rata" @if ($data->kerataan_tgk == 'Rata') selected @endif>Rata
                                         </option>
@@ -129,7 +129,7 @@
                             <tr>
                                 <td>Kemurnian</td>
                                 <td height="50px"><span>X</span>
-                                    <select name="kemurnian" required>
+                                    <select style="width: 25rem;" name="kemurnian" required>
                                         <option value="">Pilih Kemurnian</option>
                                         <option value="Murni" @if ($data->kemurnian == 'Murni') selected @endif>Murni
                                         </option>
@@ -148,7 +148,7 @@
                             <tr>
                                 <td>Bentuk Lapangan</td>
                                 <td height="50px"><span>X</span>
-                                    <select name="bentuk_lap" required>
+                                    <select style="width: 25rem;" name="bentuk_lap" required>
                                         <option value="">Pilih Bentuk Lapangan</option>
                                         <option value="Puncak" @if ($data->bentuk_lap == 'Puncak') selected @endif>Puncak
                                         </option>
@@ -167,9 +167,9 @@
                             <tr>
                                 <td>Derajat Lereng </td>
                                 <td height="50px"><span>X</span>
-                                    <input type="text" style="width: 75px" placeholder="00°" name="derajat_lereng"
+                                    <input type="text" style="width: 6rem" placeholder="00°" name="derajat_lereng"
                                         required value="{{ $data->derajat_lereng }}">
-                                    <select name="landai_lereng" required>
+                                    <select style="width: 18.7rem;" name="landai_lereng" required>
                                         <option value="">Pilih Data</option>
                                         <option value="Rata" @if ($data->landai_lereng == 'Rata') selected @endif>Rata
                                         </option>
@@ -185,7 +185,7 @@
                             <tr>
                                 <td>Kerataan </td>
                                 <td height="50px"><span>X</span>
-                                    <select name="kerataan_lap" required>
+                                    <select style="width: 25rem;" name="kerataan_lap" required>
                                         <option value="">Pilih Kerataan</option>
                                         <option value="Berbukit" @if ($data->kerataan_lap == 'Berbukit') selected @endif>
                                             Berbukit</option>
@@ -202,7 +202,7 @@
                             <tr>
                                 <td>Jenis Tanah</td>
                                 <td><span>X</span>
-                                    <select name="jns_tanah" required>
+                                    <select style="width: 25rem;" name="jns_tanah" required>
                                         <option value="">Pilih Jenis Tanah</option>
                                         <option value="Abu" @if ($data->jns_tanah == 'Abu') selected @endif>Abu
                                         </option>
@@ -221,9 +221,9 @@
                             <tr>
                                 <td>Kedalaman </td>
                                 <td height="50px"><span>X</span>
-                                    <input type="text" style="width: 85px;" placeholder="m" name="kedalaman" required
+                                    <input type="text" style="width: 6rem;" placeholder="m" name="kedalaman" required
                                         value="{{ $data->kedalaman }}">
-                                    <select style="width: 8rem;" name="dalaman" required>
+                                    <select style="width: 18.7rem;" name="dalaman" required>
                                         <option value="">Pilih Data</option>
                                         <option value="Dalam" @if ($data->dalaman == 'Dalam') selected @endif>Dalam
                                         </option>
@@ -243,7 +243,7 @@
                             <tr>
                                 <td>Jenis </td>
                                 <td height="50px"><span>X</span>
-                                    <input type="text" style="width: 150px;" name="jns_bwh"
+                                    <input style="width: 25rem;" type="text" style="width: 150px;" name="jns_bwh"
                                         value="{{ $data->jns_bwh }}">
                                 </td>
                             </tr>
@@ -251,7 +251,7 @@
                                 <td>Kerapatan</td>
                                 <td>
                                     <span>X</span>
-                                    <select style="width: 150px;" name="kerapatan" required>
+                                    <select style="width: 25rem;" name="kerapatan" required>
                                         <option value="">Pilih Kerapatan</option>
                                         <option value="Rapat" @if ($data->kerapatan == 'Rapat') selected @endif>Rapat
                                         </option>
@@ -275,7 +275,7 @@
                                 <td>Penemuan Lapangan Lain</td>
                                 <td>
                                     <span>X</span>
-                                    <input type="text" style="width: 350px;" name="penemuan"
+                                    <input style="width: 25rem;" type="text" name="penemuan"
                                         value="{{ $data->penemuan }}">
                                 </td>
                             </tr>
@@ -283,7 +283,7 @@
                                 <td>Erosi</td>
                                 <td>
                                     <span>X</span>
-                                    <select style="width: 150px;" name="erosi">
+                                    <select style="width: 25rem;" name="erosi">
                                         <option value="">Pilih Data</option>
                                         <option value="Ada" @if ($data->erosi == 'Ada') selected @endif>Ada
                                         </option>
@@ -297,7 +297,7 @@
                                 <td>Ketinggian Tempat</td>
                                 <td>
                                     <span>X</span>
-                                    <input type="text" style="width: 150px;" name="tinggi_tempat" placeholder="m"
+                                    <input type="text" style="width: 25rem;" name="tinggi_tempat" placeholder="m"
                                         value="{{ $data->tinggi_tempat }}">
                                 </td>
                             </tr>
