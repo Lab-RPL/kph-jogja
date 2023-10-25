@@ -29,7 +29,7 @@
                             <th style="background-color: #9CC589;" class="text-center">Nomor SK</th>
                             <th style="background-color: #9CC589;" class="text-center">Petak</th>
                             <th style="background-color: #9CC589;" class="text-center">Luas Izin</th>
-                            <th style="background-color: #9CC589;" class="text-center">Luas Izin</th>
+                            <th style="background-color: #9CC589;" class="text-center">Jenis Tegakan</th>
                             <th style="background-color: #9CC589;" class="text-center">Aksi</th>
                         </tr>
                     </thead>

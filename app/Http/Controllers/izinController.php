@@ -41,12 +41,15 @@ class izinController extends Controller
     public function getJenisTegakan($id_ptk)
     {
         $jenisTegakan = DB::table("petak")
-            ->where("id_ptk", $id_ptk)
-            ->select('id_hhk', 'id_hhbk')
+            ->leftJoin("hhk", "petak.id_hhk", "=", "hhk.id_hhk")
+            ->leftJoin("hhbk", "petak.id_hhbk", "=", "hhbk.id_hhbk")
+            ->where("petak.id_ptk", $id_ptk)
+            ->select("hhk.jenis_tgk as jenis_tgk_hhk", "hhbk.jenis_tgk as jenis_tgk_hhbk")
             ->get();
     
         return response()->json($jenisTegakan);
     }
+    
     
     public function store(Request $request)
     {

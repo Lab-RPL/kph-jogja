@@ -44,33 +44,40 @@
                         </td>
                     </tr>
                     <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const petakSelect = document.querySelector('select[name="petak_izin"]');
-    const jenisTgkSelect = document.querySelector('select[name="jenis_tgk"]');
+                        document.addEventListener("DOMContentLoaded", function() {
+                            const petakSelect = document.querySelector('select[name="petak_izin"]');
+                            const jenisTgkSelect = document.querySelector('select[name="jenis_tgk"]');
 
-    petakSelect.addEventListener("change", function () {
-        const selectedPetakId = this.value;
+                            petakSelect.addEventListener("change", function() {
+                                const selectedPetakId = this.value;
 
-        // Kirim permintaan AJAX atau fetch ke server untuk mendapatkan data "Jenis Tegakan" berdasarkan "Nomor Petak".
-        fetch(`/get-jenis-tegakan/${selectedPetakId}`)
-            .then(response => response.json())
-            .then(data => {
-                jenisTgkSelect.innerHTML = ''; // Hapus opsi yang ada
+                                // Kirim permintaan AJAX atau fetch ke server untuk mendapatkan data "Jenis Tegakan" berdasarkan "Nomor Petak".
+                                fetch(`/get-jenis-tegakan/${selectedPetakId}`)
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        console.log(data);
 
-                data.forEach(option => {
-    const newOption = document.createElement('option');
-    newOption.value = option.id_hhk || option.id_hhbk; // Menggunakan id_hhk jika ada, jika tidak, maka gunakan id_hhbk
-    newOption.text = option.id_hhk || option.jenis_tgk; // Menggunakan jenis_tgk jika ada, jika tidak, maka gunakan jenis_tgk
-    jenisTgkSelect.appendChild(newOption);
-});
+                                        jenisTgkSelect.innerHTML = '';
 
-            })
-            .catch(error => {
-                console.error('Terjadi kesalahan saat mengambil data jenis tegakan:', error);
-            });
-    });
-});
-</script>
+                                        data.forEach(option => {
+                                            const newOption = document.createElement('option');
+                                            newOption.value = option.id_hhk || option.id_hhbk;
+
+                                            // sesuaikan dengan struktur data baru
+                                            newOption.text = option.jenis_tgk_hhk || option.jenis_tgk_hhbk;
+
+                                            jenisTgkSelect.appendChild(newOption);
+                                        });
+                                    })
+                                    .catch(error => {
+                                        console.error('Terjadi kesalahan saat mengambil data jenis tegakan:', error);
+                                    });
+
+
+                            });
+                        });
+                    </script>
+
 
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                     {{-- <script>
@@ -96,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             });
                         });
                     </script> --}}
-                    
+
 
                     <tr>
                         <td height="60px">Luas Izin</td>

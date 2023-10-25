@@ -17,7 +17,6 @@
             background-color: #B0E398;
             color: black;
         }
-
         .my-custom-table td {
             color: black;
         }
