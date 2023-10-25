@@ -887,12 +887,13 @@ label {
 
 }
 
-@media screen and (min-width: 1681px) and (max-width: 1920px){
+@media screen and (min-width: 1680px) and (max-width: 1920px){
     /* css code for resolution between 1681px and 1920px */
 
 }
 
 @media screen and (min-width: 1366px) and (max-width: 1680px) {
+
 
     .bawah .chart1 {
         max-width: 240px;
@@ -923,7 +924,7 @@ label {
     }
 
     .toggle{
-        left: -50px;
+        left: -10px;
     }
 
     .chart2{
@@ -983,7 +984,7 @@ label {
     }
 
     .border-liste{
-        top: -20px;
+        top: 12px;
     }
 
     .cardBox{
@@ -1000,7 +1001,7 @@ label {
         max-width: 170px;
         max-height: 170px;
         margin-left: 30px;
-        margin-top: 85px;
+        margin-top: 75px;
     }
 
     .chart2{
