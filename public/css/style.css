@@ -51,6 +51,8 @@
     width: 180px;
 }
 
+
+
 .cardBox .card a {
     display: flex;
     flex-direction: column;
@@ -998,10 +1000,10 @@ label {
     }
 
     .bawah .chart1 {
-        max-width: 170px;
-        max-height: 170px;
-        margin-left: 30px;
-        margin-top: 75px;
+        max-width: 190px;
+        max-height: 190px;
+        margin-left: 20px;
+        margin-top: 65px;
     }
 
     .chart2{
@@ -1010,7 +1012,7 @@ label {
 
     .cardBox{
         padding: 5px;
-        margin-top: 20px;
+        margin-top: 22px;
     }
 
     .cardBox .card {

@@ -46,6 +46,7 @@
                             </div> --}}
                             </div>
                         </div>
+
                         <div class="cardBox">
                             <div class="card">
                                 <div>
@@ -359,6 +360,12 @@
                             pnbp.render()
 
                         }
+                    });
+
+                    document.querySelectorAll('.cardBox .card').forEach(card => {
+                        card.addEventListener('click', function() {
+                            window.location = "{{ route('data-utama.index') }}";
+                        });
                     });
                 </script>
             @endsection
