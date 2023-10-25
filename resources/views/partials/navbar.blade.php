@@ -222,6 +222,8 @@
                         (navLink.pathname === '/data-rusak' && currentPathname ==='/tambah-rosak') ||
                         //DATA-POTENSI
                         (navLink.pathname === '/data-potensi' && currentPathname ==='/tambah-potensi') ||
+                        (navLink.pathname === '/data-potensi' && currentPathname ==='/tambah-potensi-hhk') ||
+                        (navLink.pathname === '/data-potensi' && currentPathname ==='/tambah-potensi-hhbk') ||
                         //DATA-PNPB
                         (navLink.pathname === '/data-pnbp' && currentPathname ==='/tambah-pnbp') ||
                         (navLink.pathname === '/data-pnbp' && currentPathname ==='/tambah-pnbp') ||
