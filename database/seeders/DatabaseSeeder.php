@@ -4,14 +4,16 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Bdh;
+use App\Models\hhk;
 use App\Models\Rph;
+use App\Models\hhbk;
+use App\Models\izin;
+use App\Models\pnbp;
 use App\Models\User;
 use App\Models\petak;
 use App\Models\rosak;
 use App\Models\dataTegak;
 use App\Models\dataUtama;
-use App\Models\hhk;
-use App\Models\hhbk;
 use App\Models\LuasHutan;
 use Illuminate\Database\Seeder;
 
@@ -366,6 +368,84 @@ class DatabaseSeeder extends Seeder
             'id_hhbk' => 3,
             'id_rph' => 10
         ]);
+
+        izin::create([
+            'id_izin' => 1,
+            'nama_kelompok' => "Kaliurang",
+            'no_SK' => "3",
+            'id_ptk' => 16,
+            'luas_izin' => 90
+        ]);
+
+        izin::create([
+            'id_izin' => 2,
+            'nama_kelompok' => "Sleman",
+            'no_SK' => "55",
+            'id_ptk' => 7,
+            'luas_izin' => 56
+        ]);
+
+        izin::create([
+            'id_izin' => 3,
+            'nama_kelompok' => "Yogyakarta",
+            'no_SK' => "5",
+            'id_ptk' => 4,
+            'luas_izin' => 77
+        ]);
+
+        pnbp::create([
+            'id_pnbp' => 1,
+            'tahun_pnbp' => 2010,
+            'nominal_pnbp' => 689876
+        ]);
+
+        pnbp::create([
+            'id_pnbp' => 2,
+            'tahun_pnbp' => 2011,
+            'nominal_pnbp' => 729298
+        ]);
+
+        pnbp::create([
+            'id_pnbp' => 3,
+            'tahun_pnbp' => 2012,
+            'nominal_pnbp' => 829378
+        ]);
+
+        pnbp::create([
+            'id_pnbp' => 4,
+            'tahun_pnbp' => 2013,
+            'nominal_pnbp' => 588388
+        ]);
+
+        pnbp::create([
+            'id_pnbp' => 5,
+            'tahun_pnbp' => 2014,
+            'nominal_pnbp' => 782088
+        ]);
+
+        pnbp::create([
+            'id_pnbp' => 6,
+            'tahun_pnbp' => 2015,
+            'nominal_pnbp' => 637899
+        ]);
+
+        pnbp::create([
+            'id_pnbp' => 7,
+            'tahun_pnbp' => 2016,
+            'nominal_pnbp' => 578888
+        ]);
+
+        pnbp::create([
+            'id_pnbp' => 8,
+            'tahun_pnbp' => 2017,
+            'nominal_pnbp' => 488007
+        ]);
+
+        pnbp::create([
+            'id_pnbp' => 9,
+            'tahun_pnbp' => 2018,
+            'nominal_pnbp' => 678499
+        ]);
         
         dataUtama::create([
             'id_PU' => 1,
@@ -471,6 +551,66 @@ class DatabaseSeeder extends Seeder
             'koor_y' => 82321,
             'keterangan' => "Kurang Tau",
             'diameter' => 89
+        ]);
+
+        rosak::create([
+            'id_rusak' => 3,
+            'jns_rusak' => 1,
+            'tgl_input' => "2023-10-06",
+            'tgl_rusak' => "2023-10-06",
+            'id_ptk' => 13,
+            'koor_x' => 90123,
+            'koor_y' => 82321,
+            'keterangan' => "ppp",
+            'diameter' => 11
+        ]);
+
+        rosak::create([
+            'id_rusak' => 4,
+            'jns_rusak' => 1,
+            'tgl_input' => "2023-10-06",
+            'tgl_rusak' => "2023-10-06",
+            'id_ptk' => 17,
+            'koor_x' => 90123,
+            'koor_y' => 82321,
+            'keterangan' => "nge ghosting",
+            'diameter' => 89
+        ]);
+        
+        rosak::create([
+            'id_rusak' => 2,
+            'jns_rusak' => 0,
+            'tgl_input' => "2023-10-06",
+            'tgl_rusak' => "2023-10-06",
+            'id_ptk' => 3,
+            'koor_x' => 90123,
+            'koor_y' => 82321,
+            'keterangan' => "pokokmen rosak",
+            'diameter' => 50
+        ]);
+        
+        rosak::create([
+            'id_rusak' => 5,
+            'jns_rusak' => 0,
+            'tgl_input' => "2023-10-06",
+            'tgl_rusak' => "2023-10-06",
+            'id_ptk' => 2,
+            'koor_x' => 90123,
+            'koor_y' => 82321,
+            'keterangan' => "dehidrasi",
+            'diameter' => 5
+        ]);
+        
+        rosak::create([
+            'id_rusak' => 6,
+            'jns_rusak' => 0,
+            'tgl_input' => "2023-10-06",
+            'tgl_rusak' => "2023-10-06",
+            'id_ptk' => 15,
+            'koor_x' => 90123,
+            'koor_y' => 82321,
+            'keterangan' => "anu",
+            'diameter' => 12
         ]);
 
         LuasHutan::create([

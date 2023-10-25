@@ -33,6 +33,13 @@
             </h2>
             <p class="undertext">Pemantauan Potensi dan Gangguan Sumber Daya Hutan di Yogyakarta</p>
             <form>
+                <div style="display: flex; justify-content: space-between;" class="mt-4">
+                    <a class="btn btn-primary"
+                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
+                        href="{{ route('petak.create', ['rph' => $id_rph]) }}">Tambah Data</a>
+                    <a class="btn btn-warning" style="color: white; font-weight:bold;" href="javascript:void(0);"
+                        onclick="window.history.back();">Kembali</a>
+                </div>
                 <div class="wrapper">
                     <div class="bdh">
 
@@ -88,13 +95,6 @@
                 </table>
 
                 {{-- {{ $data->links() }} --}}
-                <div style="display: flex; justify-content: space-between;" class="mt-4">
-                    <a class="btn btn-warning" style="color: white; font-weight:bold;" href="javascript:void(0);"
-                        onclick="window.history.back();">Kembali</a>
-                    <a class="btn btn-primary"
-                        style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold"
-                        href="{{ route('petak.create', ['rph' => $id_rph]) }}">Tambah Data</a>
-                </div>
             </form>
         </div>
     </div>
