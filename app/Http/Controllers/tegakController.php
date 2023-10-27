@@ -108,7 +108,6 @@ class tegakController extends Controller
         $dataTegak->id_PU     = $request->id_PU;
         $dataTegak->no_pohon = $request->no_pohon;
         $dataTegak->potensi_ptk = $request->potensi_ptk;
-        $dataTegak->id_tgk = $request->jenis_tgk;
         $dataTegak->id_hhk = $request->potensi_ptk == 0 ? $request->id_tgk : null;
         $dataTegak->id_hhbk = $request->potensi_ptk == 1 ? $request->id_tgk : null;
         $dataTegak->diameter  = $request->diameter;
