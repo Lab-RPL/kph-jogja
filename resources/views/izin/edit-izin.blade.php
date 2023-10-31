@@ -43,19 +43,69 @@
                         </td>
                     </tr>
                     <tr>
+                        <td>Jenis Tegakan</td>
+                        <td>
+                            <select name="jenis_tgk" id="jenis_tgk">
+
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
                         <td height="60px">Luas Izin</td>
                         <td><input type="text" id="luas-izin" name="luas_izin" value="{{ $data->luas_izin }}"></td>
                     </tr>
                 </table>
                 <div style="display: flex; justify-content: space-between;" class="mt-5">
                     <a class="btn btn-warning" style="font-weight: bold; color: white" href="/data-izin">Kembali</a>
-                    <button class="btn btn-primary"
-                        style="color: #ffffff; font-weight: bold;"
-                        type="submit">Edit Data</button>
+                    <button class="btn btn-primary" style="color: #ffffff; font-weight: bold;" type="submit">Edit
+                        Data</button>
                 </div>
             </div>
         </div>
     </form>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const petakSelect = document.querySelector('select[name="petak_izin"]');
+    const jenisTgkSelect = document.querySelector('select[name="jenis_tgk"]');
+
+    function petakSelectChangeHandler() {
+        const selectedPetakId = this.value;
+
+        // Kirim permintaan AJAX atau fetch ke server untuk mendapatkan data "Jenis Tegakan" berdasarkan "Nomor Petak".
+        fetch(`/get-jenis-tegakan/${selectedPetakId}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+
+                jenisTgkSelect.innerHTML = '';
+
+                data.forEach(option => {
+                    const newOption = document.createElement('option');
+                    newOption.value = option.id_hhk || option.id_hhbk;
+
+                    // sesuaikan dengan struktur data baru
+                    newOption.text = option.jenis_tgk_hhk || option.jenis_tgk_hhbk;
+
+                    jenisTgkSelect.appendChild(newOption);
+                });
+            })
+            .catch(error => {
+                console.error('Terjadi kesalahan saat mengambil data jenis tegakan:', error);
+            });
+    }
+
+    petakSelect.addEventListener("change", petakSelectChangeHandler);
+
+    // Jika ada nilai awal yang diset, sesuaikan opsi 'Jenis Tegakan'
+    if (petakSelect.value) {
+        petakSelectChangeHandler.call(petakSelect);
+    }
+});
+
+
+
+    </script>
 
     <style>
         pre {

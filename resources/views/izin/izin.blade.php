@@ -36,6 +36,8 @@ integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG
                             <th style="background-color: #9CC589;" class="text-center">Petak</th>
                             <th style="background-color: #9CC589;" class="text-center">Luas Izin</th>
                             <th style="background-color: #9CC589;" class="text-center">Jenis Tegakan</th>
+                            <th style="background-color: #9CC589;" class="text-center">Nama BDH</th>
+                            <th style="background-color: #9CC589;" class="text-center">Nama RPH</th>
                             <th style="background-color: #9CC589;" class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -53,6 +55,12 @@ integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG
                                         @else
                                             {{ $da->hhk_jenis_tgk }}
                                         @endif
+                                    </td>
+                                    <td>
+                                        {{ $da->nama_bdh }}
+                                    </td>
+                                    <td>
+                                      {{ $da->nama_rph }}
                                     </td>
                                     <td style="justify-content: space-between; align-items:center">
                                         <a href="{{ route('izin.edit', $da->id_izin) }}"

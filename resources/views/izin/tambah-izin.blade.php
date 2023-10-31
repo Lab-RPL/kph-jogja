@@ -48,7 +48,7 @@
                             const petakSelect = document.querySelector('select[name="petak_izin"]');
                             const jenisTgkSelect = document.querySelector('select[name="jenis_tgk"]');
 
-                            petakSelect.addEventListener("change", function() {
+                            function petakSelectChangeHandler() {
                                 const selectedPetakId = this.value;
 
                                 // Kirim permintaan AJAX atau fetch ke server untuk mendapatkan data "Jenis Tegakan" berdasarkan "Nomor Petak".
@@ -72,9 +72,14 @@
                                     .catch(error => {
                                         console.error('Terjadi kesalahan saat mengambil data jenis tegakan:', error);
                                     });
+                            }
 
+                            petakSelect.addEventListener("change", petakSelectChangeHandler);
 
-                            });
+                            // Jika ada nilai awal yang diset, sesuaikan opsi 'Jenis Tegakan'
+                            if (petakSelect.value) {
+                                petakSelectChangeHandler.call(petakSelect);
+                            }
                         });
                     </script>
 
