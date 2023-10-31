@@ -137,7 +137,6 @@
 
 .chart2 {
     width: 2000px;
-    /* margin-bottom: 20px; */
     /* margin-top: 30px; */
 }
 
@@ -998,14 +997,14 @@ label {
     .chart-container canvas {
         max-width: 618px; /* or any size you prefer */
         max-height: 420px; /* it's better to keep the pie chart as almost a square */
-        margin-left: 15px;
+        margin-left: 12px;
     }
 
     .bawah .chart1 {
-        max-width: 190px;
-        max-height: 190px;
+        max-width: 180px;
+        max-height: 180px;
         margin-left: 20px;
-        margin-top: 65px;
+        margin-top: 75px;
     }
 
     .chart2{

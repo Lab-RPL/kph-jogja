@@ -46,16 +46,26 @@
                         Login
                     </span>
 
-                    <div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
+
+
+                    <div class="wrap-input100 validate-input m-b-23" data-validate="Username is required">
                         <span class="label-input100">Username</span>
-                        <input class="input100" type="text" name="name" placeholder="Type your username">
+                        <input class="input100" type="text" name="username" placeholder="Username">
                         <span class="focus-input100" data-symbol="&#xf206;"></span>
+                    
+                        @if ($errors->has('username'))
+                            <div class="alert-validate" data-validate="{{ $errors->first('username') }}"></div>
+                        @endif
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
                         <span class="label-input100">Password</span>
-                        <input class="input100" type="password" name="pass" placeholder="Type your password">
+                        <input class="input100" type="password" name="password" placeholder="Password">
                         <span class="focus-input100" data-symbol="&#xf190;"></span>
+                    
+                        @if ($errors->has('password'))
+                            <div class="alert-validate" data-validate="{{ $errors->first('password') }}"></div>
+                        @endif
                     </div>
 
 
