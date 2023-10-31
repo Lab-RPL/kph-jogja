@@ -21,7 +21,8 @@
                                 <option value="" disabled selected hidden>Pilih Nomor Petak</option>
                                 @foreach ($petak as $petak)
                                     @if ($petak->IsDelete == 0)
-                                        <option value="{{ $petak->id_ptk }}">{{ $petak->nomor_ptk }}</option>
+                                        <option value="{{ $petak->id_ptk }}" data-id_hhk="{{ $petak->id_hhk }}"
+                                            data-id_hhbk="{{ $petak->id_hhbk }}">{{ $petak->nomor_ptk }}</option>
                                     @endif
                                 @endforeach
                             </select>
@@ -30,15 +31,16 @@
                     <tr>
                         <td height="60px">Jenis Tegakan</td>
                         <td>
-                            <select name="jenis_tgk" id="jenis_tgk">
+                            <select name="jenis_tgk" id="jenis_tgk" disabled>
                             </select>
                         </td>
                     </tr>
                     <tr id="berat">
                         <td id="berat_or_volume_label" height="60px">Berat</td>
-                        <td><input type="text" id="berat" name="berat_volume" required></td>
+                        <td><input type="text" id="berat_input" name="berat_volume" required></td>
                     </tr>
-                    
+
+
                 </table>
                 <div style="display: flex; justify-content: space-between;" class="mt-5">
                     <a class="btn btn-warning" style="font-weight: bold; color: white" href="/data-produksi">Kembali</a>
@@ -82,27 +84,26 @@
             });
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
-    const petakSelect = document.querySelector('select[name="id_ptk"]');
-    const beratOrVolumeLabel = document.getElementById('berat_or_volume_label');
+        document.addEventListener("DOMContentLoaded", function() {
+            const petakSelect = document.querySelector('select[name="id_ptk"]');
+            const jenisTgkSelect = document.querySelector('select[name="jenis_tgk"]');
+            const beratOrVolumeLabel = document.getElementById('berat_or_volume_label');
+            const beratInput = document.getElementById('berat_input');
 
-    petakSelect.addEventListener('change', function() {
-        fetch(`/get-petak-data/${this.value}`)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data); // this will help in debugging
-                
-                if ("id_hhk" in data) {
-                    beratOrVolumeLabel.textContent = "Volume";
-                } else if ("id_hhbk" in data) {
-                    beratOrVolumeLabel.textContent = "Berat";
+            petakSelect.addEventListener("change", function() {
+                const selectedOption = this.options[this.selectedIndex];
+                const idHhk = selectedOption.getAttribute('data-id_hhk');
+                const idHhbk = selectedOption.getAttribute('data-id_hhbk');
+
+                if (idHhk) {
+                    beratOrVolumeLabel.textContent = 'Volume';
+                    // Lakukan tindakan lain jika diperlukan.
+                } else if (idHhbk) {
+                    beratOrVolumeLabel.textContent = 'Berat';
+                    // Lakukan tindakan lain jika diperlukan.
                 }
-            })
-            .catch(error => console.error('Terjadi kesalahan saat mengambil data petak:', error));
-    });
-});
-
-      
+            });
+        });
     </script>
 
     <style>

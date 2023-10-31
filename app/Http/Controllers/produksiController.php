@@ -23,9 +23,9 @@ class produksiController extends Controller
             ->join('bdh', 'rph.id_bdh', '=', 'bdh.id_bdh')
             ->leftJoin('hhk', 'ptk.id_hhk', '=', 'hhk.id_hhk')
             ->leftJoin('hhbk', 'ptk.id_hhbk', '=', 'hhbk.id_hhbk')
-            ->select('bdh.nama_bdh', 'rph.nama_rph', 'ptk.nomor_ptk', 'prod.berat_volume', 'hhk.jenis_tgk','hhbk.jenis_tgk as jenis_tgk_hhbk')
+            ->select('prod.*','bdh.nama_bdh', 'rph.nama_rph', 'ptk.nomor_ptk', 'prod.berat_volume', 'hhk.jenis_tgk','hhbk.jenis_tgk as jenis_tgk_hhbk')
             ->where('prod.IsDelete', 0)
-            ->get();
+            ->paginate(10000000000);
         
                 
                 return view("produksi-hutan.produksi-hutan",compact("data"));
@@ -76,7 +76,7 @@ class produksiController extends Controller
             ->where('produksi.id_prod', $id_prod)
             ->where('produksi.IsDelete', 0)
             ->first();
-
+        
         $petak = Petak::all();
 
         if (!$data) {
@@ -87,20 +87,21 @@ class produksiController extends Controller
     }
 
     public function update(Request $request, $id){
-        $this->validate($request, [
-            'id_ptk' => 'required',
-            'berat_volume' => 'required',
-        ]);
+      
 
-        $izin = produksi::where('id_prod', $id)->first();
-        $izin->id_ptk = $request->id_ptk;
-        $izin->berat_volume = $request->berat_volume;
-        $izin->save();
+        $prod = produksi::where('id_prod', $id)->first();
+        $prod->id_ptk = $request->id_ptk;
+        $prod->berat_volume = $request->berat_volume;
+        $prod->save();
 
         return redirect()->route('produksi.index')->with('pesan', 'Data Produksi Hasil Hutan Berhasil Diperbaharui');
     }
 
-    public function destroy(){
-        
+    public function destroy($id_prod){
+        $dataProd_entry = produksi::where('id_prod', $id_prod)->first();
+        $dataProd_entry->IsDelete = 1;
+        $dataProd_entry->save();
+
+        return redirect()->back()->with('pesan', 'Data Hasil Produksi Hutan Berhasil Dihapus');
     }
 }

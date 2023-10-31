@@ -152,15 +152,12 @@ Route::get('/data-pnbp/{id_pnbp}', [pnbpController::class, 'destroy'])->name('pn
 
 
 //PRODUKSI HASIL HUTAN
-// Route::get('/data-produksi', function () {
-//     return view('produksi-hutan.produksi-hutan');
-// });
 Route::get('/data-produksi', [produksiController::class, 'index'])->name('produksi.index');
 Route::get('/tambah-produksi', [produksiController::class, 'create'])->name('produksi.create');
 Route::post('/data-produksi', [produksiController::class, 'store'])->name('produksi.store');
 Route::get('/data-produksi/{id_prod}/edit', [produksiController::class, 'edit'])->name('produksi.edit');
 Route::put('/data-produksi/{id}', [produksiController::class, 'update'])->name('produksi.update');
-// Route::get('data-produksi/{id_prod}', [produksiController::class, 'destroy'])->name('produksi.destroy');
+Route::get('data-produksi/{id_prod}', [produksiController::class, 'destroy'])->name('produksi.destroy');
 
 
 
