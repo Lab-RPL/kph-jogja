@@ -895,8 +895,12 @@ label {
 
 }
 
-@media screen and (min-width: 1366px) and (max-width: 1680px) {
+@media screen and (min-width: 1367px) and (max-width: 1680px) {
 
+    .main.active {
+        width: calc(90% - 40px);
+        left: 30px;
+    }
 
     .bawah .chart1 {
         max-width: 240px;
@@ -982,6 +986,10 @@ label {
 
 @media screen and (max-width: 1366px) {
     /* css code for resolution up to 1366px */
+    .toggle{
+        left: -20px;
+    }
+
     .border-lists{
         max-height: 600px;
     }
@@ -991,7 +999,7 @@ label {
     }
 
     .cardBox{
-        top: 50px;
+        top: 20px;
     }
 
     .chart-container canvas {
