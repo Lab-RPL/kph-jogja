@@ -174,6 +174,8 @@ body {
     margin: -30px auto auto 30px;
 }
 
+
+
 .garis1 {
     display: flex;
     justify-content: center;
@@ -181,6 +183,8 @@ body {
     height: 100vh;
     margin: -30px auto auto 60px;
 }
+
+
 
 .middletext {
     font-size: 30px;
@@ -217,7 +221,7 @@ body {
     border-radius: 10px;
     padding: 60px;
     left: 20px;
-    max-width: 3000px;
+    max-width: 100rem;
     width: 100%;
     margin-top: 2%;
     height: 100%;
@@ -897,10 +901,38 @@ label {
 
 @media screen and (min-width: 1367px) and (max-width: 1680px) {
 
+    .garis{
+        width: 1150px;
+    }
+
+    .garis1{
+        width: 1150px;
+    }
+
     .main.active {
         width: calc(90% - 40px);
         left: 30px;
     }
+
+    .main .border-liste{
+        transition: 0.5s;
+    }
+
+    .main.active .border-liste{
+        left: 60px;
+        transition: 0.5s;
+    }
+
+    .main .border-lists{
+        transition: 0.5s;
+    }
+    
+    .main.active .border-lists{
+        left: 100px;
+        transition: 0.5s;
+    }
+
+
 
     .bawah .chart1 {
         max-width: 240px;
@@ -926,6 +958,7 @@ label {
     }
 
     .border-lists{
+        left: -10px;
         top: -10px;
         max-height: 850px;
     }
