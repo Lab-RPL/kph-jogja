@@ -152,15 +152,15 @@
                         <div class="bawah">
                             {{-- <div class="potensi">
                                 <p>Potensi Hasil Hutan</p> --}}
-                                <canvas id="hasilHutanChart" class="chart1"></canvas>
+                            <canvas id="hasilHutanChart" class="chart1"></canvas>
                             {{-- </div>
                             <div class="bdh">
                                 <p>BDH</p> --}}
-                                <canvas id="bdh" class="chart1"></canvas>
+                            <canvas id="bdh" class="chart1"></canvas>
                             {{-- </div>
                             <div class="produksi">
                                 <p>Produksi Hasil Hutan</p> --}}
-                                <canvas id="produksiHutanChart" class="chart1"></canvas>
+                            <canvas id="produksiHutanChart" class="chart1"></canvas>
                             {{-- </div> --}}
                         </div>
                         <canvas id="pnbp" class="chart2"></canvas>
@@ -195,96 +195,115 @@
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                 <script>
-
                     // Chart BDH
-                    
+
                     $.get("/dashboard/bdh", function(response) {
-                    var labels = response.map(function(e) {
-                        return e.nama_bdh;
-                    });
-                    var data = response.map(function(e) {
-                        return e.luas_bdh;
-                    });
+                        var labels = response.map(function(e) {
+                            return e.nama_bdh;
+                        });
+                        var data = response.map(function(e) {
+                            return e.luas_bdh;
+                        });
 
-                    // create chart
-                    var ctx1 = document.getElementById('bdh');
-                    var bdh = new Chart(ctx1, {
-                        type: 'pie',
-                        data: {
-                            labels: labels,
-                            datasets: [{
-                                data: data,
-                                backgroundColor: ["#438A70", "#215B63", "#5FCC9C", "#AAFFC7"],
-                            }]
-                        },
-                        options: {
-                            plugins: {
-                                legend: {
-                                    display: false
-                                },
-                                title: {
-                                    display: true,
-                                    text: 'BAGIAN DAERAH HUTAN'
+                        // create chart
+                        var ctx1 = document.getElementById('bdh');
+                        var bdh = new Chart(ctx1, {
+                            type: 'pie',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    data: data,
+                                    backgroundColor: ["#438A70", "#215B63", "#5FCC9C", "#AAFFC7"],
+                                }]
+                            },
+                            options: {
+                                plugins: {
+                                    legend: {
+                                        display: false
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: 'BAGIAN DAERAH HUTAN'
+                                    }
                                 }
                             }
-                        }
+                        });
                     });
-                });
 
 
-                    //Chart Potensi
-                    
-                    var ctx2 = document.getElementById('hasilHutanChart');
-                    var hasilHutanChart = new Chart(ctx2, {
-                        type: 'pie',
-                        data: {
-                            labels: ['Potensi 1', 'Potensi 2', 'Potensi 3'],
-                            datasets: [{
-                                data: [35, 60, 5],
-                                backgroundColor: ["#438A70", "#215B63", "#5FCC9C", "#AAFFC7"],
-                            }]
-                        },
-                        options: {
-                            // responsive: true,
-                            // maintainAspectRatio: false,
-                            plugins: {
-                                legend: {
-                                    display: false
-                                },
-                                title: {
-                                    display: true,
-                                    text: 'POTENSI HASIL HUTAN'
+                    // Chart Potensi
+
+                    $.get("/dashboard/potensi", function(response) {
+                        var labels = response.map(function(e) {
+                            return e.jenis_tgk;
+                        });
+                        var data = response.map(function(e) {
+                            return e.koreksi;
+                        });
+
+                        var ctx2 = document.getElementById('hasilHutanChart');
+                        var hasilHutanChart = new Chart(ctx2, {
+                            type: 'pie',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    data: data,
+                                    backgroundColor: ["#438A70", "#215B63", "#5FCC9C", "#AAFFC7"],
+                                }]
+                            },
+                            options: {
+                                // responsive: true,
+                                // maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        display: false
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: 'POTENSI HASIL HUTAN KAYU'
+                                    }
                                 }
                             }
-                        }
+                        });
+
                     });
 
                     //Chart Produksi
 
-                    var ctx3 = document.getElementById('produksiHutanChart');
-                    var produksiHutanChart = new Chart(ctx3, {
-                        type: 'pie',
-                        data: {
-                            labels: ['Produksi 1', 'Produksi 2', 'Produksi 3'],
-                            datasets: [{
-                                data: [50, 45, 5],
-                                backgroundColor: ["#438A70", "#215B63", "#5FCC9C", "#AAFFC7"],
-                            }]
-                        },
-                        options: {
+                    $.get("/dashboard/produksi", function(response) {
+                        var labels = response.map(function(e) {
+                            return e.id_ptk;
+                        });
+                        var data = response.map(function(e) {
+                            return e.berat_volume;
+                        });
 
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: {
-                                    display: false
-                                },
-                                title: {
-                                    display: true,
-                                    text: 'PRODUKSI HASIL HUTAN'
-                                }
+                        var ctx3 = document.getElementById('produksiHutanChart');
+                        var produksiHutanChart = new Chart(ctx3, {
+                            type: 'pie',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    data: data,
+                                    string : "volum",
+                                    backgroundColor: ["#438A70", "#215B63", "#5FCC9C", "#AAFFC7"],
+                                }]
                             },
-                        }
+                            options: {
+
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        display: false
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: 'PRODUKSI HASIL HUTAN'
+                                    }
+                                },
+                            }
+                        });
                     });
 
                     $.ajax({
@@ -333,10 +352,10 @@
                                         legend: {
                                             display: false
                                         },
-                                title: {
-                                    display: true,
-                                    text: 'PENERIMAAN NEGARA BUKAN PAJAK'
-                                }
+                                        title: {
+                                            display: true,
+                                            text: 'PENERIMAAN NEGARA BUKAN PAJAK'
+                                        }
                                     },
                                     scales: {
                                         y: {

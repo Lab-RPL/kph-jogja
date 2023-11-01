@@ -174,6 +174,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/chart-data', [DashboardController::class, 'getChartData']);
 Route::get('/dashboard/bdh', [DashboardController::class, 'getPieChartData']);
 
+Route::get('/dashboard/produksi', [DashboardController::class, 'getPieChartDataProduksi']);
+Route::get('/dashboard/potensi', [DashboardController::class, 'getPieChartDataPotensi']);
+
 
 //REKAP DATA
 Route::get('/data-rekap', [rekapController::class, 'index'])->name('rekap-read');

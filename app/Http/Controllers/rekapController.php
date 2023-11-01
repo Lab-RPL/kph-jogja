@@ -19,7 +19,7 @@ class rekapController extends Controller
             ->join('petak', 'data_utama.id_ptk', '=', 'petak.id_ptk')
             ->join('rph', 'petak.id_rph', '=', 'rph.id_rph')
             ->join('bdh', 'rph.id_bdh', '=', 'bdh.id_bdh')
-            ->select('data_utama.*', 'petak.nomor_ptk', 'rph.id_rph', 'bdh.id_bdh')
+            ->select('data_utama.*', 'petak.nomor_ptk', 'rph.nama_rph', 'bdh.nama_bdh')
             ->where('data_utama.IsDelete', 0)
             ->paginate(1000000);
 

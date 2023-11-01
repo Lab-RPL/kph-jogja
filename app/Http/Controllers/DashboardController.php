@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\hhk;
+use App\Models\produksi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -42,6 +44,27 @@ class DashboardController extends Controller
         ->get();
 
         return response()->json($bdhData);
+    }
+
+    //ini baru
+    public function getPieChartDataPotensi() {
+        $potensiData = DB::table('hhk')
+        ->select('jenis_tgk', 'koreksi')
+        ->where('IsDelete', 0)
+        // ->orderBy('jenis_tgk', 'asc')
+        ->get();
+
+        return response()->json($potensiData);
+    }
+
+    public function getPieChartDataProduksi() {
+        $produksiData = DB::table('produksi')
+        ->select('id_ptk', 'berat_volume')
+        ->where('IsDelete', 0)
+        // ->orderBy('id_ptk', 'asc')
+        ->get();
+
+        return response()->json($produksiData);
     }
 
 

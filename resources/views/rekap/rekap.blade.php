@@ -25,9 +25,9 @@
                 <table id="tabelData" class="table table-bordered">
                     <thead>
                         <tr class="kolom">
-                            <th style="background-color: #9CC589;" class="text-center">Petak</th>
-                            <th style="background-color: #9CC589;" class="text-center">RPH</th>
                             <th style="background-color: #9CC589;" class="text-center">BDH</th>
+                            <th style="background-color: #9CC589;" class="text-center">RPH</th>
+                            <th style="background-color: #9CC589;" class="text-center">Petak</th>
                             <th style="background-color: #9CC589;" class="text-center">Pohon (/Ha)</th>
                             <th style="background-color: #9CC589;" class="text-center">Volume (m³/Ha)</th>
                             {{-- <th style="background-color: #9CC589;" class="text-center">Option</th> --}}
@@ -37,9 +37,9 @@
                         @foreach ($data as $da)
                             @if ($da->IsDelete == 0)
                                 <tr>
+                                    <td>{{ $da->nama_bdh }}</td>
+                                    <td>{{ $da->nama_rph }}</td>
                                     <td>{{ $da->nomor_ptk }}</td>
-                                    <td>{{ $da->id_rph }}</td>
-                                <td>{{ $da->id_bdh }}</td>
                                     <td>{{ $da->no_PU }} pohon/Ha</td>
                                     <td>{{ $da->luas_PU * $da->tinggi_tempat * 0.6 }} m³/Ha</td>
                                     {{-- <td style="justify-content: space-between; align-items:center">
