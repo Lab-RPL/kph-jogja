@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
@@ -23,7 +23,7 @@ integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG
                         style="background-color: #9CC589; border: 1px solid #9CC589; color: #ffffff; font-weight: bold;"
                         href="/tambah-izin">Tambah Data</a>
                 </div>
-                
+
                 @csrf
                 @if (Session::has('pesan'))
                     <div id="pesan-sukses" class="alert alert-success mt-4">{{ Session::get('pesan') }}</div>
@@ -32,12 +32,12 @@ integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG
                     <thead>
                         <tr class="kolom">
                             <th style="background-color: #9CC589;" class="text-center">Nama Kelompok Tani Hutan</th>
-                            <th style="background-color: #9CC589;" class="text-center">Nomor SK</th>
-                            <th style="background-color: #9CC589;" class="text-center">Petak</th>
+                            <th style="background-color: #9CC589;" class="text-center">No.SK</th>
+                            <th style="background-color: #9CC589;" class="text-center">BDH</th>
+                            <th style="background-color: #9CC589;" class="text-center">RPH</th>
+                            <th style="background-color: #9CC589;" class="text-center">No.Petak</th>
                             <th style="background-color: #9CC589;" class="text-center">Luas Izin</th>
                             <th style="background-color: #9CC589;" class="text-center">Jenis Tegakan</th>
-                            <th style="background-color: #9CC589;" class="text-center">Nama BDH</th>
-                            <th style="background-color: #9CC589;" class="text-center">Nama RPH</th>
                             <th style="background-color: #9CC589;" class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -47,6 +47,12 @@ integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG
                                 <tr>
                                     <td>{{ $da->nama_kelompok }}</td>
                                     <td>{{ $da->no_SK }}</td>
+                                    <td>
+                                        {{ $da->nama_bdh }}
+                                    </td>
+                                    <td>
+                                        {{ $da->nama_rph }}
+                                    </td>
                                     <td>{{ $da->nomor_ptk }}</td>
                                     <td>{{ $da->luas_izin }} Ha</td>
                                     <td>
@@ -55,12 +61,6 @@ integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG
                                         @else
                                             {{ $da->hhk_jenis_tgk }}
                                         @endif
-                                    </td>
-                                    <td>
-                                        {{ $da->nama_bdh }}
-                                    </td>
-                                    <td>
-                                      {{ $da->nama_rph }}
                                     </td>
                                     <td style="justify-content: space-between; align-items:center">
                                         <a href="{{ route('izin.edit', $da->id_izin) }}"

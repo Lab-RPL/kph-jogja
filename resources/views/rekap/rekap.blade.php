@@ -27,7 +27,7 @@
                         <tr class="kolom">
                             <th style="background-color: #9CC589;" class="text-center">BDH</th>
                             <th style="background-color: #9CC589;" class="text-center">RPH</th>
-                            <th style="background-color: #9CC589;" class="text-center">Petak</th>
+                            <th style="background-color: #9CC589;" class="text-center">No.Petak</th>
                             <th style="background-color: #9CC589;" class="text-center">Pohon (/Ha)</th>
                             <th style="background-color: #9CC589;" class="text-center">Volume (m³/Ha)</th>
                             {{-- <th style="background-color: #9CC589;" class="text-center">Option</th> --}}

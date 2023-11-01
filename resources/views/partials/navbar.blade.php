@@ -24,7 +24,7 @@
                             <span class="icon">
                                 <ion-icon name="stats-chart-outline"></ion-icon>
                             </span>
-                            <span class="title">Data Inventaris</span>
+                            <span class="title">Inventarisasi</span>
                         </a> 
                     </li>
         

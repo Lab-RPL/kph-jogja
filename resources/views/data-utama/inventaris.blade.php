@@ -46,7 +46,7 @@
                                 <div class="sub-table-inventaris">RPH</div>
                             </th>
                             <th rowspan="2" style="background-color: #9CC589;">
-                                <div class="sub-table-inventaris">PETAK</div>
+                                <div class="sub-table-inventaris">NO.PETAK</div>
                             </th>
                             <th colspan="2" style="background-color: #9CC589;">
                                 <div class="text-center" style="font-size: 13px;">KOORDINAT</div>

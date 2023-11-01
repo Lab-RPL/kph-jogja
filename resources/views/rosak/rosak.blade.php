@@ -66,8 +66,7 @@
                                         class="text-center">
                                         Tanggal Rusak</th>
                                     <th rowspan="2" valign="middle" style="background-color: #9CC589;"
-                                        class="text-center">Nomor
-                                        Petak</th>
+                                        class="text-center">No.Petak</th>
                                     <th colspan="2" style="background-color: #9CC589;" class="text-center">Koordinat
                                         Rusak</th>
                                     <th rowspan="2" valign="middle" style="background-color: #9CC589;"
@@ -140,8 +139,7 @@
                                         class="text-center">
                                         Tanggal Kehilangan</th>
                                     <th rowspan="2" valign="middle" style="background-color: #9CC589;"
-                                        class="text-center">Nomor
-                                        Petak</th>
+                                        class="text-center">No.Petak</th>
                                     <th colspan="2" valign="middle" style="background-color: #9CC589;"
                                         class="text-center">
                                         Koordinat Kehilangan</th>

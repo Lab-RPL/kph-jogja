@@ -33,7 +33,7 @@ integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG
                         <tr class="kolom">
                             <th style="background-color: #9CC589;" class="text-center">BDH</th>
                             <th style="background-color: #9CC589;" class="text-center">RPH</th>
-                            <th style="background-color: #9CC589;" class="text-center">Petak</th>
+                            <th style="background-color: #9CC589;" class="text-center">No.Petak</th>
                             <th style="background-color: #9CC589;" class="text-center">Jenis Tegakan</th>
                             <th style="background-color: #9CC589;" class="text-center">Volume / Berat</th>
                             <th style="background-color: #9CC589;" class="text-center">Aksi</th>
