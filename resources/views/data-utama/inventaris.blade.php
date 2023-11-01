@@ -154,6 +154,7 @@
         </div>
     </div>
     <style>
+        
         .action{
             cursor: pointer;
         }
@@ -177,16 +178,22 @@
     <script>
             const toggleButtons = document.querySelectorAll(".toggleButton");
 
-            toggleButtons.forEach(function(button) {
-                button.addEventListener("click", function() {
-                    const buttonContainer = this.nextElementSibling;
-                    if (buttonContainer.style.display === "none" || buttonContainer.style.display === "") {
-                        buttonContainer.style.display = "block";
-                    } else {
-                        buttonContainer.style.display = "none";
-                    }
-                });
-            });
+toggleButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        const buttonContainer = this.nextElementSibling;
+        const icon = this.querySelector("i");
+
+        if (buttonContainer.style.display === "none" || buttonContainer.style.display === "") {
+            buttonContainer.style.display = "block";
+            icon.classList.remove("fa-arrow-down");
+            icon.classList.add("fa-arrow-up");
+        } else {
+            buttonContainer.style.display = "none";
+            icon.classList.remove("fa-arrow-up");
+            icon.classList.add("fa-arrow-down");
+        }
+    });
+});
 
     </script>
      <style>
