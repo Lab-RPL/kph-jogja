@@ -34,10 +34,10 @@
                     </div>
                     <thead>
                             <th rowspan="2" style="background-color: #9CC589;">
-                                <div class="sub-table-inventaris">NOMOR PU</div>
+                                <div class="sub-table-inventaris">NO.PU</div>
                             </th>
                             <th rowspan="2" style="background-color: #9CC589;">
-                                <div class="sub-table-inventaris">TANGGAL</div>
+                                <div class="sub-table-inventaris ">TANGGAL</div>
                             </th>
                             <th rowspan="2" style="background-color: #9CC589;">
                                 <div class="sub-table-inventaris">BDH</div>

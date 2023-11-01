@@ -32,9 +32,9 @@
                 <table id="tabelData" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th style="background-color: #9CC589;">Nama RPH</th>
-                            <th style="background-color: #9CC589;">Nama Kepala RPH</th>
-                            <th style="background-color: #9CC589;">Luas RPH</th>
+                            <th style="background-color: #9CC589;" class="text-center">Nama RPH</th>
+                            <th style="background-color: #9CC589;" class="text-center">Nama Kepala RPH</th>
+                            <th style="background-color: #9CC589;" class="text-center">Luas RPH</th>
                         </tr>
                     </thead>
                     <tbody>

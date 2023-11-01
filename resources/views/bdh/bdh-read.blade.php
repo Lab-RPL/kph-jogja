@@ -23,9 +23,9 @@
                 <table id="tabelData" class="table table-bordered table-striped table-hover">
                     <thead>
                         <tr>
-                            <th style="background-color: #9CC589;">BDH</th>
-                            <th style="background-color: #9CC589;">Nama Kepala BDH</th>
-                            <th style="background-color: #9CC589;">Luas BDH</th>
+                            <th style="background-color: #9CC589;" class="text-center">BDH</th>
+                            <th style="background-color: #9CC589;" class="text-center">Nama Kepala BDH</th>
+                            <th style="background-color: #9CC589;" class="text-center">Luas BDH</th>
                         </tr>
                     </thead>
                     <tbody>

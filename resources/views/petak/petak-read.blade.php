@@ -40,10 +40,10 @@
                 <table id="tabelData" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th style="background-color: #9CC589;">Nomor Petak</th>
-                            <th style="background-color: #9CC589;">Luas Petak</th>
-                            <th style="background-color: #9CC589;">Potensi Petak</th>
-                            <th style="background-color: #9CC589;">Jenis Tegakan</th>
+                            <th style="background-color: #9CC589;" class="text-center">Nomor Petak</th>
+                            <th style="background-color: #9CC589;" class="text-center">Luas Petak</th>
+                            <th style="background-color: #9CC589;" class="text-center">Potensi Petak</th>
+                            <th style="background-color: #9CC589;" class="text-center">Jenis Tegakan</th>
                         </tr>
                     </thead>
                     <tbody>
