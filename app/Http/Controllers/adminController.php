@@ -10,14 +10,18 @@ use Illuminate\Support\Facades\Hash;
 class adminController extends Controller
 {
     //
-    public function index()
+    public function index(Request $req)
     {
         // Pastikan pengguna telah masuk dan bergolong 'admin' sebelum mengizinkan akses.
         // if (Auth::check() && Auth::user()->user_type == 'admin') {
+            if (!$req->session()->has('user_type') || $req->session()->get('user_type') !== 'admin') {
+                return redirect('/');
+            }
+            
 
         // Tampilkan halaman admin atau lakukan apa pun yang Anda inginkan
         $data = admin::where('IsDelete', 0)->paginate(1000000000);
-        return view("admin.admin", ['data' => $data]);
+        return view('admin.admin', ['data' => $data]);
         // }
     }
 
@@ -46,11 +50,11 @@ class adminController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'id'    => 'required',
-            'name'  => 'required',
-            'password'=> 'required'
+            'id' => 'required',
+            'name' => 'required',
+            'password' => 'required',
         ]);
-        
+
         $admin = admin::where('id', $id)->first();
         $admin->name = $request->name;
         $admin->password = Hash::make($request->password);
@@ -61,12 +65,12 @@ class adminController extends Controller
 
     public function destroy($id)
     {
-        {
-            $admin_entry = admin::where('id', $id)->first();
-            $admin_entry->IsDelete = 1;
-            $admin_entry->save();
-    
-            return redirect()->back()->with('pesan', 'Data User Berhasil Dihapus');
-        }
+        $admin_entry = admin::where('id', $id)->first();
+        $admin_entry->IsDelete = 1;
+        $admin_entry->save();
+
+        return redirect()
+            ->back()
+            ->with('pesan', 'Data User Berhasil Dihapus');
     }
 }

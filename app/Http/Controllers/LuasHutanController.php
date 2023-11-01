@@ -7,8 +7,12 @@ use Illuminate\Http\Request;
 
 class LuasHutanController extends Controller
 {
-    public function index()
+    public function index(Request $req)
     {
+        if (!$req->session()->has('user_id')) {
+            return redirect('/');
+        }
+        
         $luasHutan = LuasHutan::where('IsDelete', 0)->get();
         return view('luas-hutan.luas-hutan', compact('luasHutan'));
     }

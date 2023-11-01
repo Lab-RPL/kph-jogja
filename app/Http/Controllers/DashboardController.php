@@ -11,7 +11,11 @@ class DashboardController extends Controller
 {
     //
 
-    public function index(){
+    public function index(Request $req){
+        if (!$req->session()->has('user_id')) {
+            return redirect('/');
+        }
+
         $totalbdh = DB::table('bdh')->where('IsDelete',0)->count();
         $totalinven = DB::table('data_utama')->where('IsDelete',0)->count();
         $totalrph = DB::table('rph')->where('IsDelete',0)->count();
